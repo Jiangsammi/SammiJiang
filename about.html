@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About & Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .about-section h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .contact-form {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Your Name</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <h1>About Me</h1>
+      <p>Hi! I'm [Your Name], a creative professional passionate about visual storytelling. I specialize in [design/photography/branding/etc.], and this portfolio is a curated selection of my recent work. When I'm not creating, I enjoy [fun fact/hobby].</p>
+
+      <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
