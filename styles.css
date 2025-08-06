@@ -1773,3 +1773,12 @@ nav {
   border-radius: 8px; /* optional */
   background-color: #f0f0f0; /* optional, to fill empty space */
 }
+
+
+html, body, a, div, span, header, section, img, p {
+  cursor: url('images/Glitchheart.png') 32 32, auto;
+}
+
+* {
+  cursor: url('images/Glitchheart.png') 32 32, auto !important;
+}
