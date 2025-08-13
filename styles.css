@@ -1749,7 +1749,6 @@ nav {
 
   
 
-
 .cover, .cover-image {
   width: 100%;
   height: 300px; /* keep your desired fixed height */
@@ -1768,11 +1767,33 @@ nav {
 
 
 
-/*cursers*/
-html, body, a, div, span, header, section, img, p {
-  cursor: url('images/Glitchheart.png') 32 32, auto;
-}
-
 * {
   cursor: url('images/Glitchheart.png') 32 32, auto !important;
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-flex;
+}
+
+/* Responsive fix */
+@media (max-width: 600px) {
+  .social-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .social-icons li {
+    display: inline-flex;
+    margin: 4px;
+  }
 }

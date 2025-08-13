@@ -1,162 +1,728 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sammi Jiang Resume</title>
 
-    body {
-      font-family: 'Manrope', sans-serif;
-      margin: 0;
-      padding: 3rem 1.5rem;
-      background-color: #f0f2f5;
-      color: #1e1e1e;
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rubik+Mono+One&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 3rem 2rem;
+    background: #fff; /* Changed to white */
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+    line-height: 1.6;
+    color: #333;
+  }
+
+html, body, *, *::before, *::after {
+  cursor: url('images/Glitchheart.png') 32 32, auto !important;
+}
+
+
+
+
+
+.site-container {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+
+.example-site-footer {
+  background: #555;
+  /* keep all other styles the same */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 4;
+  overflow-x: hidden;
+}
+
+
+
+.social.nav-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;              /* take full width of footer */
+  max-width: 1200px;        /* optional max width to keep it neat on big screens */
+}
+
+.social.nav-social ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.social.nav-social ul li {
+  flex: 0 0 auto;          /* prevent list items from shrinking */
+}
+
+
+.example-site-footer .icon {
+    fill: #fff;
+    float: left; }
+  .example-site-footer .content-left,
+.example-site-footer .content-right {
+  height: 70px;
+  float: none;             /* remove float */
+  margin: 0 10px;          /* space between left and right */
+}
+.example-footer-content {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: inline-block;
+  position: relative;
+  top: 50%; }
+
+.example-footer-link {
+  border-bottom: 1px solid #fff;
+  color: #fff; }
+  .example-footer-link:hover {
+    border-bottom-width: 0; }
+
+@media (max-width: 768px) {
+  .example-site-footer .desktop {
+    display: none; }
+  .example-site-footer .mobile {
+    text-transform: capitalize; } }
+
+.site-wrap,
+.site-container {
+  position: relative;
+  width: 100%; }
+
+.site-wrap {
+  background-color: #fff; }
+
+.site-header {
+  position: relative; }
+
+.responsive-nav {
+  display: none;
+  opacity: 0;
+  visibility: hidden; }
+
+.project-cover .separator:last-child,
+.project-header .fields .separator:last-child {
+  display: none; }
+
+.nav-social:first-child li:first-child {
+  padding-left: 0 !important; }
+
+.logo,
+.logo-secondary {
+  clear: both;
+  word-wrap: break-word; }
+  .logo img,
+  .logo-secondary img {
+    max-width: 100%; }
+  .logo a,
+  .logo-secondary a {
+    color: inherit; }
+  .logo .image-rollover,
+  .logo-secondary .image-rollover {
+    display: none; }
+  .logo.has-rollover:hover .image-link,
+  .logo-secondary.has-rollover:hover .image-link {
+    display: none; }
+  .logo.has-rollover:hover .image-link.image-rollover,
+  .logo-secondary.has-rollover:hover .image-link.image-rollover {
+    display: block; }
+
+.social {
+  font-size: 0; }
+  .social li {
+    display: inline-block; }
+    .social li:last-child {
+      padding-right: 0 !important; }
+  .social a {
+    display: block;
+    text-align: center; }
+  .social svg {
+    height: 100%;
+    vertical-align: middle; }
+
+nav .page-title,
+nav .gallery-title,
+nav .project-title,
+nav .link-title,
+nav .social,
+nav .social li {
+  display: inline-block;
+  vertical-align: middle; }
+
+nav .project-title:first-child,
+nav .gallery-title:first-child,
+nav .page-title:first-child,
+nav .link-title:first-child {
+  padding-left: 0 !important; }
+
+nav .project-title:last-child,
+nav .gallery-title:last-child,
+nav .page-title:last-child,
+nav .link-title:last-child {
+  padding-right: 0 !important; }
+
+
+  /* Scanline overlay - very subtle */
+  body::after {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0 0 0 / 0.02),
+        rgba(0 0 0 / 0.02) 1px,
+        transparent 3px,
+        transparent 5px
+      );
+    z-index: 9999;
+    mix-blend-mode: overlay;
+    animation: scanlineMove 12s linear infinite;
+  }
+  @keyframes scanlineMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; }
+  }
+
+  /* Particle background */
+  #particle-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: #fff; /* changed to white */
+  }
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent; /* Removed gray background */
+  border-radius: 0; /* Removed rounding */
+  padding: 3rem 4rem;
+  box-shadow: none; /* Removed shadow */
+  position: relative;
+  z-index: 10;
+}
+
+
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* Subtle glitch heading */
+  .glitch {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #555;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+  }
+  .glitch::before {
+    animation: glitchTop 2.5s infinite linear alternate-reverse;
+    color: #777;
+    left: 1.5px;
+    opacity: 0.6;
+  }
+  .glitch::after {
+    animation: glitchBottom 2.5s infinite linear alternate;
+    color: #999;
+    left: -1.5px;
+    opacity: 0.6;
+  }
+
+  @keyframes glitchTop {
+    0% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
     }
+    20% {
+      clip: rect(0, 9999px, 40px, 0);
+      transform: translate(-1.5px, -1.5px);
+    }
+    40% {
+      clip: rect(0, 9999px, 10px, 0);
+      transform: translate(1.5px, 1.5px);
+    }
+    60% {
+      clip: rect(0, 9999px, 50px, 0);
+      transform: translate(-1.5px, 1px);
+    }
+    80% {
+      clip: rect(0, 9999px, 15px, 0);
+      transform: translate(1.5px, -1px);
+    }
+    100% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+  }
+  @keyframes glitchBottom {
+    0% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+    20% {
+      clip: rect(30px, 9999px, 80px, 0);
+      transform: translate(1.5px, 1.5px);
+    }
+    40% {
+      clip: rect(40px, 9999px, 60px, 0);
+      transform: translate(-1.5px, -1.5px);
+    }
+    60% {
+      clip: rect(50px, 9999px, 70px, 0);
+      transform: translate(1.5px, 1px);
+    }
+    80% {
+      clip: rect(45px, 9999px, 90px, 0);
+      transform: translate(-1.5px, -1px);
+    }
+    100% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+  }
 
+  /* Social icons */
+.social-icons {
+  list-style: none; /* removes default bullet points */
+  padding: 0;       /* removes default padding */
+  margin: 0;        /* removes default margin */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 11;
+  position: relative;
+}
+
+  .social-icons a {
+    filter: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: #5c4747;
+    display: inline-block;
+    pointer-events: auto;
+  }
+  .social-icons a:hover, .social-icons a:focus {
+    transform: scale(1.2) rotate(4deg);
+    color: #7b7777;
+  }
+  .icon {
+    fill: currentColor;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Section headings */
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #444;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 50px;
+    height: 3px;
+    background: #555;
+    border-radius: 3px;
+    transform: translateX(-50%);
+    opacity: 0.3;
+  }
+
+  /* Job blocks */
+  .job, .school {
+    background: #eee;
+    border-radius: 10px;
+    padding: 1.8rem 2.4rem;
+    margin-bottom: 2.8rem;
+    box-shadow: 0 0 8px #ccc inset;
+    position: relative;
+    border: 1px solid transparent;
+    transition: border-color 0.25s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .job:hover, .job:focus-within {
+    border-color: #555;
+  }
+
+  /* Glitch effect on job titles but subtle */
+  .title {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #444;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.6rem;
+    position: relative;
+    cursor: url('images/Glitchheart.png') 32 32, auto !important;
+  }
+  .title.glitch-effect::before,
+  .title.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+  }
+  .title.glitch-effect::before {
+    animation: glitchTop 1.6s infinite linear alternate-reverse;
+    color: #616d9e;
+    left: 1.3px;
+    opacity: 0.7;
+  }
+  .title.glitch-effect::after {
+    animation: glitchBottom 1.6s infinite linear alternate;
+    color: #333;
+    left: -1.3px;
+    opacity: 0.7;
+  }
+  .title:hover {
+    animation: jitter 0.3s infinite alternate;
+  }
+  @keyframes jitter {
+    0% { transform: translate(0.8px, 0.8px) rotate(0.4deg); }
+    100% { transform: translate(-0.8px, -0.8px) rotate(-0.4deg); }
+  }
+
+  .subtitle {
+    font-style: italic;
+    color: #507458;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  ul {
+    color: #444;
+    padding-left: 1.6rem;
+  }
+  li {
+    margin-bottom: 0.7rem;
+  }
+
+  p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+  /* Pop in animation for jobs */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Back to top button */
+  .back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    background: #ccc;
+    color: #333;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: 0.3s ease, color 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.1em;
+    user-select: none;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 20;
+  }
+  .back-to-top:hover {
+    background: #555;
+    color: #fff;
+  }
+
+  .center-wrapper {
+  height: 100vh;             /* full viewport height */
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+}
+.logo.glitch {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px auto;
+  user-select: none;
+}
+
+
+  
+  /* Responsive */
+  @media (max-width: 700px) {
     main {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      padding: 2rem 2rem;
+      margin: 0 0.5rem;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .logo-wrap {
-      margin-bottom: 1rem;
-    }
-
-    .logo a {
-      font-size: 2.4rem;
-      font-weight: bold;
-      color: #222;
-      text-decoration: none;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 0.75rem;
-      list-style: none;
-      padding: 0;
-    }
-
-    .icon {
-      fill: #555;
-      transition: fill 0.3s;
-    }
-
-    a:hover .icon {
-      fill: #1a73e8;
-    }
-
     h2 {
-      font-size: 1.4rem;
-      color: #374151;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 0.4rem;
-      margin-top: 2rem;
+      font-size: 1.8rem;
     }
-
-    .job, .school {
-      margin-bottom: 1.5rem;
-    }
-
     .title {
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
-
-    .subtitle {
-      color: #6b7280;
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-      list-style-type: circle;
-    }
-
-    li {
-      margin-bottom: 0.4rem;
-    }
-
-    p, li {
-      font-size: 1rem;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <main>
-    <header>
-      <div class="logo-wrap" decorator="editable" data-context="theme.nav">
-        <div class="logo logo-text">
-          <a href="index.html">Sammi Jiang</a>
-        </div>
-      </div>
-      <ul class="social-icons">
-        <li>
-          <a href="https://ca.linkedin.com/in/antoinettescott" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-linkedin"><path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20 h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c-0.01 0.01-0.02 0.02-0.02 0.03h0.02v-0.03c0.46-0.73 1.27-1.79 3.09-1.79 c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9 C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/></svg>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.pinterest.com/antoinettescott" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-pinterest"><path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23 c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4 c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26 c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5 c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53 c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/></svg>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:sammijiang24@gmail.com" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-email">
-              <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8
-                l-10,7L5,8V18z"/>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </header>
+<!-- Particle canvas -->
+<canvas id="particle-canvas"></canvas>
 
-    <section>
-      <h2>Summary</h2>
-      <p>Brief summary of your professional background, specialties, and career goals.</p>
-    </section>
+<main>
 
-    <section>
-      <h2>Experience</h2>
-      <div class="job">
-        <div class="title">Job Title - Company Name</div>
-        <div class="subtitle">Location | Dates Worked</div>
-        <ul>
-          <li>Responsibility or achievement</li>
-          <li>Another key point</li>
-        </ul>
-      </div>
-    </section>
 
-    <section>
-      <h2>Education</h2>
-      <div class="school">
-        <div class="title">Degree - School Name</div>
-        <div class="subtitle">Location | Graduation Year</div>
-      </div>
-    </section>
+  <footer class="example-site-footer">
+  <div class="social nav-social" decorator="editable" data-context="theme.nav.social">
+    <ul>
+<li>
+                  <a href="https://www.linkedin.com/in/sammijiang24 " target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 24" height="24px" xml:space="preserve" class="icon icon-linkedin"><path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20 h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c-0.01 0.01-0.02 0.02-0.02 0.03h0.02v-0.03c0.46-0.73 1.27-1.79 3.09-1.79 c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9 C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.pinterest.com/omgsammi/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 24" height="24px" xml:space="preserve" class="icon icon-pinterest"><path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23 c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4 c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26 c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5 c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53 c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:sammijiang24@gmail.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-email">
+                      <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8
+                        l-10,7L5,8V18z"/>
+                    </svg>
+                  </a>
+                </li>  
+    </ul>
+  </div>
+</footer>
 
-    <section>
-      <h2>Skills</h2>
+    <div class="logo glitch" data-text="SAMMI JIANG" tabindex="0">SAMMI JIANG</div>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I am a really outgoing person. I enjoy having stuff to accomplish; I am helpful; and I enjoy encouraging people to do their best. I enjoy interacting with others and making new acquaintances. I've always wanted to experience and master new skills.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job" tabindex="0">
+      <div class="title glitch-effect" data-text="Art Instructor & Volunteer — UNNA ART">Art Instructor & Volunteer — UNNA ART</div>
+      <div class="subtitle">144-49 Barclay Ave, Flushing, NY 11355 | Volunteer: 2021 (90 hours), Part-time Instructor: 2022–Present (weekends)</div>
       <ul>
-        <li>Skill One</li>
-        <li>Skill Two</li>
-        <li>Skill Three</li>
+        <li>Mentor and provide guidance to younger art students, reviewing and evaluating artwork to foster creative growth.</li>
+        <li>Support development of high school and college application portfolios with tailored feedback and coaching.</li>
+        <li>Deliver weekly art instruction focused on technique, creative exploration, and portfolio preparation.</li>
       </ul>
-    </section>
-  </main>
+    </div>
+
+    <div class="job" tabindex="0">
+      <div class="title glitch-effect" data-text="Marketing Assistant — DIGISO">Marketing Assistant — DIGISO</div>
+      <div class="subtitle">Queen Center Mall & Chelsea, Manhattan | Full-time (breaks), Part-time since May 2024</div>
+      <ul>
+        <li>Designed and produced digital advertisements promoting Korean skincare products on social media platforms.</li>
+        <li>Created engaging content showcasing product features and skincare tips to boost brand awareness.</li>
+        <li>Assisted in store events planning and outreach to the Asian beauty community.</li>
+      </ul>
+    </div>
+
+        <div class="job" tabindex="0">
+      <div class="title glitch-effect" data-text="Merchandising Specialist — Teso Life">Merchandising Specialist — Teso Life</div>
+      <div class="subtitle">265 Broadway, New York, NY 10001 | Summer 2023 (32-40 hrs/week)</div>
+      <ul>
+        <li>Directed merchandising strategies and oversaw inventory operations to maintain a premium product presentation.</li>
+        <li>Led client engagement efforts, providing expert guidance on beauty brands and customized product solutions.</li>
+        <li>Developed and executed sales and marketing campaigns to maximize brand visibility and revenue growth.</li>
+      </ul>
+    </div>
+
+        <div class="job" tabindex="0">
+      <div class="title glitch-effect" data-text="Styling Consultant — Sweet Mood">Styling Consultant — Sweet Mood</div>
+      <div class="subtitle">136-77 Roosevelt Ave, Flushing, NY 11355 | 9 Months, 16 hrs/week since May 2022</div>
+      <ul>
+        <li>Managed inventory and curated visually appealing merchandise displays aligned with fashion trends.</li>
+        <li>Provided expert styling consultations including personalized advice on fit, fabric, and measurements to enhance customer satisfaction.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="school" tabindex="0">
+      <div class="title glitch-effect" data-text="Parsons School of Design">Parsons School of Design</div>
+      <div class="subtitle">Graduating 2023 — 2027  Bachelor of Fine Arts - BFA, Communication Design, GPA: 4.4</div>
+      <p>Relevant courses: Graphic Design, UI/UX, Product Marketing, Product Design, Typography.</p>
+    </div>
+
+    <div class="school" tabindex="0">
+      <div class="title glitch-effect" data-text="Fiorello H. LaGuardia High School of Music & Art and Performing Arts">Fiorello H. LaGuardia High School of Music & Art and Performing Arts</div>
+      <div class="subtitle">Graduated June 2024 — Major: Visual Arts, GPA: 4.4</div>
+      <p>Relevant courses: Graphic Design, Digital Media, Portfolio Development, Viusal Arts, Architecture.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<button class="back-to-top" aria-label="Back to top">↑ TOP</button>
+
+<script>
+  // Particle setup
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * devicePixelRatio;
+    canvas.height = height * devicePixelRatio;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.radius = Math.random() * 1.3 + 0.7;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.speedX = (Math.random() - 0.5) * 0.3;
+      this.speedY = (Math.random() - 0.5) * 0.3;
+      this.alpha = Math.random() * 0.7 + 0.3;
+      this.alphaChange = (Math.random() * 0.002 + 0.0005) * (Math.random() < 0.5 ? 1 : -1);
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.alpha += this.alphaChange;
+      if (this.alpha <= 0.3 || this.alpha >= 1) this.alphaChange = -this.alphaChange;
+      if (this.x > width) this.x = 0;
+      else if (this.x < 0) this.x = width;
+      if (this.y > height) this.y = 0;
+      else if (this.y < 0) this.y = height;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.alpha;
+      ctx.shadowColor = '#00000066';
+      ctx.shadowBlur = 1.2;
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+    }
+  }
+
+  const colors = ['#000000', '#222222', '#444444', '#666666'];
+
+  const particles = [];
+  const particleCount = 100;
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of particles) {
+      p.update();
+      p.draw();
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Back to top button
+  const backToTopBtn = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.pointerEvents = 'auto';
+    } else {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.pointerEvents = 'none';
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
