@@ -1,227 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sammi Jiang - Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:image" content="style.css" />
+  <link rel="icon" href="" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <title>Sammi Jiang - Resume</title>
+
   <style>
-    /* Reset & Base */
-    html, body {
+    body {
+      background-color: #ffffff !important;
+      color: #222222;
+      font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #222;
-    }
-    a { text-decoration: none; }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      border-bottom: 1px solid #eee;
-      z-index: 100;
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo {
-      font-family: 'Roboto Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links a {
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: #444;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: #000; }
-
-    /* Sections */
-    .section {
-      padding: 6rem 2rem 4rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .about-section {
-      text-align: center;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    /* Typing effect */
-    .about-section .typing {
-      font-family: 'Roboto Mono', monospace;
-      font-size: 2rem;
-      font-weight: 400;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #222;
-      width: 0;
-      margin: 0 auto;
-      animation: typing 2.5s steps(20, end) forwards,
-                 blink 0.7s step-end infinite;
+    h1, h2, h3, h4, h5, h6 {
+      color: #000000;
+      font-family: inherit;
     }
 
-    .about-section p {
-      margin-top: 1.5rem;
-      font-size: 1.05rem;
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
       line-height: 1.6;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
-      animation-delay: 3s;
-      color: #555;
+      color: #555555;
     }
 
-    /* Resume Thumbnail */
-    .about-photo {
-      display: block;
-      margin: 2rem auto 1.5rem;
-      width: 240px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      cursor: pointer;
-      transition: transform 0.3s ease;
+    /* Header */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px 0;
+      z-index: 1000;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
     }
-    .about-photo:hover { transform: scale(1.02); }
 
-    /* Buttons */
-    .resume-buttons {
-      margin-top: 1rem;
+    nav.nav-container {
       display: flex;
       justify-content: center;
-    }
-    .resume-btn {
-      padding: 0.6rem 1.5rem;
-      font-size: 0.9rem;
-      font-weight: 400;
-      border-radius: 9999px;
-      border: 1px solid #444;
-      background: transparent;
-      color: #444;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-    }
-    .resume-btn:hover {
-      background: #000;
-      color: #fff;
+      gap: 20px;
     }
 
-    /* Contact */
-    .contact-section {
-      text-align: center;
+    nav.nav-container a {
+      color: #000;
+      text-decoration: none;
+      font-size: 16px;
     }
-    .contact-section h2 {
-      font-weight: 400;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
-    .contact-section a {
-      color: #0077cc;
-    }
-    .contact-section a:hover {
+
+    nav.nav-container a:hover {
       text-decoration: underline;
     }
 
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    .logo-wrap {
+      margin-top: 10px;
+      text-align: center;
     }
 
-    /* Animations */
-    @keyframes typing { from { width: 0 } to { width: 17ch } }
-    @keyframes blink { 50% { border-color: transparent } }
-    @keyframes fadeIn { to { opacity: 1 } }
+    .logo a {
+      color: #000;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social.nav-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social.nav-social svg {
+      fill: #000000;
+      transition: opacity 0.3s;
+    }
+
+    .social.nav-social svg:hover {
+      opacity: 0.6;
+    }
+
+    .intro {
+      margin-top: 180px;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .resume-image {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume-image img {
+      width: 65%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .back-to-top {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .back-to-top a {
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-to-top a:hover {
+      text-decoration: underline;
+    }
+
+    footer.site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      text-align: center;
+      padding: 12px 0;
+      color: #888;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+    }
+
+    .page-content {
+      flex: 1;
+      padding-bottom: 80px;
+    }
   </style>
 </head>
-<body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-      <div class="nav-logo">Sammi Jiang</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+<body class="transition-enabled">
+  <header class="site-header js-site-header">
+    <nav class="nav-container">
+     <div class="gallery-title"><a href="index.html">Home</a></div>
+      <div class="gallery-title"><a href="/projects" class="active">Projects</a></div>
+      <div class="gallery-title"><a href="/about">About</a></div>
+    </nav>
+
+    <div class="logo-wrap">
+      <div class="logo logo-text">
+        <a href="index.html">Sammi Jiang</a>
       </div>
     </div>
-  </nav>
 
-  <!-- About -->
-  <div id="about" class="section about-section">
-    <div class="typing">Hello, I'm Sammi</div>
-    <p>
-      I'm a designer with a focus on digital marketing, brand identity,
-      skincare products, and content creation. I combine clean, simple
-      design with smart strategy to help brands stand out and connect with
-      their audience.
-    </p>
+    <div class="social nav-social">
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-linkedin">
+              <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+            </svg>
+          </a>
+        </li>
 
-    <!-- Resume Thumbnail -->
-    <img src="images/Resume JPEG.jpg" alt="Resume Preview" class="about-photo" onclick="openLightbox()">
+        <li>
+          <a href="https://www.pinterest.com/omgsammi/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-pinterest">
+              <path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/>
+            </svg>
+          </a>
+        </li>
 
-    <!-- Download Button -->
-    <div class="resume-buttons">
-      <a href="documents/Sammi_Jiang_Resume.pdf" download class="resume-btn">Download Resume</a>
+        <li>
+          <a href="mailto:sammijiang24@gmail.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-email">
+              <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
-  </div>
+  </header>
 
-  <!-- Lightbox -->
-  <div id="resumeLightbox" class="lightbox" onclick="closeLightbox(event)">
-    <img src="images/Resume JPEG.jpg" alt="Full Resume">
-  </div>
+<main class="page-content">
+  <section class="intro">
+    <h1>Hi, I'm Sammi Jiang</h1>
+    <p>
+      I'm a designer with a focus on digital marketing, brand identity, skincare products, and content creation.
+      I combine clean, simple design with smart strategy to help brands stand out and connect with their audience.
+    </p>
+  </section>
+</main>
 
-  <!-- Contact -->
-  <div id="contact" class="section contact-section">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:sammijiang24@gmail.com">sammijiang24@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sammijiang24/" target="_blank">linkedin.com/in/sammijiang24</a></p>
-  </div>
 
-  <script>
-    function openLightbox() {
-      document.getElementById("resumeLightbox").style.display = "flex";
-    }
-    function closeLightbox(e) {
-      if (e.target.id === "resumeLightbox") {
-        document.getElementById("resumeLightbox").style.display = "none";
-      }
-    }
-  </script>
+    <div class="resume-image">
+      <img src="images/Resume.jpg" alt="Sammi Jiang Resume" />
+    </div>
+
+    <section class="back-to-top">
+      <a href="#top"><span class="arrow">&uarr;</span> Back to Top</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © Sammi Jiang 2025
+  </footer>
+
+</script>
+  <script type="text/javascript" src="//use.typekit.net/ik/zdnE6H07pb88tgBH4syKQBCjK7QFVxoO8Aj0xVVV_HCfenqgfHYEBsJzwD9oFDIDWh93FDFcjRJUZejtwhJoFDMUZR63FQF8ZRg8wQwkwcsy5QSuZQJaZR6-OPG0dW83da4XZcNC-Av0jhNlOfG0SY4zwKuh-AmaOcuoSeNkieZzde8zOcFzdPJIZ1s0-kJIZhuD-KG4fJFmIMMj2PMfH6qJyB9bMg6IJMJ7fbRxmgMMeM96MKG4fJBmIMMjgkMfH6qJDR9bMs6IJMJ7fbRs2UMgeMS6MTMgqFRiC39.js?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5786cd6f6117d606b5efc1680baddfccda381cc01a16acfb8d07c","theme":{"name":"marta"},"pageTransition":true,"linkTransition":true,"disableDownload":true,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":false},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript" src="/site/translations?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+  <script type="text/javascript" src="/dist/js/main.js?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
 </body>
-</html>
+  </html>
+

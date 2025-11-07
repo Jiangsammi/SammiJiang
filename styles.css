@@ -81,6 +81,12 @@
     padding: 20px;
   }
   
+.scroll-indicator p {
+  margin-top: 3rem; /* more distance from intro text */
+  font-size: 0.6rem;
+  color: #4a1313;
+}
+
 
 
 
@@ -1797,3 +1803,4 @@ nav {
     margin: 4px;
   }
 }
+
