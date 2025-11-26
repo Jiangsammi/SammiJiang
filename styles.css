@@ -1804,3 +1804,214 @@ nav {
   }
 }
 
+/* SUPER readable — bigger, not bold */
+
+/* Navigation text: Projects / Resume / About */
+nav .gallery-title a {
+  font-size: 26px !important;   /* MUCH bigger */
+  font-weight: 400 !important;  /* not bold */
+  letter-spacing: 0.2px;
+}
+
+/* “Sammi Jiang” logo text */
+.logo-text a,
+.logo a {
+  font-size: 34px !important;   /* bigger but not bold */
+  font-weight: 400 !important;  
+  letter-spacing: 0.3px;
+}
+
+/* Social icons: LinkedIn / Pinterest / Email */
+.nav-social svg {
+  width: 36px !important;       /* larger */
+  height: 36px !important;
+}
+
+/* Increase header height so nothing feels squished */
+.site-header {
+  height: 95px !important;
+}
+.header-placeholder {
+  height: 95px !important;
+}
+
+    /* Header */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px 0;
+      z-index: 1000;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+        nav.nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav.nav-container a {
+      color: #000;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav.nav-container a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-wrap {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .logo a {
+      color: #000;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+        body {
+      background-color: #ffffff !important;
+      color: #222222;
+      font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #000000;
+      font-family: inherit;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555555;
+    }
+
+    /* Header */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px 0;
+      z-index: 1000;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav.nav-container a {
+      color: #000;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav.nav-container a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-wrap {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .logo a {
+      color: #000;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social.nav-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social.nav-social svg {
+      fill: #000000;
+      transition: opacity 0.3s;
+    }
+
+    .social.nav-social svg:hover {
+      opacity: 0.6;
+    }
+
+    .intro {
+      margin-top: 180px;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .resume-image {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume-image img {
+      width: 65%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .back-to-top {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .back-to-top a {
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-to-top a:hover {
+      text-decoration: underline;
+    }
+
+    footer.site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      text-align: center;
+      padding: 12px 0;
+      color: #888;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+    }
+
+    .page-content {
+      flex: 1;
+      padding-bottom: 80px;
+    }
