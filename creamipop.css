@@ -1,95 +1,33 @@
-/* ---------- GLOBAL RESET ---------- */
+/* --------------------------------------------------------- */
+/* ---------------------- GLOBAL RESET ---------------------- */
+/* --------------------------------------------------------- */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- GLOBAL STYLES ---------- */
+/* --------------------------------------------------------- */
+/* ---------------------- GLOBAL STYLES --------------------- */
+/* --------------------------------------------------------- */
+
 body {
   font-family: "General Sans", sans-serif;
   color: #000;
   background-color: #fff;
-  margin: 0;
-  padding: 0 5rem; /* adds clean side spacing */
+  padding: 0 5rem;
+  padding-top: 180px; /* exact resume header height */
 }
 
-/* ---------- HEADER SECTION ---------- */
-.main-header {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
-  align-items: start;
-  margin-bottom: 6rem;
-}
+/* --------------------------------------------------------- */
+/* ------------------------ HERO ---------------------------- */
+/* --------------------------------------------------------- */
 
-/* ---------- TOP NAV (EVENLY SPACED + ALIGNED UNDER "JIANG") ---------- */
-.top-nav {
-  grid-column: 1 / 7;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  max-width: 44rem; /* aligns with the end of "JIANG" */
-  margin-left: 0.2rem;
-}
-
-.top-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.top-nav li {
-  display: inline-block;
-}
-
-.top-nav a {
-  position: relative;
-  text-decoration: none;
-  color: #000;
-  font-size: 1rem; /* was 0.9rem — slightly larger now */
-  letter-spacing: -0.01em;
-  transition: opacity 0.3s ease;
-  padding-bottom: 0.3rem; /* more breathing room under text */
-}
-
-/* --- underline animation --- */
-.top-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px; /* was 1px — now thicker for visibility */
-  background-color: #000;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease, background-color 0.3s ease;
-}
-
-.top-nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-  background-color: #555;
-}
-
-.top-nav a:hover {
-  opacity: 0.6;
-}
-
-
-
-/* ---------- HERO SECTION ---------- */
 .hero {
-  grid-column: 1 / 7;
-  margin-top: 5rem;
+  margin-top: 0;
 }
 
-/* SAMMI JIANG */
 .hero h1 {
   font-weight: 500;
   font-size: 7rem;
@@ -97,106 +35,72 @@ body {
   letter-spacing: -0.03em;
   margin-bottom: 2.5rem;
   white-space: nowrap;
-  word-spacing: 10rem; /* space between SAMMI and JIANG */
+  word-spacing: 10rem;
 }
 
-/* Text + Category Layout */
 .intro-row {
   display: flex;
   align-items: flex-start;
-  gap: 6rem; /* space between paragraph and category list */
+  gap: 6rem;
 }
 
-/* Intro Paragraph */
 .intro-row p {
   flex: 1;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #222;
-  margin: 0;
   max-width: 28rem;
 }
 
 .category-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* space between each category */
-  margin-top: -0.05rem;
-  margin-left: 0.4rem; /* keeps text aligned where it is */
+  gap: 1rem;
 }
 
 .category-list a {
-  position: relative;
   text-decoration: none;
   color: #000;
   font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
   padding-bottom: 0.3rem;
-  display: inline-block;
-  transition: opacity 0.2s ease;
+  position: relative;
 }
 
-/* make line extend visually past last letter (to align with J in JIANG) */
 .category-list a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 530%; /* extend line further to the right */
+  width: 530%;
   height: 1px;
   background-color: #000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: left;
 }
 
-/* optional hover effect */
-.category-list a:hover::after {
-  opacity: 0.6;
-  transform: scaleX(0.95);
-}
+/* --------------------------------------------------------- */
+/* ------------------------ PROJECTS ------------------------ */
+/* --------------------------------------------------------- */
 
-.category-list a:hover {
-  opacity: 0.6;
-}
-
-
-
-
-/* ---------- PROJECT SECTIONS ---------- */
 .project {
   display: grid;
-  grid-template-columns: 1.3fr 0.6fr 1fr; /* wide left column for visuals */
+  grid-template-columns: 1.3fr 0.6fr 1fr;
   gap: 2.5rem;
-  align-items: start;
   margin-top: 6rem;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Project Info (Number + Date) */
 .project-info {
   grid-column: 1 / 2;
   font-size: 0.8rem;
   font-family: monospace;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: -1rem; /* tighter space */
   text-transform: uppercase;
-
   width: 150%;
   margin-left: -41%;
 }
 
-
-.project-info span:last-child {
-  margin-left: auto;
-  margin-right: 2rem;
-}
-
-/* Project Image */
 .project-image {
   grid-column: 1 / 2;
   width: 170%;
@@ -209,30 +113,19 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  transform: translateX(-20%);
   border: 1px solid #ddd;
   background-color: #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Project Description */
 .project-description {
   grid-column: 3 / 4;
   font-size: 0.85rem;
   line-height: 1.6;
   margin-top: 2.2rem;
-  margin-left: 4rem; /* increase or decrease for more/less movement */
+  margin-left: 4rem;
   max-width: 90%;
-
 }
 
-.project-description h3 {
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-/* ---------- IMAGE UNIFORMITY ---------- */
 .project:nth-of-type(1) .project-image,
 .project:nth-of-type(2) .project-image,
 .project:nth-of-type(3) .project-image {
@@ -243,19 +136,16 @@ body {
 .project:nth-of-type(2) .project-image img,
 .project:nth-of-type(3) .project-image img {
   width: 80%;
-  height: auto;
-  transform: none;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* --------------------------------------------------------- */
+/* --------------------- RESPONSIVE ------------------------- */
+/* --------------------------------------------------------- */
+
 @media (max-width: 1000px) {
   body {
     padding: 0 2rem;
-  }
-
-  .main-header {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    padding-top: 180px;
   }
 
   .hero h1 {
@@ -270,29 +160,102 @@ body {
 
   .project {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    margin-top: 4rem;
   }
 
   .project-info {
     width: 100%;
     margin-left: 0;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
   }
 
   .project-image {
     width: 100%;
     margin-left: 0;
-    justify-content: center;
   }
 
   .project-image img {
     width: 100%;
-    transform: none;
   }
 
   .project-description {
-    margin-top: 1rem;
+    margin-left: 0;
   }
 }
 
+/* --------------------------------------------------------- */
+/* -------- ONE-ROW, CENTERED, RESUME-SIZE HEADER ----------- */
+/* --------------------------------------------------------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* centers the entire header block */
+  width: 100%;
+  max-width: 1500px; /* clean centered boundary */
+
+  background: white;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+
+  padding: 48px 0; /* slightly bigger header height */
+  font-family: "Times New Roman", Georgia, serif !important;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px; /* adds breathing room */
+}
+
+/* ---------------- LEFT NAV ---------------- */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 55px; /* wider spacing for bigger feel */
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: #000;
+  font-size: 26px;  /* slightly bigger than resume */
+  font-weight: 400;
+}
+
+/* ---------------- CENTER LOGO ---------------- */
+.logo-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-wrap .logo a {
+  font-size: 34px; /* slightly bigger logo */
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ---------------- RIGHT ICONS ---------------- */
+.nav-social ul {
+  display: flex;
+  align-items: center;
+  gap: 26px; /* slightly bigger spacing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-social svg {
+  height: 28px; /* slightly larger */
+  fill: #000;
+  transition: opacity .3s;
+}
+
+.nav-social svg:hover {
+  opacity: .6;
+}
+
+/* Space below header so it doesn't overlap content */
+body {
+  padding-top: 190px !important;
+}
