@@ -1,43 +1,45 @@
-/* --------------------------------------------------------- */
-/* ---------------------- GLOBAL RESET ---------------------- */
-/* --------------------------------------------------------- */
-
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --------------------------------------------------------- */
-/* ---------------------- GLOBAL STYLES --------------------- */
-/* --------------------------------------------------------- */
-
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
 body {
   font-family: "General Sans", sans-serif;
+  background: #fff;
   color: #000;
-  background-color: #fff;
   padding: 0 5rem;
-  padding-top: 180px; /* exact resume header height */
+  padding-top: 180px; /* Header offset */
+  line-height: 1.6;
 }
 
-/* --------------------------------------------------------- */
-/* ------------------------ HERO ---------------------------- */
-/* --------------------------------------------------------- */
-
+/* =========================================================
+   HERO (FIXED)
+========================================================= */
 .hero {
-  margin-top: 0;
+  max-width: 850px;        /* ⭐ THIS FIXES THE WRAP */
+  margin: 0 auto 4rem;     /* center hero section */
 }
 
 .hero h1 {
   font-weight: 500;
   font-size: 7rem;
-  line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 2.5rem;
-  white-space: nowrap;
-  word-spacing: 10rem;
+
+  white-space: normal !important;   /* ⭐ allow wrapping */
+  word-spacing: 0.3rem;             /* nicer than 10rem */
+  line-height: 0.92;
+  max-width: 100%;                  /* ensures wrap inside container */
 }
 
+/* ===== Intro row under title ===== */
 .intro-row {
   display: flex;
   align-items: flex-start;
@@ -46,12 +48,13 @@ body {
 
 .intro-row p {
   flex: 1;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #222;
-  max-width: 28rem;
+  max-width: 30rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
 }
 
+/* ===== Category List ===== */
 .category-list {
   display: flex;
   flex-direction: column;
@@ -59,9 +62,9 @@ body {
 }
 
 .category-list a {
+  font-size: 0.95rem;
   text-decoration: none;
   color: #000;
-  font-size: 0.95rem;
   padding-bottom: 0.3rem;
   position: relative;
 }
@@ -73,84 +76,97 @@ body {
   bottom: 0;
   width: 530%;
   height: 1px;
-  background-color: #000;
+  background: #000;
 }
 
-/* --------------------------------------------------------- */
-/* ------------------------ PROJECTS ------------------------ */
-/* --------------------------------------------------------- */
-
+/* =========================================================
+   PROJECTS — DESKTOP
+========================================================= */
 .project {
   display: grid;
   grid-template-columns: 1.3fr 0.6fr 1fr;
   gap: 2.5rem;
-  margin-top: 6rem;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 6rem auto 0;
 }
 
 .project-info {
   grid-column: 1 / 2;
-  font-size: 0.8rem;
-  font-family: monospace;
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
   width: 150%;
   margin-left: -41%;
+  font-size: 0.75rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: #444;
 }
 
 .project-image {
   grid-column: 1 / 2;
   width: 170%;
+  margin-left: -26%;
   display: flex;
   justify-content: flex-start;
-  margin-left: -26%;
 }
 
 .project-image img {
   width: 100%;
+  background: #fff;
+  border: 1px solid #e2e2e2;
   height: auto;
-  object-fit: cover;
-  border: 1px solid #ddd;
-  background-color: #fff;
 }
 
-.project-description {
-  grid-column: 3 / 4;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin-top: 2.2rem;
-  margin-left: 4rem;
-  max-width: 90%;
-}
-
-.project:nth-of-type(1) .project-image,
-.project:nth-of-type(2) .project-image,
-.project:nth-of-type(3) .project-image {
+/* First 3 images span wider */
+.project:nth-of-type(-n + 3) .project-image {
   grid-column: 1 / span 2;
 }
 
-.project:nth-of-type(1) .project-image img,
-.project:nth-of-type(2) .project-image img,
-.project:nth-of-type(3) .project-image img {
+.project:nth-of-type(-n + 3) .project-image img {
   width: 80%;
 }
 
-/* --------------------------------------------------------- */
-/* --------------------- RESPONSIVE ------------------------- */
-/* --------------------------------------------------------- */
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+.project-description {
+  grid-column: 3 / 4;
+  margin-left: 4rem;
+  margin-top: 2.2rem;
+  max-width: 90%;
+}
 
+.project-description h3 {
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 1.1rem;
+}
+
+.project-description p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #2e2e2e;
+  max-width: 36rem;
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 @media (max-width: 1000px) {
   body {
     padding: 0 2rem;
-    padding-top: 180px;
+    padding-top: 160px;
+  }
+
+  .hero {
+    max-width: 100%;
   }
 
   .hero h1 {
-    font-size: 9vw;
-    word-spacing: 3vw;
+    font-size: 11vw;
+    word-spacing: 1vw;
+    max-width: 90%;
   }
 
   .intro-row {
@@ -163,65 +179,57 @@ body {
     margin-top: 4rem;
   }
 
-  .project-info {
-    width: 100%;
+  .project-info,
+  .project-description {
+    grid-column: 1 / -1;
     margin-left: 0;
   }
 
   .project-image {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .project-image img {
-    width: 100%;
-  }
-
-  .project-description {
-    margin-left: 0;
+    width: 120%;
+    margin-left: -10%;
+    justify-content: center;
   }
 }
 
-/* --------------------------------------------------------- */
-/* -------- ONE-ROW, CENTERED, RESUME-SIZE HEADER ----------- */
-/* --------------------------------------------------------- */
-
+/* =========================================================
+   HEADER
+========================================================= */
 .site-header {
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* centers the entire header block */
+  transform: translateX(-50%);
   width: 100%;
-  max-width: 1500px; /* clean centered boundary */
-
-  background: white;
+  max-width: 1500px;
+  background: #fff;
   border-bottom: 1px solid #ddd;
+  padding: 48px 0;
   z-index: 1000;
-
-  padding: 48px 0; /* slightly bigger header height */
-  font-family: "Times New Roman", Georgia, serif !important;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px; /* adds breathing room */
+  gap: 60px;
+
+  font-family: "Times New Roman", Georgia, serif !important;
 }
 
-/* ---------------- LEFT NAV ---------------- */
+/* Left Nav */
 .nav-container {
   display: flex;
   align-items: center;
-  gap: 55px; /* wider spacing for bigger feel */
+  gap: 55px;
 }
 
 .nav-container a {
-  text-decoration: none;
-  color: #000;
-  font-size: 26px;  /* slightly bigger than resume */
+  font-size: 26px;
   font-weight: 400;
+  color: #000;
+  text-decoration: none;
 }
 
-/* ---------------- CENTER LOGO ---------------- */
+/* Center Logo */
 .logo-wrap {
   position: absolute;
   left: 50%;
@@ -229,33 +237,37 @@ body {
 }
 
 .logo-wrap .logo a {
-  font-size: 34px; /* slightly bigger logo */
+  font-size: 34px;
   font-weight: 400;
-  color: #000;
   text-decoration: none;
+  color: #000;
 }
 
-/* ---------------- RIGHT ICONS ---------------- */
+/* Right Icons */
 .nav-social ul {
   display: flex;
-  align-items: center;
-  gap: 26px; /* slightly bigger spacing */
+  gap: 26px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-social svg {
-  height: 28px; /* slightly larger */
+  height: 28px;
   fill: #000;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .nav-social svg:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
 
-/* Space below header so it doesn't overlap content */
-body {
-  padding-top: 190px !important;
+/* When page gets smaller, stack the logo */
+@media (max-width: 1250px) {
+  .logo-wrap .logo a {
+    display: block;
+    white-space: normal !important;
+    text-align: center;
+    line-height: 1.05;
+    max-width: 120px;  /* forces “Jiang” to wrap under “Sammi” */
+    margin: 0 auto;
+  }
 }
