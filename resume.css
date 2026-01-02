@@ -1,0 +1,403 @@
+/* ===== Light AI Metallic + Y2K (Readable) ===== */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+html{scroll-behavior:smooth}
+
+:root{
+  --bg:#f6f7fb;
+  --bg2:#eef0ff;
+  --panel:#ffffff;
+
+  --ink:#0f1222;
+  --muted:#5a607a;
+  --line:#e4e7f2;
+
+  /* y2k / ai accents */
+  --accent:#7cf7ff;     /* cyber cyan */
+  --accent2:#d7a6ff;    /* y2k lilac */
+  --accent3:#ffd36a;    /* warm highlight */
+
+  --chrome: linear-gradient(135deg, #ffffff 0%, #cfd7ff 35%, #baf4ff 70%, #ffffff 100%);
+  --glow: 0 18px 45px rgba(15,18,34,.10);
+
+  --r:22px;
+  --wrap:1200px;
+
+  --sans:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --serif:"Times New Roman",Georgia,serif;
+}
+
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:
+    radial-gradient(900px 650px at 20% 0%, rgba(215,166,255,.22), transparent 55%),
+    radial-gradient(900px 650px at 85% 10%, rgba(124,247,255,.20), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+/* top bar */
+.topbar{
+  position:fixed; inset:0 0 auto 0;
+  z-index:50;
+  background:rgba(246,247,251,.75);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(15,18,34,.08);
+}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 26px}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:16px 0;
+}
+.brand{font-weight:900;letter-spacing:.02em}
+.links{display:flex;gap:18px;align-items:center;font-size:14px;color:rgba(15,18,34,.72)}
+.links a:hover{color:var(--ink)}
+.cta{
+  padding:10px 14px;border-radius:999px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:var(--ink);
+  font-weight:950;
+  border:1px solid rgba(15,18,34,.10);
+  box-shadow:0 12px 24px rgba(124,247,255,.12);
+}
+
+/* page spacing */
+.page{padding-top:86px}
+.hero{padding:48px 0 40px}
+.hero.wrap{display:grid;grid-template-columns:1.35fr .85fr;gap:28px;align-items:start}
+.kicker{
+  letter-spacing:.28em;
+  font-size:12px;
+  text-transform:uppercase;
+  color:rgba(15,18,34,.55);
+  margin-top:8px;
+}
+
+.name{margin:10px 0 0;line-height:.9}
+.first{
+  display:block;
+  font-family:var(--serif);
+  font-size:clamp(58px,7.2vw,110px);
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.last{
+  display:block;
+  font-family:var(--serif);
+  font-size:clamp(58px,7.2vw,110px);
+  margin-top:-8px;
+  color: var(--ink);            /* solid black */
+  text-shadow: none;            /* clean + sharp */
+}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 14px}
+.chips span{
+  padding:10px 14px;border-radius:999px;
+  background:rgba(15,18,34,.04);
+  border:1px solid rgba(15,18,34,.10);
+  color:rgba(15,18,34,.80);
+  font-size:13px;
+  font-weight:800;
+  transition:transform .2s ease, background .2s ease;
+}
+.chips span:hover{transform:translateY(-2px);background:rgba(15,18,34,.06)}
+
+.summary{
+  margin:0;
+  max-width:560px;
+  color:rgba(15,18,34,.78);
+  line-height:1.8;
+  font-size:15.5px;
+}
+
+.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.pill{
+  padding:10px 14px;border-radius:999px;
+  background:rgba(255,255,255,.75);
+  border:1px solid rgba(15,18,34,.10);
+  color:rgba(15,18,34,.86);
+  font-size:13px;
+  font-weight:800;
+}
+.pill:hover{border-color:rgba(124,247,255,.6)}
+.pill.ghost{background:transparent}
+
+.scroll{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid rgba(15,18,34,.10);
+  background:rgba(255,255,255,.65);
+  font-weight:950;
+  color:rgba(15,18,34,.86);
+  box-shadow:0 10px 20px rgba(15,18,34,.06);
+}
+
+/* cards */
+.card{
+  background:rgba(255,255,255,.85);
+  border:1px solid rgba(15,18,34,.10);
+  border-radius:var(--r);
+  box-shadow:var(--glow);
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle y2k highlight line */
+.card::before{
+  content:"";
+  position:absolute; left:-30%; top:-50%;
+  width:90%; height:140%;
+  background:linear-gradient(120deg, transparent 35%, rgba(215,166,255,.18), rgba(124,247,255,.16), transparent 70%);
+  transform:rotate(18deg);
+  opacity:.6;
+  pointer-events:none;
+}
+
+/* hover lift */
+.card{transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(15,18,34,.12)}
+
+/* hero right */
+.hero-right{display:grid;gap:14px}
+.portrait{padding:14px}
+.portrait-head{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 6px 12px;
+  position:relative;z-index:2;
+  color:rgba(15,18,34,.72);
+  font-size:13px;
+}
+.dot{
+  width:10px;height:10px;border-radius:999px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow:0 0 18px rgba(124,247,255,.25);
+}
+.mini-pill{
+  margin-left:auto;
+  padding:7px 10px;border-radius:999px;
+  background:rgba(15,18,34,.04);
+  border:1px solid rgba(15,18,34,.10);
+  font-weight:900;
+  font-size:12px;
+  color:rgba(15,18,34,.70);
+}
+.portrait img{
+  border-radius:16px;
+  border:1px solid rgba(15,18,34,.10);
+  position:relative;z-index:2;
+}
+
+.shine{
+  position:absolute; inset:-40%;
+  background:linear-gradient(120deg, transparent 35%, rgba(255,255,255,.35), transparent 65%);
+  transform:rotate(14deg) translateX(-60%);
+  animation:shimmer 7s ease-in-out infinite;
+  pointer-events:none;
+  opacity:.7;
+}
+
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note,.portfolio{padding:16px;position:relative;z-index:2}
+.mini-title{
+  font-weight:950;
+  letter-spacing:.18em;
+  font-size:12px;
+  text-transform:uppercase;
+  color:rgba(15,18,34,.70);
+  margin-bottom:8px;
+}
+.note p{margin:0;color:rgba(15,18,34,.72);line-height:1.65}
+.port-link{
+  display:inline-block;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(15,18,34,.04);
+  border:1px solid rgba(15,18,34,.10);
+  font-weight:950;
+  color:rgba(15,18,34,.86);
+}
+.port-link:hover{border-color:rgba(215,166,255,.6)}
+.hint{margin-top:8px;color:rgba(15,18,34,.55);font-size:12px}
+
+/* resume grid */
+.resume{padding:22px 0 110px}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.col{display:grid;gap:18px}
+
+.block{padding:18px;position:relative;z-index:2}
+.block-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
+}
+.block-head h2{
+  margin:0;
+  font-family:var(--serif);
+  font-size:34px;
+  letter-spacing:-.01em;
+}
+.badge{
+  width:34px;height:34px;border-radius:999px;
+  display:grid;place-items:center;
+  background:rgba(15,18,34,.04);
+  border:1px solid rgba(15,18,34,.10);
+  font-weight:950;
+  color:rgba(15,18,34,.70);
+}
+
+.entry-top{display:flex;justify-content:space-between;gap:14px}
+.entry-title{font-weight:900}
+.entry-right{font-weight:900;color:rgba(15,18,34,.70)}
+.entry-meta{margin-top:6px;color:rgba(15,18,34,.65);font-size:14px}
+
+.divider{height:1px;background:rgba(15,18,34,.10);margin:14px 0}
+
+.job-top{display:flex;justify-content:space-between;gap:14px}
+.job-title{font-weight:950}
+.job-date{color:rgba(15,18,34,.62);font-weight:850}
+.job-meta{margin-top:6px;color:rgba(15,18,34,.62);font-size:14px}
+
+ul{margin:10px 0 0;padding-left:18px;color:rgba(15,18,34,.78);line-height:1.7}
+li{margin:6px 0}
+
+.p{margin:10px 0 0;color:rgba(15,18,34,.74);line-height:1.7}
+
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{
+  padding:10px 14px;border-radius:999px;
+  background:rgba(15,18,34,.04);
+  border:1px solid rgba(15,18,34,.10);
+  font-size:13px;
+  font-weight:850;
+  color:rgba(15,18,34,.78);
+}
+
+.lang{
+  display:flex;justify-content:space-between;gap:12px;
+  padding:10px 0;border-top:1px solid rgba(15,18,34,.10);
+}
+.lang:first-of-type{border-top:none}
+.muted{color:rgba(15,18,34,.62)}
+
+/* accent treatment for Experience */
+.accent{
+  border:1px solid rgba(15,18,34,.12);
+}
+.accent::after{
+  content:"";
+  position:absolute; inset:0;
+  background:radial-gradient(700px 220px at 10% 10%, rgba(255,211,106,.22), transparent 55%);
+  pointer-events:none;
+  opacity:.8;
+}
+
+/* animations */
+@keyframes shimmer{
+  0%{transform:rotate(14deg) translateX(-60%)}
+  50%{transform:rotate(14deg) translateX(10%)}
+  100%{transform:rotate(14deg) translateX(-60%)}
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .hero.wrap{grid-template-columns:1fr}
+  .mini-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .topbar .links{gap:12px}
+}
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.page{
+  padding-top: 140px; /* matches header height */
+}
+ header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px 0;
+      z-index: 1000;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.nav-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav.nav-container a {
+      color: #000;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav.nav-container a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-wrap {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .logo a {
+      color: #000;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .social.nav-social ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social.nav-social svg {
+      fill: #000000;
+      transition: opacity 0.3s;
+    }
+
+    .social.nav-social svg:hover {
+      opacity: 0.6;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #000000;
+      font-family: inherit;
+    }
+
+    /* Resume PDF Download */
+.resume-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.resume-download {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+}
+
+.resume-download:hover {
+  opacity: 0.6;
+}

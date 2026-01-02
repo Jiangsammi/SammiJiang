@@ -1,184 +1,34 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:image" content="style.css" />
-  <link rel="icon" href="" />
-  <link rel="stylesheet" href="styles.css" type="text/css" />
-  <title>Sammi Jiang - Resume</title>
-
-  <style>
-    body {
-      background-color: #ffffff !important;
-      color: #222222;
-      font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      color: #000000;
-      font-family: inherit;
-    }
-
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555555;
-    }
-
-    /* Header */
-    header.site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      padding: 20px 0;
-      z-index: 1000;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav.nav-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    nav.nav-container a {
-      color: #000;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    nav.nav-container a:hover {
-      text-decoration: underline;
-    }
-
-    .logo-wrap {
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    .logo a {
-      color: #000;
-      font-size: 20px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .social.nav-social ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .social.nav-social svg {
-      fill: #000000;
-      transition: opacity 0.3s;
-    }
-
-    .social.nav-social svg:hover {
-      opacity: 0.6;
-    }
-
-    .intro {
-      margin-top: 180px;
-      text-align: center;
-      padding: 40px 0;
-    }
-
-    .resume-image {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .resume-image img {
-      width: 65%;
-      max-width: 900px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .back-to-top {
-      text-align: center;
-      margin: 60px 0;
-    }
-
-    .back-to-top a {
-      color: #000;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .back-to-top a:hover {
-      text-decoration: underline;
-    }
-
-    footer.site-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      text-align: center;
-      padding: 12px 0;
-      color: #888;
-      font-size: 14px;
-      border-top: 1px solid #ddd;
-    }
-
-    .page-content {
-      flex: 1;
-      padding-bottom: 80px;
-    }
-
-.intro h1 {
-  font-family: "Times New Roman", Georgia, serif !important;
-  font-size: 70px;
-  font-style: italic;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 30px;
-}
-
-.intro p{
-  font-family: "Times New Roman", Georgia,
-  serif;
-  font-size: 26px;
-  line-height: 1.75;
-  color: #000;
-  max-width: 880px; /* three-line sweet spot */
-  margin: 0 auto;
-  text-align: center;
-}
-
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammi Jiang — Resume</title>
+  <link rel="stylesheet" href="resume.css" />
+    <link rel="stylesheet" href="styles.css" />
+<style>
+  /* REMOVE heart cursor, restore normal cursor */
+  html, body, * {
+    cursor: auto !important;
+  }
+</style>
 </head>
+
+  <!-- Top Nav -->
 
 <body class="transition-enabled">
 
   <header class="site-header js-site-header">
     <nav class="nav-container">
-      <div class="gallery-title"><a href="index.html">Home</a></div>
-      <div class="gallery-title"><a href="/projects" class="active">Projects</a></div>
-      <div class="gallery-title"><a href="/about">About</a></div>
+      <div class="gallery-title">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="gallery-title">
+        <a href="/projects" class="active">Projects</a>
+      </div>
+      <div class="gallery-title">
+        <a href="/about">Resume</a>
+      </div>
     </nav>
 
     <div class="logo-wrap">
@@ -186,8 +36,7 @@
         <a href="index.html">Sammi Jiang</a>
       </div>
     </div>
-
-    <div class="social nav-social">
+        <div class="social nav-social">
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
@@ -216,48 +65,234 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <section class="intro">
-      <h1>Hi, I'm Sammi Jiang</h1>
-      <p>
-        I'm a designer with a focus on digital marketing, brand identity, skincare products, and content creation.
-        I combine clean, simple design with smart strategy to help brands stand out and connect with their audience.
-      </p>
+  <!-- HERO -->
+  <main id="top" class="page">
+    <section class="hero wrap" id="about">
+      <div class="hero-left">
+        <div class="kicker">COMMUNICATION DESIGN · NYC</div>
+
+        <h1 class="name">
+          <span class="first">SAMMI</span>
+          <span class="last">JIANG</span>
+        </h1>
+
+        <div class="chips">
+          <span>Designer</span>
+          <span>Digital Marketing</span>
+          <span>Brand Identity</span>
+          <span>Skincare / Packaging</span>
+        </div>
+
+        <p class="summary">
+          I’m a designer focused on digital marketing, brand identity, skincare products, and content creation.
+          I combine clean, simple design with smart strategy to help brands stand out and connect with their audience.
+        </p>
+
+        <div class="contact-row">
+          <a class="pill" href="mailto:sammijiang24@gmail.com" aria-label="Email Sammi">✦ sammijiang24@gmail.com</a>
+          <a class="pill" href="tel:+19176359908" aria-label="Call Sammi">☎ (917) 635-9908</a>
+          <span class="pill ghost" aria-label="Location">⌂ Based in NYC</span>
+        </div>
+
+        <a class="scroll" href="#resume">Scroll down</a>
+      </div>
+
+      <div class="hero-right">
+        <div class="portrait card">
+          <div class="portrait-head">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="portrait-title">Sammi Jiang portrait</span>
+            <span class="mini-pill">’27 · internships</span>
+          </div>
+          <img src="images/profile.jpg" alt="Sammi Jiang portrait" />
+          <span class="shine" aria-hidden="true"></span>
+        </div>
+
+        <div class="mini-grid">
+          <div class="note card">
+            <div class="mini-title">Quick note</div>
+            <p>Open to internships + collaborations. Happy to share more work samples.</p>
+          </div>
+
+          <div class="portfolio card" id="work">
+            <div class="mini-title">Portfolio</div>
+            <a class="port-link" href="#" onclick="return false;">yourwebsite.com</a>
+            <div class="hint">Swap with your real link</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="resume-image">
-      <img src="images/Resume.jpg" alt="Sammi Jiang Resume" />
-    </div>
+    <!-- RESUME -->
+    <section class="resume wrap" id="resume">
+        <div class="resume-actions">
+<a class="resume-download" href="./images/Resume.png" download>
+  Download Resume
+</a>
 
-    <section class="back-to-top">
-      <a href="#top"><span class="arrow">&uarr;</span> Back to Top</a>
+  </div>
+
+      <div class="grid">
+        <!-- LEFT -->
+        <section class="col">
+          <article class="card block">
+            <header class="block-head">
+              <h2>Education</h2>
+              <span class="badge">01</span>
+            </header>
+
+            <div class="entry">
+              <div class="entry-top">
+                <div class="entry-title">Parsons School of Design</div>
+                <div class="entry-right">BFA Communication Design ’27</div>
+              </div>
+              <div class="entry-meta">Parsons Merit Scholarship · GPA: 3.80</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="entry">
+              <div class="entry-top">
+                <div class="entry-title">Fiorello H. LaGuardia HS Music & Art ’23</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card block accent">
+            <header class="block-head">
+              <h2>Experience</h2>
+              <span class="badge">02</span>
+            </header>
+
+            <div class="job">
+              <div class="job-top">
+                <div class="job-title">Marketing Assistant — DIGISO</div>
+                <div class="job-date">May 2024 — Present</div>
+              </div>
+              <div class="job-meta">Queens Center Mall</div>
+              <ul>
+                <li>Designed and produced digital advertisements for Korean skincare products across social platforms.</li>
+                <li>Created engaging content and supported store events + outreach within the Asian beauty community.</li>
+              </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="job">
+              <div class="job-top">
+                <div class="job-title">Art Instructor — UNNA ART</div>
+                <div class="job-date">Summer 2023 — Present</div>
+              </div>
+              <div class="job-meta">Flushing, NY</div>
+              <ul>
+                <li>Mentored younger art students through reviews and guidance.</li>
+                <li>Supported portfolio development for high school + college applications.</li>
+              </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="job">
+              <div class="job-top">
+                <div class="job-title">Merchandising Specialist — Teso Life</div>
+                <div class="job-date">Summer 2023</div>
+              </div>
+              <div class="job-meta">Manhattan, NY</div>
+              <ul>
+                <li>Supported sales + marketing initiatives in the beauty department.</li>
+                <li>Provided personalized product recommendations with strong skincare/cosmetics knowledge.</li>
+              </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="job">
+              <div class="job-top">
+                <div class="job-title">Styling Consultant — Sweet Mood</div>
+                <div class="job-date">May 2022</div>
+              </div>
+              <div class="job-meta">Flushing, NY</div>
+              <ul>
+                <li>Managed inventory and curated visually appealing merchandise displays aligned with fashion trends.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <!-- RIGHT -->
+        <aside class="col">
+          <article class="card block">
+            <header class="block-head">
+              <h2>Skills</h2>
+              <span class="badge">03</span>
+            </header>
+
+            <div class="tags">
+              <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>After Effects</span>
+              <span>Figma</span><span>Google Docs</span><span>GitHub</span><span>VSCode</span>
+              <span>Branding</span><span>Packaging</span><span>UI/UX</span><span>Content</span>
+              <span>Project Mgmt</span><span>HTML/CSS/JS</span>
+            </div>
+          </article>
+
+          <article class="card block">
+            <header class="block-head">
+              <h2>Extracurricular</h2>
+              <span class="badge">04</span>
+            </header>
+
+            <div class="entry">
+              <div class="job-top">
+                <div class="job-title">ACE Mentorship Program</div>
+                <div class="job-date">May 2022</div>
+              </div>
+              <p class="p">
+                Designed conceptual building layouts, developed architectural solutions,
+                and introduced earthquake-resistant safety elements.
+              </p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="entry">
+              <div class="job-top">
+                <div class="job-title">LaGuardia Arts and Crafts Club</div>
+                <div class="job-date">Dec 2022</div>
+              </div>
+              <p class="p">
+                Club President. Organized creative workshops and maintained an Instagram page to support online fundraising.
+              </p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="entry">
+              <div class="job-top">
+                <div class="job-title">City Council Districts 25, 29, and 20</div>
+                <div class="job-date">Nov 2021</div>
+              </div>
+              <p class="p">
+                Volunteer in voter outreach; developed social media strategies; promoted community engagement for campaign visibility.
+              </p>
+            </div>
+          </article>
+
+          <article class="card block">
+            <header class="block-head">
+              <h2>Languages</h2>
+              <span class="badge">05</span>
+            </header>
+
+            <div class="lang">
+              <strong>English</strong><span class="muted">Native / Proficient</span>
+            </div>
+            <div class="lang">
+              <strong>Chinese</strong><span class="muted">Native / Proficient</span>
+            </div>
+          </article>
+        </aside>
+      </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    © Sammi Jiang 2025
-  </footer>
-
-  <script src="//use.typekit.net/ik/zdnE6H07pb88tgBH4syKQBCjK7QFVxoO8Aj0xVVV_HCfenqgfHYEBsJzwD9oFDIDWh93FDFcjRJUZejtwhJoFDMUZR63FQF8ZRg8wQwkwcsy5QSuZQJaZR6-OPG0dW83da4XZcNC-Av0jhNlOfG0SY4zwKuh-AmaOcuoSeNkieZzde8zOcFzdPJIZ1s0-kJIZhuD-KG4fJFmIMMj2PMfH6qJyB9bMg6IJMJ7fbRxmgMMeM96MKG4fJBmIMMjgkMfH6qJDR9bMs6IJMJ7fbRs2UMgeMS6MTMgqFRiC39.js"></script>
-
-  <script>
-    var __config__ = {
-      "page_id":"p5786cd6f6117d606b5efc1680baddfccda381cc01a16acfb8d07c",
-      "theme":{"name":"marta"},
-      "pageTransition":true,
-      "linkTransition":true,
-      "disableDownload":true,
-      "localizedValidationMessages":{
-        "required":"This field is required",
-        "Email":"This field must be a valid email address"
-      },
-      "lightbox":{"enabled":false},
-      "cookie_banner":{"enabled":false}
-    };
-  </script>
-
-  <script src="/site/translations"></script>
-  <script src="/dist/js/main.js"></script>
-
 </body>
 </html>
