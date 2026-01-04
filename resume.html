@@ -5,27 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sammi Jiang — Resume</title>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="resume.css" />
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     /* REMOVE heart cursor, restore normal cursor */
-    html, body, * { cursor: auto !important; }
+    html,
+    body,
+    * {
+      cursor: auto !important;
+    }
+
+    /* Portrait + star line overlay */
+    .portrait {
+      position: relative;
+      display: inline-block;
+    }
+
+    .portrait img.portrait-photo {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .portrait img.portrait-deco {
+      position: absolute;
+      right: -12px;   /* adjust to taste */
+      bottom: -12px;  /* adjust to taste */
+      width: 150px;   /* adjust size to taste */
+      pointer-events: none;
+    }
   </style>
 </head>
 
 <body class="transition-enabled">
-
+  <!-- Slide Dots (slideshow navigation) -->
   <div class="slide-dots" aria-hidden="true">
     <a class="slide-dot" href="#about" title="About"></a>
     <a class="slide-dot" href="#resume" title="Resume"></a>
   </div>
 
+  <!-- Header -->
   <header class="site-header js-site-header">
     <nav class="nav-container" aria-label="Primary">
-      <div class="gallery-title"><a href="index.html">Home</a></div>
-      <div class="gallery-title"><a href="/projects">Projects</a></div>
-      <div class="gallery-title"><a href="/about" class="active">Resume</a></div>
+      <div class="gallery-title">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="gallery-title">
+        <a href="/projects">Projects</a>
+      </div>
+      <div class="gallery-title">
+        <a href="/about" class="active">Resume</a>
+      </div>
     </nav>
 
     <div class="logo-wrap">
@@ -37,25 +69,62 @@
     <div class="social nav-social" aria-label="Social links">
       <ul>
         <li>
-          <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-linkedin" role="img" aria-hidden="true">
-              <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+          <a
+            href="https://www.linkedin.com/in/sammijiang24"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 24"
+              height="24px"
+              class="icon icon-linkedin"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"
+              />
             </svg>
           </a>
         </li>
 
         <li>
-          <a href="https://www.pinterest.com/omgsammi/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-pinterest" role="img" aria-hidden="true">
-              <path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/>
+          <a
+            href="https://www.pinterest.com/omgsammi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Pinterest"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 24"
+              height="24px"
+              class="icon icon-pinterest"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"
+              />
             </svg>
           </a>
         </li>
 
         <li>
           <a href="mailto:sammijiang24@gmail.com" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" class="icon icon-email" role="img" aria-hidden="true">
-              <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 24"
+              height="24px"
+              class="icon icon-email"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"
+              />
             </svg>
           </a>
         </li>
@@ -64,18 +133,16 @@
   </header>
 
   <main id="top" class="page">
-
     <!-- HERO -->
     <section class="hero wrap" id="about" aria-label="About Sammi Jiang">
-
       <!-- defs for chrome gradient (needed for sticker fill) -->
       <svg width="0" height="0" style="position:absolute">
         <defs>
           <linearGradient id="chromeGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#ffffff"/>
-            <stop offset="0.35" stop-color="#cfd7ff"/>
-            <stop offset="0.70" stop-color="#baf4ff"/>
-            <stop offset="1" stop-color="#ffffff"/>
+            <stop offset="0" stop-color="#ffffff" />
+            <stop offset="0.35" stop-color="#cfd7ff" />
+            <stop offset="0.70" stop-color="#baf4ff" />
+            <stop offset="1" stop-color="#ffffff" />
           </linearGradient>
         </defs>
       </svg>
@@ -84,44 +151,92 @@
       <div class="sticker-rail" aria-hidden="true">
         <!-- LEFT -->
         <svg class="stkr stkr-left s1 float" style="top: 14%;" viewBox="0 0 64 64">
-          <path class="fill-cyan" d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"/>
-          <path class="stroke" d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"/>
+          <path
+            class="fill-cyan"
+            d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"
+          />
+          <path
+            class="stroke"
+            d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"
+          />
         </svg>
 
         <svg class="stkr stkr-left s2 float" style="top: 28%;" viewBox="0 0 64 64">
-          <path class="fill-lilac" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
-          <path class="stroke" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
+          <path
+            class="fill-lilac"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
+          <path
+            class="stroke"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
         </svg>
 
         <svg class="stkr stkr-left s3 float" style="top: 46%;" viewBox="0 0 64 64">
-          <path class="fill-chrome" d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"/>
-          <path class="stroke" d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"/>
+          <path
+            class="fill-chrome"
+            d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"
+          />
+          <path
+            class="stroke"
+            d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"
+          />
         </svg>
 
         <svg class="stkr stkr-left s4 float" style="top: 66%;" viewBox="0 0 64 64">
-          <path class="fill-gold" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
-          <path class="stroke" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
+          <path
+            class="fill-gold"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
+          <path
+            class="stroke"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
         </svg>
 
         <!-- RIGHT -->
         <svg class="stkr stkr-right s5 float" style="top: 16%;" viewBox="0 0 64 64">
-          <path class="fill-chrome" d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"/>
-          <path class="stroke" d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"/>
+          <path
+            class="fill-chrome"
+            d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"
+          />
+          <path
+            class="stroke"
+            d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"
+          />
         </svg>
 
         <svg class="stkr stkr-right s6 float" style="top: 34%;" viewBox="0 0 64 64">
-          <path class="fill-lilac" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
-          <path class="stroke" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
+          <path
+            class="fill-lilac"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
+          <path
+            class="stroke"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
         </svg>
 
         <svg class="stkr stkr-right s7 float" style="top: 54%;" viewBox="0 0 64 64">
-          <path class="fill-cyan" d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"/>
-          <path class="stroke" d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"/>
+          <path
+            class="fill-cyan"
+            d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"
+          />
+          <path
+            class="stroke"
+            d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"
+          />
         </svg>
 
         <svg class="stkr stkr-right s8 float" style="top: 72%;" viewBox="0 0 64 64">
-          <path class="fill-gold" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
-          <path class="stroke" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
+          <path
+            class="fill-gold"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
+          <path
+            class="stroke"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
         </svg>
       </div>
 
@@ -140,79 +255,104 @@
           <span>Skincare / Packaging</span>
         </div>
 
-        <p class="summary">
+        <p class="summary" style="text-align: left;">
           I’m a designer focused on digital marketing, brand identity, skincare products, and content creation.
           I combine clean, simple design with smart strategy to help brands stand out and connect with their audience.
         </p>
 
         <div class="contact-row" aria-label="Contact">
-          <a class="pill" href="mailto:sammijiang24@gmail.com" aria-label="Email Sammi">✦ sammijiang24@gmail.com</a>
-          <a class="pill" href="tel:+19176359908" aria-label="Call Sammi">☎ (917) 635-9908</a>
+          <a class="pill" href="mailto:sammijiang24@gmail.com" aria-label="Email Sammi">
+            ✦ sammijiang24@gmail.com
+          </a>
+          <a class="pill" href="tel:+19176359908" aria-label="Call Sammi">
+            ☎ (917) 635-9908
+          </a>
           <span class="pill ghost" aria-label="Location">⌂ Based in NYC</span>
         </div>
 
         <a class="scroll" href="#resume" aria-label="Scroll to Resume">Scroll down</a>
       </div>
 
-      <div class="hero-right">
-        <figure class="portrait card" aria-label="Portrait">
-          <div class="portrait-head">
-            <span class="dot" aria-hidden="true"></span>
-            <span class="portrait-title">Sammi Jiang portrait</span>
-            <span class="mini-pill">’27 · internships</span>
-          </div>
+<div class="hero-right">
+  <figure class="portrait" aria-label="Portrait">
+    <!-- main photo -->
+    <img
+      src="images/profile.png"
+      alt="Sammi Jiang portrait"
+      loading="eager"
+      decoding="async"
+      class="portrait-photo"
+    />
 
-          <img src="images/profile.jpg" alt="Sammi Jiang portrait" loading="eager" decoding="async" />
-          <span class="shine" aria-hidden="true"></span>
-        </figure>
+    <!-- orbit / stars graphic (PNG with transparent background) -->
+    <img
+      src="images/orbit-stars.png"  
+      alt=""
+      class="portrait-deco"
+      aria-hidden="true"
+    />
+  </figure>
+</div>
 
-        <div class="mini-grid">
-          <article class="note card">
-            <div class="mini-title">Quick note</div>
-            <p>Open to internships + collaborations. Happy to share more work samples.</p>
-          </article>
-
-          <article class="portfolio card" id="work">
-            <div class="mini-title">Portfolio</div>
-            <a class="port-link" href="#" onclick="return false;">yourwebsite.com</a>
-            <div class="hint">Swap with your real link</div>
-          </article>
-        </div>
-      </div>
     </section>
 
     <!-- RESUME -->
     <section class="resume wrap" id="resume" aria-label="Resume">
-
       <!-- extra stickers for resume edges -->
       <div class="sticker-rail" aria-hidden="true">
         <svg class="stkr stkr-left s2 float" style="top: 16%;" viewBox="0 0 64 64">
-          <path class="fill-lilac" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
-          <path class="stroke" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
+          <path
+            class="fill-lilac"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
+          <path
+            class="stroke"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
         </svg>
 
         <svg class="stkr stkr-right s6 float" style="top: 22%;" viewBox="0 0 64 64">
-          <path class="fill-cyan" d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"/>
-          <path class="stroke" d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"/>
+          <path
+            class="fill-cyan"
+            d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"
+          />
+          <path
+            class="stroke"
+            d="M32 10l5.7 12.1 13.3 1.6-9.7 8.9 2.6 13.6-11.9-6.7-11.9 6.7 2.6-13.6-9.7-8.9 13.3-1.6L32 10z"
+          />
         </svg>
 
         <svg class="stkr stkr-left s1 float" style="top: 54%;" viewBox="0 0 64 64">
-          <path class="fill-chrome" d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"/>
-          <path class="stroke" d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"/>
+          <path
+            class="fill-chrome"
+            d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"
+          />
+          <path
+            class="stroke"
+            d="M32 7l6.8 14.6 16.1 1.9-11.8 10.9 3.2 16.5-14.3-8.1-14.3 8.1 3.2-16.5L9.1 23.5l16.1-1.9L32 7z"
+          />
         </svg>
 
         <svg class="stkr stkr-right s4 float" style="top: 70%;" viewBox="0 0 64 64">
-          <path class="fill-gold" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
-          <path class="stroke" d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"/>
+          <path
+            class="fill-gold"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
+          <path
+            class="stroke"
+            d="M32 54s-18-10.5-24-22C3 21 10 12 20 12c6 0 10 4 12 7c2-3 6-7 12-7c10 0 17 9 12 20C50 43.5 32 54 32 54z"
+          />
         </svg>
       </div>
 
       <div class="resume-actions">
-        <a class="resume-download" href="./images/Resume.png" download>Download Resume</a>
+        <a class="resume-download" href="./images/Resume.png" download>
+          Download Resume
+        </a>
       </div>
 
       <div class="grid">
-        <!-- LEFT -->
+        <!-- LEFT COLUMN -->
         <section class="col" aria-label="Education and Experience">
           <article class="card block">
             <header class="block-head">
@@ -232,7 +372,7 @@
 
             <div class="entry">
               <div class="entry-top">
-                <div class="entry-title">Fiorello H. LaGuardia HS Music & Art ’23</div>
+                <div class="entry-title">Fiorello H. LaGuardia HS Music &amp; Art ’23</div>
               </div>
             </div>
           </article>
@@ -250,8 +390,12 @@
               </div>
               <div class="job-meta">Queens Center Mall</div>
               <ul>
-                <li>Designed and produced digital advertisements for Korean skincare products across social platforms.</li>
-                <li>Created engaging content and supported store events + outreach within the Asian beauty community.</li>
+                <li>
+                  Designed and produced digital advertisements for Korean skincare products across social platforms.
+                </li>
+                <li>
+                  Created engaging content and supported store events + outreach within the Asian beauty community.
+                </li>
               </ul>
             </div>
 
@@ -292,13 +436,15 @@
               </div>
               <div class="job-meta">Flushing, NY</div>
               <ul>
-                <li>Managed inventory and curated visually appealing merchandise displays aligned with fashion trends.</li>
+                <li>
+                  Managed inventory and curated visually appealing merchandise displays aligned with fashion trends.
+                </li>
               </ul>
             </div>
           </article>
         </section>
 
-        <!-- RIGHT -->
+        <!-- RIGHT COLUMN -->
         <aside class="col" aria-label="Skills and More">
           <article class="card block">
             <header class="block-head">
@@ -307,10 +453,20 @@
             </header>
 
             <div class="tags">
-              <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>After Effects</span>
-              <span>Figma</span><span>Google Docs</span><span>GitHub</span><span>VSCode</span>
-              <span>Branding</span><span>Packaging</span><span>UI/UX</span><span>Content</span>
-              <span>Project Mgmt</span><span>HTML/CSS/JS</span>
+              <span>Photoshop</span>
+              <span>Illustrator</span>
+              <span>InDesign</span>
+              <span>After Effects</span>
+              <span>Figma</span>
+              <span>Google Docs</span>
+              <span>GitHub</span>
+              <span>VSCode</span>
+              <span>Branding</span>
+              <span>Packaging</span>
+              <span>UI/UX</span>
+              <span>Content</span>
+              <span>Project Mgmt</span>
+              <span>HTML/CSS/JS</span>
             </div>
           </article>
 
@@ -339,7 +495,8 @@
                 <div class="job-date">Dec 2022</div>
               </div>
               <p class="p">
-                Club President. Organized creative workshops and maintained an Instagram page to support online fundraising.
+                Club President. Organized creative workshops and maintained an Instagram page to support online
+                fundraising.
               </p>
             </div>
 
@@ -351,7 +508,8 @@
                 <div class="job-date">Nov 2021</div>
               </div>
               <p class="p">
-                Volunteer in voter outreach; developed social media strategies; promoted community engagement for campaign visibility.
+                Volunteer in voter outreach; developed social media strategies; promoted community engagement for
+                campaign visibility.
               </p>
             </div>
           </article>
@@ -363,16 +521,17 @@
             </header>
 
             <div class="lang">
-              <strong>English</strong><span class="muted">Native / Proficient</span>
+              <strong>English</strong>
+              <span class="muted">Native / Proficient</span>
             </div>
             <div class="lang">
-              <strong>Chinese</strong><span class="muted">Native / Proficient</span>
+              <strong>Chinese</strong>
+              <span class="muted">Native / Proficient</span>
             </div>
           </article>
         </aside>
       </div>
     </section>
-
   </main>
 </body>
 </html>

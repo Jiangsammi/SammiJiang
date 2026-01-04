@@ -2774,3 +2774,8 @@ header.site-header {
     margin-right: auto;
   }
 }
+
+/* FORCE NORMAL CURSOR — FINAL OVERRIDE */
+html, body, * {
+  cursor: auto !important;
+}
