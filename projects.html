@@ -1,0 +1,576 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:image" content="style.css" />
+  <link rel="icon" href="" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <title>Sammi Jiang — Projects</title>
+
+  <style>
+    body { background-color: #2b2b2b !important; }
+    html, body, * { cursor: auto !important; }
+
+    /* ===== Gallery Filters (matches your page structure + uses your classes) ===== */
+    .gallery-filters {
+      width: min(1100px, 92vw);
+      margin: 0 auto 22px;
+      padding: 0 0 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-filters .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .filter-pill {
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: #000 !important; /* category text black */
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      font-size: 14px;
+      letter-spacing: .01em;
+    }
+
+    .filter-pill:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.28);
+      box-shadow: 0 12px 34px rgba(0,0,0,.24);
+    }
+
+    .filter-pill[aria-pressed="true"]{
+      color: #000 !important;
+      border-color: rgba(124,247,255,.55);
+      background: linear-gradient(135deg, rgba(124,247,255,.18), rgba(215,166,255,.16));
+      box-shadow: 0 16px 40px rgba(0,0,0,.30);
+    }
+
+    .filter-dot{
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--c, #7cf7ff);
+      box-shadow: 0 0 0 4px rgba(0,0,0,.06);
+    }
+
+    .filter-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .filter-search:focus-within{
+      transform: translateY(-1px);
+      border-color: rgba(124,247,255,.55);
+      background: rgba(255,255,255,.09);
+    }
+
+    .filter-search input{
+      width: 220px;
+      max-width: 65vw;
+      background: transparent;
+      border: 0;
+      outline: none;
+      color: rgba(255,255,255,.92);
+      font-size: 14px;
+    }
+    .filter-search input::placeholder{ color: rgba(255,255,255,.55); }
+
+    .results-count{
+      text-align: center;
+      margin-top: 12px;
+      color: rgba(255,255,255,.7);
+      font-size: 13px;
+    }
+
+    /* Hide cards when filtered */
+    .project-cover.is-hidden { display: none !important; }
+
+    /* ===== IMPORTANT: fixes the empty space when filtering ===== */
+    .project-cover { min-height: auto !important; }  /* remove the forced height that created gaps */
+
+    /* Pack grid items upward (helps reflow) */
+    .project-covers{
+      display: grid;
+      grid-auto-flow: dense;
+      align-items: start;
+    }
+
+    /* Cute hover animation on your existing project tiles */
+    .project-cover .cover-content-container{
+      transform: translateY(0);
+      transition: transform .18s ease, filter .18s ease;
+      will-change: transform;
+    }
+    .project-cover:hover .cover-content-container{
+      transform: translateY(-4px);
+      filter: saturate(1.03);
+    }
+    .project-cover .cover-image img{
+      transition: transform .35s ease;
+      will-change: transform;
+    }
+    .project-cover:hover .cover-image img{
+      transform: scale(1.02);
+    }
+
+    /* Sparkle layer (subtle + fun) */
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .75;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,.35));
+    }
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 72%);
+      animation: floaty var(--dur) ease-in-out infinite;
+      opacity: var(--op);
+      transform: translate3d(0,0,0);
+    }
+    @keyframes floaty{
+      0%,100% { transform: translate(var(--x0), var(--y0)) scale(var(--s0)); }
+      50%     { transform: translate(var(--x1), var(--y1)) scale(var(--s1)); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .sparkles{ display:none !important; }
+      .project-cover .cover-content-container,
+      .project-cover .cover-image img,
+      .filter-pill,
+      .filter-search { transition:none !important; }
+    }
+
+    /* 3 per row (match typical layout from your other page) */
+.project-covers{
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* keep your original spacing (if your other page already has margins, this won't break it) */
+.project-cover{
+  width: calc(33.333% - 20px) !important; /* 3 across */
+  margin: 10px !important;               /* spacing between tiles */
+  min-height: auto !important;           /* prevents the empty gap issue */
+}
+
+/* Force filter bar to span full width */
+.gallery-filters {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Center the row itself */
+.gallery-filters .filter-row {
+  width: max-content !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
+}
+
+/* Make buttons bigger */
+.filter-pill {
+  padding: 16px 28px !important;
+  font-size: 16px !important;
+}
+
+/* Center results text */
+.results-count {
+  text-align: center !important;
+  width: 100%;
+}
+
+.project-covers {
+  margin-bottom: 80px !important;
+}
+/* Make the page background match your content so no black shows */
+html, body {
+  background: #fff !important;
+}
+
+  </style>
+</head>
+
+<body class="transition-enabled">
+  <!-- fun background layer -->
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+
+  <div class="js-responsive-nav">
+
+    <!-- CLEAN RESUME-STYLE HEADER -->
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title"><a href="index.html">Home</a></div>
+        <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+        <div class="gallery-title"><a href="resume.html">Resume</a></div>
+      </nav>
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
+      </div>
+
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.pinterest.com/omgsammi/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:sammijiang24@gmail.com" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="hamburger-click-area js-hamburger">
+      <div class="hamburger">
+        <i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <div class="header-placeholder"></div>
+
+    <!-- Masthead -->
+    <div class="masthead js-masthead-fixed">
+      <div class="masthead-contents">
+        <div class="masthead-text js-masthead-text">
+          <section class="intro">
+            <h1>Projects</h1>
+            <p>
+              Filter my work by category — Physical Form, Mobile Apps, Advertisement, or Other.
+              Click any project to open it.
+            </p>
+          </section>
+          <div class="masthead-buttons"></div>
+        </div>
+      </div>
+      <div class="masthead-arrow-container js-masthead-arrow" decorator="editable" data-context="page.masthead">
+        <div class="masthead-arrow"></div>
+      </div>
+    </div>
+    <div class="masthead-placeholder" decorator="editable" data-context="page.masthead"></div>
+
+    <div class="site-wrap js-site-wrap">
+      <div class="site-container">
+        <div class="site-content">
+          <main>
+
+            <!-- FILTER BAR -->
+            <section class="gallery-filters" aria-label="Project filters">
+              <div class="filter-row">
+                <button class="filter-pill" data-filter="all" aria-pressed="true">
+                  <span class="filter-dot" style="--c:#7cf7ff"></span> All
+                </button>
+                <button class="filter-pill" data-filter="physical" aria-pressed="false">
+                  <span class="filter-dot" style="--c:#ffd36a"></span> Physical Form
+                </button>
+                <button class="filter-pill" data-filter="mobile" aria-pressed="false">
+                  <span class="filter-dot" style="--c:#d7a6ff"></span> Mobile Apps
+                </button>
+                <button class="filter-pill" data-filter="ads" aria-pressed="false">
+                  <span class="filter-dot" style="--c:#7cf7ff"></span> Advertisement
+                </button>
+                <button class="filter-pill" data-filter="other" aria-pressed="false">
+                  <span class="filter-dot" style="--c:#b7ffb0"></span> Other
+                </button>
+
+              <div class="results-count" id="resultsCount">Showing 0 projects</div>
+            </section>
+
+            <!-- Project Covers Grid -->
+            <section class="project-covers" decorator="editable" data-context="theme.gallery.projects">
+
+              <a class="project-cover hold-space"
+                 href="Creamipop.html"
+                 data-category="ads"
+                 data-title="Creami Pop">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <img src="images/Creamipop.jpg" alt="Creami Pop" style="width:100%;display:block;">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Creami Pop</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="guerrilla girls.html"
+                 data-category="physical"
+                 data-title="Guerrilla Girls">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <img src="images/guerrilla girls.jpg" alt="Guerrilla Girls" style="width:100%;display:block;">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Guerrilla Girls</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="Leftbehind.html"
+                 data-category="physical"
+                 data-title="Left Behind Print">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Leftbehindprint.jpg" alt="Left Behind Print" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lunar Phases</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="littlecupcake.html"
+                 data-category="ads"
+                 data-title="Little Cupcake">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/littlecupcake.png" alt="Little Cupcake" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Little Cupcake</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="littlecupcake.html"
+                 data-category="ads"
+                 data-title="Little Cupcake Social">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/littlecupcakesocial.jpg" alt="Little Cupcake Social" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Little Cupcake Social</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="LemonGlow.html"
+                 data-category="ads"
+                 data-title="Lemon Glow">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/lemonglow.jpg" alt="Lemon Glow" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lemon Glow</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="matchagirl.html"
+                 data-category="other"
+                 data-title="Matcha Girl">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/matchagirl1.jpg" alt="Matcha Girl" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">NYC Spots</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="nycscaffolding.html"
+                 data-category="other"
+                 data-title="NYC Scaffolding">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/nycscaffolding.jpg" alt="NYC Scaffolding" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Inconsistant Love</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="DreamieDuoposter.html"
+                 data-category="ads"
+                 data-title="Dreamie Duo Poster">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Dreamie Duo poster.jpg" alt="Dreamie Duo Poster" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Dreamie Duo Poster</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="LEMOMO.html"
+                 data-category="mobile"
+                 data-title="LEMOMO">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/LEMOMO.png" alt="LEMOMO" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LEMOMO</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="LIMESALT.html"
+                 data-category="mobile"
+                 data-title="LIMESALT">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/LIMESALT.png" alt="LIMESALT" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LIMESALT</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="Home.html"
+                 data-category="physical"
+                 data-title="Home">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Home.jpg" alt="Home" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Home</div></div></div></div>
+                </div>
+              </a>
+
+              <a class="project-cover hold-space"
+                 href="lunarphases.html"
+                 data-category="physical"
+                 data-title="Lunar Phases">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/lunarphases.jpg" alt="Lunar Phases" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lunar Phases</div></div></div></div>
+                </div>
+              </a>
+
+            </section>
+
+            <section class="back-to-top">
+              <a href="#top"><span class="arrow">&uarr;</span> Back to Top</a>
+            </section>
+
+            <footer class="site-footer" decorator="editable">
+              <div class="footer-text">© Sammi Jiang 2025</div>
+            </footer>
+
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+
+  // ===== Sparkles (cute + subtle) =====
+  (function makeSparkles(){
+    const box = document.getElementById('sparkles');
+    if(!box) return;
+    const n = 16;
+    const rand = (a,b)=> (Math.random()*(b-a)+a).toFixed(2);
+    for(let i=0;i<n;i++){
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.left = rand(0,100) + 'vw';
+      s.style.top  = rand(0,100) + 'vh';
+      s.style.setProperty('--dur', rand(5,10)+'s');
+      s.style.setProperty('--op', rand(.22,.62));
+      s.style.setProperty('--x0', rand(-18,18)+'px');
+      s.style.setProperty('--y0', rand(-22,22)+'px');
+      s.style.setProperty('--x1', rand(-26,26)+'px');
+      s.style.setProperty('--y1', rand(-32,32)+'px');
+      s.style.setProperty('--s0', rand(.6,1.0));
+      s.style.setProperty('--s1', rand(.9,1.3));
+      box.appendChild(s);
+    }
+  })();
+
+  // ===== Category Filter + Search (for your existing .project-cover grid) =====
+  const pills = Array.from(document.querySelectorAll('.filter-pill'));
+  const cards = Array.from(document.querySelectorAll('.project-cover'));
+  const search = document.getElementById('projectSearch');
+  const resultsCount = document.getElementById('resultsCount');
+
+  let activeFilter = 'all';
+
+  function norm(s){ return (s || '').toLowerCase().trim(); }
+
+  function applyFilter(){
+    const q = norm(search ? search.value : '');
+    let shown = 0;
+
+    cards.forEach(card=>{
+      const cat = card.dataset.category || 'other';
+      const title = norm(card.dataset.title || card.querySelector('.title')?.textContent || '');
+
+      const matchesCategory = (activeFilter === 'all') || (cat === activeFilter);
+      const matchesSearch = !q || title.includes(q);
+
+      const show = matchesCategory && matchesSearch;
+      card.classList.toggle('is-hidden', !show);
+      if(show) shown++;
+    });
+
+    if(resultsCount) resultsCount.textContent = `Showing ${shown} project${shown===1?'':'s'}`;
+  }
+
+  pills.forEach(p=>{
+    p.addEventListener('click', ()=>{
+      activeFilter = p.dataset.filter || 'all';
+
+      pills.forEach(x=>{
+        x.setAttribute('aria-pressed', (x.dataset.filter === activeFilter) ? 'true' : 'false');
+      });
+
+      // tiny click animation
+      p.animate(
+        [{ transform:'translateY(0)' }, { transform:'translateY(-3px)' }, { transform:'translateY(0)' }],
+        { duration: 220, easing: 'ease-out' }
+      );
+
+      applyFilter();
+    });
+  });
+
+  if(search){
+    search.addEventListener('input', applyFilter);
+  }
+
+  // initial
+  applyFilter();
+</script>
+
+<script type="text/javascript" src="/site/translations?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+<script type="text/javascript" src="/dist/js/main.js?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+</html>
