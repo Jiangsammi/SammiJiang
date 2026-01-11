@@ -2779,3 +2779,24 @@ header.site-header {
 html, body, * {
   cursor: auto !important;
 }
+
+.more-work-cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  /* MATCH spacing logic from Resume page */
+  margin-top: 22px;      /* same as .scroll margin-top */
+  padding-bottom: 200px; /* only for footer clearance */
+}
+
+
+/* FORCE identical sizing (prevents other CSS from changing it) */
+.scroll--cta {
+  font-size: 14px !important;
+  font-weight: 950 !important;
+  padding: 14px 22px !important;
+  border-radius: 999px !important;
+  display: inline-block !important;
+  line-height: normal !important;
+}
