@@ -1,258 +1,248 @@
 /* =========================================================
    GLOBAL RESET
 ========================================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 /* =========================================================
    GLOBAL STYLES
 ========================================================= */
-body {
-  font-family: "General Sans", sans-serif;
-  background: #fff;
-  color: #000;
-  padding: 0 5rem;
-  padding-top: 180px; /* Header offset */
-  line-height: 1.6;
+:root{
+  /* control your whole “project unit” size here */
+  --unit-max: 1480px;
+
+  /* project spacing */
+  --gutter: clamp(1.1rem, 4vw, 5rem);
+  --top-offset: 180px;
+
+  /* project columns (keeps the look consistent on huge screens) */
+  --img-col: clamp(520px, 56vw, 980px);   /* image column never grows past 980px */
+  --text-col: clamp(260px, 22vw, 460px);  /* text column stays readable */
+  --col-gap: clamp(1.25rem, 3vw, 4rem);
+}
+
+body{
+  font-family:"General Sans", sans-serif;
+  background:#fff;
+  color:#000;
+  padding:0 var(--gutter);
+  padding-top: var(--top-offset);
+  line-height:1.6;
 }
 
 /* =========================================================
    HERO
 ========================================================= */
-.hero {
-  /* give the hero enough width so the name never wraps */
+.hero{
   max-width: 1200px;
   margin: 12rem auto 8rem;
 }
 
-.hero > h1 {
-  /* match resume name styling */
-  font-family: "Times New Roman", Georgia, serif !important;
-  font-weight: 850 !important;
-  font-style: normal !important;
+.hero > h1{
+  font-family:"Times New Roman", Georgia, serif !important;
+  font-weight:850 !important;
+  font-style:normal !important;
   font-size: clamp(72px, 9vw, 138px) !important;
-  line-height: 0.9 !important;
-  letter-spacing: -0.02em !important;
-  margin: 0 0 32px 0 !important;
-  white-space: nowrap !important; /* ONE LINE */
-  color: #000 !important;
+  line-height:0.9 !important;
+  letter-spacing:-0.02em !important;
+  margin:0 0 32px 0 !important;
+  white-space:nowrap !important;
+  color:#000 !important;
 }
 
-/* Intro row under title */
-.intro-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 6rem;
+.intro-row{
+  display:flex;
+  align-items:flex-start;
+  gap:6rem;
 }
 
-.intro-row p {
-  flex: 1;
-  max-width: 30rem;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #333;
+.intro-row p{
+  flex:1;
+  max-width:30rem;
+  font-size:1rem;
+  line-height:1.75;
+  color:#333;
 }
 
-/* Category list */
-.category-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.category-list{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
 }
 
-.category-list a {
-  font-size: 0.95rem;
-  text-decoration: none;
-  color: #000;
-  padding-bottom: 0.3rem;
-  position: relative;
+.category-list a{
+  font-size:0.95rem;
+  text-decoration:none;
+  color:#000;
+  padding-bottom:0.3rem;
+  position:relative;
 }
 
-.category-list a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 530%;
-  height: 1px;
-  background: #000;
+.category-list a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:530%;
+  height:1px;
+  background:#000;
 }
 
 /* =========================================================
-   PROJECTS — DESKTOP
+   PROJECTS — ALWAYS 2-COLUMN, CONSISTENT SIZE
+   (does NOT scale up on huge screens)
 ========================================================= */
-.project {
-  display: grid;
-  grid-template-columns: 2.6fr 0.2fr 1fr; /* bigger image area */
-  gap: 2.5rem;
-  max-width: 1600px;
-  margin: 6rem auto 0;
+.page-wrapper{
+  max-width: var(--unit-max);
+  margin: 0 auto;
 }
 
-.project-info {
+.project{
+  display:grid;
+  grid-template-columns: var(--img-col) var(--text-col);
+  column-gap: var(--col-gap);
+  align-items:center;
+  justify-content:center;
+  margin: clamp(3.5rem, 6vw, 8rem) auto 0;
+}
+
+/* meta stays above image column */
+.project-info{
   grid-column: 1 / 2;
-  display: flex;
-  justify-content: space-between;
-  width: 150%;
-  margin-left: -41%;
-  font-size: 0.75rem;
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  margin-bottom: 1rem;
+
+  font-size:0.75rem;
   font-family: monospace;
-  text-transform: uppercase;
-  color: #444;
+  text-transform:uppercase;
+  color:#444;
 }
 
-/* frame fits the image (no letterboxing) */
-.project-image {
-  grid-column: 1 / span 2;
-  display: block;
-
-  height: auto;
-  padding: 0;
-  background: transparent;
-
-  width: auto;
-  margin-left: 0;
-}
-
-.project-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: initial;
-
-  background: #fff;
-  border: 1px solid #e2e2e2;
-}
-
-/* =========================================================
-   PROJECT DESCRIPTION
-========================================================= */
-.project-description {
-  grid-column: 3 / 4;
-  margin-left: 4rem;
-  margin-top: 2.2rem;
-  max-width: 90%;
-}
-
-.project-description h3 {
-  font-size: 1.55rem;
-  font-weight: 500;
-  line-height: 1.25;
-  margin-bottom: 1.1rem;
-}
-
-.project-description p {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: #2e2e2e;
-  max-width: 36rem;
-}
-
-/* =========================================================
-   SCOPED OVERRIDES — ONLY body.transition-enabled
-========================================================= */
-body.transition-enabled .site-header {
-  height: 70px;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-body.transition-enabled .logo-wrap {
-  flex: 1;
-  width: 40%;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.transition-enabled nav {
-  width: 30%;
-}
-
-body.transition-enabled .nav-social {
-  width: 30%;
-  text-align: right;
-}
-
-body.transition-enabled .nav-social svg {
-  width: 30px;
-  opacity: 1;
-}
-
-/* =========================================================
-   RESPONSIVE — MOBILE
-========================================================= */
-@media (max-width: 1000px) {
-  body {
-    padding: 0 2rem;
-    padding-top: 160px;
-  }
-
-  .hero {
-    max-width: 100%;
-    margin: 10rem auto 6rem;
-  }
-
-  .hero > h1 {
-    font-size: clamp(46px, 13vw, 80px) !important;
-    white-space: normal !important; /* allow wrap on small screens */
-  }
-
-  .intro-row {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-}
-
-/* =========================================================
-   PROJECTS — DESKTOP (BIG IMAGES)
-========================================================= */
-.project {
-  display: grid;
-  grid-template-columns: 4.5fr 0.2fr 1fr; /* 🔥 much bigger image column */
-  gap: 3.5rem;
-
-  max-width: 5600px;        /* 🔥 remove the ceiling */
-  margin: 8rem auto 0;
-
-  position: relative;
-}
-
-/* Project meta */
-.project-info {
+.project-image{
   grid-column: 1 / 2;
-  display: flex;
-  justify-content: space-between;
-
-  font-size: 0.75rem;
-  font-family: monospace;
-  text-transform: uppercase;
-  color: #444;
+  width:100%;
+  display:block;
 }
 
-/* Image container — hard align to left edge */
-.project-image {
-  grid-column: 1 / span 2;
-
-  width: calc(100% + 32rem);   /* cancel body padding */
-  margin-left: -24rem;        /* pull image to viewport edge */
-
-  display: block;
+.project-image img{
+  width:100%;
+  height:auto;
+  display:block;
+  background:#fff;
+  border:1px solid #e2e2e2;
+  border-radius: clamp(6px, 1vw, 10px);
 }
 
+.project-description{
+  grid-column: 2 / 3;
+  max-width: 42ch;
+}
 
-/* Image itself */
-.project-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+.project-description h3{
+  font-size: clamp(1.05rem, 1.6vw, 1.55rem);
+  font-weight:600;
+  line-height:1.2;
+  margin-bottom:0.9rem;
+}
 
-  background: #fff;
-  border: 1px solid #e2e2e2;
+.project-description p{
+  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  line-height:1.7;
+  color:#2e2e2e;
+
+  white-space:normal;
+  word-break:normal;
+  overflow-wrap:break-word;
+  hyphens:none;
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   CTA BUTTON — MATCH PROJECTS PAGE SPACING
+========================================================= */
+.more-work-cta{
+  display:flex;
+  justify-content:center;
+  margin: clamp(4rem, 7vw, 9rem) 0 clamp(2.5rem, 4vw, 4rem);
+}
+
+.scroll{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:999px;
+  border:1px solid rgba(15,18,34,0.1);
+  background:rgba(255,255,255,0.8);
+  font-weight:950;
+  font-size:14px;
+  color:rgba(15,18,34,0.86);
+  box-shadow:0 12px 26px rgba(15,18,34,0.08);
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.scroll::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    135deg,
+    rgba(124,247,255,0.25),
+    rgba(215,166,255,0.22)
+  );
+  transform: translateX(-110%);
+  transition: transform 0.35s ease;
+}
+
+.scroll:hover::after{
+  transform: translateX(0);
+}
+
+.more-work-scroll{ margin-top:0; }
+
+/* =========================================================
+   RESPONSIVE POLISH — STILL 2-COLUMN (NEVER STACKS)
+========================================================= */
+@media (max-width: 900px){
+  :root{
+    --top-offset: 150px;
+    --img-col: clamp(340px, 58vw, 520px);
+    --text-col: clamp(220px, 34vw, 360px);
+    --col-gap: clamp(1rem, 3vw, 2rem);
+  }
+
+  .hero{ margin: 9rem auto 5rem; }
+
+  .hero > h1{
+    font-size: clamp(44px, 10vw, 78px) !important;
+    white-space: normal !important;
+  }
+
+  .intro-row{
+    flex-direction:column;
+    gap:1.5rem;
+  }
+
+  .category-list a::after{ width:100%; }
+}
+
+@media (max-width: 520px){
+  :root{
+    --top-offset: 140px;
+    --img-col: clamp(240px, 56vw, 320px);
+    --text-col: clamp(170px, 40vw, 240px);
+    --col-gap: 1rem;
+  }
+
+  .project-description{ max-width: 34ch; }
+
+  .scroll{
+    padding:12px 18px;
+    font-size:13px;
+  }
 }
