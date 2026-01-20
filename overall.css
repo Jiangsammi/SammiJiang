@@ -223,6 +223,56 @@ body{
   max-width: 1200px;
 }
 
+/* ===== Case study intro (better hierarchy) ===== */
+.case-intro{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: calc(1.2rem * var(--scale)) calc(2.2rem * var(--scale));
+  align-items: start;
+  padding-bottom: calc(2.6rem * var(--scale));
+  border-bottom: none;
+  margin-bottom: calc(2.6rem * var(--scale));
+}
+
+.case-intro::after{
+  width: 64px;
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+  margin-top: calc(2rem * var(--scale));
+}
+
+.project-meta{
+  grid-column: 1 / 2;
+  font-size: calc(0.82rem * var(--scale));
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+  margin: 0;
+}
+
+.project-desc{
+  grid-column: 2 / 3;
+  max-width: 68ch;               /* keeps it “designer” readable */
+  font-size: calc(1rem * var(--scale));
+  line-height: 1.75;
+  color: rgba(0,0,0,0.72);
+  margin: 0;
+}
+
+.kit-title{
+  font-size: clamp(3.1rem, calc(5.2vw * var(--scale)), 4.8rem);
+  letter-spacing:-0.04em;
+  line-height:1;
+  margin-top: calc(4rem * var(--scale));   /* 👈 adds space above */
+  margin-bottom: calc(1.25rem * var(--scale));
+}
+
+
+/* make Primary Logo section start sooner */
+.kit-section{
+  padding: calc(1.6rem * var(--scale)) 0; /* was 2.2rem */
+}
+
 .kit-title{
   font-size: clamp(3.1rem, calc(5.2vw * var(--scale)), 4.8rem);
   letter-spacing:-0.04em;
@@ -513,4 +563,8 @@ body{
   .graphic-pair{
     grid-template-columns: 1fr;
   }
+}
+
+.brand-kit{
+  margin-top: calc(10rem * var(--scale));
 }
