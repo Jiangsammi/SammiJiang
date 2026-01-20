@@ -11,17 +11,30 @@
    GLOBAL STYLES
 ========================================================= */
 :root{
-  /* control your whole “project unit” size here */
-  --unit-max: 1480px;
+  --scale: 1.35;
 
-  /* project spacing */
-  --gutter: clamp(1.1rem, 4vw, 5rem);
+  --unit-max: 1480px;
+  --gutter: clamp(1.4rem, 4.5vw, 6rem);
   --top-offset: 180px;
 
-  /* project columns (keeps the look consistent on huge screens) */
-  --img-col: clamp(520px, 56vw, 980px);   /* image column never grows past 980px */
-  --text-col: clamp(260px, 22vw, 460px);  /* text column stays readable */
-  --col-gap: clamp(1.25rem, 3vw, 4rem);
+  --img-col: clamp(580px, 58vw, 1040px);
+  --text-col: clamp(300px, 24vw, 520px);
+  --col-gap: clamp(1.5rem, 3.2vw, 4.6rem);
+
+  --r-sm: calc(10px * var(--scale));
+  --r-md: calc(18px * var(--scale));
+  --r-lg: calc(22px * var(--scale));
+
+  --pad-sm: calc(1.25rem * var(--scale));
+  --pad-md: calc(2rem * var(--scale));
+  --pad-lg: calc(3rem * var(--scale));
+
+  --line: rgba(0,0,0,0.10);
+  --hairline: rgba(0,0,0,0.08);
+  --shadow-soft: 0 10px 28px rgba(0,0,0,0.08);
+  --shadow-outline:
+    0 0 0 1px rgba(0,0,0,0.08),
+    0 18px 40px rgba(0,0,0,0.08);
 }
 
 body{
@@ -31,24 +44,25 @@ body{
   padding:0 var(--gutter);
   padding-top: var(--top-offset);
   line-height:1.6;
+  font-size: calc(16px * var(--scale));
 }
 
 /* =========================================================
    HERO
 ========================================================= */
 .hero{
-  max-width: 1200px;
-  margin: 12rem auto 8rem;
+  max-width: 1240px;
+  margin: calc(12rem * var(--scale)) auto calc(8rem * var(--scale));
 }
 
 .hero > h1{
   font-family:"Times New Roman", Georgia, serif !important;
   font-weight:850 !important;
   font-style:normal !important;
-  font-size: clamp(72px, 9vw, 138px) !important;
+  font-size: clamp(78px, calc(9.2vw * var(--scale)), 156px) !important;
   line-height:0.9 !important;
   letter-spacing:-0.02em !important;
-  margin:0 0 32px 0 !important;
+  margin:0 0 calc(32px * var(--scale)) 0 !important;
   white-space:nowrap !important;
   color:#000 !important;
 }
@@ -56,13 +70,13 @@ body{
 .intro-row{
   display:flex;
   align-items:flex-start;
-  gap:6rem;
+  gap: calc(6rem * var(--scale));
 }
 
 .intro-row p{
   flex:1;
-  max-width:30rem;
-  font-size:1rem;
+  max-width: 34rem;
+  font-size: calc(1rem * var(--scale));
   line-height:1.75;
   color:#333;
 }
@@ -70,14 +84,14 @@ body{
 .category-list{
   display:flex;
   flex-direction:column;
-  gap:1rem;
+  gap: calc(1rem * var(--scale));
 }
 
 .category-list a{
-  font-size:0.95rem;
+  font-size: calc(0.95rem * var(--scale));
   text-decoration:none;
   color:#000;
-  padding-bottom:0.3rem;
+  padding-bottom: calc(0.3rem * var(--scale));
   position:relative;
 }
 
@@ -92,8 +106,7 @@ body{
 }
 
 /* =========================================================
-   PROJECTS — ALWAYS 2-COLUMN, CONSISTENT SIZE
-   (does NOT scale up on huge screens)
+   PROJECTS — 2-COLUMN
 ========================================================= */
 .page-wrapper{
   max-width: var(--unit-max);
@@ -106,18 +119,16 @@ body{
   column-gap: var(--col-gap);
   align-items:center;
   justify-content:center;
-  margin: clamp(3.5rem, 6vw, 8rem) auto 0;
+  margin: clamp(3.8rem, 6.5vw, 9rem) auto 0;
 }
 
-/* meta stays above image column */
 .project-info{
   grid-column: 1 / 2;
   display:flex;
   justify-content:space-between;
   width:100%;
-  margin-bottom: 1rem;
-
-  font-size:0.75rem;
+  margin-bottom: calc(1rem * var(--scale));
+  font-size: calc(0.78rem * var(--scale));
   font-family: monospace;
   text-transform:uppercase;
   color:#444;
@@ -135,26 +146,25 @@ body{
   display:block;
   background:#fff;
   border:1px solid #e2e2e2;
-  border-radius: clamp(6px, 1vw, 10px);
+  border-radius: var(--r-sm);
 }
 
 .project-description{
   grid-column: 2 / 3;
-  max-width: 42ch;
+  max-width: 46ch;
 }
 
 .project-description h3{
-  font-size: clamp(1.05rem, 1.6vw, 1.55rem);
+  font-size: clamp(1.15rem, calc(1.75vw * var(--scale)), 1.75rem);
   font-weight:600;
   line-height:1.2;
-  margin-bottom:0.9rem;
+  margin-bottom: calc(0.9rem * var(--scale));
 }
 
 .project-description p{
-  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  font-size: clamp(0.98rem, calc(1.25vw * var(--scale)), 1.15rem);
   line-height:1.7;
   color:#2e2e2e;
-
   white-space:normal;
   word-break:normal;
   overflow-wrap:break-word;
@@ -163,22 +173,22 @@ body{
 }
 
 /* =========================================================
-   CTA BUTTON — MATCH PROJECTS PAGE SPACING
+   CTA BUTTON
 ========================================================= */
 .more-work-cta{
   display:flex;
   justify-content:center;
-  margin: clamp(4rem, 7vw, 9rem) 0 clamp(2.5rem, 4vw, 4rem);
+  margin: clamp(4.5rem, 7.5vw, 10rem) 0 clamp(2.8rem, 4.5vw, 4.5rem);
 }
 
 .scroll{
   display:inline-block;
-  padding:14px 22px;
+  padding: calc(14px * var(--scale)) calc(22px * var(--scale));
   border-radius:999px;
   border:1px solid rgba(15,18,34,0.1);
   background:rgba(255,255,255,0.8);
   font-weight:950;
-  font-size:14px;
+  font-size: calc(14px * var(--scale));
   color:rgba(15,18,34,0.86);
   box-shadow:0 12px 26px rgba(15,18,34,0.08);
   position:relative;
@@ -206,7 +216,230 @@ body{
 .more-work-scroll{ margin-top:0; }
 
 /* =========================================================
-   RESPONSIVE POLISH — STILL 2-COLUMN (NEVER STACKS)
+   BRAND KIT — LINES (NO BLUE BOX FRAMES)
+========================================================= */
+.brand-kit{
+  margin: calc(4.5rem * var(--scale)) auto;
+  max-width: 1200px;
+}
+
+.kit-title{
+  font-size: clamp(3.1rem, calc(5.2vw * var(--scale)), 4.8rem);
+  letter-spacing:-0.04em;
+  line-height:1;
+  margin-bottom: calc(2.25rem * var(--scale));
+}
+
+.kit-section{
+  padding: calc(2.2rem * var(--scale)) 0;
+  border-top: 1px solid var(--line);
+}
+
+.kit-section:last-child{
+  border-bottom: 1px solid var(--line);
+}
+
+.kit-label{
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: calc(0.82rem * var(--scale));
+  opacity: 0.65;
+  margin-bottom: calc(1.2rem * var(--scale));
+}
+
+.kit-caption{
+  margin-top: calc(1.1rem * var(--scale));
+  max-width: 62ch;
+  font-size: calc(1rem * var(--scale));
+  line-height:1.6;
+  opacity:0.8;
+}
+
+/* images */
+.logo-variations{
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  object-fit: contain;
+}
+
+/* Primary logo: smaller + centered */
+.primary-logo{
+  max-width: 620px;
+  margin: 0 auto;
+  display:block;
+}
+
+/* Flavor box packaging image class from HTML rewrite */
+.can-box-packaging{
+  width:100%;
+  height:auto;
+  display:block;
+  margin-top: calc(2.5rem * var(--scale));
+}
+
+/* =========================================================
+   COLOR PALETTE
+========================================================= */
+.palette-row{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: calc(1.35rem * var(--scale));
+}
+
+.palette-swatch{
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-lg);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding-bottom: calc(0.95rem * var(--scale));
+  font-size: calc(0.9rem * var(--scale));
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(0,0,0,0.75);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.palette-swatch span{
+  background: rgba(255,255,255,0.75);
+  padding: calc(0.28rem * var(--scale)) calc(0.7rem * var(--scale));
+  border-radius: 999px;
+}
+
+.palette-note{
+  margin-top: calc(1.3rem * var(--scale));
+  max-width: 65ch;
+  font-size: calc(1rem * var(--scale));
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+.type-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: calc(2.2rem * var(--scale));
+}
+
+.type-name{
+  font-weight:700;
+  margin-bottom: calc(0.6rem * var(--scale));
+}
+
+.type-style{
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: calc(0.78rem * var(--scale));
+  opacity: 0.6;
+  margin-bottom: calc(0.5rem * var(--scale));
+}
+
+.type-sample.large{
+  font-size: calc(2.45rem * var(--scale));
+  letter-spacing:-0.03em;
+  line-height:1.1;
+}
+
+.type-sample{
+  font-size: calc(1.05rem * var(--scale));
+  line-height:1.6;
+  opacity:0.9;
+}
+
+/* =========================================================
+   CAN DESIGNS (NO CURVED CORNERS)
+========================================================= */
+.can-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(1.9rem * var(--scale));
+}
+
+.can-item{
+  display:grid;
+  place-items:center;
+}
+
+.can-item img{
+  width:100%;
+  height:auto;
+  border-radius:0;
+  border: 1px solid var(--hairline);
+}
+
+/* =========================================================
+   FINAL PRODUCT PHOTOGRAPHY — BIGGER + CLICKABLE FEEL
+========================================================= */
+.final-photo-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* bigger tiles */
+  gap: calc(1.6rem * var(--scale));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.final-photo-grid img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:0;
+  box-shadow: var(--shadow-soft);
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.final-photo-grid img:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.10);
+}
+
+/* =========================================================
+   GRAPHIC ELEMENTS — SHADOW OUTLINE + SMALLER FIT
+========================================================= */
+.shadow-outline{
+  box-shadow: var(--shadow-outline);
+  border-radius: var(--r-md);
+}
+
+.graphic-small{
+  max-width: 780px;
+  margin: 0 auto;
+  display:block;
+}
+
+/* =========================================================
+   LIGHTBOX (FULLSCREEN PHOTO VIEW)
+========================================================= */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.86);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding: 4vh 4vw;
+  z-index: 9999;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width: 92vw;
+  max-height: 92vh;
+  width:auto;
+  height:auto;
+  border-radius:0;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+  cursor: zoom-out;
+}
+
+/* =========================================================
+   RESPONSIVE
 ========================================================= */
 @media (max-width: 900px){
   :root{
@@ -214,6 +447,7 @@ body{
     --img-col: clamp(340px, 58vw, 520px);
     --text-col: clamp(220px, 34vw, 360px);
     --col-gap: clamp(1rem, 3vw, 2rem);
+    --scale: 1.18;
   }
 
   .hero{ margin: 9rem auto 5rem; }
@@ -229,6 +463,14 @@ body{
   }
 
   .category-list a::after{ width:100%; }
+
+  .type-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .can-grid{
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px){
@@ -237,6 +479,7 @@ body{
     --img-col: clamp(240px, 56vw, 320px);
     --text-col: clamp(170px, 40vw, 240px);
     --col-gap: 1rem;
+    --scale: 1.12;
   }
 
   .project-description{ max-width: 34ch; }
@@ -244,5 +487,30 @@ body{
   .scroll{
     padding:12px 18px;
     font-size:13px;
+  }
+
+  .final-photo-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.graphic-pair{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(1.6rem * var(--scale));
+  align-items: start;
+}
+
+.graphic-pair img{
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+/* stack on mobile */
+@media (max-width: 900px){
+  .graphic-pair{
+    grid-template-columns: 1fr;
   }
 }
