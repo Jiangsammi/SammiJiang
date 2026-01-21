@@ -399,6 +399,110 @@ body{
   opacity:0.9;
 }
 
+.type-spec{
+  margin-top: calc(2rem * var(--scale));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: calc(1.6rem * var(--scale));
+}
+
+.type-family-name{
+  font-weight: 600;
+  font-size: calc(1rem * var(--scale));
+  margin-bottom: calc(0.4rem * var(--scale));
+}
+
+.type-weights{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: calc(0.9rem * var(--scale));
+  line-height: 1.6;
+  color: rgba(0,0,0,0.65);
+}
+
+.type-family-name{
+  font-size: calc(1.1rem * var(--scale));
+  margin-bottom: calc(0.4rem * var(--scale));
+}
+
+/* Typography specimen layout */
+.type-spec{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(3rem * var(--scale)) calc(5rem * var(--scale));
+  margin-top: calc(1.6rem * var(--scale));
+}
+
+/* each font block */
+.type-family{
+  padding-top: calc(0.6rem * var(--scale));
+}
+
+/* font name */
+.type-family-name{
+  font-size: calc(1.9rem * var(--scale));
+  line-height: 1.1;
+  margin-bottom: calc(1.1rem * var(--scale));
+  color: rgba(0,0,0,0.78);
+}
+
+/* preview line */
+.type-preview{
+  font-size: calc(1.05rem * var(--scale));
+  line-height: 1.7;
+  margin-bottom: calc(1.2rem * var(--scale));
+  color: rgba(0,0,0,0.62);
+  max-width: 42ch;
+}
+
+/* weights list */
+.type-weights{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: calc(0.55rem * var(--scale));
+  font-size: calc(1.05rem * var(--scale));
+  color: rgba(0,0,0,0.68);
+}
+
+.type-weights .is-italic{
+  font-style: italic;
+}
+
+/* brighten consistency: don’t let Brightwall dominate */
+.font-brightwall{
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* responsive stack */
+@media (max-width: 900px){
+  .type-spec{
+    grid-template-columns: 1fr;
+    gap: calc(2.4rem * var(--scale));
+  }
+}
+
+/* Each font previews itself */
+.font-source-serif{
+  font-family: "Source Serif Variable", serif;
+}
+
+.font-hanzipen{
+  font-family: "HanziPen TC", cursive;
+}
+
+.font-brightwall{
+  font-family: "Brightwall", sans-serif;
+}
+
+.font-maku{
+  font-family: "MAKU", sans-serif;
+}
+
+
 /* =========================================================
    CAN DESIGNS (NO CURVED CORNERS)
 ========================================================= */
