@@ -502,6 +502,582 @@ body{
   font-family: "MAKU", sans-serif;
 }
 
+/* Creami Pop typography fonts */
+.font-dtgetai{
+  font-family: "DT Getai Grotesk Display", sans-serif;
+}
+
+.font-ppright{
+  font-family: "PPRightGrotesk", sans-serif;
+}
+
+.font-aktiv{
+  font-family: "Aktiv Grotesk Ex", sans-serif;
+}
+
+.font-avenir{
+  font-family: "Avenir", sans-serif;
+}
+
+.font-lctmogi{
+  font-family: "LCTMOGI-A", cursive;
+}
+
+/* ================================
+   TYPOGRAPHY (PRO SPEC GRID)
+================================ */
+.type-spec--pro{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(2.6rem * var(--scale)) calc(4.2rem * var(--scale));
+  margin-top: calc(1.6rem * var(--scale));
+}
+
+.type-family{
+  padding-top: calc(0.4rem * var(--scale));
+}
+
+.type-family-name{
+  font-size: calc(1.8rem * var(--scale));
+  line-height: 1.05;
+  margin: 0 0 calc(0.9rem * var(--scale));
+  color: rgba(0,0,0,0.78);
+  letter-spacing: -0.01em;
+}
+
+.type-preview{
+  font-size: calc(1.02rem * var(--scale));
+  line-height: 1.7;
+  margin: 0 0 calc(1.1rem * var(--scale));
+  color: rgba(0,0,0,0.62);
+  max-width: 44ch;
+}
+
+.type-weights{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: calc(0.45rem * var(--scale));
+  font-size: calc(0.95rem * var(--scale));
+  color: rgba(0,0,0,0.66);
+}
+
+@media (max-width: 900px){
+  .type-spec--pro{
+    grid-template-columns: 1fr;
+    gap: calc(2.1rem * var(--scale));
+  }
+}
+
+/* ================================
+   FONT CLASSES (will render once loaded)
+   Fallbacks included so it still looks good
+================================ */
+.font-aktiv{
+  font-family: "Aktiv Grotesk Ex", "General Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.font-avenir{
+  font-family: "Avenir", "General Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.font-dtgetai{
+  font-family: "DT Getai Grotesk Display", "General Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+}
+
+.font-ppright{
+  font-family: "PPRightGrotesk", "General Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.font-lctmogi{
+  font-family: "LCTMOGI-A", "General Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: "Sneakers Pro";
+  src: url("fonts/sneakers-pro.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Sammi Handwriting";
+  src: url("fonts/sammi-handwriting.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-sneakers { font-family: "Sneakers Pro", sans-serif; font-weight: 700; }
+.font-hand     { font-family: "Sammi Handwriting", cursive; }
+
+
+/* FONT FAMILIES */
+.font-ibm{
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.font-aleo{
+  font-family: "Aleo", Georgia, serif;
+  font-weight: 700;
+}
+
+.font-gilda{
+  font-family: "Gilda Display", Georgia, serif;
+}
+
+.font-gurmukhi{
+  font-family: "Gurmukhi MN", serif;
+  font-weight: 700;
+}
+
+.font-sneakers{
+  font-family: "Sneakers Pro", sans-serif;
+  font-weight: 700;
+}
+
+.font-handwriting{
+  font-family: "Handwriting", cursive;
+}
+
+.font-charmonman{
+  font-family: "Charmonman", cursive;
+  font-weight: 700;
+}
+
+.font-noteworthy{
+  font-family: "Noteworthy", cursive;
+}
+
+.font-trattatello{
+  font-family: "Trattatello", fantasy;
+}
+
+.font-pacifico{
+  font-family: "Pacifico", cursive;
+}
+
+.font-montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.logo-color{
+  color: #6e5e4c;
+}
+
+/* ===== Typography (3 groups only) ===== */
+.type-spec--three{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(1.6rem * var(--scale));
+  margin-top: calc(1.6rem * var(--scale));
+}
+
+/* each group */
+.type-group{
+  display: grid;
+  gap: calc(1rem * var(--scale));
+  align-content: start;
+}
+
+.type-group-label{
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: calc(0.72rem * var(--scale));
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 calc(0.4rem * var(--scale));
+}
+
+
+.type-family-name{
+  margin: 0 0 calc(0.7rem * var(--scale));
+  font-size: calc(1.2rem * var(--scale));
+  line-height: 1.15;
+  color: rgba(0,0,0,0.82);
+}
+
+.type-preview{
+  margin: 0 0 calc(0.85rem * var(--scale));
+  font-size: calc(1.02rem * var(--scale));
+  line-height: 1.6;
+  color: rgba(0,0,0,0.62);
+}
+
+.type-weights{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: calc(0.35rem * var(--scale));
+  font-size: calc(0.92rem * var(--scale));
+  color: rgba(0,0,0,0.65);
+}
+
+/* ===== Typography — NO BOX FRAMES ===== */
+.type-spec--three{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(3.2rem * var(--scale));
+  margin-top: calc(2rem * var(--scale));
+}
+
+.type-group{
+  display: grid;
+  gap: calc(2.2rem * var(--scale));
+  align-content: start;
+}
+
+.type-group-label{
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: calc(0.72rem * var(--scale));
+  color: rgba(0,0,0,0.45);
+  margin-bottom: calc(0.4rem * var(--scale));
+}
+
+/* each font block */
+.type-card{
+  padding: 0;
+}
+
+/* font name */
+.type-family-name{
+  margin: 0 0 calc(0.6rem * var(--scale));
+  font-size: calc(1.35rem * var(--scale));
+  line-height: 1.15;
+  color: rgba(0,0,0,0.85);
+}
+
+/* preview */
+.type-preview{
+  margin: 0 0 calc(0.75rem * var(--scale));
+  font-size: calc(1.05rem * var(--scale));
+  line-height: 1.6;
+  color: rgba(0,0,0,0.6);
+}
+
+/* weights */
+.type-weights{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: calc(0.35rem * var(--scale));
+  font-size: calc(0.92rem * var(--scale));
+  color: rgba(0,0,0,0.6);
+}
+
+/* accents */
+.location-color{ color:#4568D0; }
+.price-color{ color:#DA3830; }
+
+/* responsive */
+@media (max-width: 900px){
+  .type-spec--three{
+    grid-template-columns: 1fr;
+    gap: calc(3rem * var(--scale));
+  }
+}
+
+/* accents */
+.location-color{ color:#4568D0; }
+.price-color{ color:#DA3830; }
+
+/* font classes */
+.font-american{ font-family: "American Typewriter", "Courier New", serif; }
+.font-courier{ font-family: "Courier New", Courier, monospace; }
+.font-montserrat{ font-family: "Montserrat", sans-serif; }
+.font-jetbrains{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; }
+.font-oswald{ font-family: "Oswald", sans-serif; }
+.font-source-serif{ font-family: "Source Serif 4", "Source Serif Variable", serif; }
+.font-impact{ font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; }
+.font-arial{ font-family: Arial, sans-serif; }
+.font-helvetica{ font-family: Helvetica, Arial, sans-serif; }
+
+@media (max-width: 900px){
+  .type-spec--three{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Guerrilla Girls */
+.font-akzidenz{
+  font-family: "Berthold Akzidenz Grotesk BE", "Akzidenz-Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Akzidenz Grotesk BE";
+  src: url("AkzidenzGroteskBE-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Akzidenz Grotesk BE";
+  src: url("AkzidenzGroteskBE-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ===== Typography: 2-column clean layout ===== */
+.type-spec--two{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 2rem;
+  align-items:start;
+}
+
+.type-group{
+  display:grid;
+  gap: 2.2rem;
+}
+
+.type-group-label{
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.55);
+  margin-top: 0.2rem;
+}
+
+.type-family-name{
+  font-size: 1.15rem;
+  margin: 0 0 0.6rem;
+  color: rgba(0,0,0,0.85);
+  letter-spacing: -0.01em;
+}
+
+.type-preview{
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+  color: rgba(0,0,0,0.72);
+  max-width: 44ch;
+}
+
+.type-weights{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.62);
+}
+
+/* size tiers */
+.type-preview.xl{ font-size: 4.8rem; line-height: 0.9; }
+.type-preview.lg{ font-size: 2.2rem; line-height: 1.05; }
+
+/* caps utility */
+.caps{ text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* responsive */
+@media (max-width: 900px){
+  .type-spec--two{ grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ===== LemonGlow font classes ===== */
+.font-playfair{ font-family: "Playfair Display", Georgia, serif; }
+.font-bitter{ font-family: "Bitter", Georgia, serif; font-weight: 400; }
+.font-akaya{ font-family: "Akaya Telivigala", cursive; }
+
+.font-athelas{
+  font-family: "Athelas", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+.font-adobe-clean{
+  font-family: "Adobe Clean UX", "General Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Single-font typography layout ===== */
+.type-spec--single{
+  margin-top: 2rem;
+  max-width: 520px;
+}
+
+.type-family-name{
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: rgba(0,0,0,0.85);
+}
+
+.type-preview.xl{
+  font-size: 3.8rem;
+  line-height: 1.05;
+  margin-bottom: 0.8rem;
+}
+
+.type-weights{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.6);
+}
+
+/* Apple Chancery font */
+.font-apple-chancery{
+  font-family: "Apple Chancery", "Zapf Chancery", "URW Chancery L", cursive;
+}
+
+/* ===== Typography layout: two fonts ===== */
+.type-spec--two{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  margin-top: 1.6rem;
+  max-width: 820px;
+}
+
+/* previews */
+.type-preview.lg{
+  font-size: 2.1rem;
+  line-height: 1.15;
+}
+
+.type-preview.sm{
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+/* font families */
+.font-bailey{
+  font-family: "Bailey Bowers", "Comic Sans MS", cursive;
+}
+
+.font-adelle{
+  font-family: "Adelle Sans Devanagari", "Adelle Sans", system-ui, sans-serif;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .type-spec--two{
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+}
+
+/* ===== Typography layout: two-column (app-focused) ===== */
+.type-spec--two{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  margin-top: 1.6rem;
+  max-width: 820px;
+}
+
+/* previews */
+.type-preview.lg{
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.type-preview.md{
+  font-size: 1.2rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+/* font families */
+.font-montserrat{
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+}
+
+.font-lexend{
+  font-family: "Lexend", system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .type-spec--two{
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+}
+
+/* ===== Three-section typography layout ===== */
+.type-sections{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin-top: 2rem;
+  max-width: 900px;
+}
+
+/* section wrapper */
+.type-section{
+  display: grid;
+  gap: 1.4rem;
+}
+
+/* section label */
+.type-section-label{
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.55);
+}
+
+/* font name */
+.type-family-name{
+  font-size: 1.6rem;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+/* preview line */
+.type-preview{
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.6);
+  max-width: 42ch;
+  margin-bottom: 0.8rem;
+}
+
+/* weights */
+.type-weights{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.65);
+}
+
+/* split layout for accent font */
+.type-section--split{
+  gap: 1.4rem;
+}
+
+.type-split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* mobile: stack normally */
+@media (max-width: 900px){
+  .type-split{
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* =========================================================
    CAN DESIGNS (NO CURVED CORNERS)
@@ -671,4 +1247,73 @@ body{
 
 .brand-kit{
   margin-top: calc(10rem * var(--scale));
+}
+
+
+
+/* ===== Typography layout: 3 columns ===== */
+.type-spec.type-spec--centered{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(2.2rem * var(--scale)) calc(3rem * var(--scale));
+  margin-top: calc(1.6rem * var(--scale));
+  align-items: start;
+}
+
+/* each group (Website / Advertising / Logo) */
+.type-group{
+  display: grid;
+  gap: calc(1.2rem * var(--scale));
+}
+
+/* group label */
+.type-group-label{
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: calc(0.78rem * var(--scale));
+  color: rgba(0,0,0,0.55);
+  margin-bottom: calc(0.6rem * var(--scale));
+}
+
+/* keep your font blocks tidy */
+.type-family{
+  padding-top: calc(0.4rem * var(--scale));
+}
+
+.type-family-name{
+  font-size: calc(1.6rem * var(--scale));
+  line-height: 1.1;
+  margin-bottom: calc(0.7rem * var(--scale));
+}
+
+.type-preview{
+  font-size: calc(1rem * var(--scale));
+  line-height: 1.6;
+  margin-bottom: calc(0.9rem * var(--scale));
+  color: rgba(0,0,0,0.62);
+  max-width: 42ch;
+}
+
+.type-weights{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: calc(0.45rem * var(--scale));
+  font-size: calc(0.95rem * var(--scale));
+  color: rgba(0,0,0,0.68);
+}
+
+/* make the note sit nicely inside the Logo column */
+.type-note{
+  margin-top: calc(1.2rem * var(--scale));
+  font-size: calc(0.9rem * var(--scale));
+  color: rgba(0,0,0,0.55);
+}
+
+/* responsive */
+@media (max-width: 1000px){
+  .type-spec.type-spec--centered{
+    grid-template-columns: 1fr;
+  }
 }
