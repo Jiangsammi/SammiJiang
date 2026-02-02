@@ -1321,15 +1321,14 @@ body{
 .project-video {
   max-width: 1200px;
   margin: 3rem auto 0;
+  display: flex;
+  justify-content: center; /* 👈 centers the video */
 }
 
 .project-video video {
-  width: 100%;
-  height: 820px;        /* 👈 adjust this number */
-  object-fit: cover;   /* crops vertically instead of squishing */
+  width: 90%;
+  height: 720px;           /* your chosen height */
+  object-fit: cover;      /* crops without distortion */
   display: block;
-}
-
-.project-video video {
   filter: contrast(1.02) saturate(1.02);
 }

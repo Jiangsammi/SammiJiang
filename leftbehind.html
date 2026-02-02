@@ -15,6 +15,24 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
+<style>
+  .final-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 👈 4 images per row */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+}
+
+.final-photo-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+</style>
+
 <body>
 
   <!-- CLEAN RESUME-STYLE HEADER -->
@@ -305,6 +323,39 @@ Red is used as the main color to symbolize connection and investigation, referen
   </p>
 </section>
 
+
+
+      <!-- Final Product Photography -->
+      <section class="kit-section" aria-labelledby="final-product-photography">
+        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
+
+        <div class="final-photo-grid">
+          <img src="images/leftbehindfigma1.png" alt="Creami Pop full flavor lineup with box">
+          <img src="images/leftbehindfigma2.png" alt="Creami Pop cereal variety pack front view">
+
+          <img src="images/leftbehindfigma3.png" alt="Creami Pop cans clinking together">
+          <img src="images/leftbehindfigma4.png" alt="Creami Pop chocolate, cinnamon, and ube flavors">
+          <img src="images/leftbehindfigma5.png" alt="Creami Pop cans trio on white background">
+          <img src="images/leftbehindfigma6.png" alt="Creami Pop cereal variety pack front">
+          <img src="images/leftbehindfigma7.png" alt="Creami Pop cereal variety pack angled view">
+          <img src="images/leftbehindfigma8.png" alt="Creami Pop cereal variety pack front on white">
+          <img src="images/leftbehindfigma9.png" alt="Creami Pop cereal variety pack front on white">
+          <img src="images/leftbehindfigma10.png" alt="Creami Pop cereal variety pack front on white">
+          <img src="images/leftbehindfigma11.png" alt="Creami Pop cereal variety pack front on white">
+          <img src="images/leftbehindfigma12.png" alt="Creami Pop cereal variety pack front on white">
+          <img src="images/leftbehindfigma13.png" alt="Creami Pop cereal variety pack front on white">
+          <img src="images/leftbehindfigma14.png" alt="Creami Pop cereal variety pack front on white">
+        </div>
+
+        <p class="kit-caption">
+          Studio photography showcasing the final Creami Pop cans and variety packaging,
+          highlighting color, material finish, and real-world scale.
+        </p>
+      </section>
+
+
+
+
       <!-- Color Application -->
       <section class="kit-section" aria-labelledby="color-application">
         <p class="kit-label" id="color-application">Color Application</p>
@@ -372,28 +423,6 @@ Red is used as the main color to symbolize connection and investigation, referen
         </div>
       </section>
 
-      <!-- Final Product Photography -->
-      <section class="kit-section" aria-labelledby="final-product-photography">
-        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
-
-        <div class="final-photo-grid">
-          <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-          <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
-
-          <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-          <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-          <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-          <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
-        </div>
-
-        <p class="kit-caption">
-          Studio photography showcasing the final Creami Pop cans and variety packaging,
-          highlighting color, material finish, and real-world scale.
-        </p>
-      </section>
-
 <div class="kit-section">
   <p class="kit-label">Graphic Elements</p>
 
@@ -427,6 +456,12 @@ Red is used as the main color to symbolize connection and investigation, referen
   <div class="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
+<script>
+  const video = document.querySelector('.project-video video');
+  if (video) {
+    video.playbackRate = 0.75; // 👈 slower pace (try 0.8 or 0.7 if needed)
+  }
+</script>
 
   <script>
     const photos = document.querySelectorAll('.final-photo-grid img');
