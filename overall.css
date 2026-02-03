@@ -1332,3 +1332,19 @@ body{
   display: block;
   filter: contrast(1.02) saturate(1.02);
 }
+
+
+.project-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;   /* 👈 makes the whole block smaller */
+  margin: 3rem auto 0;
+}
+
+.project-video-grid video {
+  width: 100%;
+  max-height: 620px;   /* 👈 controls size without cropping */
+  object-fit: contain; /* 👈 shows full video */
+  display: block;
+}
