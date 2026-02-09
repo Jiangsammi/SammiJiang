@@ -1104,27 +1104,27 @@ body{
    FINAL PRODUCT PHOTOGRAPHY — BIGGER + CLICKABLE FEEL
 ========================================================= */
 .final-photo-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* bigger tiles */
-  gap: calc(1.6rem * var(--scale));
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(2rem * var(--scale));   /* more breathing room */
+  max-width: 1400px;                /* 👈 bigger overall */
+  margin: 3rem auto 0;
 }
 
 .final-photo-grid img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:0;
-  box-shadow: var(--shadow-soft);
+  width: 100%;
+  height: auto;                     /* 👈 no cropping */
+  display: block;
+  border-radius: 0;
+  box-shadow: none;                 /* 👈 no box */
   cursor: zoom-in;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .final-photo-grid img:hover{
   transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.10);
 }
+
 
 /* =========================================================
    GRAPHIC ELEMENTS — SHADOW OUTLINE + SMALLER FIT
@@ -1348,3 +1348,27 @@ body{
   object-fit: contain; /* 👈 shows full video */
   display: block;
 }
+
+.lb-final-photos .final-photo-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lb-final-photos .final-photo-grid img{
+  width: 100%;
+  height: 320px;       /* makes the last image match the rest */
+  object-fit: cover;   /* keeps grid consistent */
+  display: block;
+}
+
+@media (max-width: 900px){
+  .lb-final-photos .final-photo-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .lb-final-photos .final-photo-grid{ grid-template-columns: 1fr; }
+}
+
+

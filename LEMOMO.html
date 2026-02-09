@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammi Jiang — Creami Pop</title>
+
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="overall.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<style>
+.logo-variation-row {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;   /* ⬆ bigger container */
+  margin: 2.5rem auto 0;
+}
+
+.logo-variation-row img {
+  width: 100%;
+  max-width: 520px;    /* ⬆ bigger logos */
+  height: auto;
+}
+
+.logo-variation-row img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.final-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 👈 3 images per row */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+}
+
+.final-photo-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.collateral-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.collateral-grid img {
+  width: 100%;
+  height: 420px;        /* 👈 bigger presence */
+  object-fit: cover;   /* clean, intentional crop */
+  object-position: center;
+  display: block;
+  background: #fff;
+}
+
+.type-text {
+  max-width: 720px;
+  margin-top: 0.75rem;
+}
+
+</style>
+
+<body>
+
+  <!-- CLEAN RESUME-STYLE HEADER -->
+  <header class="site-header js-site-header">
+    <nav class="nav-container">
+      <div class="gallery-title"><a href="index.html">Home</a></div>
+      <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+      <div class="gallery-title"><a href="resume.html">Resume</a></div>
+    </nav>
+
+    <div class="logo-wrap">
+      <div class="logo logo-text">
+        <a href="index.html">Sammi Jiang</a>
+      </div>
+    </div>
+
+    <!-- KEEP SOCIAL ICONS -->
+    <div class="social nav-social">
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
+              <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.pinterest.com/omgsammi/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
+              <path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:sammijiang24@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
+              <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="header-placeholder"></div>
+
+  <!-- BRAND KIT -->
+  <main>
+    <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
+<h2 class="kit-title">LEMOMO<br>Brand Guidelines</h2>
+<header class="case-intro">
+  <p class="project-meta">Branding · Packaging · Illustration · 2025</p>
+
+  <p class="project-desc">
+This rebrand presents Lemomo Tea as fresh, calm, and quietly playful, blending modern design with traditional tea culture. 
+The focus is on real ingredients, smooth flavors, and a relaxed experience that encourages people to slow down and enjoy the moment.
+  </p>
+</header>
+
+
+
+      <!-- Primary Logo -->
+      <section class="kit-section" aria-labelledby="primary-logo">
+        <p class="kit-label" id="primary-logo">Primary Logo</p>
+        <img
+          src="images/perfume lemon tea logo.png"
+          alt="LEMOMO Primary Logo"
+          class="logo-variations primary-logo"
+        >
+      </section>
+
+<!-- Logo Variations -->
+<section class="kit-section" aria-labelledby="logo-variations">
+  <p class="kit-label" id="logo-variations">Logo Variations</p>
+
+  <div class="logo-variation-row">
+    <img
+      src="images/perfume lemon tea logo 1.png"
+      alt="Creami Pop vertical logo variation for Perfume Lemon Tea"
+    >
+
+    <img
+      src="images/perfume lemon tea logo 2.png"
+      alt="Creami Pop logo variations and wordmarks"
+    >
+  </div>
+
+  <p class="kit-caption">
+The Perfume Lemon Tea logo uses organic shapes, hand-drawn type, and subtle botanical details to create a calm, sensory-driven identity. The vertical and framed variations allow the logo to adapt across different formats while staying visually consistent. 
+A minimal color palette keeps the system understated, refined, and easy to apply across print and digital use.  </p>
+</section>
+
+
+<section class="kit-section" aria-labelledby="typography">
+  <p class="kit-label" id="typography">Typography</p>
+
+  <div class="type-text">
+    <p class="kit-caption">
+      The typography system combines 手札體-繁, Source Serif Variable Roman, and Minion Variable Concept Bold.
+      A hand-drawn style adds warmth and personality, while classic serif typefaces bring structure,
+      readability, and refinement across printed and in-store applications.
+    </p>
+  </div>
+</section>
+
+      <!-- Color Palette -->
+      <section class="kit-section" aria-labelledby="color-palette">
+        <p class="kit-label" id="color-palette">Color Palette</p>
+
+        <div class="palette-row">
+          <div class="palette-swatch" style="background:#000000"><span>#000000</span></div>
+          <div class="palette-swatch" style="background:#263e88"><span>#263e88</span></div>
+          <div class="palette-swatch" style="background:#ffffff"><span>#ffffff</span></div>
+          <div class="palette-swatch" style="background:#f5e55a"><span>#f5e55a</span></div>
+          <div class="palette-swatch" style="background:#fad126"><span>#fad126</span></div>
+          <div class="palette-swatch" style="background:#ff544f"><span>#ff544f</span></div>
+        </div>
+
+        <p class="palette-note">
+This rebrand color palette is inspired by Lemomo Tea and the feeling of freshly brewed tea paired with fragrant lemons.
+Black and white keep the system clean and minimal, helping modernize the brand. Deep blue adds a calm, grounded tone that reflects the depth of brewed tea, while lemon yellow is used sparingly to bring in freshness and a subtle citrus lift without overpowering the overall look.        </p>
+      </section>
+
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">Signature Lemon Ice Tea Poster</p>
+
+  <div class="final-photo-grid">
+    <img src="images/LEMOMO BLUE 1.jpg" alt="Left Behind app screen 1">
+    <img src="images/LEMOMO BLUE 2.JPG" alt="Left Behind app screen 2">
+    <img src="images/LEMOMO BLUE 3.jpg" alt="Left Behind app screen 3">
+    <img src="images/LEMOMO ORANGE 1.jpg" alt="Left Behind app screen 4">
+    <img src="images/LEMOMO ORANGE 2.jpg" alt="Left Behind app screen 5">
+    <img src="images/LEMOMO ORANGE 3.jpg" alt="Left Behind app screen 6">
+  </div>
+</section>
+
+
+<section class="kit-section" aria-labelledby="collateral">
+  <p class="kit-label" id="collateral">Brand Collateral</p>
+
+  <div class="final-photo-grid">
+    <img src="images/LEMOMObag1.jpg" alt="Lemomo Tea bag design 1">
+    <img src="images/LEMOMObag2.jpg" alt="Lemomo Tea bag design 2">
+    <img src="images/LEMOMObag3.jpg" alt="Lemomo Tea bag design 3">
+  </div>
+</section>
+
+<section class="kit-section" aria-labelledby="app-ui">
+  <div class="final-photo-grid collateral-grid">
+    <img src="images/LEMOMOSIGN.png" alt="Lemomo Tea signage">
+    <img src="images/LEMOMONAPKIN.png" alt="Lemomo Tea napkin design">
+    <img src="images/LEMOMOSTICKER.png" alt="Lemomo Tea sticker design">
+  </div>
+</section>
+
+<section class="kit-section" aria-labelledby="map">
+  <p class="kit-label" id="map">In Store Marketing</p>
+
+  <img src="images/LEMOMO TEA.png" alt="Left Behind map" class="logo-variations">
+
+  <p class="kit-caption">
+    This poster system is designed to be easy to notice and easy to remember.
+    Bold color and clear flavor cues help each drink stand out, while the consistent layout keeps everything feeling cohesive and recognizable across the Lemomo Tea space.
+  </p>
+
+
+    <section class="more-work-cta">
+      <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+    </section>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" aria-hidden="true">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const photos = document.querySelectorAll('.final-photo-grid img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        lightboxImg.src = photo.src;
+        lightboxImg.alt = photo.alt || 'Expanded photo';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
