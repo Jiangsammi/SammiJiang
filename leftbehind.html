@@ -31,6 +31,11 @@
   object-fit: contain;
 }
 
+.palette-empty {
+  border: none !important;
+  box-shadow: none !important;
+}
+
 </style>
 
 <body>
@@ -143,15 +148,17 @@ Different typefaces are used to reflect the different kinds of documents found w
   </div>
 </section>
 
-<!-- Color Palette -->
-<section class="kit-section" aria-labelledby="color-palette">
-  <p class="kit-label" id="color-palette">Color Palette</p>
 
-  <div class="palette-row">
+      <!-- Color Palette -->
+      <section class="kit-section" aria-labelledby="color-palette">
+        <p class="kit-label" id="color-palette">Color Palette</p>
+<div class="palette-row palette-row--six">
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
     <div class="palette-swatch" style="background:#da382d"><span>#da382d</span></div>
     <div class="palette-swatch" style="background:#bb4f40"><span>#bb4f40</span></div>
     <div class="palette-swatch" style="background:#000000"><span>#000000</span></div>
-  </div>
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
+</div>
 
   <p class="palette-note">
     Red is used as a visual thread—referencing investigation and connection—linking each object to an unseen story.

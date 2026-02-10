@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sammi Jiang — Study Sprout</title>
+  <title>Sammi Jiang — Studysprout</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -15,9 +15,26 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<style>
+/* App UI Screens — 3 per row */
+.final-photo-grid.ui-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 720px !important;   /* control size here */
+  max-width: 200% !important;
+  height: auto !important;
+}
 
-  <!-- CLEAN RESUME-STYLE HEADER -->
+.palette-empty {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+</style>
+
+<body>
   <header class="site-header js-site-header">
     <nav class="nav-container">
       <div class="gallery-title"><a href="index.html">Home</a></div>
@@ -62,11 +79,9 @@
   </header>
 
   <div class="header-placeholder"></div>
-
-  <!-- BRAND KIT -->
   <main>
     <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title">Study Sprout</h2>
+<h2 class="kit-title">Studysprout</h2>
 <header class="case-intro">
   <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
 
@@ -74,199 +89,99 @@
         Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
         The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
   </p>
-</header><section class="kit-section" aria-labelledby="typography">
-    
-<section class="kit-section" aria-labelledby="typography">
-  <p class="kit-label" id="typography">Typography</p>
+</header>
 
-  <div class="type-spec type-spec--two">
+<!-- App Walkthrough Videos -->
+<section class="kit-section" aria-labelledby="app-video">
+  <p class="kit-label" id="app-video">App Walkthrough</p>
 
-    <!-- PRIMARY APP FONT -->
-    <div class="type-family">
-      <p class="type-family-name font-montserrat">Montserrat</p>
-      <p class="type-preview font-montserrat lg">
-        App UI & Navigation
-      </p>
-      <ul class="type-weights">
-        <li>SemiBold · 32 pt</li>
-        <li>SemiBold · 26 pt</li>
-        <li>SemiBold · 20 pt</li>
-        <li>SemiBold · 18 pt</li>
-        <li><strong>Bold · 16 pt</strong></li>
-        <li><strong>Bold · 10 pt</strong></li>
-      </ul>
-    </div>
+  <div class="project-video-grid">
+    <video src="compressed.mov" autoplay muted loop playsinline controls></video>
+    <video src="compressed1.mov" autoplay muted loop playsinline controls></video>
+  </div>
+</section>
 
-    <!-- SUPPORTING TYPE -->
-    <div class="type-family">
-      <p class="type-family-name font-lexend">Lexend</p>
-      <p class="type-preview font-lexend md">
-        Reading & Focused Content
-      </p>
-      <ul class="type-weights">
-        <li>SemiBold · 26 pt</li>
-      </ul>
-    </div>
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">Character Illustration</p>
 
+  <div class="final-photo-grid ui-grid-3">
+    <img src="images/studysprout1.png" alt="Study Sprout app screen 1">
+    <img src="images/studysprout2.png" alt="Study Sprout app screen 2">
+    <img src="images/studysprout3.png" alt="Study Sprout app screen 3">
+    <img src="images/studysprout4.png" alt="Study Sprout app screen 4">
+    <img src="images/studysprout5.png" alt="Study Sprout app screen 5">
+    <img src="images/studysprout6.png" alt="Study Sprout app screen 6">
+    <img src="images/studysprout7.png" alt="Study Sprout app screen 7">
+    <img src="images/studysprout8.png" alt="Study Sprout app screen 8">
+    <img src="images/studysprout9.png" alt="Study Sprout app screen 9">
   </div>
 </section>
 
 
-      <!-- Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
-        <p class="kit-label" id="primary-logo">Printed Overview</p>
-        <img
-          src="images/guerrilla girls.jpg"
-          alt="Creami Pop Primary Logo"
-          class="logo-variations primary-logo"
-        >
-    <p class="kit-caption"></p>
-         This visual system shows how Creami Pop can appear across posters and brand materials. Bright colors, smooth gradients, and bubble details highlight the drink’s fun and creamy personality, creating a lively and eye-catching look.
-        </p>
+<!-- Typography -->
+<section class="kit-section" aria-labelledby="typography">
+  <p class="kit-label" id="typography">Typography</p>
 
-      </section>
+  <p class="kit-caption">
+Each file uses a small range of type sizes to keep the hierarchy clear and the layout easy to look through. 
+Different typefaces are used to reflect the different kinds of documents found within each case file.
+  </p>
 
-      <!-- Logo Variations -->
-      <section class="kit-section" aria-labelledby="logo-variations">
-        <p class="kit-label" id="logo-variations">Map</p>
-        <img
-          src="images/leftbehindmap.png"
-          alt="Creami Pop logo variations and wordmarks"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
-        </p>
-      </section>
+</section>
 
       <!-- Color Palette -->
       <section class="kit-section" aria-labelledby="color-palette">
         <p class="kit-label" id="color-palette">Color Palette</p>
-
-        <div class="palette-row">
-          <div class="palette-swatch" style="background:#91BB54"><span>#91BB54</span></div>
-          <div class="palette-swatch" style="background:#FFF378"><span>#FFF378</span></div>
-          <div class="palette-swatch" style="background:#E084B3"><span>#E084B3</span></div>
-          <div class="palette-swatch" style="background:#A02657"><span>#A02657</span></div>
-          <div class="palette-swatch" style="background:#1A97D4"><span>#1A97D4</span></div>
-          <div class="palette-swatch" style="background:#693C97"><span>#693C97</span></div>
-        </div>
-
-        <p class="palette-note">
-          Dreamy pastel tones are paired with bold, high-contrast pops to create a lively and balanced palette. Milky white and soft peach feel creamy and smooth, while lime green, electric blue, and deep purple add a bright, fizzy pop that feels fresh and fun.
-        </p>
-      </section>
-
-      <!-- Color Application -->
-      <section class="kit-section" aria-labelledby="color-application">
-        <p class="kit-label" id="color-application">Color Application</p>
-        <img
-          src="images/creamipop-color-logos.png"
-          alt="Creami Pop logo color variations"
-          class="logo-variations"
-        >
-      </section>
-
-      <!-- Flavor Illustrations -->
-      <section class="kit-section" aria-labelledby="flavor-illustrations">
-        <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
-        <img
-          src="images/creamipop-flavor-illustrations.png"
-          alt="Creami Pop flavor illustrations"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
-        </p>
-      </section>
-
-      <!-- Flavor Can Designs -->
-      <section class="kit-section" aria-labelledby="flavor-can-designs">
-        <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
-
-        <div class="can-grid">
-          <figure class="can-item">
-            <img
-              src="images/creamipop-fruit-loop-can.png"
-              alt="Creami Pop Fruit Loop Milk Soda can design"
-            >
-            <figcaption class="flavor-name">Fruit Loop</figcaption>
-          </figure>
-
-          <figure class="can-item">
-            <img
-              src="images/creamipop-cinnaswrl-can.png"
-              alt="Creami Pop CinnaSwrl Milk Soda can design"
-            >
-            <figcaption class="flavor-name">CinnaSwrl</figcaption>
-          </figure>
-        </div>
-
-        <img
-          src="images/creamipop-can-box-packaging.png"
-          alt="Creami Pop can box packaging design"
-          class="can-box-packaging"
-        >
-
-        <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
-        </p>
-      </section>
-
-          <div>
-            <p class="type-style">Body</p>
-            <p class="type-sample">
-              Creami Pop is a Korean milky soda brand that blends softness and carbonation into a clean, playful visual identity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final Product Photography -->
-      <section class="kit-section" aria-labelledby="final-product-photography">
-        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
-
-        <div class="final-photo-grid">
-          <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-          <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
-
-          <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-          <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-          <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-          <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
-        </div>
-
-        <p class="kit-caption">
-          Studio photography showcasing the final Creami Pop cans and variety packaging,
-          highlighting color, material finish, and real-world scale.
-        </p>
-      </section>
-
-<div class="kit-section">
-  <p class="kit-label">Graphic Elements</p>
-
-  <div class="graphic-pair">
-    <img
-      src="images/Creamipopposter.png"
-      alt="Creami Pop Graphic Elements Poster"
-      class="shadow-outline"
-    />
-
-    <img
-      src="images/Creamipop.jpg"
-      alt="Creami Pop Instagram mockup"
-      class="shadow-outline"
-    />
-  </div>
+<div class="palette-row palette-row--six">
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
+  <div class="palette-swatch" style="background:#FEE5B7"><span>#FEE5B7</span></div>
+  <div class="palette-swatch" style="background:#D9C08C"><span>#D9C08C</span></div>
+  <div class="palette-swatch" style="background:#BFA46A"><span>#BFA46A</span></div>
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
 </div>
 
 
-    </section>
-  </main>
+  <p class="palette-note">
+    Red is used as a visual thread—referencing investigation and connection—linking each object to an unseen story.
+  </p>
+</section>
+
+<!-- Printed Case Files -->
+<section class="kit-section" aria-labelledby="printed-files">
+  <p class="kit-label" id="printed-files">App Wireframe</p>
+
+  <img src="images/Studysproutfigma.png" alt="Printed case files overview" class="logo-variations">
+</section>
+
+<!-- Final Product Photography -->
+<section class="kit-section lb-final-photos" aria-labelledby="final-photos">
+  <p class="kit-label" id="final-photos">Final Product Photography</p>
+
+  <div class="final-photo-grid">
+    <img src="images/leftbehind6.JPG" alt="Left Behind photo 1">
+    <img src="images/leftbehind7.jpg" alt="Left Behind photo 2">
+    <img src="images/leftbehind2.JPG" alt="Left Behind photo 3">
+    <img src="images/leftbehind1.jpg" alt="Left Behind photo 4">
+    <img src="images/leftbehind3.JPG" alt="Left Behind photo 5">
+    <img src="images/leftbehind4.JPG" alt="Left Behind photo 6">
+    <img src="images/leftbehind8.JPG" alt="Left Behind photo 7">
+  </div>
+</section>
+
+<!-- Map -->
+<section class="kit-section" aria-labelledby="map">
+  <p class="kit-label" id="map">Map</p>
+
+  <img src="images/leftbehindmap.png" alt="Left Behind map" class="logo-variations">
+
+  <p class="kit-caption">
+    This map functions as a visual investigation. Red string connects each found object to its location, tracing patterns of loss and movement across the city.
+  </p>
+
+  <img src="images/leftbehindmap.jpg" alt="Left Behind map detail" class="logo-variations">
+</section>
+
 
 
     <section class="more-work-cta">
@@ -279,6 +194,12 @@
   <div class="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
+<script>
+  const video = document.querySelector('.project-video video');
+  if (video) {
+    video.playbackRate = 0.75; // 👈 slower pace (try 0.8 or 0.7 if needed)
+  }
+</script>
 
   <script>
     const photos = document.querySelectorAll('.final-photo-grid img');
