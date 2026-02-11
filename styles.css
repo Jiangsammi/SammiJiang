@@ -2819,63 +2819,50 @@ html, body, * {
 
 }
 
-/* PHONE ONLY — centered stacked header */
+/* PHONE ONLY — clean stacked header */
 @media (max-width: 600px) {
 
+  /* Stack everything */
   header.site-header {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     height: auto !important;
     padding: 18px 0 !important;
-    text-align: center !important;
   }
 
-  /* Make name bigger + centered */
+  /* NAME ON TOP */
   .logo-wrap {
-    order: 1;
+    order: -1 !important; /* forces name above nav */
     width: 100% !important;
-    margin: 0 !important;
     text-align: center !important;
+    margin-bottom: 6px !important;
   }
 
+  /* Make name bigger */
   .logo-text a,
   .logo a {
-    font-size: 28px !important;   /* bigger name */
+    font-size: 30px !important;
     line-height: 1.1 !important;
   }
 
-/* PHONE ONLY — centered stacked header */
-@media (max-width: 600px) {
-
+  /* NAV UNDER NAME */
   nav.nav-container {
-    order: 2;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 10px !important;   /* smaller space between links */
-    margin-top: 10px !important;
-    width: 100% !important;
+    gap: 8px !important; /* tighter spacing */
   }
 
-}
-
+  /* Make links bigger */
   nav .gallery-title a {
-    font-size: 15px !important;
+    font-size: 18px !important;
   }
 
-}
-
-/* PHONE ONLY — reduce spacing between nav links */
-@media (max-width: 600px) {
-
+  /* Remove extra padding from links */
   nav .gallery-title {
-    padding-right: 6px !important;
     padding-left: 6px !important;
-  }
-
-  nav.nav-container {
-    gap: 0 !important; /* remove flex gap */
+    padding-right: 6px !important;
   }
 
 }
