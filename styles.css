@@ -2802,27 +2802,19 @@ html, body, * {
 }
 
 
-
-/* =========================
-   PHONE ONLY HEADING FIX
-========================= */
+/* PHONE ONLY – fix nav layout */
 @media (max-width: 600px) {
 
-  /* Main intro heading */
-  .intro h1 {
-    font-size: clamp(24px, 8vw, 30px);
-    line-height: 1.1;
+  .nav-container {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;
+    gap: 16px;                 /* space between Home / Projects / Resume */
+    flex-wrap: nowrap;         /* prevent stacking */
   }
 
-  /* Project page main title (like "Study Sprout") */
-  .kit-title {
-    font-size: clamp(28px, 9vw, 36px);
-    line-height: 1.1;
-  }
-
-  /* Section labels */
-  .kit-label {
-    font-size: 14px;
+  .gallery-title a {
+    font-size: 14px;           /* smaller text */
   }
 
 }
