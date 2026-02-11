@@ -2818,3 +2818,18 @@ html, body, * {
   }
 
 }
+
+/* PHONE ONLY – fix header logo */
+@media (max-width: 600px) {
+
+  .logo-wrap {
+    display: flex;
+    justify-content: center; /* center the name */
+  }
+
+  .logo-text a {
+    font-size: 26px;   /* smaller size */
+    line-height: 1.1;
+  }
+
+}
