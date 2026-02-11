@@ -2819,17 +2819,47 @@ html, body, * {
 
 }
 
-/* PHONE ONLY – fix header logo */
+/* PHONE ONLY — keep nav links visible + center logo + shrink logo */
 @media (max-width: 600px) {
 
-  .logo-wrap {
-    display: flex;
-    justify-content: center; /* center the name */
+  /* Let header wrap into 2 rows */
+  .site-header{
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
 
-  .logo-text a {
-    font-size: 26px;   /* smaller size */
-    line-height: 1.1;
+  /* Row 1: nav links centered, stay on ONE line */
+  nav{
+    width: 100% !important;
+    order: 1 !important;
+    text-align: center !important;
+  }
+  .nav-container{
+    display: flex !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    flex-wrap: nowrap !important; /* don't stack Home/Projects/Resume */
+  }
+  nav .gallery-title a{
+    font-size: 14px !important;   /* smaller nav text */
+    line-height: 1.2 !important;
   }
 
+  /* Row 2: logo centered + smaller */
+  .logo-wrap{
+    width: 100% !important;
+    order: 2 !important;
+    margin-top: 8px !important;
+  }
+  .logo-text{
+    text-align: center !important;
+  }
+  .logo-text a,
+  .logo a{
+    font-size: 22px !important;   /* smaller logo */
+    line-height: 1.05 !important;
+    display: inline-block !important;
+  }
 }
