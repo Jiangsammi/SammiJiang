@@ -2819,19 +2819,45 @@ html, body, * {
 
 }
 
-/* PHONE ONLY — font-size fixes (no layout changes) */
+/* PHONE ONLY — centered stacked header */
 @media (max-width: 600px) {
 
-  /* Make Sammi Jiang smaller */
-  .logo-text a,
-  .logo a{
-    font-size: 22px !important;
-    line-height: 1.05 !important;
+  header.site-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    padding: 18px 0 !important;
+    text-align: center !important;
   }
 
-  /* Make Home / Projects / Resume smaller */
-  nav .gallery-title a{
-    font-size: 14px !important;
-    line-height: 1.2 !important;
+  /* Make name bigger + centered */
+  .logo-wrap {
+    order: 1;
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
   }
+
+  .logo-text a,
+  .logo a {
+    font-size: 28px !important;   /* bigger name */
+    line-height: 1.1 !important;
+  }
+
+  /* Links under name */
+  nav.nav-container {
+    order: 2;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+  }
+
+  nav .gallery-title a {
+    font-size: 15px !important;
+  }
+
 }
