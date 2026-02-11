@@ -2801,3 +2801,115 @@ html, body, * {
   line-height: normal !important;
 }
 
+
+
+
+/* ================================
+   MOBILE FIXES (Projects page)
+================================ */
+
+/* 1) Prevent horizontal cropping on phones */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Give the page safe padding on small screens */
+.site-container,
+.site-content,
+.site-wrap {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* 2) HEADER: allow items to wrap instead of spilling off-screen */
+@media (max-width: 768px) {
+  .site-header .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .logo-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-social ul {
+    display: flex;
+    gap: 14px;
+  }
+}
+
+/* 3) MASTHEAD: keep headline + paragraph inside screen */
+@media (max-width: 768px) {
+  .masthead {
+    padding: 28px 0;
+  }
+
+  .intro h1 {
+    font-size: clamp(34px, 9vw, 48px);
+    line-height: 1.05;
+    word-break: normal;
+  }
+
+  .intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 38ch; /* keeps it readable */
+  }
+
+  .masthead-contents,
+  .masthead-text {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* 4) PROJECT GRID: make it responsive */
+.project-covers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* desktop default */
+  gap: 18px;
+}
+
+/* tablets */
+@media (max-width: 1024px) {
+  .project-covers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* phones */
+@media (max-width: 600px) {
+  .project-covers {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-cover {
+    width: 100%;
+  }
+}
+
+/* 5) Images: never overflow their card */
+.cover-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
