@@ -30,6 +30,20 @@
   border: none !important;
   box-shadow: none !important;
 }
+.project-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2rem;
+  justify-content: center; /* centers the whole grid */
+}
+
+.project-video-grid video {
+  width: 250px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
 
 
 </style>
@@ -81,14 +95,24 @@
   <div class="header-placeholder"></div>
   <main>
     <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title">Studysprout</h2>
+<h2 class="kit-title">Study Sprout</h2>
 <header class="case-intro">
-  <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
+<p class="project-meta">Mobile App · UX/UI · AI Tools · 2025</p>
 
-  <p class="project-desc">
-        Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
-        The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
-  </p>
+<p class="project-desc">
+  Study Sprout is an app I designed to help students better manage and navigate their schoolwork. 
+  It connects to platforms like Canvas so assignments, due dates, and grades can be viewed in one organized place.
+</p>
+
+<p class="project-desc">
+  The app includes AI tools for quick summaries, translations, and email drafting, along with focus features such as reminders, task lists, and timers to support productivity.
+</p>
+
+<p class="project-desc">
+To make studying feel less boring, the app includes a small character feature that students can take care of. Students choose a character and earn coins by completing assignments before deadlines, which can be used to care for their character.
+</p>
+
+
 </header>
 
 <!-- App Walkthrough Videos -->
@@ -96,25 +120,9 @@
   <p class="kit-label" id="app-video">App Walkthrough</p>
 
   <div class="project-video-grid">
-    <video src="compressed.mov" autoplay muted loop playsinline controls></video>
-    <video src="compressed1.mov" autoplay muted loop playsinline controls></video>
-  </div>
-</section>
-
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
-  <p class="kit-label" id="app-ui">Character Illustration</p>
-
-  <div class="final-photo-grid ui-grid-3">
-    <img src="images/studysprout1.png" alt="Study Sprout app screen 1">
-    <img src="images/studysprout2.png" alt="Study Sprout app screen 2">
-    <img src="images/studysprout3.png" alt="Study Sprout app screen 3">
-    <img src="images/studysprout4.png" alt="Study Sprout app screen 4">
-    <img src="images/studysprout5.png" alt="Study Sprout app screen 5">
-    <img src="images/studysprout6.png" alt="Study Sprout app screen 6">
-    <img src="images/studysprout7.png" alt="Study Sprout app screen 7">
-    <img src="images/studysprout8.png" alt="Study Sprout app screen 8">
-    <img src="images/studysprout9.png" alt="Study Sprout app screen 9">
+    <video src="studysprout 1.mov" autoplay muted loop playsinline controls></video>
+    <video src="studysprout 2.MOV" autoplay muted loop playsinline controls></video>
+    <video src="studysprout 3.MOV" autoplay muted loop playsinline controls></video>
   </div>
 </section>
 
@@ -141,47 +149,49 @@ Different typefaces are used to reflect the different kinds of documents found w
 <div class="palette-swatch palette-empty" style="background:#ffffff"></div>
 </div>
 
-
-  <p class="palette-note">
-    Red is used as a visual thread—referencing investigation and connection—linking each object to an unseen story.
-  </p>
+<p class="palette-note">
+  I chose warm neutral tones to make the app feel calm and welcoming. 
+  The soft yellow adds warmth and optimism, while the deeper browns create balance and stability. 
+  Together, the palette feels gentle and focused, helping reduce stress and make studying feel more comfortable.
+</p>
 </section>
 
-<!-- Printed Case Files -->
-<section class="kit-section" aria-labelledby="printed-files">
-  <p class="kit-label" id="printed-files">App Wireframe</p>
 
-  <img src="images/Studysproutfigma.png" alt="Printed case files overview" class="logo-variations">
-</section>
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">Character Illustration</p>
 
-<!-- Final Product Photography -->
-<section class="kit-section lb-final-photos" aria-labelledby="final-photos">
-  <p class="kit-label" id="final-photos">Final Product Photography</p>
-
-  <div class="final-photo-grid">
-    <img src="images/leftbehind6.JPG" alt="Left Behind photo 1">
-    <img src="images/leftbehind7.jpg" alt="Left Behind photo 2">
-    <img src="images/leftbehind2.JPG" alt="Left Behind photo 3">
-    <img src="images/leftbehind1.jpg" alt="Left Behind photo 4">
-    <img src="images/leftbehind3.JPG" alt="Left Behind photo 5">
-    <img src="images/leftbehind4.JPG" alt="Left Behind photo 6">
-    <img src="images/leftbehind8.JPG" alt="Left Behind photo 7">
+  <div class="final-photo-grid ui-grid-3">
+    <img src="images/studysprout1.png" alt="Study Sprout app screen 1">
+    <img src="images/studysprout2.png" alt="Study Sprout app screen 2">
+    <img src="images/studysprout3.png" alt="Study Sprout app screen 3">
+    <img src="images/studysprout4.png" alt="Study Sprout app screen 4">
+    <img src="images/studysprout5.png" alt="Study Sprout app screen 5">
+    <img src="images/studysprout6.png" alt="Study Sprout app screen 6">
+    <img src="images/studysprout7.png" alt="Study Sprout app screen 7">
+    <img src="images/studysprout8.png" alt="Study Sprout app screen 8">
+    <img src="images/studysprout9.png" alt="Study Sprout app screen 9">
   </div>
 </section>
 
-<!-- Map -->
-<section class="kit-section" aria-labelledby="map">
-  <p class="kit-label" id="map">Map</p>
-
-  <img src="images/leftbehindmap.png" alt="Left Behind map" class="logo-variations">
-
-  <p class="kit-caption">
-    This map functions as a visual investigation. Red string connects each found object to its location, tracing patterns of loss and movement across the city.
-  </p>
-
-  <img src="images/leftbehindmap.jpg" alt="Left Behind map detail" class="logo-variations">
+<section class="kit-section" aria-labelledby="character-wireframe">
+  <p class="kit-label" id="character-wireframe">Character Wireframe</p>
+  <img src="images/Studysproutfigma.png" alt="Study Sprout character wireframe" class="logo-variations">
 </section>
 
+<section class="kit-section" aria-labelledby="app-wireframe">
+  <p class="kit-label" id="app-wireframe">App Wireframe</p>
+  <img src="images/studysproutfigma1.png" alt="Study Sprout app wireframe" class="logo-variations">
+</section>
+
+<section class="kit-section">
+  <p class="kit-label">Reflection</p>
+  <p class="project-desc">
+    I created Study Sprout in an AI design course to explore how technology could make studying feel less stressful. 
+    I wanted the app to feel supportive, not overwhelming. 
+    This project helped me think more deeply about motivation, balance, and how design can make everyday tasks feel a little more encouraging.
+  </p>
+</section>
 
 
     <section class="more-work-cta">
