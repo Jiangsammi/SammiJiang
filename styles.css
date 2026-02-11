@@ -2902,3 +2902,21 @@ html, body, * {
 
 }
 
+/* =================================
+   ONLY CHANGE: responsive columns
+   Desktop = 3, smaller = 2, phone = 1
+================================= */
+
+/* Any smaller desktop window → 2 per row immediately */
+@media (max-width: 1100px) {
+  .project-cover {
+    width: calc(50% - 20px) !important;
+  }
+}
+
+/* Phones → 1 per row */
+@media (max-width: 768px) {
+  .project-cover {
+    width: 100% !important;
+  }
+}

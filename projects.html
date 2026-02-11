@@ -10,169 +10,169 @@
 
   <style>
     body { background-color: #2b2b2b !important; }
-    html, body, * { cursor: auto !important; }
+html, body, * { cursor: auto !important; }
 
-    /* ===== Gallery Filters (matches your page structure + uses your classes) ===== */
-    .gallery-filters {
-      width: min(1100px, 92vw);
-      margin: 0 auto 22px;
-      padding: 0 0 10px;
-      position: relative;
-      z-index: 2;
-    }
+/* ===== Gallery Filters (matches your page structure + uses your classes) ===== */
+.gallery-filters {
+  width: min(1100px, 92vw);
+  margin: 0 auto 22px;
+  padding: 0 0 10px;
+  position: relative;
+  z-index: 2;
+}
 
-    .gallery-filters .filter-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
+.gallery-filters .filter-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
-    .filter-pill {
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      color: #000 !important; /* category text black */
-      padding: 10px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      user-select: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-      font-size: 14px;
-      letter-spacing: .01em;
-    }
+.filter-pill {
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: #000 !important; /* category text black */
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  font-size: 14px;
+  letter-spacing: .01em;
+}
 
-    .filter-pill:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.10);
-      border-color: rgba(255,255,255,.28);
-      box-shadow: 0 12px 34px rgba(0,0,0,.24);
-    }
+.filter-pill:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.28);
+  box-shadow: 0 12px 34px rgba(0,0,0,.24);
+}
 
-    .filter-pill[aria-pressed="true"]{
-      color: #000 !important;
-      border-color: rgba(124,247,255,.55);
-      background: linear-gradient(135deg, rgba(124,247,255,.18), rgba(215,166,255,.16));
-      box-shadow: 0 16px 40px rgba(0,0,0,.30);
-    }
+.filter-pill[aria-pressed="true"]{
+  color: #000 !important;
+  border-color: rgba(124,247,255,.55);
+  background: linear-gradient(135deg, rgba(124,247,255,.18), rgba(215,166,255,.16));
+  box-shadow: 0 16px 40px rgba(0,0,0,.30);
+}
 
-    .filter-dot{
-      width: 9px;
-      height: 9px;
-      border-radius: 99px;
-      background: var(--c, #7cf7ff);
-      box-shadow: 0 0 0 4px rgba(0,0,0,.06);
-    }
+.filter-dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 99px;
+  background: var(--c, #7cf7ff);
+  box-shadow: 0 0 0 4px rgba(0,0,0,.06);
+}
 
-    .filter-search {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
-    }
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
 
-    .filter-search:focus-within{
-      transform: translateY(-1px);
-      border-color: rgba(124,247,255,.55);
-      background: rgba(255,255,255,.09);
-    }
+.filter-search:focus-within{
+  transform: translateY(-1px);
+  border-color: rgba(124,247,255,.55);
+  background: rgba(255,255,255,.09);
+}
 
-    .filter-search input{
-      width: 220px;
-      max-width: 65vw;
-      background: transparent;
-      border: 0;
-      outline: none;
-      color: rgba(255,255,255,.92);
-      font-size: 14px;
-    }
-    .filter-search input::placeholder{ color: rgba(255,255,255,.55); }
+.filter-search input{
+  width: 220px;
+  max-width: 65vw;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: rgba(255,255,255,.92);
+  font-size: 14px;
+}
+.filter-search input::placeholder{ color: rgba(255,255,255,.55); }
 
-    .results-count{
-      text-align: center;
-      margin-top: 12px;
-      color: rgba(255,255,255,.7);
-      font-size: 13px;
-    }
+.results-count{
+  text-align: center;
+  margin-top: 12px;
+  color: rgba(255,255,255,.7);
+  font-size: 13px;
+}
 
-    /* Hide cards when filtered */
-    .project-cover.is-hidden { display: none !important; }
+/* Hide cards when filtered */
+.project-cover.is-hidden { display: none !important; }
 
-    /* ===== IMPORTANT: fixes the empty space when filtering ===== */
-    .project-cover { min-height: auto !important; }  /* remove the forced height that created gaps */
+/* ===== IMPORTANT: fixes the empty space when filtering ===== */
+.project-cover { min-height: auto !important; }  /* remove the forced height that created gaps */
 
-    /* Pack grid items upward (helps reflow) */
-    .project-covers{
-      display: grid;
-      grid-auto-flow: dense;
-      align-items: start;
-    }
+/* Pack grid items upward (helps reflow) */
+.project-covers{
+  display: grid;
+  grid-auto-flow: dense;
+  align-items: start;
+}
 
-    /* Cute hover animation on your existing project tiles */
-    .project-cover .cover-content-container{
-      transform: translateY(0);
-      transition: transform .18s ease, filter .18s ease;
-      will-change: transform;
-    }
-    .project-cover:hover .cover-content-container{
-      transform: translateY(-4px);
-      filter: saturate(1.03);
-    }
-    .project-cover .cover-image img{
-      transition: transform .35s ease;
-      will-change: transform;
-    }
-    .project-cover:hover .cover-image img{
-      transform: scale(1.02);
-    }
+/* Cute hover animation on your existing project tiles */
+.project-cover .cover-content-container{
+  transform: translateY(0);
+  transition: transform .18s ease, filter .18s ease;
+  will-change: transform;
+}
+.project-cover:hover .cover-content-container{
+  transform: translateY(-4px);
+  filter: saturate(1.03);
+}
+.project-cover .cover-image img{
+  transition: transform .35s ease;
+  will-change: transform;
+}
+.project-cover:hover .cover-image img{
+  transform: scale(1.02);
+}
 
-    /* Sparkle layer (subtle + fun) */
-    .sparkles {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: .75;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,.35));
-    }
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 72%);
-      animation: floaty var(--dur) ease-in-out infinite;
-      opacity: var(--op);
-      transform: translate3d(0,0,0);
-    }
-    @keyframes floaty{
-      0%,100% { transform: translate(var(--x0), var(--y0)) scale(var(--s0)); }
-      50%     { transform: translate(var(--x1), var(--y1)) scale(var(--s1)); }
-    }
+/* Sparkle layer (subtle + fun) */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .75;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.35));
+}
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 72%);
+  animation: floaty var(--dur) ease-in-out infinite;
+  opacity: var(--op);
+  transform: translate3d(0,0,0);
+}
+@keyframes floaty{
+  0%,100% { transform: translate(var(--x0), var(--y0)) scale(var(--s0)); }
+  50%     { transform: translate(var(--x1), var(--y1)) scale(var(--s1)); }
+}
 
-    @media (prefers-reduced-motion: reduce){
-      .sparkles{ display:none !important; }
-      .project-cover .cover-content-container,
-      .project-cover .cover-image img,
-      .filter-pill,
-      .filter-search { transition:none !important; }
-    }
+@media (prefers-reduced-motion: reduce){
+  .sparkles{ display:none !important; }
+  .project-cover .cover-content-container,
+  .project-cover .cover-image img,
+  .filter-pill,
+  .filter-search { transition:none !important; }
+}
 
-    /* 3 per row (match typical layout from your other page) */
+/* 3 per row (match typical layout from your other page) */
 .project-covers{
   display: flex !important;
   flex-wrap: wrap !important;
@@ -214,9 +214,38 @@
 .project-covers {
   margin-bottom: 80px !important;
 }
+
 /* Make the page background match your content so no black shows */
 html, body {
   background: #fff !important;
+}
+
+/* =================================
+   ONLY CHANGE: responsive columns
+   Desktop = 3, smaller = 2, phone = 1
+================================= */
+
+/* Half desktop / smaller screens → 2 per row immediately */
+@media (max-width: 1100px) {
+  .project-cover {
+    width: calc(50% - 20px) !important;
+  }
+}
+
+/* Phones → 1 per row */
+@media (max-width: 768px) {
+  .project-cover {
+    width: 100% !important;
+  }
+}
+
+/* =================================
+   ONLY CHANGE: 1 IMAGE PER ROW ON SMALL SCREENS
+================================= */
+@media (max-width: 768px) {
+  .project-cover {
+    width: 100% !important;
+  }
 }
 
   </style>
