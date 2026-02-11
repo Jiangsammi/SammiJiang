@@ -2853,9 +2853,11 @@ html, body, * {
     margin-bottom: 10px !important;
   }
 
+@media (max-width: 600px) {
   .nav-social ul {
-    gap: 14px !important;
+    gap: 26px !important;
   }
+}
 
   /* 3️⃣ Nav links under icons */
   nav.nav-container {
@@ -2875,3 +2877,28 @@ html, body, * {
   }
 
 }
+.resume-actions {
+  margin-top: 0px; /* adjust if you want more space */
+  display: flex;
+  justify-content: center;
+}
+
+.resume-actions a svg {
+  width: 26px;          /* match your other icons */
+  height: 26px;
+  display: block;       /* prevents baseline floating */
+}
+
+/* ✅ PHONE ONLY — push the whole icon row down */
+@media (max-width: 600px) {
+  header.site-header .social.nav-social {
+    margin-top: 14px !important;   /* adjust: 8px–20px */
+  }
+
+  header.site-header .social.nav-social ul {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+}
+
