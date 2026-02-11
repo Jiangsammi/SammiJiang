@@ -172,16 +172,17 @@ html, body, * { cursor: auto !important; }
   .filter-search { transition:none !important; }
 }
 
-/* 3 per row (match typical layout from your other page) */
 .project-covers{
   display: flex !important;
   flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 20px !important;   /* controls spacing between tiles */
+  padding: 0 40px !important;  /* equal left & right margin */
 }
 
-/* keep your original spacing (if your other page already has margins, this won't break it) */
 .project-cover{
-  width: calc(33.333% - 20px) !important; /* 3 across */
-  margin: 10px !important;               /* spacing between tiles */
+  width: calc(33.333% - 20px) !important;
+  margin: 0 !important;   /* remove margin so gap handles spacing */
   min-height: auto !important;           /* prevents the empty gap issue */
 }
 
@@ -247,6 +248,35 @@ html, body {
     width: 100% !important;
   }
 }
+/* FORCE the grid to sit higher (override styles.css) */
+.project-covers{
+  padding-top: 0 !important;     /* this is the big one */
+  margin-top: -10px !important;  /* adjust: -20 to -60 if you want */
+}
+
+/* tighten gap under filter bar */
+.gallery-filters{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* (optional) tighten results text spacing */
+.results-count{
+  margin-top: 8px !important;
+}
+/* Reduce space below masthead */
+.masthead {
+  padding-bottom: 20px !important;
+}
+
+.masthead-arrow-container {
+  margin-top: -20px !important;
+}
+
+.masthead-placeholder {
+  height: 700px !important; /* reduce this number more if needed */
+}
+
 
   </style>
 </head>
