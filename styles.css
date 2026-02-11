@@ -2835,7 +2835,7 @@ html, body, * {
   .logo-wrap {
     order: 1 !important;
     width: 100% !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 18px !important;
   }
 
   .logo-text a,
