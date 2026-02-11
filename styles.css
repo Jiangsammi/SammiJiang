@@ -2819,50 +2819,59 @@ html, body, * {
 
 }
 
-/* PHONE ONLY — clean stacked header */
+/* PHONE ONLY — final header layout */
 @media (max-width: 600px) {
 
-  /* Stack everything */
   header.site-header {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     height: auto !important;
-    padding: 18px 0 !important;
-  }
-
-  /* NAME ON TOP */
-  .logo-wrap {
-    order: -1 !important; /* forces name above nav */
-    width: 100% !important;
+    padding: 20px 0 !important;
     text-align: center !important;
-    margin-bottom: 6px !important;
   }
 
-  /* Make name bigger */
+  /* 1️⃣ Name on top */
+  .logo-wrap {
+    order: 1 !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+
   .logo-text a,
   .logo a {
     font-size: 30px !important;
     line-height: 1.1 !important;
   }
 
-  /* NAV UNDER NAME */
-  nav.nav-container {
+  /* 2️⃣ Social icons under name */
+  .nav-social {
+    order: 2 !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important; /* tighter spacing */
+    width: 100% !important;
+    margin-bottom: 10px !important;
   }
 
-  /* Make links bigger */
-  nav .gallery-title a {
-    font-size: 18px !important;
+  .nav-social ul {
+    gap: 14px !important;
   }
 
-  /* Remove extra padding from links */
+  /* 3️⃣ Nav links under icons */
+  nav.nav-container {
+    order: 3 !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
   nav .gallery-title {
     padding-left: 6px !important;
     padding-right: 6px !important;
+  }
+
+  nav .gallery-title a {
+    font-size: 18px !important;
   }
 
 }
