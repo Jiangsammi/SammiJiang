@@ -2865,3 +2865,17 @@ html, body, * {
   }
 
 }
+
+/* PHONE ONLY — reduce spacing between nav links */
+@media (max-width: 600px) {
+
+  nav .gallery-title {
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+  }
+
+  nav.nav-container {
+    gap: 0 !important; /* remove flex gap */
+  }
+
+}
