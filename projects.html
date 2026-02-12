@@ -253,34 +253,25 @@ html, body {
 }
 
 /* =========================================
-   PHONE FIX: ALWAYS STAYS IN PLACE + 1 ROW
+   PHONE — SAME BEHAVIOR AS TABLET (STICKY)
 ========================================= */
 @media (max-width: 600px){
 
-  /* FIXED (not sticky) so it works on mobile templates */
   .gallery-filters{
-    position: fixed !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-
-    top: 140px !important;     /* under your mobile header */
-    z-index: 9999 !important;
-
-    margin: 0 !important;
+    position: sticky !important;
+    top: 95px !important;     /* SAME as tablet */
+    z-index: 100 !important;
+    background: #ffffff !important;
     padding: 6px 0 !important;
-    background: #fff !important;
   }
 
-  /* single row */
+  /* keep it in one row */
   .gallery-filters .filter-row{
     flex-wrap: nowrap !important;
     gap: 8px !important;
     justify-content: center !important;
-
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
-
     padding: 0 10px !important;
   }
 
@@ -288,7 +279,6 @@ html, body {
     display: none;
   }
 
-  /* smaller pills */
   .filter-pill{
     padding: 10px 12px !important;
     font-size: 13px !important;
@@ -299,6 +289,8 @@ html, body {
     width: 7px !important;
     height: 7px !important;
   }
+}
+
 
   /* IMPORTANT: push grid down so filter bar doesn't cover images */
   .project-covers{
