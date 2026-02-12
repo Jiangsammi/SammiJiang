@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css" />
   <title>Sammi Jiang — Projects</title>
 
-  <style>
+<style>
     body { background-color: #2b2b2b !important; }
 html, body, * { cursor: auto !important; }
 
@@ -339,7 +339,28 @@ html, body {
   }
 }
 
+/* =========================================================
+   ADD ONLY: FORCE THE STICKY BAR TO STAY PURE WHITE (NO GREY)
+   (does NOT change layout/design, just fixes iPhone rendering)
+========================================================= */
+.gallery-filters{
+  background-color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+@media (max-width: 600px){
+  .gallery-filters{
+    background-color: #fff !important;
+  }
+}
+
 </style>
+
+
 </head>
 
 <body class="transition-enabled">
