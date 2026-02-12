@@ -60,14 +60,93 @@
       margin-top:0.75rem;
     }
     
-    .logo-variation-row img{
+.logo-variation-row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+
+  justify-content: center;   /* center the grid */
+  justify-items: center;     /* center images inside grid cells */
+}
+
+.logo-variation-row img{
   width: 100%;
-  max-width: 440px;
-  height: 380px;           /* force same height */
-  object-fit: contain;     /* keeps full logo visible */
+  max-width: 520px;          /* prevents it from stretching too wide */
+  height: 420px;
+  object-fit: contain;
   display: block;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.final-photo-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 260px); /* default = 2 */
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0 0;
+}
+
+.final-photo-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔥 Full screen → 4 images */
+@media (min-width: 1400px){
+  .final-photo-grid{
+    grid-template-columns: repeat(4, 260px);
+  }
+}
+
+/* App UI Section Only */
+#app-ui + .final-photo-grid,
+#app-ui ~ .final-photo-grid {
+  margin-top: 2.5rem;       /* more space from title */
+}
+
+.app-ui-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 260px); /* default = 3 */
+  gap: 0.8rem;
+  justify-content: center;
+  margin: 1rem 0 0;
+}
+
+.app-ui-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔥 Full screen → 4 images */
+@media (min-width: 1400px){
+  .app-ui-grid{
+    grid-template-columns: repeat(4, 260px);
+  }
+}
+.collateral-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 220px); /* smaller fixed size */
+  gap: 0.8rem;
+  justify-content: center;   /* center the grid */
+  margin: 1.2rem 0 0;
+}
+
+.collateral-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional: bigger screens → 4 images */
+@media (min-width: 1400px){
+  .collateral-grid{
+    grid-template-columns: repeat(4, 220px);
+  }
 }
 
   </style>
@@ -135,16 +214,6 @@
         </p>
       </header>
 
-      <!-- 1) Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
-        <p class="kit-label" id="primary-logo">Primary Logo</p>
-        <img
-          src="images/perfume lemon tea logo.png"
-          alt="Lemomo Tea primary logo"
-          class="logo-variations primary-logo"
-        >
-      </section>
-
       <!-- 2) Logo Variations -->
       <section class="kit-section" aria-labelledby="logo-variations">
         <p class="kit-label" id="logo-variations">Logo Variations</p>
@@ -197,6 +266,36 @@
         </div>
       </section>
 
+            <!-- 1) Primary Logo -->
+      <section class="kit-section" aria-labelledby="primary-logo">
+        <p class="kit-label" id="primary-logo">Socialmedia</p>
+        <img
+          src="images/littlecupcakesocial.jpg"
+          alt="Lemomo Tea primary logo"
+          class="logo-variations primary-logo"
+        >
+      </section>
+
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">App UI Screens</p>
+
+<div class="app-ui-grid">
+    <img src="images/littlecupcakeArtboard 1.jpg" alt="Left Behind app screen 1">
+    <img src="images/littlecupcakeArtboard 2.png" alt="Left Behind app screen 2">
+    <img src="images/littlecupcakeArtboard 3.png" alt="Left Behind app screen 3">
+    <img src="images/littlecupcakeArtboard 4.jpg" alt="Left Behind app screen 4">
+    <img src="images/littlecupcakeArtboard 5.png" alt="Left Behind app screen 5">
+    <img src="images/littlecupcakeArtboard 7.png" alt="Left Behind app screen 6">
+    <img src="images/littlecupcakeArtboard 8.png" alt="Left Behind app screen 7">
+    <img src="images/littlecupcakeArtboard 9.jpg" alt="Left Behind app screen 8">
+    <img src="images/littlecupcakeArtboard 10.jpg" alt="Left Behind app screen 9">
+    <img src="images/littlecupcakeArtboard 11.jpg" alt="Left Behind app screen 10">
+    <img src="images/littlecupcakeArtboard 12.jpg" alt="Left Behind app screen 11">
+  </div>
+</section>
+
+
             <!-- Flavor Can Designs -->
       <section class="kit-section" aria-labelledby="flavor-can-designs">
         <p class="kit-label" id="flavor-can-designs">Box Designs</p>
@@ -214,55 +313,24 @@
         </p>
       </section>
 
-      <!-- 5) Posters / Campaign -->
-      <section class="kit-section" aria-labelledby="posters">
-        <p class="kit-label" id="posters">Signature Lemon Ice Tea Poster</p>
-
-        <div class="final-photo-grid">
-          <img src="images/LEMOMO BLUE 1.jpg" alt="Lemomo Tea poster — blue set 1">
-          <img src="images/LEMOMO BLUE 2.JPG" alt="Lemomo Tea poster — blue set 2">
-          <img src="images/LEMOMO BLUE 3.jpg" alt="Lemomo Tea poster — blue set 3">
-          <img src="images/LEMOMO ORANGE 1.jpg" alt="Lemomo Tea poster — orange set 1">
-          <img src="images/LEMOMO ORANGE 2.jpg" alt="Lemomo Tea poster — orange set 2">
-          <img src="images/LEMOMO ORANGE 3.jpg" alt="Lemomo Tea poster — orange set 3">
-        </div>
-      </section>
-
       <!-- 6) Brand Collateral (bags) -->
       <section class="kit-section" aria-labelledby="collateral">
         <p class="kit-label" id="collateral">Brand Collateral</p>
 
-        <div class="final-photo-grid">
-          <img src="images/LEMOMObag1.jpg" alt="Lemomo Tea bag design 1">
-          <img src="images/LEMOMObag2.jpg" alt="Lemomo Tea bag design 2">
-          <img src="images/LEMOMObag3.jpg" alt="Lemomo Tea bag design 3">
+<div class="collateral-grid">
+          <img src="images/littlecupcakeT-shirt.png" alt="Lemomo Tea bag design 1">
+          <img src="images/littlecupcakeapron.png" alt="Lemomo Tea bag design 1">
+          <img src="images/littlecupcakecoffee.jpg" alt="Lemomo Tea bag design 2">
+          <img src="images/littlecupcakelatte.jpg" alt="Lemomo Tea bag design 3">
+          <img src="images/Litllecupcakebox.png" alt="Lemomo Tea poster — blue set 1">
+          <img src="images/Litllecupcakebag.png" alt="Lemomo Tea poster — blue set 2">
+          <img src="images/Litllecupcakenapkin1.png" alt="Lemomo Tea poster — blue set 3">
+          <img src="images/Litllecupcakenapkin2.png" alt="Lemomo Tea poster — orange set 1">
+          <img src="images/Litllecupcakecap1.png" alt="Lemomo Tea poster — orange set 2">
+          <img src="images/Litllecupcakecap2.png" alt="Lemomo Tea poster — orange set 3">
         </div>
       </section>
 
-      <!-- 7) Touchpoints (sign / napkin / sticker) -->
-      <section class="kit-section" aria-labelledby="touchpoints">
-        <p class="kit-label" id="touchpoints">In-Store Touchpoints</p>
-
-        <div class="collateral-grid">
-          <img src="images/LEMOMOSIGN.png" alt="Lemomo Tea signage">
-          <img src="images/LEMOMONAPKIN.png" alt="Lemomo Tea napkin design">
-          <img src="images/LEMOMOSTICKER.png" alt="Lemomo Tea sticker design">
-        </div>
-      </section>
-
-      <!-- 8) In-store marketing -->
-      <section class="kit-section" aria-labelledby="in-store">
-        <p class="kit-label" id="in-store">In-Store Marketing</p>
-
-        <img src="images/LEMOMO TEA.png" alt="Lemomo Tea in-store marketing layout" class="logo-variations">
-
-        <p class="kit-caption">
-          Designed to be easy to notice and easy to remember using bold color and clear flavor cues help each drink stand out,
-          and the consistent layout keeps the brand cohesive across the space.
-        </p>
-      </section>
-
-    </section>
   </main>
 
   <section class="more-work-cta">

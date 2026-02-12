@@ -1371,4 +1371,6 @@ body{
   .lb-final-photos .final-photo-grid{ grid-template-columns: 1fr; }
 }
 
-
+main{
+  padding: 0 2rem;   /* side breathing room */
+}
