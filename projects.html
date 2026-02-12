@@ -319,6 +319,26 @@ html, body {
     width: 100% !important;
   }
 }
+
+/* MOBILE: allow sticky to work (no design change) */
+@media (max-width: 600px){
+  .js-responsive-nav,
+  .site-wrap,
+  .site-container,
+  .site-content,
+  main{
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  .gallery-filters{
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 95px !important;   /* same as tablet */
+    z-index: 100 !important;
+  }
+}
+
 </style>
 </head>
 
@@ -415,25 +435,30 @@ html, body {
         <div class="site-content">
           <main>
 
-            <!-- FILTER BAR -->
-            <section class="gallery-filters" aria-label="Project filters">
-              <div class="filter-row">
-                <button class="filter-pill" data-filter="all" aria-pressed="true">
-                  <span class="filter-dot" style="--c:#7cf7ff"></span> All
-                </button>
-                <button class="filter-pill" data-filter="physical" aria-pressed="false">
-                  <span class="filter-dot" style="--c:#ffd36a"></span> Physical Form
-                </button>
-                <button class="filter-pill" data-filter="mobile" aria-pressed="false">
-                  <span class="filter-dot" style="--c:#d7a6ff"></span> Mobile Apps
-                </button>
-                <button class="filter-pill" data-filter="brand" aria-pressed="false">
-                  <span class="filter-dot" style="--c:#7cf7ff"></span> Branding
-                </button>
-                <button class="filter-pill" data-filter="other" aria-pressed="false">
-                  <span class="filter-dot" style="--c:#b7ffb0"></span> Other
-                </button>
-            </section>
+<!-- FILTER BAR -->
+<section class="gallery-filters" aria-label="Project filters">
+  <div class="filter-row">
+    <button class="filter-pill" data-filter="all" aria-pressed="true">
+      <span class="filter-dot" style="--c:#7cf7ff"></span> All
+    </button>
+
+    <button class="filter-pill" data-filter="physical" aria-pressed="false">
+      <span class="filter-dot" style="--c:#ffd36a"></span> Physical Form
+    </button>
+
+    <button class="filter-pill" data-filter="mobile" aria-pressed="false">
+      <span class="filter-dot" style="--c:#d7a6ff"></span> Mobile Apps
+    </button>
+
+    <button class="filter-pill" data-filter="brand" aria-pressed="false">
+      <span class="filter-dot" style="--c:#7cf7ff"></span> Branding
+    </button>
+
+    <button class="filter-pill" data-filter="other" aria-pressed="false">
+      <span class="filter-dot" style="--c:#b7ffb0"></span> Other
+    </button>
+  </div>
+</section>
 
             <!-- Project Covers Grid -->
             <section class="project-covers" decorator="editable" data-context="theme.gallery.projects">
