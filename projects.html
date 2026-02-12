@@ -254,10 +254,55 @@ html, body {
   margin-top: -10px !important;  /* adjust: -20 to -60 if you want */
 }
 
-/* tighten gap under filter bar */
+/* Tight gap + sticky filter bar */
 .gallery-filters{
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+
+  position: sticky !important;
+  top: 95px;                 /* match your header height */
+  z-index: 100;
+  background: #ffffff;       /* prevents overlap issues */
+}
+
+/* =========================================
+   PHONE: same sticky behavior + 1-row filter bar
+========================================= */
+@media (max-width: 600px){
+
+  /* keep it sticky under the (taller) mobile header */
+  .gallery-filters{
+    top: 140px !important;          /* adjust if your mobile header is taller/shorter */
+    padding: 6px 0 !important;
+    background: #fff !important;
+  }
+
+  /* force a single row */
+  .gallery-filters .filter-row{
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    overflow-x: auto !important;     /* just in case small phones */
+    -webkit-overflow-scrolling: touch;
+    padding: 0 8px !important;
+  }
+
+  /* hide scrollbar (optional) */
+  .gallery-filters .filter-row::-webkit-scrollbar{
+    display: none;
+  }
+
+  /* make the pills smaller so everything fits */
+  .filter-pill{
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  .filter-dot{
+    width: 7px !important;
+    height: 7px !important;
+  }
 }
 
 /* (optional) tighten results text spacing */
@@ -275,6 +320,21 @@ html, body {
 
 .masthead-placeholder {
   height: 700px !important; /* reduce this number more if needed */
+}
+
+/* =================================
+   iPhone – Make images wider
+================================= */
+@media (max-width: 768px) {
+
+  .project-covers{
+    padding: 0 14px !important;   /* reduce side space */
+  }
+
+  .project-cover{
+    width: 100% !important;
+  }
+
 }
 
 
@@ -392,8 +452,6 @@ html, body {
                 <button class="filter-pill" data-filter="other" aria-pressed="false">
                   <span class="filter-dot" style="--c:#b7ffb0"></span> Other
                 </button>
-
-              <div class="results-count" id="resultsCount">Showing 0 projects</div>
             </section>
 
             <!-- Project Covers Grid -->
