@@ -252,17 +252,14 @@ html, body {
   background: #ffffff;
 }
 
-/* =========================================
-   PHONE — SAME BEHAVIOR AS TABLET (STICKY)
-========================================= */
+/* PHONE — same design, just force sticky to work */
 @media (max-width: 600px){
 
   .gallery-filters{
+    position: -webkit-sticky !important; /* Safari fix */
     position: sticky !important;
-    top: 95px !important;     /* SAME as tablet */
+    top: 95px !important;   /* same as tablet */
     z-index: 100 !important;
-    background: #ffffff !important;
-    padding: 6px 0 !important;
   }
 
   /* keep it in one row */
@@ -294,9 +291,8 @@ html, body {
 
   /* IMPORTANT: push grid down so filter bar doesn't cover images */
   .project-covers{
-    padding-top: 64px !important; /* adjust if you want more/less */
+    padding-top: 70px !important; /* adjust if you want more/less */
   }
-}
 
 /* tighten results text spacing */
 .results-count{
