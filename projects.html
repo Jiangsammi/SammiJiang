@@ -9,120 +9,107 @@
   <title>Sammi Jiang — Projects</title>
 
   <style>
-    body { background-color: #2b2b2b !important; }
+ /* =========================================================
+   PROJECTS PAGE — CLEAN + CONSISTENT
+   - 3 cols desktop / 2 cols tablet / 1 col phone
+   - consistent spacing (smaller)
+   - sticky filter under header (desktop/tablet)
+   - FIXED filter under header on phone (reliable)
+========================================================= */
+
+body { background-color: #2b2b2b !important; }
 html, body, * { cursor: auto !important; }
 
-/* ===== Gallery Filters (matches your page structure + uses your classes) ===== */
-.gallery-filters {
-  width: min(1100px, 92vw);
-  margin: 0 auto 22px;
-  padding: 0 0 10px;
-  position: relative;
-  z-index: 2;
+/* ===== Gallery Filters ===== */
+.gallery-filters{
+  width: 100% !important;
+  margin: 0 auto 12px !important;
+  padding: 8px 0 !important;
+  position: sticky !important;
+  top: 95px !important;          /* desktop header height */
+  z-index: 200 !important;
+  background: #ffffff !important;
 }
 
-.gallery-filters .filter-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.gallery-filters .filter-row{
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.filter-pill {
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.06);
-  color: #000 !important; /* category text black */
-  padding: 10px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+/* pills */
+.filter-pill{
+  border: 1px solid rgba(0,0,0,.10) !important;
+  background: rgba(0,0,0,.03) !important;
+  color: #000 !important;
+  padding: 12px 18px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.18);
-  font-size: 14px;
-  letter-spacing: .01em;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10) !important;
+  font-size: 15px !important;
+  letter-spacing: .01em !important;
+  white-space: nowrap !important;
 }
 
-.filter-pill:hover {
+.filter-pill:hover{
   transform: translateY(-2px);
-  background: rgba(255,255,255,.10);
-  border-color: rgba(255,255,255,.28);
-  box-shadow: 0 12px 34px rgba(0,0,0,.24);
+  background: rgba(0,0,0,.05) !important;
+  border-color: rgba(0,0,0,.18) !important;
+  box-shadow: 0 12px 34px rgba(0,0,0,.16) !important;
 }
 
 .filter-pill[aria-pressed="true"]{
-  color: #000 !important;
-  border-color: rgba(124,247,255,.55);
-  background: linear-gradient(135deg, rgba(124,247,255,.18), rgba(215,166,255,.16));
-  box-shadow: 0 16px 40px rgba(0,0,0,.30);
+  border-color: rgba(124,247,255,.55) !important;
+  background: linear-gradient(135deg, rgba(124,247,255,.18), rgba(215,166,255,.16)) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.18) !important;
 }
 
 .filter-dot{
-  width: 9px;
-  height: 9px;
-  border-radius: 99px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
   background: var(--c, #7cf7ff);
   box-shadow: 0 0 0 4px rgba(0,0,0,.06);
 }
 
-.filter-search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.18);
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
-}
-
-.filter-search:focus-within{
-  transform: translateY(-1px);
-  border-color: rgba(124,247,255,.55);
-  background: rgba(255,255,255,.09);
-}
-
-.filter-search input{
-  width: 220px;
-  max-width: 65vw;
-  background: transparent;
-  border: 0;
-  outline: none;
-  color: rgba(255,255,255,.92);
-  font-size: 14px;
-}
-.filter-search input::placeholder{ color: rgba(255,255,255,.55); }
-
-.results-count{
-  text-align: center;
-  margin-top: 12px;
-  color: rgba(255,255,255,.7);
-  font-size: 13px;
-}
-
 /* Hide cards when filtered */
-.project-cover.is-hidden { display: none !important; }
+.project-cover.is-hidden{ display:none !important; }
 
-/* ===== IMPORTANT: fixes the empty space when filtering ===== */
-.project-cover { min-height: auto !important; }  /* remove the forced height that created gaps */
-
-/* Pack grid items upward (helps reflow) */
+/* ===== Project Grid (consistent spacing) ===== */
 .project-covers{
-  display: grid;
-  grid-auto-flow: dense;
-  align-items: start;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;              /* ✅ smaller spacing */
+  align-items: start !important;
+  width: 100% !important;
+  padding: 0 18px !important;
+  margin: 0 auto 80px !important;
+  padding-top: 0 !important;
+  margin-top: -10px !important;
 }
 
-/* Cute hover animation on your existing project tiles */
+/* kill old float/width logic so grid always works */
+.project-cover{
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  min-height: auto !important;
+}
+.project-cover:nth-child(3n),
+.project-cover:nth-child(3n + 1),
+.project-cover:nth-child(2n){
+  clear: none !important;
+  margin-right: 0 !important;
+}
+
+/* hover animations */
 .project-cover .cover-content-container{
   transform: translateY(0);
   transition: transform .18s ease, filter .18s ease;
@@ -140,8 +127,8 @@ html, body, * { cursor: auto !important; }
   transform: scale(1.02);
 }
 
-/* Sparkle layer (subtle + fun) */
-.sparkles {
+/* Sparkles */
+.sparkles{
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -149,7 +136,7 @@ html, body, * { cursor: auto !important; }
   opacity: .75;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.35));
 }
-.sparkle {
+.sparkle{
   position: absolute;
   width: 10px;
   height: 10px;
@@ -163,180 +150,73 @@ html, body, * { cursor: auto !important; }
   0%,100% { transform: translate(var(--x0), var(--y0)) scale(var(--s0)); }
   50%     { transform: translate(var(--x1), var(--y1)) scale(var(--s1)); }
 }
-
 @media (prefers-reduced-motion: reduce){
   .sparkles{ display:none !important; }
   .project-cover .cover-content-container,
   .project-cover .cover-image img,
-  .filter-pill,
-  .filter-search { transition:none !important; }
+  .filter-pill{ transition:none !important; }
 }
 
-.project-covers{
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 20px !important;   /* controls spacing between tiles */
-  padding: 0 40px !important;  /* equal left & right margin */
-}
-
-.project-cover{
-  width: calc(33.333% - 20px) !important;
-  margin: 0 !important;   /* remove margin so gap handles spacing */
-  min-height: auto !important;           /* prevents the empty gap issue */
-}
-
-/* Force filter bar to span full width */
-.gallery-filters {
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
-/* Center the row itself */
-.gallery-filters .filter-row {
-  width: max-content !important;
-  margin: 0 auto !important;
-  justify-content: center !important;
-}
-
-/* Make buttons bigger */
-.filter-pill {
-  padding: 16px 28px !important;
-  font-size: 16px !important;
-}
-
-/* Center results text */
-.results-count {
-  text-align: center !important;
-  width: 100%;
-}
-
-.project-covers {
-  margin-bottom: 80px !important;
-}
-
-/* Make the page background match your content so no black shows */
-html, body {
-  background: #fff !important;
-}
-
-/* =================================
-   ONLY CHANGE: responsive columns
-   Desktop = 3, smaller = 2, phone = 1
-================================= */
-
-/* Half desktop / smaller screens → 2 per row immediately */
-@media (max-width: 1100px) {
-  .project-cover {
-    width: calc(50% - 20px) !important;
+/* ===== Responsive columns ===== */
+@media (max-width: 1100px){
+  .project-covers{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 0 16px !important;
   }
 }
 
-/* Phones → 1 per row */
-@media (max-width: 768px) {
-  .project-cover {
-    width: 100% !important;
+@media (max-width: 768px){
+  .project-covers{
+    grid-template-columns: 1fr !important;
+    padding: 0 14px !important;     /* iPhone wider images */
   }
 }
 
-/* =================================
-   ONLY CHANGE: 1 IMAGE PER ROW ON SMALL SCREENS
-================================= */
-@media (max-width: 768px) {
-  .project-cover {
-    width: 100% !important;
-  }
-}
-/* FORCE the grid to sit higher (override styles.css) */
-.project-covers{
-  padding-top: 0 !important;     /* this is the big one */
-  margin-top: -10px !important;  /* adjust: -20 to -60 if you want */
-}
-
-/* Tight gap + sticky filter bar */
-.gallery-filters{
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-
-  position: sticky !important;
-  top: 95px;                 /* match your header height */
-  z-index: 100;
-  background: #ffffff;       /* prevents overlap issues */
-}
-
-/* =========================================
-   PHONE: same sticky behavior + 1-row filter bar
-========================================= */
+/* ===== Phone: make filter bar reliable (fixed) + one row ===== */
 @media (max-width: 600px){
 
-  /* keep it sticky under the (taller) mobile header */
+  /* FIXED is more reliable than sticky on iPhone Safari */
   .gallery-filters{
-    top: 140px !important;          /* adjust if your mobile header is taller/shorter */
+    position: fixed !important;
+    top: 140px !important;          /* mobile header height */
+    left: 0 !important;
+    width: 100% !important;
     padding: 6px 0 !important;
+    z-index: 300 !important;
     background: #fff !important;
   }
 
-  /* force a single row */
+  /* make it one row */
   .gallery-filters .filter-row{
     flex-wrap: nowrap !important;
-    gap: 8px !important;
-    justify-content: center !important;
-    overflow-x: auto !important;     /* just in case small phones */
+    gap: 6px !important;
+    overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
-    padding: 0 8px !important;
+    padding: 0 10px !important;
+    justify-content: flex-start !important;
   }
+  .gallery-filters .filter-row::-webkit-scrollbar{ display:none; }
 
-  /* hide scrollbar (optional) */
-  .gallery-filters .filter-row::-webkit-scrollbar{
-    display: none;
-  }
-
-  /* make the pills smaller so everything fits */
+  /* smaller pills */
   .filter-pill{
-    padding: 10px 12px !important;
-    font-size: 13px !important;
-    white-space: nowrap !important;
+    padding: 8px 10px !important;
+    font-size: 12px !important;
   }
-
   .filter-dot{
-    width: 7px !important;
-    height: 7px !important;
+    width: 6px !important;
+    height: 6px !important;
   }
-}
 
-/* (optional) tighten results text spacing */
-.results-count{
-  margin-top: 8px !important;
-}
-/* Reduce space below masthead */
-.masthead {
-  padding-bottom: 20px !important;
-}
-
-.masthead-arrow-container {
-  margin-top: -20px !important;
-}
-
-.masthead-placeholder {
-  height: 700px !important; /* reduce this number more if needed */
-}
-
-/* =================================
-   iPhone – Make images wider
-================================= */
-@media (max-width: 768px) {
-
+  /* push grid down so it doesn't hide under fixed bar */
   .project-covers{
-    padding: 0 14px !important;   /* reduce side space */
+    margin-top: 70px !important;
   }
-
-  .project-cover{
-    width: 100% !important;
-  }
-
 }
 
+/* Reduce space below masthead (your original tweaks) */
+.masthead{ padding-bottom: 20px !important; }
+.masthead-arrow-container{ margin-top: -20px !important; }
+.masthead-placeholder{ height: 700px !important; }
 
   </style>
 </head>
