@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sammi Jiang — Little Cupcake</title>
+  <title>Sammi Jiang — DreamieDuo</title>
 
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="overall.css" />
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    .logo-variation-row{
-      display:flex;
-      gap:3rem;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;            /* ✅ wraps on small screens */
-      max-width:1200px;
-      margin:2.5rem auto 0;
-    }
-    .logo-variation-row img{
-      width:100%;
-      max-width:520px;
-      height:auto;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    }
+.logo-variation-row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 🔥 force 3 per row */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  justify-items: center;
+}
+
+.logo-variation-row img{
+  width: 100%;
+  max-width: 350px;   /* keeps them balanced */
+  height: auto;
+  display: block;
+}
 
     .final-photo-grid{
       display:grid;
@@ -55,115 +55,12 @@
       background:#fff;
     }
 
-    .type-text{
-      max-width:720px;
-      margin-top:0.75rem;
-    }
-    
-.logo-variation-row{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 2.5rem auto 0;
-
-  justify-content: center;   /* center the grid */
-  justify-items: center;     /* center images inside grid cells */
-}
-
-.logo-variation-row img{
-  width: 100%;
-  max-width: 520px;          /* prevents it from stretching too wide */
-  height: 420px;
-  object-fit: contain;
+.dreamie-image{
   display: block;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.final-photo-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 260px); /* default = 2 */
-  gap: 1rem;
-  justify-content: center;
-  margin: 1.5rem 0 0;
-}
-
-.final-photo-grid img{
+  max-width: 650px;   /* adjust size here */
   width: 100%;
   height: auto;
-  display: block;
-}
-
-/* 🔥 Full screen → 4 images */
-@media (min-width: 1400px){
-  .final-photo-grid{
-    grid-template-columns: repeat(4, 260px);
-  }
-}
-
-/* App UI Section Only */
-#app-ui + .final-photo-grid,
-#app-ui ~ .final-photo-grid {
-  margin-top: 2.5rem;       /* more space from title */
-}
-
-.app-ui-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 260px); /* default = 3 */
-  gap: 0.8rem;
-  justify-content: center;
-  margin: 1rem 0 0;
-}
-
-.app-ui-grid img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 🔥 Full screen → 4 images */
-@media (min-width: 1400px){
-  .app-ui-grid{
-    grid-template-columns: repeat(4, 260px);
-  }
-}
-.collateral-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 220px); /* smaller fixed size */
-  gap: 0.8rem;
-  justify-content: center;   /* center the grid */
-  margin: 1.2rem 0 0;
-}
-
-.collateral-grid img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* FORCE Brand Collateral alignment (wins over earlier rules) */
-.brand-kit .collateral-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 220px);
-  gap: 0.8rem;
-  justify-content: center;
   margin: 1.5rem auto 0;
-}
-
-.brand-kit .collateral-grid img{
-  width: 100% !important;
-  height: 220px !important;        /* force same box height */
-  object-fit: contain !important;  /* don’t crop */
-  object-position: center !important;
-  display: block;
-}
-
-/* Optional: bigger screens → 4 images */
-@media (min-width: 1400px){
-  .collateral-grid{
-    grid-template-columns: repeat(4, 220px);
-  }
 }
 
 
@@ -233,7 +130,7 @@
   <!-- BRAND KIT -->
   <main>
     <section class="brand-kit" aria-label="Lemomo Tea Brand Guidelines">
-      <h2 class="kit-title">Little Cupcake<br>Brand Guidelines</h2>
+      <h2 class="kit-title">Dreamie Duo<br>Poster</h2>
 
       <!-- Intro -->
       <header class="case-intro">
@@ -244,17 +141,31 @@
         </p>
       </header>
 
+      <!-- 1) Primary Logo -->
+      <section class="kit-section" aria-labelledby="primary-logo">
+        <p class="kit-label" id="primary-logo">Primary Logo</p>
+        <img
+          src="images/Dreamie Duo title.png"
+          alt="Lemomo Tea primary logo"
+          class="logo-variations primary-logo"
+        >
+      </section>
+
       <!-- 2) Logo Variations -->
       <section class="kit-section" aria-labelledby="logo-variations">
         <p class="kit-label" id="logo-variations">Logo Variations</p>
 
         <div class="logo-variation-row">
           <img
-            src="images/littlecupcakelogo.png"
+            src="images/Dreamie Duo Logo.png"
             alt="Lemomo Tea vertical logo variation"
           >
           <img
-            src="images/littlecupcakelogo1.png"
+            src="images/Dreamie Duo Logo 2.png"
+            alt="Lemomo Tea framed logo system"
+          >
+          <img
+            src="images/Dreamie Dou Logo3.png"
             alt="Lemomo Tea framed logo system"
           >
         </div>
@@ -270,12 +181,12 @@
         <p class="kit-label" id="color-palette">Color Palette</p>
 
         <div class="palette-row">
-          <div class="palette-swatch" style="background:#c00000"><span>#c00000</span></div>
-          <div class="palette-swatch" style="background:#67372C"><span>#67372C</span></div>
-          <div class="palette-swatch" style="background:#904f1e"><span>#904f1e</span></div>
-          <div class="palette-swatch" style="background:#6e5e4c"><span>#6e5e4c</span></div>
-          <div class="palette-swatch" style="background:#ffbcc2"><span>#ffbcc2</span></div>
-          <div class="palette-swatch" style="background:#ffdbdf"><span>#ffdbdf</span></div>
+          <div class="palette-swatch" style="background:#000000"><span>#000000</span></div>
+          <div class="palette-swatch" style="background:#263e88"><span>#263e88</span></div>
+          <div class="palette-swatch" style="background:#ffffff"><span>#ffffff</span></div>
+          <div class="palette-swatch" style="background:#f5e55a"><span>#f5e55a</span></div>
+          <div class="palette-swatch" style="background:#fad126"><span>#fad126</span></div>
+          <div class="palette-swatch" style="background:#ff544f"><span>#ff544f</span></div>
         </div>
 
         <p class="palette-note">
@@ -296,72 +207,31 @@
         </div>
       </section>
 
-            <!-- 1) Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
-        <p class="kit-label" id="primary-logo">Socialmedia</p>
-        <img
-          src="images/littlecupcakesocial.jpg"
-          alt="Lemomo Tea primary logo"
-          class="logo-variations primary-logo"
-        >
-      </section>
+      <!-- 8) In-store marketing -->
+      <section class="kit-section" aria-labelledby="in-store">
+<p class="kit-label" id="in-store">Dreamie Duo In-Store Marketing</p>
 
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
-  <p class="kit-label" id="app-ui">App UI Screens</p>
-
-<div class="app-ui-grid">
-    <img src="images/littlecupcakeArtboard 1.jpg" alt="Left Behind app screen 1">
-    <img src="images/littlecupcakeArtboard 2.png" alt="Left Behind app screen 2">
-    <img src="images/littlecupcakeArtboard 3.png" alt="Left Behind app screen 3">
-    <img src="images/littlecupcakeArtboard 4.jpg" alt="Left Behind app screen 4">
-    <img src="images/littlecupcakeArtboard 5.png" alt="Left Behind app screen 5">
-    <img src="images/littlecupcakeArtboard 7.png" alt="Left Behind app screen 6">
-    <img src="images/littlecupcakeArtboard 8.png" alt="Left Behind app screen 7">
-    <img src="images/littlecupcakeArtboard 9.jpg" alt="Left Behind app screen 8">
-    <img src="images/littlecupcakeArtboard 10.jpg" alt="Left Behind app screen 9">
-    <img src="images/littlecupcakeArtboard 11.jpg" alt="Left Behind app screen 10">
-    <img src="images/littlecupcakeArtboard 12.jpg" alt="Left Behind app screen 11">
-  </div>
-</section>
-
-
-            <!-- Flavor Can Designs -->
-      <section class="kit-section" aria-labelledby="flavor-can-designs">
-        <p class="kit-label" id="flavor-can-designs">Box Designs</p>
-        
-                <img
-          src="images/littlecupcakebox1.jpg"
-          alt="Creami Pop can box packaging design"
-          class="can-box-packaging"
-        >
+<img src="images/Dreamie Duo.jpg" alt="Dreamie Duo in-store marketing layout" class="dreamie-image">
 
         <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
+          Designed to be easy to notice and easy to remember using bold color and clear flavor cues help each drink stand out,
+          and the consistent layout keeps the brand cohesive across the space.
         </p>
       </section>
 
+      <!-- 8) In-store marketing -->
+      <section class="kit-section" aria-labelledby="in-store">
+        <p class="kit-label" id="in-store">In-Store Marketing</p>
 
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
-  <p class="kit-label" id="app-ui">App UI Screens</p>
+        <img src="images/Dreamie Duo poster.jpg" alt="Lemomo Tea in-store marketing layout" class="logo-variations">
 
-<div class="app-ui-grid">
-          <img src="images/littlecupcakeT-shirt.png" alt="Lemomo Tea bag design 1">
-          <img src="images/littlecupcakeapron.png" alt="Lemomo Tea bag design 1">
-          <img src="images/littlecupcakecoffee.jpg" alt="Lemomo Tea bag design 2">
-          <img src="images/littlecupcakelatte.jpg" alt="Lemomo Tea bag design 3">
-          <img src="images/Litllecupcakebox.png" alt="Lemomo Tea poster — blue set 1">
-          <img src="images/Litllecupcakebag.png" alt="Lemomo Tea poster — blue set 2">
-          <img src="images/Litllecupcakenapkin1.png" alt="Lemomo Tea poster — blue set 3">
-          <img src="images/Litllecupcakenapkin2.png" alt="Lemomo Tea poster — orange set 1">
-          <img src="images/Litllecupcakecap1.png" alt="Lemomo Tea poster — orange set 2">
-          <img src="images/Litllecupcakecap2.png" alt="Lemomo Tea poster — orange set 3">
-        </div>
+        <p class="kit-caption">
+          Designed to be easy to notice and easy to remember using bold color and clear flavor cues help each drink stand out,
+          and the consistent layout keeps the brand cohesive across the space.
+        </p>
       </section>
 
+    </section>
   </main>
 
   <section class="more-work-cta">
