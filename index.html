@@ -28,6 +28,12 @@ html, body {
 .project-covers {
   margin-bottom: 20px !important;
 }
+.project-cover video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 </style>
 
@@ -158,12 +164,16 @@ html, body {
                 </div>
               </a>
 
-              <a decorator="editable" class="project-cover hold-space" href="Studysprout.html">
-                <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/studysproutcover.png" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
-                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Study Sprout</div></div></div></div>
-                </div>
-              </a>
+<a decorator="editable" class="project-cover hold-space" href="Studysprout.html">
+  <div class="cover-content-container">
+    <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal">
+      <video src="studysprout-4.mp4" autoplay muted loop playsinline controls></video>
+    </div></div></div>
+
+    <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">study sprout</div></div></div></div>
+  </div>
+</a>
+
 
               <a decorator="editable" class="project-cover hold-space" href="LemonGlow.html">
                 <div class="cover-content-container">
