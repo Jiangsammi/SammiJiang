@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sammi Jiang — Studysprout</title>
+  <title>Sammi Jiang — DOODLE</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -43,6 +43,57 @@
   object-fit: cover;
   border-radius: 50px;
 }
+/* Box Dieline (Front/Back) */
+.box-dieline-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 1.25rem;
+  width: min(1200px, 92vw);
+  margin: 1.25rem auto 0;
+  align-items: start;
+}
+
+.box-dieline-card{
+  margin: 0;
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.08);
+}
+
+.box-dieline-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  cursor: zoom-in;
+}
+
+.box-dieline-cap{
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: .75;
+  text-align: center;
+}
+
+@media (max-width: 820px){
+  .box-dieline-grid{ grid-template-columns: 1fr; }
+}
+
+.application-img{
+  width: min(900px, 90vw);
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.sticker-img{
+  width: min(500px, 70vw);  /* smaller */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
 </style>
 
 
@@ -105,56 +156,85 @@
     
   <div class="header-placeholder"></div>
   <main>
-    <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title">Study Sprout</h2>
-<header class="case-intro">
-<p class="project-meta">Mobile App · UX/UI · AI Tools · 2025</p>
+<section class="brand-kit" aria-label="DOODLE Brand Kit">
+  <h2 class="kit-title">DOODLE</h2>
 
-<p class="project-desc">
-  Study Sprout is an app I designed to help students better manage and navigate their schoolwork. 
-  It connects to platforms like Canvas so assignments, due dates, and grades can be viewed in one organized place.
-</p>
+  <header class="case-intro">
+    <p class="project-meta">Branding · Company Kit · Illustration · 2025</p>
 
-<p class="project-desc">
-  The app includes AI tools for quick summaries, translations, and email drafting, along with focus features such as reminders, task lists, and timers to support productivity.
-</p>
+    <p class="project-desc">
+      DOODLE is a digital drawing platform I've created. The concept for my project was to create a “company kit” the kind of essentials a brand would send out to show what the company is and what they represent.
+    </p>
 
-<p class="project-desc">
-To make studying feel less boring, the app includes a small character feature that students can take care of. Students choose a character and earn coins by completing assignments before deadlines, which can be used to care for their character.
-</p>
-</header>
+    <p class="project-desc">
+      The brand is all about making drawing feel easy and fun. DOODLE is a space where anyone can sketch, doodle, and experiment without pressure like a digital sketchbook that doesn’t take itself too seriously.
+    </p>
+
+    <p class="project-desc">
+I hand drawn characters in soft pastel blue and applied them across packaging and brand materials like the business card and sticker sheet to keep the kit consistent and playful.    </p>
+  </header>
+
 
       <!-- Primary Logo -->
       <section class="kit-section" aria-labelledby="primary-logo">
         <p class="kit-label" id="primary-logo">Primary Logo</p>
         <img
-          src="images/CreamipopLOGO.jpg"
-          alt="Creami Pop Primary Logo"
+          src="images/DOODLE.png"
+alt="DOODLE Primary Logo"
           class="logo-variations primary-logo"
         >
       </section>
 
-      
-<!-- App Walkthrough Videos -->
-<section class="kit-section" aria-labelledby="app-video">
-  <p class="kit-label" id="app-video">App Walkthrough</p>
+      <!-- Logo Variations -->
+      <section class="kit-section" aria-labelledby="logo-variations">
+        <p class="kit-label" id="logo-variations">Logo Variations</p>
+        <img
+          src="images/DOODLE LOGO.png"
+          alt="Creami Pop logo variations and wordmarks"
+          class="logo-variations"
+        >
+         <img
+          src="images/DOODLE LOGO1.png"
+          alt="Creami Pop logo variations and wordmarks"
+          class="logo-variations"
+        >
+<p class="kit-caption">
+  I made different versions of the logo so it can work on packaging, print, and small items like stickers while still showing what DOODLE is.
+</p>
 
-  <div class="project-video-grid">
-    <video src="studysprout 1.mov" autoplay muted loop playsinline controls></video>
-    <video src="studysprout 2.MOV" autoplay muted loop playsinline controls></video>
-    <video src="studysprout 3.MOV" autoplay muted loop playsinline controls></video>
-  </div>
-</section>
-
-
-<!-- Typography -->
+      </section>
+    
 <section class="kit-section" aria-labelledby="typography">
   <p class="kit-label" id="typography">Typography</p>
 
-  <p class="kit-caption">
-Each file uses a small range of type sizes to keep the hierarchy clear and the layout easy to look through. 
-Different typefaces are used to reflect the different kinds of documents found within each case file.
-  </p>
+  <div class="type-spec type-spec--two">
+
+    <!-- PRIMARY TYPE -->
+    <div class="type-family">
+      <p class="type-family-name font-bailey">Bailey Bowers</p>
+      <ul class="type-weights">
+        <li>Regular · 29 pt</li>
+        <li>Regular · 17 pt</li>
+        <li>Regular · 9 pt</li>
+        <li>Regular · 6 pt</li>
+      </ul>
+    </div>
+
+    <!-- SUPPORTING TYPE -->
+    <div class="type-family">
+      <p class="type-family-name font-adelle">Adelle Sans Devanagari</p>
+      <ul class="type-weights">
+        <li>Regular · 6 pt</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<p class="kit-caption">
+  The typography is meant to feel like handwriting — simple, slightly imperfect, and playful. I kept the type system small on purpose so the kit stays clean and readable while still feeling hand-made and fun.
+</p>
+
 
 </section>
 
@@ -163,62 +243,67 @@ Different typefaces are used to reflect the different kinds of documents found w
         <p class="kit-label" id="color-palette">Color Palette</p>
 <div class="palette-row palette-row--six">
 <div class="palette-swatch palette-empty" style="background:#ffffff"></div>
-  <div class="palette-swatch" style="background:#FEE5B7"><span>#FEE5B7</span></div>
-  <div class="palette-swatch" style="background:#D9C08C"><span>#D9C08C</span></div>
-  <div class="palette-swatch" style="background:#BFA46A"><span>#BFA46A</span></div>
+  <div class="palette-swatch" style="background:#e1e8f2"><span>#e1e8f2</span></div>
+  <div class="palette-swatch" style="background:#bcd2ed"><span>#bcd2ed</span></div>
+  <div class="palette-swatch" style="background:#c9c9c9"><span>#c9c9c9</span></div>
 <div class="palette-swatch palette-empty" style="background:#ffffff"></div>
 </div>
 
 <p class="palette-note">
-  I chose warm neutral tones to make the app feel calm and welcoming. 
-  The soft yellow adds warmth and optimism, while the deeper browns create balance and stability. 
-  Together, the palette feels gentle and focused, helping reduce stress and make studying feel more comfortable.
+  I wanted to use soft blues and neutral grays to create a calm, open creative space. The light blue feels playful and friendly, while the soft gray adds a bit of a sketch feel to it.
 </p>
+
 </section>
 
-
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
+<section class="kit-section" aria-labelledby="map">
   <p class="kit-label" id="app-ui">Character Illustration</p>
 
-  <div class="final-photo-grid ui-grid-3">
-    <img src="images/studysprout1.png" alt="Study Sprout app screen 1">
-    <img src="images/studysprout2.png" alt="Study Sprout app screen 2">
-    <img src="images/studysprout3.png" alt="Study Sprout app screen 3">
-    <img src="images/studysprout4.png" alt="Study Sprout app screen 4">
-    <img src="images/studysprout5.png" alt="Study Sprout app screen 5">
-    <img src="images/studysprout6.png" alt="Study Sprout app screen 6">
-    <img src="images/studysprout7.png" alt="Study Sprout app screen 7">
-    <img src="images/studysprout8.png" alt="Study Sprout app screen 8">
-    <img src="images/studysprout9.png" alt="Study Sprout app screen 9">
+  <img src="images/DOODLEcharacter.png" alt="Left Behind map" class="logo-variations">
+<div class="kit-section">
+
+<!-- Box Design — Front & Back -->
+<section class="kit-section" aria-labelledby="box-dieline">
+  <p class="kit-label" id="box-dieline">Box Design — Front & Back</p>
+
+  <div class="box-dieline-grid">
+    <figure class="box-dieline-card">
+      <img src="images/DOODLEfront.png" alt="DOODLE box dieline — front">
+      <figcaption class="box-dieline-cap">Front</figcaption>
+    </figure>
+
+    <figure class="box-dieline-card">
+      <img src="images/DOODLEback.png" alt="DOODLE box dieline — back">
+      <figcaption class="box-dieline-cap">Back</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="kit-section" aria-labelledby="character-wireframe">
-  <p class="kit-label" id="character-wireframe">Character Wireframe</p>
-  <img src="images/Studysproutfigma.png" alt="Study Sprout character wireframe" class="logo-variations">
+<section class="kit-section" aria-labelledby="business-card">
+  <p class="kit-label" id="business-card">Business Card Design</p>
+
+  <img src="images/DOODLECARD.png" alt="DOODLE business card mockup" class="application-img">
 </section>
 
-<section class="kit-section" aria-labelledby="app-wireframe">
-  <p class="kit-label" id="app-wireframe">App Wireframe</p>
-  <img src="images/studysproutfigma1.png" alt="Study Sprout app wireframe" class="logo-variations">
+<section class="kit-section" aria-labelledby="stickers">
+  <p class="kit-label" id="stickers">Sticker Pack</p>
+
+  <img src="images/DOODLEsticker.png" 
+       alt="DOODLE sticker sheet" 
+       class="sticker-img">
 </section>
 
-<!-- Map -->
-<section class="kit-section" aria-labelledby="map">
-  <p class="kit-label" id="map">Graphic Elements</p>
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+<p class="kit-label" id="final-product-photography">Final Product Photography</p>
 
-  <img src="images/studysproutadvertise.png" alt="Left Behind map" class="logo-variations">
-
-<div class="kit-section">
-
-<section class="kit-section">
-  <p class="kit-label">Reflection</p>
-  <p class="project-desc">
-    I created Study Sprout in an AI design course to explore how technology could make studying feel less stressful. 
-    I wanted the app to feel supportive, not overwhelming. 
-    This project helped me think more deeply about motivation, balance, and how design can make everyday tasks feel a little more encouraging.
-  </p>
+  <div class="final-photo-grid ui-grid-3">
+          <img src="images/DOODLEbox.png" alt="Creami Pop full flavor lineup with box">
+          <img src="images/DOODLEinside.png" alt="Creami Pop cereal variety pack front">
+          <img src="images/DOODLEbook.png" alt="Creami Pop cereal variety pack front view">
+          <img src="images/DOODLEbook2.png" alt="Creami Pop cans clinking together">
+          <img src="images/DOODLEbook1.png" alt="Creami Pop chocolate, cinnamon, and ube flavors">
+          <img src="images/DOODLEbook3.png" alt="Creami Pop cans trio on white background">
+  </div>
 </section>
 
 
@@ -270,44 +355,3 @@ Different typefaces are used to reflect the different kinds of documents found w
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</header><section class="kit-section" aria-labelledby="typography">
-    
-<section class="kit-section" aria-labelledby="typography">
-  <p class="kit-label" id="typography">Typography</p>
-
-  <div class="type-spec type-spec--two">
-
-    <!-- PRIMARY TYPE -->
-    <div class="type-family">
-      <p class="type-family-name font-bailey">Bailey Bowers</p>
-      <ul class="type-weights">
-        <li>Regular · 29 pt</li>
-        <li>Regular · 17 pt</li>
-        <li>Regular · 9 pt</li>
-        <li>Regular · 6 pt</li>
-      </ul>
-    </div>
-
-    <!-- SUPPORTING TYPE -->
-    <div class="type-family">
-      <p class="type-family-name font-adelle">Adelle Sans Devanagari</p>
-      <ul class="type-weights">
-        <li>Regular · 6 pt</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
