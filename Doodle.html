@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sammi Jiang — DOODLE</title>
+  <title>Sammi Jiang — Studysprout</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -15,250 +15,211 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<style>
+/* App UI Screens — 3 per row */
+.final-photo-grid.ui-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 720px !important;   /* control size here */
+  max-width: 200% !important;
+  height: auto !important;
+}
 
-  <!-- CLEAN RESUME-STYLE HEADER -->
-  <header class="site-header js-site-header">
-    <nav class="nav-container">
-      <div class="gallery-title"><a href="index.html">Home</a></div>
-      <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
-      <div class="gallery-title"><a href="resume.html">Resume</a></div>
-    </nav>
+.palette-empty {
+  border: none !important;
+  box-shadow: none !important;
+}
+.project-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2rem;
+  justify-content: center; /* centers the whole grid */
+}
 
-    <div class="logo-wrap">
-      <div class="logo logo-text">
-        <a href="index.html">Sammi Jiang</a>
+.project-video-grid video {
+  width: 250px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+</style>
+
+
+<body class="transition-enabled">
+  <div class="js-responsive-nav">
+<!-- CLEAN RESUME-STYLE HEADER -->
+<header class="site-header js-site-header">
+  <nav class="nav-container">
+    <div class="gallery-title"><a href="index.html">Home</a></div>
+    <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+    <div class="gallery-title"><a href="resume.html">Resume</a></div>
+  </nav>
+
+
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
       </div>
-    </div>
 
-    <!-- KEEP SOCIAL ICONS -->
-    <div class="social nav-social">
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
-              <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
-            </svg>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.pinterest.com/omgsammi/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
-              <path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/>
-            </svg>
-          </a>
-        </li>
-
-        <li>
-          <a href="mailto:sammijiang24@gmail.com">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
-              <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
-
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sammijiang24@gmail.com" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+  <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <!-- arrow -->
+      <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+            stroke="#000"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <!-- tray -->
+      <path d="M5 18h14"
+            stroke="#000"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"/>
+    </svg>
+  </a>
+</li>
+        </ul>
+      </div>
+    </header>
+    
   <div class="header-placeholder"></div>
-
-  <!-- BRAND KIT -->
   <main>
     <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title">DOODLE</h2>
+<h2 class="kit-title">Study Sprout</h2>
 <header class="case-intro">
-  <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
+<p class="project-meta">Mobile App · UX/UI · AI Tools · 2025</p>
 
-  <p class="project-desc">
-        Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
-        The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
-  </p>
-</header><section class="kit-section" aria-labelledby="typography">
-    
-<section class="kit-section" aria-labelledby="typography">
-  <p class="kit-label" id="typography">Typography</p>
+<p class="project-desc">
+  Study Sprout is an app I designed to help students better manage and navigate their schoolwork. 
+  It connects to platforms like Canvas so assignments, due dates, and grades can be viewed in one organized place.
+</p>
 
-  <div class="type-spec type-spec--two">
+<p class="project-desc">
+  The app includes AI tools for quick summaries, translations, and email drafting, along with focus features such as reminders, task lists, and timers to support productivity.
+</p>
 
-    <!-- PRIMARY TYPE -->
-    <div class="type-family">
-      <p class="type-family-name font-bailey">Bailey Bowers</p>
-      <ul class="type-weights">
-        <li>Regular · 29 pt</li>
-        <li>Regular · 17 pt</li>
-        <li>Regular · 9 pt</li>
-        <li>Regular · 6 pt</li>
-      </ul>
-    </div>
+<p class="project-desc">
+To make studying feel less boring, the app includes a small character feature that students can take care of. Students choose a character and earn coins by completing assignments before deadlines, which can be used to care for their character.
+</p>
+</header>
 
-    <!-- SUPPORTING TYPE -->
-    <div class="type-family">
-      <p class="type-family-name font-adelle">Adelle Sans Devanagari</p>
-      <ul class="type-weights">
-        <li>Regular · 6 pt</li>
-      </ul>
-    </div>
+      <!-- Primary Logo -->
+      <section class="kit-section" aria-labelledby="primary-logo">
+        <p class="kit-label" id="primary-logo">Primary Logo</p>
+        <img
+          src="images/CreamipopLOGO.jpg"
+          alt="Creami Pop Primary Logo"
+          class="logo-variations primary-logo"
+        >
+      </section>
 
+      
+<!-- App Walkthrough Videos -->
+<section class="kit-section" aria-labelledby="app-video">
+  <p class="kit-label" id="app-video">App Walkthrough</p>
+
+  <div class="project-video-grid">
+    <video src="studysprout 1.mov" autoplay muted loop playsinline controls></video>
+    <video src="studysprout 2.MOV" autoplay muted loop playsinline controls></video>
+    <video src="studysprout 3.MOV" autoplay muted loop playsinline controls></video>
   </div>
 </section>
 
 
-      <!-- Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
-        <p class="kit-label" id="primary-logo">Printed Overview</p>
-        <img
-          src="images/guerrilla girls.jpg"
-          alt="Creami Pop Primary Logo"
-          class="logo-variations primary-logo"
-        >
-    <p class="kit-caption"></p>
-         This visual system shows how Creami Pop can appear across posters and brand materials. Bright colors, smooth gradients, and bubble details highlight the drink’s fun and creamy personality, creating a lively and eye-catching look.
-        </p>
+<!-- Typography -->
+<section class="kit-section" aria-labelledby="typography">
+  <p class="kit-label" id="typography">Typography</p>
 
-      </section>
+  <p class="kit-caption">
+Each file uses a small range of type sizes to keep the hierarchy clear and the layout easy to look through. 
+Different typefaces are used to reflect the different kinds of documents found within each case file.
+  </p>
 
-      <!-- Logo Variations -->
-      <section class="kit-section" aria-labelledby="logo-variations">
-        <p class="kit-label" id="logo-variations">Map</p>
-        <img
-          src="images/leftbehindmap.png"
-          alt="Creami Pop logo variations and wordmarks"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
-        </p>
-      </section>
+</section>
 
       <!-- Color Palette -->
       <section class="kit-section" aria-labelledby="color-palette">
         <p class="kit-label" id="color-palette">Color Palette</p>
-
-        <div class="palette-row">
-          <div class="palette-swatch" style="background:#91BB54"><span>#91BB54</span></div>
-          <div class="palette-swatch" style="background:#FFF378"><span>#FFF378</span></div>
-          <div class="palette-swatch" style="background:#E084B3"><span>#E084B3</span></div>
-          <div class="palette-swatch" style="background:#A02657"><span>#A02657</span></div>
-          <div class="palette-swatch" style="background:#1A97D4"><span>#1A97D4</span></div>
-          <div class="palette-swatch" style="background:#693C97"><span>#693C97</span></div>
-        </div>
-
-        <p class="palette-note">
-          Dreamy pastel tones are paired with bold, high-contrast pops to create a lively and balanced palette. Milky white and soft peach feel creamy and smooth, while lime green, electric blue, and deep purple add a bright, fizzy pop that feels fresh and fun.
-        </p>
-      </section>
-
-      <!-- Color Application -->
-      <section class="kit-section" aria-labelledby="color-application">
-        <p class="kit-label" id="color-application">Color Application</p>
-        <img
-          src="images/creamipop-color-logos.png"
-          alt="Creami Pop logo color variations"
-          class="logo-variations"
-        >
-      </section>
-
-      <!-- Flavor Illustrations -->
-      <section class="kit-section" aria-labelledby="flavor-illustrations">
-        <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
-        <img
-          src="images/creamipop-flavor-illustrations.png"
-          alt="Creami Pop flavor illustrations"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
-        </p>
-      </section>
-
-      <!-- Flavor Can Designs -->
-      <section class="kit-section" aria-labelledby="flavor-can-designs">
-        <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
-
-        <div class="can-grid">
-          <figure class="can-item">
-            <img
-              src="images/creamipop-fruit-loop-can.png"
-              alt="Creami Pop Fruit Loop Milk Soda can design"
-            >
-            <figcaption class="flavor-name">Fruit Loop</figcaption>
-          </figure>
-
-          <figure class="can-item">
-            <img
-              src="images/creamipop-cinnaswrl-can.png"
-              alt="Creami Pop CinnaSwrl Milk Soda can design"
-            >
-            <figcaption class="flavor-name">CinnaSwrl</figcaption>
-          </figure>
-        </div>
-
-        <img
-          src="images/creamipop-can-box-packaging.png"
-          alt="Creami Pop can box packaging design"
-          class="can-box-packaging"
-        >
-
-        <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
-        </p>
-      </section>
-
-          <div>
-            <p class="type-style">Body</p>
-            <p class="type-sample">
-              Creami Pop is a Korean milky soda brand that blends softness and carbonation into a clean, playful visual identity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final Product Photography -->
-      <section class="kit-section" aria-labelledby="final-product-photography">
-        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
-
-        <div class="final-photo-grid">
-          <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-          <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
-
-          <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-          <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-          <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-          <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
-        </div>
-
-        <p class="kit-caption">
-          Studio photography showcasing the final Creami Pop cans and variety packaging,
-          highlighting color, material finish, and real-world scale.
-        </p>
-      </section>
-
-<div class="kit-section">
-  <p class="kit-label">Graphic Elements</p>
-
-  <div class="graphic-pair">
-    <img
-      src="images/Creamipopposter.png"
-      alt="Creami Pop Graphic Elements Poster"
-      class="shadow-outline"
-    />
-
-    <img
-      src="images/Creamipop.jpg"
-      alt="Creami Pop Instagram mockup"
-      class="shadow-outline"
-    />
-  </div>
+<div class="palette-row palette-row--six">
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
+  <div class="palette-swatch" style="background:#FEE5B7"><span>#FEE5B7</span></div>
+  <div class="palette-swatch" style="background:#D9C08C"><span>#D9C08C</span></div>
+  <div class="palette-swatch" style="background:#BFA46A"><span>#BFA46A</span></div>
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
 </div>
 
+<p class="palette-note">
+  I chose warm neutral tones to make the app feel calm and welcoming. 
+  The soft yellow adds warmth and optimism, while the deeper browns create balance and stability. 
+  Together, the palette feels gentle and focused, helping reduce stress and make studying feel more comfortable.
+</p>
+</section>
 
-    </section>
-  </main>
+
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">Character Illustration</p>
+
+  <div class="final-photo-grid ui-grid-3">
+    <img src="images/studysprout1.png" alt="Study Sprout app screen 1">
+    <img src="images/studysprout2.png" alt="Study Sprout app screen 2">
+    <img src="images/studysprout3.png" alt="Study Sprout app screen 3">
+    <img src="images/studysprout4.png" alt="Study Sprout app screen 4">
+    <img src="images/studysprout5.png" alt="Study Sprout app screen 5">
+    <img src="images/studysprout6.png" alt="Study Sprout app screen 6">
+    <img src="images/studysprout7.png" alt="Study Sprout app screen 7">
+    <img src="images/studysprout8.png" alt="Study Sprout app screen 8">
+    <img src="images/studysprout9.png" alt="Study Sprout app screen 9">
+  </div>
+</section>
+
+<section class="kit-section" aria-labelledby="character-wireframe">
+  <p class="kit-label" id="character-wireframe">Character Wireframe</p>
+  <img src="images/Studysproutfigma.png" alt="Study Sprout character wireframe" class="logo-variations">
+</section>
+
+<section class="kit-section" aria-labelledby="app-wireframe">
+  <p class="kit-label" id="app-wireframe">App Wireframe</p>
+  <img src="images/studysproutfigma1.png" alt="Study Sprout app wireframe" class="logo-variations">
+</section>
+
+<!-- Map -->
+<section class="kit-section" aria-labelledby="map">
+  <p class="kit-label" id="map">Graphic Elements</p>
+
+  <img src="images/studysproutadvertise.png" alt="Left Behind map" class="logo-variations">
+
+<div class="kit-section">
+
+<section class="kit-section">
+  <p class="kit-label">Reflection</p>
+  <p class="project-desc">
+    I created Study Sprout in an AI design course to explore how technology could make studying feel less stressful. 
+    I wanted the app to feel supportive, not overwhelming. 
+    This project helped me think more deeply about motivation, balance, and how design can make everyday tasks feel a little more encouraging.
+  </p>
+</section>
 
 
     <section class="more-work-cta">
@@ -271,6 +232,12 @@
   <div class="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
+<script>
+  const video = document.querySelector('.project-video video');
+  if (video) {
+    video.playbackRate = 0.75; // 👈 slower pace (try 0.8 or 0.7 if needed)
+  }
+</script>
 
   <script>
     const photos = document.querySelectorAll('.final-photo-grid img');
@@ -303,3 +270,44 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</header><section class="kit-section" aria-labelledby="typography">
+    
+<section class="kit-section" aria-labelledby="typography">
+  <p class="kit-label" id="typography">Typography</p>
+
+  <div class="type-spec type-spec--two">
+
+    <!-- PRIMARY TYPE -->
+    <div class="type-family">
+      <p class="type-family-name font-bailey">Bailey Bowers</p>
+      <ul class="type-weights">
+        <li>Regular · 29 pt</li>
+        <li>Regular · 17 pt</li>
+        <li>Regular · 9 pt</li>
+        <li>Regular · 6 pt</li>
+      </ul>
+    </div>
+
+    <!-- SUPPORTING TYPE -->
+    <div class="type-family">
+      <p class="type-family-name font-adelle">Adelle Sans Devanagari</p>
+      <ul class="type-weights">
+        <li>Regular · 6 pt</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
