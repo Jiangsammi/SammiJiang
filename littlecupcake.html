@@ -9,71 +9,22 @@
   <link rel="stylesheet" href="overall.css" />
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    .logo-variation-row{
-      display:flex;
-      gap:3rem;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;            /* ✅ wraps on small screens */
-      max-width:1200px;
-      margin:2.5rem auto 0;
-    }
-    .logo-variation-row img{
-      width:100%;
-      max-width:520px;
-      height:auto;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    }
+<style>
 
-    .final-photo-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:1.5rem;
-      max-width:1200px;
-      margin:2rem auto 0;
-    }
-    .final-photo-grid img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .collateral-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:2.5rem;
-      max-width:1200px;
-      margin:2rem auto 0;
-    }
-    .collateral-grid img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      object-position:center;
-      display:block;
-      background:#fff;
-    }
-
-    .type-text{
-      max-width:720px;
-      margin-top:0.75rem;
-    }
-    
+/* Logo Variations */
 .logo-variation-row{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 3rem;
   max-width: 1200px;
   margin: 2.5rem auto 0;
-
-  justify-content: center;   /* center the grid */
-  justify-items: center;     /* center images inside grid cells */
+  justify-content: center;
+  justify-items: center;
 }
 
 .logo-variation-row img{
   width: 100%;
-  max-width: 520px;          /* prevents it from stretching too wide */
+  max-width: 520px;
   height: 420px;
   object-fit: contain;
   display: block;
@@ -81,36 +32,10 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.final-photo-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 260px); /* default = 2 */
-  gap: 1rem;
-  justify-content: center;
-  margin: 1.5rem 0 0;
-}
-
-.final-photo-grid img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 🔥 Full screen → 4 images */
-@media (min-width: 1400px){
-  .final-photo-grid{
-    grid-template-columns: repeat(4, 260px);
-  }
-}
-
-/* App UI Section Only */
-#app-ui + .final-photo-grid,
-#app-ui ~ .final-photo-grid {
-  margin-top: 2.5rem;       /* more space from title */
-}
-
+/* App UI Grid */
 .app-ui-grid{
   display: grid;
-  grid-template-columns: repeat(3, 260px); /* default = 3 */
+  grid-template-columns: repeat(3, 260px);
   gap: 0.8rem;
   justify-content: center;
   margin: 1rem 0 0;
@@ -122,28 +47,14 @@
   display: block;
 }
 
-/* 🔥 Full screen → 4 images */
 @media (min-width: 1400px){
   .app-ui-grid{
     grid-template-columns: repeat(4, 260px);
   }
 }
+
+/* Collateral Grid */
 .collateral-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 220px); /* smaller fixed size */
-  gap: 0.8rem;
-  justify-content: center;   /* center the grid */
-  margin: 1.2rem 0 0;
-}
-
-.collateral-grid img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* FORCE Brand Collateral alignment (wins over earlier rules) */
-.brand-kit .collateral-grid{
   display: grid;
   grid-template-columns: repeat(3, 220px);
   gap: 0.8rem;
@@ -151,23 +62,27 @@
   margin: 1.5rem auto 0;
 }
 
-.brand-kit .collateral-grid img{
-  width: 100% !important;
-  height: 220px !important;        /* force same box height */
-  object-fit: contain !important;  /* don’t crop */
-  object-position: center !important;
+.collateral-grid img{
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
   display: block;
 }
 
-/* Optional: bigger screens → 4 images */
 @media (min-width: 1400px){
   .collateral-grid{
     grid-template-columns: repeat(4, 220px);
   }
 }
 
+/* Typography spacing */
+.type-text{
+  max-width: 720px;
+  margin-top: 0.75rem;
+}
 
-  </style>
+</style>
+
 </head>
 
 
@@ -232,16 +147,17 @@
 
   <!-- BRAND KIT -->
   <main>
-    <section class="brand-kit" aria-label="Lemomo Tea Brand Guidelines">
+<section class="brand-kit" aria-label="Little Cupcake Brand Guidelines">
       <h2 class="kit-title">Little Cupcake<br>Brand Guidelines</h2>
 
       <!-- Intro -->
       <header class="case-intro">
         <p class="project-meta">Branding · Packaging · Illustration · 2025</p>
-        <p class="project-desc">
-          This rebrand presents Lemomo Tea as fresh, calm, and quietly playful—blending modern design with traditional tea culture.
-          The focus is on real ingredients, smooth flavors, and a relaxed experience that encourages people to slow down and enjoy the moment.
-        </p>
+<p class="project-desc">
+  Little Cupcake Bakery is a brand and website project centered around warmth, nostalgia, and small everyday joy. 
+  I wanted the identity to feel sweet without being childish — playful but still refined. 
+  The design focuses on soft tones, handmade details, and clear structure to create a welcoming digital experience that feels like stepping into a cozy neighborhood bakery.
+</p>
       </header>
 
       <!-- 2) Logo Variations -->
@@ -259,10 +175,11 @@
           >
         </div>
 
-        <p class="kit-caption">
-          Organic shapes, hand-drawn type, and subtle botanical details create a calm, sensory identity.
-          The vertical and framed versions flex across layouts while staying consistent.
-        </p>
+<p class="kit-caption">
+  The logo combines soft curves and hand-drawn lettering to reflect the bakery’s homemade feel. 
+  I designed multiple variations so the identity can adapt across packaging, social media, and signage while still feeling consistent. 
+  The goal was to keep it charming but balanced — expressive without losing clarity.
+</p>
       </section>
 
       <!-- 3) Color Palette (moved BEFORE typography) -->
@@ -278,10 +195,11 @@
           <div class="palette-swatch" style="background:#ffdbdf"><span>#ffdbdf</span></div>
         </div>
 
-        <p class="palette-note">
-          This palette is inspired by Lemomo Tea and the feeling of freshly brewed tea with fragrant lemons.
-          Black and white keep it clean and modern, deep blue adds a grounded “tea” tone, and the yellows bring in a light citrus lift.
-        </p>
+<p class="palette-note">
+  The color palette is inspired by baked goods — warm reds, chocolate browns, and soft blush pinks. 
+  I chose tones that feel comforting and familiar, while still giving the brand enough contrast to feel polished. 
+  The softer pinks add sweetness, and the deeper shades ground the identity.
+</p>
       </section>
 
       <!-- 4) Typography -->
@@ -289,10 +207,11 @@
         <p class="kit-label" id="typography">Typography</p>
 
         <div class="type-text">
-          <p class="kit-caption">
-            手札體-繁 brings a handmade warmth, while Source Serif Variable Roman and Minion Variable Concept Bold keep everything structured and readable.
-            Together they balance personality with a refined, classic feel across print and in-store pieces.
-          </p>
+<p class="kit-caption">
+  The typography blends expressive, slightly playful lettering with structured serif fonts. 
+  I wanted the type to feel warm and inviting, but still clean and readable across digital and print applications. 
+  The combination keeps the brand approachable while maintaining a professional finish.
+</p>
         </div>
       </section>
 
@@ -325,6 +244,249 @@
   </div>
 </section>
 
+<section class="website-demo"> 
+  <p class="kit-label">Website Demo</p>
+
+  <div class="demo-video-wrap">
+    <video 
+      src="images/littlecupcake-website.mp4"
+      autoplay 
+      muted 
+      loop 
+      playsinline>
+    </video>
+  </div>
+</section>
+
+<!-- ===== LONG IMAGE PREVIEW + FULLSCREEN SCROLL LIGHTBOX ===== -->
+<section class="long-mockup">
+  <p class="kit-label">Website Design</p>
+
+  <!-- Preview (cropped) -->
+  <button class="mockup-preview" type="button" id="openMockup" aria-label="Open full website mockup">
+    <img src="images/littlecupcakewebsite.jpg" alt="Little Cupcake website mockup (long page)" />
+<span class="mockup-overlay">Tap to View</span>
+  </button>
+</section>
+
+<!-- Fullscreen Lightbox -->
+<div class="mockup-modal" id="mockupModal" aria-hidden="true" role="dialog" aria-label="Website mockup fullscreen">
+  <div class="mockup-scroll">
+    <img src="images/littlecupcakewebsite.jpg" alt="Little Cupcake website mockup fullscreen" />
+  </div>
+</div>
+
+<style>
+  .website-demo{
+  margin-top: 3rem;
+}
+
+.demo-video-wrap{
+  width: min(1200px, 92vw);   /* match your logo grid width */
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+
+.demo-video-wrap video{
+  width: 100%;
+  display: block;
+}
+
+  .mockup-preview video{
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+  /* ===== PREVIEW (shows only part of the long image) ===== */
+  .long-mockup { margin-top: 2rem; }
+
+.mockup-preview{
+  width: min(1200px, 92vw);   /* same width as video */
+  margin: 0 auto;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+.mockup-preview img{
+  width: 100%;
+  display: block;
+  max-height: 700px;   /* taller preview */
+  object-fit: cover;
+  object-position: top;
+}
+
+
+  /* Fade at bottom so it looks intentional */
+  .mockup-preview::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height: 140px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    pointer-events:none;
+  }
+
+/* Hover overlay */
+.mockup-overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+/* show on hover */
+.mockup-preview:hover .mockup-overlay{
+  opacity: 1;
+}
+
+  /* ===== FULLSCREEN MODAL (scrollable long image) ===== */
+  .mockup-modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    z-index: 9999;
+  }
+  .mockup-modal.is-open{ display:block; }
+
+.mockup-scroll{
+  position: fixed;
+  top: 80px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(1000px, 85vw);
+  background: #fff;
+  border-radius: 18px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+
+  padding: 24px;            /* ⭐ prevents edge-cropping */
+  box-sizing: border-box;   /* ⭐ padding doesn't break width */
+  display: flex;
+  justify-content: center;  /* center the image */
+  align-items: flex-start;  /* start at top */
+}
+
+.mockup-scroll img{
+  width: 100%;              /* fill the available padded space */
+  max-width: 900px;         /* optional: keeps it from being huge */
+  height: auto;             /* keeps full long scroll */
+  display: block;
+}
+
+
+  .mockup-close{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(0,0,0,.35);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* Mobile: show a bit less preview height */
+  @media (max-width: 600px){
+    .mockup-preview img{ max-height: 420px; }
+    .mockup-scroll{ inset: 58px 10px 10px 10px; }
+  }
+
+  .kit-section,
+.website-demo,
+.long-mockup{
+  position: relative;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+.website-demo::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(1200px, 92vw);
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+}
+  
+</style>
+
+<script>
+// ===== LONG MOCKUP MODAL (tap outside OR tap image to close) =====
+const openMockupBtn = document.getElementById('openMockup');
+const mockupModalEl = document.getElementById('mockupModal');
+const mockupScrollEl = mockupModalEl?.querySelector('.mockup-scroll');
+const mockupImgEl = mockupScrollEl?.querySelector('img');
+
+function openMockupModal() {
+  mockupModalEl.classList.add('is-open');
+  mockupModalEl.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMockupModal() {
+  mockupModalEl.classList.remove('is-open');
+  mockupModalEl.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+openMockupBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  openMockupModal();
+});
+
+// close when clicking the dark background only
+mockupModalEl?.addEventListener('click', (e) => {
+  if (e.target === mockupModalEl) closeMockupModal();
+});
+
+// close when clicking the image
+mockupImgEl?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  closeMockupModal();
+});
+
+// ESC closes
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mockupModalEl?.classList.contains('is-open')) {
+    closeMockupModal();
+  }
+});
+</script>
 
             <!-- Flavor Can Designs -->
       <section class="kit-section" aria-labelledby="flavor-can-designs">
@@ -335,32 +497,26 @@
           alt="Creami Pop can box packaging design"
           class="can-box-packaging"
         >
-
-        <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
-        </p>
       </section>
 
 
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
-  <p class="kit-label" id="app-ui">App UI Screens</p>
 
-<div class="app-ui-grid">
-          <img src="images/littlecupcakeT-shirt.png" alt="Lemomo Tea bag design 1">
-          <img src="images/littlecupcakeapron.png" alt="Lemomo Tea bag design 1">
-          <img src="images/littlecupcakecoffee.jpg" alt="Lemomo Tea bag design 2">
-          <img src="images/littlecupcakelatte.jpg" alt="Lemomo Tea bag design 3">
-          <img src="images/Litllecupcakebox.png" alt="Lemomo Tea poster — blue set 1">
-          <img src="images/Litllecupcakebag.png" alt="Lemomo Tea poster — blue set 2">
-          <img src="images/Litllecupcakenapkin1.png" alt="Lemomo Tea poster — blue set 3">
-          <img src="images/Litllecupcakenapkin2.png" alt="Lemomo Tea poster — orange set 1">
-          <img src="images/Litllecupcakecap1.png" alt="Lemomo Tea poster — orange set 2">
-          <img src="images/Litllecupcakecap2.png" alt="Lemomo Tea poster — orange set 3">
-        </div>
-      </section>
+<section class="kit-section" aria-labelledby="brand-collateral">
+  <p class="kit-label" id="brand-collateral">Brand Collateral</p>
+
+  <div class="collateral-grid">
+    <img src="images/littlecupcakeT-shirt.png" alt="Little Cupcake T-shirt">
+    <img src="images/littlecupcakeapron.png" alt="Little Cupcake apron">
+    <img src="images/littlecupcakecoffee.jpg" alt="Little Cupcake coffee cup">
+    <img src="images/littlecupcakelatte.jpg" alt="Little Cupcake latte">
+    <img src="images/Litllecupcakebox.png" alt="Little Cupcake box">
+    <img src="images/Litllecupcakebag.png" alt="Little Cupcake bag">
+    <img src="images/Litllecupcakenapkin1.png" alt="Little Cupcake napkin 1">
+    <img src="images/Litllecupcakenapkin2.png" alt="Little Cupcake napkin 2">
+    <img src="images/Litllecupcakecap1.png" alt="Little Cupcake cap 1">
+    <img src="images/Litllecupcakecap2.png" alt="Little Cupcake cap 2">
+  </div>
+</section>
 
   </main>
 
@@ -374,7 +530,9 @@
   </div>
 
   <script>
-    const photos = document.querySelectorAll('.final-photo-grid img, .collateral-grid img');
+const photos = document.querySelectorAll(
+  '.app-ui-grid img, .collateral-grid img, .logo-variation-row img, .can-box-packaging'
+);
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox.querySelector('img');
 
@@ -399,6 +557,39 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
     });
+
+    // ===== LONG MOCKUP MODAL (tap to close) =====
+const openMockup = document.getElementById('openMockup');
+const mockupModal = document.getElementById('mockupModal');
+
+function openMockupModal() {
+  mockupModal.classList.add('is-open');
+  mockupModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMockupModal() {
+  mockupModal.classList.remove('is-open');
+  mockupModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// open
+openMockup?.addEventListener('click', (e) => {
+  e.preventDefault();
+  openMockupModal();
+});
+
+// close by tapping anywhere (image/box/backdrop)
+mockupModal?.addEventListener('click', closeMockupModal);
+
+// ESC closes (but don’t interfere with your other lightbox)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mockupModal?.classList.contains('is-open')) {
+    closeMockupModal();
+  }
+});
+
   </script>
 
 </body>
