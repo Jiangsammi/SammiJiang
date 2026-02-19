@@ -16,6 +16,51 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
+<style>
+/* App UI Grid */
+.app-ui-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  gap: 0.8rem;
+  justify-content: center;
+  margin: 1rem 0 0;
+}
+
+.app-ui-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 1400px){
+  .app-ui-grid{
+    grid-template-columns: repeat(4, 260px);
+  }
+}
+
+.box-dieline-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: min(1200px, 95vw);   /* bigger overall */
+  margin: 2rem auto 0;
+}
+
+.box-dieline-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  cursor: zoom-in;   /* shows it's clickable */
+}
+
+.lightbox img{
+  background: #ffffff;   /* white behind PNG */
+  padding: 20px;         /* space around image */
+  border-radius: 12px;
+}
+
+</style>
 <body>
 
   <!-- CLEAN RESUME-STYLE HEADER -->
@@ -83,7 +128,7 @@
       <section class="kit-section" aria-labelledby="primary-logo">
         <p class="kit-label" id="primary-logo">Primary Logo</p>
         <img
-          src="images/CreamipopLOGO.jpg"
+          src="images/Lemon Glow logo.png"
           alt="Creami Pop Primary Logo"
           class="logo-variations primary-logo"
         >
@@ -161,36 +206,58 @@
   </div>
 </section>
 
-
-      
       <!-- Color Palette -->
       <section class="kit-section" aria-labelledby="color-palette">
         <p class="kit-label" id="color-palette">Color Palette</p>
-
-        <div class="palette-row">
-          <div class="palette-swatch" style="background:#91BB54"><span>#91BB54</span></div>
-          <div class="palette-swatch" style="background:#FFF378"><span>#FFF378</span></div>
-          <div class="palette-swatch" style="background:#E084B3"><span>#E084B3</span></div>
-          <div class="palette-swatch" style="background:#A02657"><span>#A02657</span></div>
-          <div class="palette-swatch" style="background:#1A97D4"><span>#1A97D4</span></div>
-          <div class="palette-swatch" style="background:#693C97"><span>#693C97</span></div>
-        </div>
+<div class="palette-row palette-row--six">
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
+          <div class="palette-swatch" style="background:#fbe204"><span>#fbe204</span></div>
+          <div class="palette-swatch" style="background:#c48b2c"><span>#c48b2c</span></div>
+          <div class="palette-swatch" style="background:#dc7327"><span>#dc7327</span></div>
+<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
+</div>
 
         <p class="palette-note">
           Dreamy pastel tones are paired with bold, high-contrast pops to create a lively and balanced palette. Milky white and soft peach feel creamy and smooth, while lime green, electric blue, and deep purple add a bright, fizzy pop that feels fresh and fun.
         </p>
       </section>
 
-      <!-- Color Application -->
-      <section class="kit-section" aria-labelledby="color-application">
-        <p class="kit-label" id="color-application">Color Application</p>
-        <img
-          src="images/creamipop-color-logos.png"
-          alt="Creami Pop logo color variations"
-          class="logo-variations"
-        >
-      </section>
+      <section class="kit-section" aria-labelledby="box-dieline">
+  <p class="kit-label" id="box-dieline">Box Design</p>
 
+  <div class="box-dieline-grid">
+    <figure class="box-dieline-card">
+      <img src="images/LemonGlow Lip Balm.png" alt="DOODLE box dieline — front">
+      <figcaption class="box-dieline-cap">Outside</figcaption>
+    </figure>
+
+    <figure class="box-dieline-card">
+      <img src="images/LemonGlow Lip Balm2.png" alt="DOODLE box dieline — back">
+      <figcaption class="box-dieline-cap">Inside</figcaption>
+    </figure>
+
+        <figure class="box-dieline-card">
+      <img src="images/LemonGlow Lip Balm3.png" alt="DOODLE box dieline — back">
+      <figcaption class="box-dieline-cap">Inside</figcaption>
+    </figure>
+
+        <figure class="box-dieline-card">
+      <img src="images/LemonGlow Lip Balm4.png" alt="DOODLE box dieline — back">
+      <figcaption class="box-dieline-cap">Inside</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">App UI Screens</p>
+
+<div class="app-ui-grid">
+    <img src="images/LemonGlow Lip Balm-01.jpg" alt="Left Behind app screen 1">
+    <img src="images/LemonGlow Lip Balm-02.jpg" alt="Left Behind app screen 2">
+    <img src="images/LemonGlow Lip Balm-03.jpg" alt="Left Behind app screen 3">
+    <img src="images/LemonGlow Lip Balm-04.jpg" alt="Left Behind app screen 4">
+  </div>
+</section> 
       <!-- Flavor Illustrations -->
       <section class="kit-section" aria-labelledby="flavor-illustrations">
         <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
@@ -296,7 +363,9 @@
   </div>
 
   <script>
-    const photos = document.querySelectorAll('.final-photo-grid img');
+const photos = document.querySelectorAll(
+  '.final-photo-grid img, .box-dieline-card img'
+);
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox.querySelector('img');
 
