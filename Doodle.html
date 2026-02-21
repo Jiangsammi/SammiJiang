@@ -16,16 +16,21 @@
 </head>
 
 <style>
-/* App UI Screens — 3 per row */
-.final-photo-grid.ui-grid-3 {
+.final-photo-grid.ui-grid-3{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  width: 720px !important;   /* control size here */
-  max-width: 200% !important;
-  height: auto !important;
+  width: min(1300px, 94vw);
+  margin: 2rem auto 0;
 }
 
+.final-photo-grid.ui-grid-3 img{
+  width: 100%;
+  height: auto;        /* 👈 keeps original proportions */
+  display: block;
+  border-radius: 0;    /* 👈 sharp corners */
+  cursor: zoom-in;
+}
 .palette-empty {
   border: none !important;
   box-shadow: none !important;

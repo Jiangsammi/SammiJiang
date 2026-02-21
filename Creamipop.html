@@ -10,6 +10,28 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
+<style>
+  .logo-variation-row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  justify-content: center;
+  justify-items: center;
+}
+
+.logo-variation-row img{
+  width: 100%;
+  max-width: 520px;
+  height: 420px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+</style>
 
 <body class="transition-enabled">
   <div class="js-responsive-nav">
@@ -84,19 +106,17 @@
   </p>
 </header>
 
-
-
-      <!-- Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
+      <section class="kit-section" aria-labelledby="logo-variations">
         <p class="kit-label" id="primary-logo">Primary Logo</p>
+
+        <div class="logo-variation-row">
         <img
           src="images/CreamipopLOGO.jpg"
           alt="Creami Pop Primary Logo"
           class="logo-variations primary-logo"
         >
-      </section>
+        </div>
 
-      <!-- Logo Variations -->
       <section class="kit-section" aria-labelledby="logo-variations">
         <p class="kit-label" id="logo-variations">Logo Variations</p>
         <img

@@ -17,8 +17,21 @@
 </head>
 
 <style>
-/* App UI Grid */
-.app-ui-grid{
+.final-photo-grid.ui-grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: min(1300px, 94vw);
+  margin: 2rem auto 0;
+}
+
+.final-photo-grid.ui-grid-3 img{
+  width: 100%;
+  height: auto;        /* 👈 keeps original proportions */
+  display: block;
+  border-radius: 0;    /* 👈 sharp corners */
+  cursor: zoom-in;
+}.app-ui-grid{
   display: grid;
   grid-template-columns: repeat(3, 260px);
   gap: 0.8rem;
@@ -41,25 +54,69 @@
 .box-dieline-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1rem;
   width: min(1200px, 95vw);   /* bigger overall */
-  margin: 2rem auto 0;
+  margin: 0.8rem auto 0;
 }
+
 
 .box-dieline-card img{
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
-  cursor: zoom-in;   /* shows it's clickable */
+  object-fit: contain;
+  object-position: top;   /* 👈 forces image content upward */
 }
-
 .lightbox img{
-  background: #ffffff;   /* white behind PNG */
-  padding: 20px;         /* space around image */
-  border-radius: 12px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
+.box-dieline-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers image + text */
+  text-align: center;
+}
+
+.box-dieline-cap{
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.75;
+  text-align: center;
+}
+.stagger-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  width: min(1300px, 94vw);
+  margin: 1rem auto 0;
+}
+
+.stagger-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  cursor: zoom-in;
+}
+
+@media (max-width: 900px){
+  .stagger-grid{ grid-template-columns: 1fr; }
+}
+.stagger-img.large{
+  max-width: 700px;   /* bigger */
+}
+
+.stagger-img.small{
+  max-width: 560px;   /* bigger */
+  margin-top: 60px;   /* stagger effect */
+}
+.stagger-img{
+  border-radius: 0;   /* sharp corners */
+  object-fit: cover;
+}
 </style>
 <body>
 
@@ -132,19 +189,6 @@
           alt="Creami Pop Primary Logo"
           class="logo-variations primary-logo"
         >
-      </section>
-
-      <!-- Logo Variations -->
-      <section class="kit-section" aria-labelledby="logo-variations">
-        <p class="kit-label" id="logo-variations">Logo Variations</p>
-        <img
-          src="images/creamipop logo design.png"
-          alt="Creami Pop logo variations and wordmarks"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
-        </p>
       </section>
 
 <section class="kit-section" aria-labelledby="typography">
@@ -228,105 +272,48 @@
   <div class="box-dieline-grid">
     <figure class="box-dieline-card">
       <img src="images/LemonGlow Lip Balm.png" alt="DOODLE box dieline — front">
-      <figcaption class="box-dieline-cap">Outside</figcaption>
+      <figcaption class="box-dieline-cap">Purfume Mist</figcaption>
     </figure>
 
     <figure class="box-dieline-card">
       <img src="images/LemonGlow Lip Balm2.png" alt="DOODLE box dieline — back">
-      <figcaption class="box-dieline-cap">Inside</figcaption>
+      <figcaption class="box-dieline-cap">Lip Balm</figcaption>
     </figure>
 
         <figure class="box-dieline-card">
       <img src="images/LemonGlow Lip Balm3.png" alt="DOODLE box dieline — back">
-      <figcaption class="box-dieline-cap">Inside</figcaption>
+      <figcaption class="box-dieline-cap">Serum</figcaption>
     </figure>
 
         <figure class="box-dieline-card">
       <img src="images/LemonGlow Lip Balm4.png" alt="DOODLE box dieline — back">
-      <figcaption class="box-dieline-cap">Inside</figcaption>
+      <figcaption class="box-dieline-cap">Lotion</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="kit-section" aria-labelledby="app-ui">
-  <p class="kit-label" id="app-ui">App UI Screens</p>
+<section class="brand-kit" aria-label="DOODLE Brand Kit">
+  <p class="kit-label" id="box-dieline">Box Design — Front & Back</p>
 
-<div class="app-ui-grid">
-    <img src="images/LemonGlow Lip Balm-01.jpg" alt="Left Behind app screen 1">
-    <img src="images/LemonGlow Lip Balm-02.jpg" alt="Left Behind app screen 2">
-    <img src="images/LemonGlow Lip Balm-03.jpg" alt="Left Behind app screen 3">
-    <img src="images/LemonGlow Lip Balm-04.jpg" alt="Left Behind app screen 4">
+  <div class="stagger-grid">
+<img src="images/lemonglowmedia.jpg" class="stagger-img">
+<img src="images/Lemonglowmedia2.jpg" class="stagger-img">
   </div>
-</section> 
-      <!-- Flavor Illustrations -->
-      <section class="kit-section" aria-labelledby="flavor-illustrations">
-        <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
-        <img
-          src="images/creamipop-flavor-illustrations.png"
-          alt="Creami Pop flavor illustrations"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
-        </p>
-      </section>
+</section>
 
-      <!-- Flavor Can Designs -->
-      <section class="kit-section" aria-labelledby="flavor-can-designs">
-        <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+<p class="kit-label" id="final-product-photography">Final Product Photography</p>
 
-        <div class="can-grid">
-          <figure class="can-item">
-            <img
-              src="images/creamipop-fruit-loop-can.png"
-              alt="Creami Pop Fruit Loop Milk Soda can design"
-            >
-            <figcaption class="flavor-name">Fruit Loop</figcaption>
-          </figure>
-
-          <figure class="can-item">
-            <img
-              src="images/creamipop-cinnaswrl-can.png"
-              alt="Creami Pop CinnaSwrl Milk Soda can design"
-            >
-            <figcaption class="flavor-name">CinnaSwrl</figcaption>
-          </figure>
-        </div>
-
-        <img
-          src="images/creamipop-can-box-packaging.png"
-          alt="Creami Pop can box packaging design"
-          class="can-box-packaging"
-        >
-
-        <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
-        </p>
-      </section>
-
-      <!-- Final Product Photography -->
-      <section class="kit-section" aria-labelledby="final-product-photography">
-        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
-
-        <div class="final-photo-grid">
-          <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-          <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
-
-          <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-          <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-          <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-          <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
-        </div>
-
-        <p class="kit-caption">
-          Studio photography showcasing the final Creami Pop cans and variety packaging,
-          highlighting color, material finish, and real-world scale.
-        </p>
-      </section>
+  <div class="final-photo-grid ui-grid-3">
+          <img src="images/lemonglow.JPG" alt="Creami Pop full flavor lineup with box">
+          <img src="images/lemonglow1.JPG" alt="Creami Pop cereal variety pack front">
+          <img src="images/lemonglow2.JPG" alt="Creami Pop cereal variety pack front view">
+          <img src="images/lemonglow3.JPG" alt="Creami Pop cans clinking together">
+          <img src="images/lemonglow4.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
+          <img src="images/lemonglow5.JPG" alt="Creami Pop cans trio on white background">
+  </div>
+</section>
 
 <div class="kit-section">
   <p class="kit-label">Graphic Elements</p>
@@ -364,7 +351,7 @@
 
   <script>
 const photos = document.querySelectorAll(
-  '.final-photo-grid img, .box-dieline-card img'
+  '.final-photo-grid img, .box-dieline-card img, .stagger-img'
 );
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox.querySelector('img');
