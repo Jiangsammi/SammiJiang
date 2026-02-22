@@ -145,6 +145,15 @@
     max-width: 220px; /* never grows bigger than desktop */
   }
 }
+
+/* Make all final images same size and crop evenly */
+.final-photo-grid.ui-grid-3 img{
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* makes them square */
+  object-fit: cover;       /* crops to fill */
+  object-position: center; /* keeps center focus */
+  display: block;
+}
 </style>
 <body>
 
@@ -336,10 +345,10 @@
   <div class="final-photo-grid ui-grid-3">
           <img src="images/Lemonglowfinal.png" alt="Creami Pop cans trio on white background">
           <img src="images/Lemonglowfinal1.png" alt="Creami Pop cereal variety pack front">
-          <img src="images/lemonglow2.JPG" alt="Creami Pop cereal variety pack front view">
-          <img src="images/lemonglow3.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/lemonglow4.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/lemonglow.JPG" alt="Creami Pop full flavor lineup with box">
+          <img src="images/lemonglowfinal3.png" alt="Creami Pop cereal variety pack front view">
+          <img src="images/lemonglowfinal2.png" alt="Creami Pop cans clinking together">
+          <img src="images/lemonglowfinal4.png" alt="Creami Pop chocolate, cinnamon, and ube flavors">
+          <img src="images/lemonglowfinal5.png" alt="Creami Pop full flavor lineup with box">
   </div>
 </section>
 
