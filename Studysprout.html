@@ -44,8 +44,26 @@
   border-radius: 50px;
 }
 
+.palette-row{
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* fixed gap */
+  flex-wrap: nowrap;  /* force one row */
+}
 
+.palette-swatch{
+  width: 220px;
+  height: 300px;
+}
 
+/* Shrink slightly on smaller screens */
+@media (max-width: 900px){
+  .palette-swatch{
+    width: 28vw;      /* scales proportionally */
+    height: 38vw;
+    max-width: 220px; /* never grows bigger than desktop */
+  }
+}
 </style>
 
 

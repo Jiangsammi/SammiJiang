@@ -36,6 +36,26 @@
   box-shadow: none !important;
 }
 
+.palette-row{
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* fixed gap */
+  flex-wrap: nowrap;  /* force one row */
+}
+
+.palette-swatch{
+  width: 220px;
+  height: 300px;
+}
+
+/* Shrink slightly on smaller screens */
+@media (max-width: 900px){
+  .palette-swatch{
+    width: 28vw;      /* scales proportionally */
+    height: 38vw;
+    max-width: 220px; /* never grows bigger than desktop */
+  }
+}
 </style>
 
 
@@ -166,11 +186,9 @@ Different typefaces are used to reflect the different kinds of documents found w
       <section class="kit-section" aria-labelledby="color-palette">
         <p class="kit-label" id="color-palette">Color Palette</p>
 <div class="palette-row palette-row--six">
-<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
     <div class="palette-swatch" style="background:#da382d"><span>#da382d</span></div>
     <div class="palette-swatch" style="background:#bb4f40"><span>#bb4f40</span></div>
     <div class="palette-swatch" style="background:#000000"><span>#000000</span></div>
-<div class="palette-swatch palette-empty" style="background:#ffffff"></div>
 </div>
 
   <p class="palette-note">

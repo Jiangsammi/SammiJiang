@@ -74,6 +74,26 @@
   font-weight: 600;
   margin: 1.5rem 0;
 }
+.palette-row{
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* fixed gap */
+  flex-wrap: nowrap;  /* force one row */
+}
+
+.palette-swatch{
+  width: 220px;
+  height: 300px;
+}
+
+/* Shrink slightly on smaller screens */
+@media (max-width: 900px){
+  .palette-swatch{
+    width: 28vw;      /* scales proportionally */
+    height: 38vw;
+    max-width: 220px; /* never grows bigger than desktop */
+  }
+}
   </style>
 </head>
 
@@ -207,12 +227,10 @@ like a small reminder of friendship and good moments.
         <p class="kit-label" id="color-palette">Color Palette</p>
 
         <div class="palette-row">
-          <div class="palette-swatch" style="background:#000000"><span>#000000</span></div>
-          <div class="palette-swatch" style="background:#263e88"><span>#263e88</span></div>
-          <div class="palette-swatch" style="background:#ffffff"><span>#ffffff</span></div>
-          <div class="palette-swatch" style="background:#f5e55a"><span>#f5e55a</span></div>
-          <div class="palette-swatch" style="background:#fad126"><span>#fad126</span></div>
-          <div class="palette-swatch" style="background:#ff544f"><span>#ff544f</span></div>
+          
+          <div class="palette-swatch" style="background:#336099"><span>#336099</span></div>
+          <div class="palette-swatch" style="background:#d6d6d6"><span>#d6d6d6</span></div>
+          <div class="palette-swatch" style="background:#b5b4a9"><span>#b5b4a9</span></div>
         </div>
 <p class="palette-note">
   I chose cool blue tones to create a soft, dreamy mood. 

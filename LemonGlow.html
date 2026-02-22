@@ -117,6 +117,34 @@
   border-radius: 0;   /* sharp corners */
   object-fit: cover;
 }
+
+.palette-swatch.palette-empty{
+  border: none !important;
+  box-shadow: none !important;
+  visibility: hidden;
+
+}
+
+.palette-row{
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* fixed gap */
+  flex-wrap: nowrap;  /* force one row */
+}
+
+.palette-swatch{
+  width: 220px;
+  height: 300px;
+}
+
+/* Shrink slightly on smaller screens */
+@media (max-width: 900px){
+  .palette-swatch{
+    width: 28vw;      /* scales proportionally */
+    height: 38vw;
+    max-width: 220px; /* never grows bigger than desktop */
+  }
+}
 </style>
 <body>
 
@@ -292,12 +320,12 @@
   </div>
 </section>
 
-<section class="brand-kit" aria-label="DOODLE Brand Kit">
-  <p class="kit-label" id="box-dieline">Box Design — Front & Back</p>
+<section class="kit-section">
+  <p class="kit-label">Box Design — Front & Back</p>
 
   <div class="stagger-grid">
-<img src="images/lemonglowmedia.jpg" class="stagger-img">
-<img src="images/Lemonglowmedia2.jpg" class="stagger-img">
+    <img src="images/lemonglowmedia.jpg" class="stagger-img">
+    <img src="images/Lemonglowmedia2.jpg" class="stagger-img">
   </div>
 </section>
 
@@ -320,13 +348,19 @@
 
   <div class="graphic-pair">
     <img
-      src="images/Creamipopposter.png"
+      src="images/Lemonglowbillboard1.jpg"
       alt="Creami Pop Graphic Elements Poster"
       class="shadow-outline"
     />
 
     <img
-      src="images/Creamipop.jpg"
+      src="images/Lemonglowcup.jpg"
+      alt="Creami Pop Instagram mockup"
+      class="shadow-outline"
+    />
+
+        <img
+      src="images/Lemonglowcup.jpg"
       alt="Creami Pop Instagram mockup"
       class="shadow-outline"
     />
