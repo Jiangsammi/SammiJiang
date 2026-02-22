@@ -154,6 +154,22 @@
   object-position: center; /* keeps center focus */
   display: block;
 }
+
+.graphic-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: min(1000px, 92vw);  /* controlled width */
+  margin: 2rem auto 0;
+}
+
+.graphic-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
 </style>
 <body>
 
@@ -352,34 +368,16 @@
   </div>
 </section>
 
-<div class="kit-section">
-  <p class="kit-label">Graphic Elements</p>
+<section class="kit-section" aria-labelledby="graphic-elements">
+  <p class="kit-label" id="graphic-elements">Graphic Elements</p>
 
-  <div class="graphic-pair">
-    <img
-      src="images/Lemonglowbillboard1.jpg"
-      alt="Creami Pop Graphic Elements Poster"
-      class="shadow-outline"
-    />
+  <div class="graphic-grid">
+    <img src="images/Lemonglowbillboard1.jpg" alt="LemonGlow billboard" class="shadow-outline graphic-wide">
 
-    <img
-      src="images/Lemonglowcup.jpg"
-      alt="Creami Pop Instagram mockup"
-      class="shadow-outline"
-    />
-
-        <img
-      src="images/Lemonglowcup.jpg"
-      alt="Creami Pop Instagram mockup"
-      class="shadow-outline"
-    />
+    <img src="images/Lemonglowcup.jpg" alt="LemonGlow cup" class="shadow-outline">
+    <img src="images/Lemonglowsketch.jpg" alt="LemonGlow sketch" class="shadow-outline">
   </div>
-</div>
-
-
-    </section>
-  </main>
-
+</section>
 
     <section class="more-work-cta">
       <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
