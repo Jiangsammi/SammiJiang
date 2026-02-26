@@ -170,6 +170,29 @@
   border-radius: 0;
 }
 
+.type-simple{
+  width: min(900px, 92vw);
+  margin: 1rem auto 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.type-name{
+  font-size: 42px;
+  margin: 0;
+}
+
+.type-info{
+  margin: 0.25rem 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.type-note{
+  margin: 0.5rem 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
 </style>
 <body>
 
@@ -253,65 +276,30 @@
 <section class="kit-section" aria-labelledby="typography">
   <p class="kit-label" id="typography">Typography</p>
 
-  <div class="type-spec type-spec--two">
+  <div class="type-simple">
 
-    <!-- LEFT COLUMN -->
-    <div class="type-group">
-      <p class="type-group-label">Logo</p>
-
-      <div class="type-family">
-        <p class="type-family-name font-playfair caps">PLAYFAIR DISPLAY</p>
-        <ul class="type-weights">
-          <li><strong>All Caps · 80 pt</strong></li>
-        </ul>
-      </div>
-
-      <p class="type-group-label">Packaging Box Design</p>
-
-      <div class="type-family">
-        <p class="type-family-name font-bitter">Bitter</p>
-        <ul class="type-weights">
-          <li>Regular · 23 pt</li>
-          <li>Regular · 13 pt</li>
-          <li>Regular · 9 pt</li>
-          <li>Light · 4 pt</li>
-        </ul>
-      </div>
+    <div class="type-block">
+      <p class="type-name font-bitter">Bitter</p>
+      <p class="type-info">
+        Thin 6.5 pt · 19 pt · 25 pt
+      </p>
+      <p class="type-note">
+        I used Bitter for most of the packaging because it feels structured but still soft.
+        It stays readable even when the text gets really small.
+      </p>
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="type-group">
-      <p class="type-group-label">Advertisement Poster</p>
-
-      <div class="type-family">
-        <p class="type-family-name font-athelas">Athelas</p>
-        <ul class="type-weights">
-          <li>Regular · 260 pt</li>
-        </ul>
-      </div>
-
-      <div class="type-family">
-        <p class="type-family-name font-adobe-clean">Adobe Clean UX</p>
-        <ul class="type-weights">
-          <li>Regular · 60 pt</li>
-          <li><strong>Bold · 260 pt</strong></li>
-        </ul>
-      </div>
-
-      <div class="type-family">
-        <p class="type-family-name font-akaya">AkayaTelivigala</p>
-        <ul class="type-weights">
-          <li>Regular · 60 pt</li>
-        </ul>
-      </div>
+    <div class="type-block">
+      <p class="type-name font-adobe-clean">Adobe Clean UX</p>
+      <p class="type-info">
+        Regular
+      </p>
+      <p class="type-note">
+        I used this as a supporting font to keep everything feeling modern and clean.
+      </p>
     </div>
 
   </div>
-  <p class="kit-caption">
-  I used Playfair Display for the logo to make it feel more elegant and “beauty brand,”
-  and Bitter for the packaging because it stays readable even when the text gets small.
-  The poster type is bold and dramatic so it can grab attention fast.
-</p>
 </section>
 
       <!-- Color Palette -->

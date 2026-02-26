@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta property="og:image" content="style.css" />
   <link rel="icon" href="" />
-<link rel="stylesheet" href="resume.css" />
-<link rel="stylesheet" href="styles.css" type="text/css" />
+  <link rel="stylesheet" href="resume.css" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
   <title>Sammi Jiang</title>
 
   <style>
@@ -14,43 +14,69 @@
       background-color: #2b2b2b !important; /* ash black with higher priority */
     }
   </style>
-<style>
-  /* REMOVE heart cursor, restore normal cursor */
-  html, body, * {
-    cursor: auto !important;
-  }
 
-/* Make the page background match your content so no black shows */
-html, body {
-  background: #fff !important;
-}
+  <style>
+    /* REMOVE heart cursor, restore normal cursor */
+    html, body, * {
+      cursor: auto !important;
+    }
 
-.project-covers {
-  margin-bottom: 20px !important;
-}
-.project-cover video {
+    /* Make the page background match your content so no black shows */
+    html, body {
+      background: #fff !important;
+    }
+
+    .project-covers {
+      margin-bottom: 20px !important;
+    }
+
+    .project-cover video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ONLY for the two slideshow image areas */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+.slideshow img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;   /* keep default behavior */
   display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
-
-</style>
-
-
+/* ONLY DOODLE + LEMOMO fit fully inside */
+.slideshow.doodle img,
+.slideshow.lemomo img {
+  object-fit: contain;
+}
+    .slideshow img.active {
+      opacity: 1;
+    }
+    
+  </style>
 </head>
 
 <body class="transition-enabled">
   <div class="js-responsive-nav">
-<!-- CLEAN RESUME-STYLE HEADER -->
-<header class="site-header js-site-header">
-  <nav class="nav-container">
-    <div class="gallery-title"><a href="index.html">Home</a></div>
-    <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
-    <div class="gallery-title"><a href="resume.html">Resume</a></div>
-  </nav>
 
-
+    <!-- CLEAN RESUME-STYLE HEADER -->
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title"><a href="index.html">Home</a></div>
+        <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+        <div class="gallery-title"><a href="resume.html">Resume</a></div>
+      </nav>
 
       <div class="logo-wrap">
         <div class="logo logo-text">
@@ -75,35 +101,33 @@ html, body {
             </a>
           </li>
           <li>
-  <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <!-- arrow -->
-      <path d="M12 4v9m0 0l-3-3m3 3l3-3"
-            stroke="#000"
-            stroke-width="1.8"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-      <!-- tray -->
-      <path d="M5 18h14"
-            stroke="#000"
-            stroke-width="1.8"
-            fill="none"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-</li>
+            <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M5 18h14"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"/>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
 
-      <div class="hamburger-click-area js-hamburger">
-        <div class="hamburger">
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
+    <div class="hamburger-click-area js-hamburger">
+      <div class="hamburger">
+        <i></i>
+        <i></i>
+        <i></i>
       </div>
+    </div>
 
     <div class="header-placeholder"></div>
 
@@ -118,13 +142,12 @@ html, body {
               I combine clean, simple design with smart strategy to help brands stand out and connect with their audience.
             </p>
           </section>
-
-
-
           <div class="masthead-buttons"></div>
         </div>
       </div>
-      <div class="masthead-arrow-container js-masthead-arrow" decorator="editable" data-context="page.masthead"><div class="masthead-arrow"></div></div>
+      <div class="masthead-arrow-container js-masthead-arrow" decorator="editable" data-context="page.masthead">
+        <div class="masthead-arrow"></div>
+      </div>
     </div>
     <div class="masthead-placeholder" decorator="editable" data-context="page.masthead"></div>
 
@@ -133,70 +156,141 @@ html, body {
         <div class="site-content">
           <main>
 
-            <!-- Project Covers Grid (unchanged) -->
+            <!-- Project Covers Grid -->
             <section class="project-covers" decorator="editable" data-context="theme.gallery.projects">
 
+              <!-- CREAMI POP (3-image slideshow) -->
               <a decorator="editable" class="project-cover hold-space" href="Creamipop.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
                 <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Creamipop3.JPG" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
-                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">CREAMI POP</div></div></div></div>
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <div class="slideshow creami-pop">
+                          <img src="images/CreamipopLOGO.jpg" alt="Home Cover" class="active">
+                          <img src="images/Creamipop3.jpg" alt="Home Cover">
+                          <img src="images/Creamipop5.JPG" alt="Home Cover">
+                          <img src="images/Creamipop7.JPG" alt="Home Cover">
+                          <img src="images/Creamipop.JPG" alt="Home Cover">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap">
+                    <div class="details">
+                      <div class="details-inner">
+                        <div class="title">CREAMI POP</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </a>
 
-              <a decorator="editable" class="project-cover hold-space" href="Doodle.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
-                <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/DOODLEpackage.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
-                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">DOODLE</div></div></div></div>
-                </div>
-              </a>
-
-              <a decorator="editable" class="project-cover hold-space" href="leftbehind.html">
-                <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/leftbehindoverall.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
-                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LEFT BEHIND</div></div></div></div>
-                </div>
-              </a>
-
-<a decorator="editable" class="project-cover hold-space" href="littlecupcake.html">
+<a decorator="editable" class="project-cover hold-space" href="Doodle.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
   <div class="cover-content-container">
     <div class="cover-image-wrap">
       <div class="cover-image">
         <div class="cover cover-normal">
-          <video autoplay muted loop playsinline style="width:100%;display:block;">
-            <source src="images/littlecupcake-website.mp4" type="video/mp4">
-          </video>
+          <div class="slideshow doodle">
+            <img src="images/DOODLE.png" alt="Home Cover" class="active">
+            <img src="images/DOODLEcharacter.png" alt="Home Cover">
+            <img src="images/DOODLEinside.png" alt="Home Cover">
+            <img src="images/DOODLEpackage.jpg" alt="Home Cover">
+            <img src="images/DOODLEbusniesscard.png" alt="Home Cover">
+          </div>
         </div>
       </div>
     </div>
+
     <div class="details-wrap">
       <div class="details">
         <div class="details-inner">
-          <div class="title">Little Cupcake</div>
+          <div class="title">DOODLE</div>
         </div>
       </div>
     </div>
   </div>
 </a>
 
-
-<a decorator="editable" class="project-cover hold-space" href="Studysprout.html">
+<a decorator="editable" class="project-cover hold-space" href="leftbehind.html">
   <div class="cover-content-container">
-    <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal">
-      <video src="studysprout-4.mp4" autoplay muted loop playsinline controls></video>
-    </div></div></div>
+    <div class="cover-image-wrap">
+      <div class="cover-image">
+        <div class="cover cover-normal">
+          <div class="slideshow left-behind">
+            <img src="images/leftbehindoverall.jpg" alt="Home Cover" class="active">
+            <img src="images/leftbehind2.jpg" alt="Home Cover">
+            <img src="images/leftbehind3.jpg" alt="Home Cover">
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">study sprout</div></div></div></div>
+    <div class="details-wrap">
+      <div class="details">
+        <div class="details-inner">
+          <div class="title">LEFT BEHIND</div>
+        </div>
+      </div>
+    </div>
   </div>
 </a>
 
+              <!-- Little Cupcake -->
+              <a decorator="editable" class="project-cover hold-space" href="littlecupcake.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <video autoplay muted loop playsinline style="width:100%;display:block;">
+                          <source src="images/littlecupcake-website.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap">
+                    <div class="details">
+                      <div class="details-inner">
+                        <div class="title">Little Cupcake</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
 
+              <!-- Studysprout -->
+              <a decorator="editable" class="project-cover hold-space" href="Studysprout.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal">
+                    <video src="studysprout-4.mp4" autoplay muted loop playsinline controls></video>
+                  </div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">study sprout</div></div></div></div>
+                </div>
+              </a>
+
+              <!-- Lemon Glow (3-image slideshow) -->
               <a decorator="editable" class="project-cover hold-space" href="LemonGlow.html">
                 <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Lemonglowfinal.png" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <div class="slideshow lemon-glow">
+                          <img src="images/Lemon Glow logo.png" alt="Home Cover" class="active">
+                          <img src="images/Lemonglowfinal.png" alt="Home Cover">
+                          <img src="images/lemonglowfinal2.png" alt="Home Cover">
+                          <img src="images/lemonglowfinal3.png" alt="Home Cover">
+                          <img src="images/lemonglowfinal5.png" alt="Home Cover">
+                          <img src="images/LemonGlow Lip Balm.png" alt="Home Cover">
+                          <img src="images/lemonglowmedia.jpg" alt="Home Cover">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lemon Glow</div></div></div></div>
                 </div>
               </a>
 
+              <!-- NYC Scaffolding -->
               <a decorator="editable" class="project-cover hold-space" href="nycscaffolding.html">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/nycscaffolding.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -204,6 +298,7 @@ html, body {
                 </div>
               </a>
 
+              <!-- Inconsistant Love -->
               <a decorator="editable" class="project-cover hold-space" href="inconsistantlove.html">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/inconsistantlove.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -211,20 +306,46 @@ html, body {
                 </div>
               </a>
 
-              <a decorator="editable" class="project-cover hold-space" href="LEMOMO.html">
-                <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/LEMOMO.png" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
-                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LEMOMO</div></div></div></div>
-                </div>
-              </a>
+<a decorator="editable" class="project-cover hold-space" href="LEMOMO.html">
+  <div class="cover-content-container">
+    <div class="cover-image-wrap">
+      <div class="cover-image">
+        <div class="cover cover-normal">
+          <div class="slideshow lemomo">
+            <img src="images/perfume lemon tea logo.png" alt="Home Cover" class="active">
+            <img src="images/perfume lemon tea logo 1.png" alt="Home Cover">
+            <img src="images/LEMOMO BLUE 1.jpg" alt="Home Cover">
+            <img src="images/LEMOMO BLUE 2.jpg" alt="Home Cover">
+            <img src="images/LEMOMO BLUE 3.jpg" alt="Home Cover">
+            <img src="images/LEMOMO ORANGE 1.jpg" alt="Home Cover">
+            <img src="images/LEMOMO ORANGE 2.jpg" alt="Home Cover">
+            <img src="images/LEMOMO ORANGE 3.jpg" alt="Home Cover">
+            <img src="images/LEMOMO TEA.png" alt="Home Cover">
 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-wrap">
+      <div class="details">
+        <div class="details-inner">
+          <div class="title">LEMOMO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+              <!-- Matcha Girl -->
               <a decorator="editable" class="project-cover hold-space" href="matchagirl.html">
                 <div class="cover-content-container">
-                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/matchagirl2.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/matchagirl1.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
                   <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Matcha Girl</div></div></div></div>
                 </div>
               </a>
 
+              <!-- LIMESALT -->
               <a decorator="editable" class="project-cover hold-space" href="LIMESALT.html">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/LIMESALT.png" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -232,6 +353,7 @@ html, body {
                 </div>
               </a>
 
+              <!-- Dreamie Duo -->
               <a decorator="editable" class="project-cover hold-space" href="DreamieDuoposter.html">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Dreamie Duo poster.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -239,6 +361,7 @@ html, body {
                 </div>
               </a>
 
+              <!-- Home -->
               <a decorator="editable" class="project-cover hold-space" href="Home.html" data-context="pages">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Home.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -246,6 +369,7 @@ html, body {
                 </div>
               </a>
 
+              <!-- Lunar Phases -->
               <a decorator="editable" class="project-cover hold-space" href="lunarphases.html">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/lunarphases.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -253,6 +377,7 @@ html, body {
                 </div>
               </a>
 
+              <!-- Guerrilla Girls -->
               <a decorator="editable" class="project-cover hold-space" href="guerrilla girls.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/guerrilla girls.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
@@ -262,12 +387,10 @@ html, body {
 
             </section>
 
-<section class="more-work-cta">
-  <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
-</section>
+            <section class="more-work-cta">
+              <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+            </section>
 
-
-            
             <section class="back-to-top">
               <a href="#top"><span class="arrow">&uarr;</span> Back to Top</a>
             </section>
@@ -281,15 +404,38 @@ html, body {
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    window.onpageshow = function(e) {
+      if (e.persisted) { window.location.reload(); }
+    };
+  </script>
+
+  <!-- ONE slideshow script only -->
+  <script>
+    function startSlideshow(selector, intervalMs) {
+      const wrap = document.querySelector(selector);
+      if (!wrap) return;
+
+      const imgs = wrap.querySelectorAll("img");
+      if (imgs.length < 2) return;
+
+      let i = 0;
+      setInterval(() => {
+        imgs[i].classList.remove("active");
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add("active");
+      }, intervalMs);
+    }
+
+    startSlideshow(".slideshow.creami-pop", 1200);
+    startSlideshow(".slideshow.lemon-glow", 1200);
+    startSlideshow(".slideshow.left-behind", 1200);
+startSlideshow(".slideshow.doodle", 1200);
+startSlideshow(".slideshow.lemomo", 1200);
+  </script>
+
+  <script type="text/javascript" src="/site/translations?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+  <script type="text/javascript" src="/dist/js/main.js?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
 </body>
-
-<script type="text/javascript">
-  window.onpageshow = function(e) {
-    if (e.persisted) { window.location.reload(); }
-  };
-</script>
-
-<script type="text/javascript" src="/site/translations?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
-<script type="text/javascript" src="/dist/js/main.js?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
-
 </html>
