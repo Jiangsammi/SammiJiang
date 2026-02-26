@@ -3,30 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sammi Jiang — Matcha Girl</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap" rel="stylesheet">
+  <title>Sammi Jiang — MATCHA GIRL</title>
 
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="overall.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
+<style>
+  .logo-variation-row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .logo-variation-row img{
+    width: 100%;
+    max-width: 520px;
+    height: 420px;
+    object-fit: contain;
+    display: block;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* dark transparent */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox.active{
+  display: flex;
+}
+
+.lightbox img{
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+
+  background: #ffffff; /* THIS makes the image area white */
+}
+
+  .final-photo-grid img {
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.final-photo-grid img:hover {
+  transform: scale(1.02);
+}
+.box-dieline-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: min(1200px, 92vw);
+  margin: 1.5rem auto 0;
+
+  justify-items: center;   /* THIS centers items inside columns */
+}
+.box-dieline-card{
+  margin: 0 auto;   /* centers inside each column */
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+/* Image styling */
+.box-dieline-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06); /* soft border */
+  border-radius: 6px;
+}
+@media (max-width: 900px){
+  .box-dieline-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.box-dieline-cap{
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: .75;
+  text-align: center;
+}
+
+@media (max-width: 820px){
+  .box-dieline-grid{ grid-template-columns: 1fr; }
+}
+section[aria-labelledby="box-dieline"] {
+  width: min(1200px, 92vw);
+  margin: 0 auto 3rem auto;
+}
+.box-dieline-card{
+  width: 100%;
+  max-width: 380px;  /* keeps them from stretching */
+}
+</style>
 
 <body class="transition-enabled">
   <div class="js-responsive-nav">
-<!-- CLEAN RESUME-STYLE HEADER -->
-<header class="site-header js-site-header">
-  <nav class="nav-container">
-    <div class="gallery-title"><a href="index.html">Home</a></div>
-    <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
-    <div class="gallery-title"><a href="resume.html">Resume</a></div>
-  </nav>
 
-
+    <!-- CLEAN RESUME-STYLE HEADER -->
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title"><a href="index.html">Home</a></div>
+        <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+        <div class="gallery-title"><a href="resume.html">Resume</a></div>
+      </nav>
 
       <div class="logo-wrap">
         <div class="logo logo-text">
@@ -51,88 +146,103 @@
             </a>
           </li>
           <li>
-  <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <!-- arrow -->
-      <path d="M12 4v9m0 0l-3-3m3 3l3-3"
-            stroke="#000"
-            stroke-width="1.8"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-      <!-- tray -->
-      <path d="M5 18h14"
-            stroke="#000"
-            stroke-width="1.8"
-            fill="none"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-</li>
+            <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M5 18h14"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"/>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
 
-  <div class="header-placeholder"></div>
+    <div class="header-placeholder"></div>
 
-  <!-- BRAND KIT -->
-  <main>
-    <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title">Matcha Girl</h2>
-<header class="case-intro">
-  <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
+    <!-- BRAND KIT -->
+    <main>
+      <section class="brand-kit" aria-label="Matcha Girl Brand Guidelines">
 
-  <p class="project-desc">
-        Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
-        The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
-  </p>
-</header><section class="kit-section" aria-labelledby="typography">
-    
-<section class="kit-section" aria-labelledby="typography">
-  <p class="kit-label" id="typography">Typography</p>
+        <h2 class="kit-title">MATCHA GIRL</h2>
 
-  <div class="type-spec type-spec--single">
+        <header class="case-intro">
+          <p class="project-meta">Branding · Packaging · Illustration · 2025</p>
 
-    <div class="type-family">
-      <p class="type-family-name font-apple-chancery">Apple Chancery</p>
-      <ul class="type-weights">
-        <li>Regular · 72 pt</li>
-      </ul>
-    </div>
+          <p class="project-desc">
+            Creami Pop is a conceptual rebrand inspired by Milkis, the iconic Korean milk soda.
+            I recreated the creamy-fizzy vibe with brighter colors, playful type, and flavor-driven visuals,
+            keeping it fun, modern, and still familiar.
+          </p>
+        </header>
 
-  </div>
-</section>
+        <section class="kit-section" aria-labelledby="logo-variations">
+          <p class="kit-label" id="logo-variations">Logo Variations</p>
 
+          <div class="final-photo-grid">
+            <img src="images/matcha.png" alt="Matcha Girl logo 1">
+            <img src="images/matcha3.png" alt="Matcha Girl logo 2">
+            <img src="images/matcha2.png" alt="Matcha Girl logo 3">
+            <img src="images/matcha4.png" alt="Matcha Girl logo 4">
+          </div>
+        </section>
 
-      <!-- Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
-        <p class="kit-label" id="primary-logo">Printed Overview</p>
-        <img
-          src="images/guerrilla girls.jpg"
-          alt="Creami Pop Primary Logo"
-          class="logo-variations primary-logo"
-        >
-    <p class="kit-caption"></p>
-         This visual system shows how Creami Pop can appear across posters and brand materials. Bright colors, smooth gradients, and bubble details highlight the drink’s fun and creamy personality, creating a lively and eye-catching look.
-        </p>
+        <section class="kit-section" aria-labelledby="typography">
+          <p class="kit-label" id="typography">Typography</p>
 
-      </section>
+          <div class="type-spec">
+            <div class="type-family">
+              <p class="type-family-name font-dtgetai">DT GETAI GROTESK DISPLAY</p>
+              <p class="type-preview font-dtgetai">CREAMI POP — 0123456789</p>
+              <ul class="type-weights">
+                <li><strong>Black · 100 pt</strong></li>
+              </ul>
+            </div>
 
-      <!-- Logo Variations -->
-      <section class="kit-section" aria-labelledby="logo-variations">
-        <p class="kit-label" id="logo-variations">Map</p>
-        <img
-          src="images/leftbehindmap.png"
-          alt="Creami Pop logo variations and wordmarks"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
-        </p>
-      </section>
+            <div class="type-family">
+              <p class="type-family-name font-ppright">PPRightGrotesk</p>
+              <p class="type-preview font-ppright">Creamy fizz made modern — 0123456789</p>
+              <ul class="type-weights">
+                <li>Spatial Fine · 50 pt</li>
+                <li>Wide Medium</li>
+              </ul>
+            </div>
 
-      <!-- Color Palette -->
-      <section class="kit-section" aria-labelledby="color-palette">
+            <div class="type-family">
+              <p class="type-family-name font-aktiv">Aktiv Grotesk Ex</p>
+              <p class="type-preview font-aktiv">Clean, modern body text — 0123456789</p>
+              <ul class="type-weights">
+                <li>Medium · 14 pt</li>
+              </ul>
+            </div>
+
+            <div class="type-family">
+              <p class="type-family-name font-avenir">Avenir</p>
+              <p class="type-preview font-avenir">Supporting UI text — 0123456789</p>
+              <ul class="type-weights">
+                <li>Medium · 8 pt</li>
+              </ul>
+            </div>
+
+            <div class="type-family">
+              <p class="type-family-name font-lctmogi">LCTMOGI-A</p>
+              <p class="type-preview font-lctmogi">Playful accent — 0123456789</p>
+              <ul class="type-weights">
+                <li>Display Accent</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+            <section class="kit-section" aria-labelledby="color-palette">
         <p class="kit-label" id="color-palette">Color Palette</p>
 
         <div class="palette-row">
@@ -149,157 +259,92 @@
         </p>
       </section>
 
-      <!-- Color Application -->
-      <section class="kit-section" aria-labelledby="color-application">
-        <p class="kit-label" id="color-application">Color Application</p>
-        <img
-          src="images/creamipop-color-logos.png"
-          alt="Creami Pop logo color variations"
-          class="logo-variations"
-        >
-      </section>
+      <section class="kit-section" aria-labelledby="box-dieline">
+        <p class="kit-label" id="box-dieline">Box Design — Outside & Inside</p>
 
-      <!-- Flavor Illustrations -->
-      <section class="kit-section" aria-labelledby="flavor-illustrations">
-        <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
-        <img
-          src="images/creamipop-flavor-illustrations.png"
-          alt="Creami Pop flavor illustrations"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
-        </p>
-      </section>
-
-      <!-- Flavor Can Designs -->
-      <section class="kit-section" aria-labelledby="flavor-can-designs">
-        <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
-
-        <div class="can-grid">
-          <figure class="can-item">
-            <img
-              src="images/creamipop-fruit-loop-can.png"
-              alt="Creami Pop Fruit Loop Milk Soda can design"
-            >
-            <figcaption class="flavor-name">Fruit Loop</figcaption>
+        <div class="box-dieline-grid">
+          <figure class="box-dieline-card">
+            <img src="images/matchagirl1.jpg" alt="DOODLE box dieline — front">
           </figure>
 
-          <figure class="can-item">
-            <img
-              src="images/creamipop-cinnaswrl-can.png"
-              alt="Creami Pop CinnaSwrl Milk Soda can design"
-            >
-            <figcaption class="flavor-name">CinnaSwrl</figcaption>
+          <figure class="box-dieline-card">
+            <img src="images/matchagirl2.jpg" alt="DOODLE box dieline — back">
           </figure>
         </div>
-
-        <img
-          src="images/creamipop-can-box-packaging.png"
-          alt="Creami Pop can box packaging design"
-          class="can-box-packaging"
-        >
-
-        <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
-        </p>
       </section>
 
-          <div>
-            <p class="type-style">Body</p>
-            <p class="type-sample">
-              Creami Pop is a Korean milky soda brand that blends softness and carbonation into a clean, playful visual identity.
-            </p>
-          </div>
+            <section class="kit-section" aria-labelledby="box-dieline">
+        <p class="kit-label" id="box-dieline">Box Design — Outside & Inside</p>
+
+        <div class="box-dieline-grid">
+          <figure class="box-dieline-card">
+            <img src="images/matchaposter1.png" alt="DOODLE box dieline — front">
+          </figure>
+
+          <figure class="box-dieline-card">
+            <img src="images/matchaposter2.png" alt="DOODLE box dieline — back">
+          </figure>
         </div>
       </section>
 
-      <!-- Final Product Photography -->
-      <section class="kit-section" aria-labelledby="final-product-photography">
-        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
+      <section class="kit-section" aria-labelledby="box-dieline">
+  <p class="kit-label" id="matcha-writing">Typography Exercise</p>
+          <p class="kit-caption">
+    In-class typography challenge using the same Matcha text in three different layouts. 
+    Constraint: no color, only 1–2 typefaces and two type sizes. Goal: create hierarchy through spacing, weight, and layout.
+  </p>
 
-        <div class="final-photo-grid">
-          <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-          <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
+        <div class="box-dieline-grid">
+          <figure class="box-dieline-card">
+            <img src="images/matchawriting.png" alt="DOODLE box dieline — front">
+          </figure>
 
-          <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-          <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-          <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-          <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
+          <figure class="box-dieline-card">
+            <img src="images/matchawriting2.png" alt="DOODLE box dieline — back">
+          </figure>
+          <figure class="box-dieline-card">
+            <img src="images/matchawriting3.png" alt="DOODLE box dieline — back">
+          </figure>
         </div>
-
-        <p class="kit-caption">
-          Studio photography showcasing the final Creami Pop cans and variety packaging,
-          highlighting color, material finish, and real-world scale.
-        </p>
       </section>
-
-<div class="kit-section">
-  <p class="kit-label">Graphic Elements</p>
-
-  <div class="graphic-pair">
-    <img
-      src="images/Creamipopposter.png"
-      alt="Creami Pop Graphic Elements Poster"
-      class="shadow-outline"
-    />
-
-    <img
-      src="images/Creamipop.jpg"
-      alt="Creami Pop Instagram mockup"
-      class="shadow-outline"
-    />
-  </div>
-</div>
-
-
-    </section>
-  </main>
-
+    </main>
 
     <section class="more-work-cta">
       <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
     </section>
-
   </div>
 
   <!-- LIGHTBOX -->
-  <div class="lightbox" aria-hidden="true">
+  <div class="lightbox" id="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
 
-  <script>
-    const photos = document.querySelectorAll('.final-photo-grid img');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = lightbox.querySelector('img');
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-    photos.forEach(photo => {
-      photo.addEventListener('click', () => {
-        lightboxImg.src = photo.src;
-        lightboxImg.alt = photo.alt || 'Expanded photo';
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        lightbox.setAttribute('aria-hidden', 'false');
-      });
+const photos = document.querySelectorAll(
+  ".final-photo-grid img, .box-dieline-card img"
+);
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+
+  photos.forEach(photo => {
+    photo.addEventListener("click", function(){
+      lightboxImg.src = this.src;
+      lightboxImg.alt = this.alt;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
+  });
 
-    function closeLightbox(){
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-      document.body.style.overflow = '';
-      lightbox.setAttribute('aria-hidden', 'true');
-    }
+  lightbox.addEventListener("click", function(){
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+  });
 
-    lightbox.addEventListener('click', closeLightbox);
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-  </script>
+});
+</script>
 
 </body>
 </html>
