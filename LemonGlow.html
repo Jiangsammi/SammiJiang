@@ -193,6 +193,32 @@
   font-size: 15px;
   line-height: 1.6;
 }
+
+/* ✅ Preview + hover effect for all clickable images */
+.final-photo-grid img,
+.box-dieline-card img,
+.stagger-img,
+.shadow-outline{
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.final-photo-grid img:hover,
+.box-dieline-card img:hover,
+.stagger-img:hover,
+.shadow-outline:hover{
+  transform: scale(1.02);
+}
+/* Lightbox image background fix */
+.lightbox img{
+  max-width: 92vw;
+  max-height: 92vh;
+  object-fit: contain;
+
+  background: #ffffff;   /* makes PNG appear on white */
+  padding: 20px;         /* gives breathing room */
+  border-radius: 0;      /* keep sharp */
+}
 </style>
 <body>
 

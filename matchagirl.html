@@ -11,30 +11,36 @@
 </head>
 
 <style>
-  .logo-variation-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 2.5rem auto 0;
-    justify-content: center;
-    justify-items: center;
-  }
+/* ================================
+   LOGO VARIATIONS
+   ================================ */
+.logo-variation-row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  width: min(1200px, 92vw);
+  margin: 2.5rem auto 0;
+  justify-items: center;
+}
 
-  .logo-variation-row img{
-    width: 100%;
-    max-width: 520px;
-    height: 420px;
-    object-fit: contain;
-    display: block;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
+.logo-variation-row img{
+  width: 100%;
+  max-width: 520px;
+  height: 420px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 
+
+/* ================================
+   LIGHTBOX
+   ================================ */
 .lightbox{
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6); /* dark transparent */
+  background: rgba(0,0,0,0.6);
   display: none;
   align-items: center;
   justify-content: center;
@@ -42,73 +48,75 @@
   cursor: zoom-out;
 }
 
-.lightbox.active{
-  display: flex;
-}
+.lightbox.active{ display: flex; }
 
 .lightbox img{
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 92vw;
+  max-height: 92vh;
   object-fit: contain;
-
-  background: #ffffff; /* THIS makes the image area white */
+  background: #fff;
 }
 
-  .final-photo-grid img {
+
+/* ================================
+   IMAGE INTERACTION
+   ================================ */
+.final-photo-grid img,
+.box-dieline-card img{
   cursor: zoom-in;
   transition: transform 0.25s ease;
 }
 
-.final-photo-grid img:hover {
+.final-photo-grid img:hover,
+.box-dieline-card img:hover{
   transform: scale(1.02);
 }
+
+
+/* ================================
+   BOX / COLLAGE / TYPO SECTIONS
+   centered + balanced size
+   ================================ */
+section[aria-labelledby="box-dieline"]{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 3rem auto;
+}
+
 .box-dieline-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  width: min(1200px, 92vw);
-  margin: 1.5rem auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin: 2rem auto 0;
+  justify-content: center;
+  justify-items: center;
+}
 
-  justify-items: center;   /* THIS centers items inside columns */
-}
 .box-dieline-card{
-  margin: 0 auto;   /* centers inside each column */
-  background: transparent;
-  padding: 0;
-  box-shadow: none;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
 }
-/* Image styling */
+
 .box-dieline-card img{
   width: 100%;
   height: auto;
   display: block;
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.06); /* soft border */
-  border-radius: 6px;
 }
+
+
+/* ================================
+   MOBILE
+   ================================ */
 @media (max-width: 900px){
   .box-dieline-grid{
     grid-template-columns: 1fr;
   }
-}
 
-.box-dieline-cap{
-  margin-top: 10px;
-  font-size: 14px;
-  opacity: .75;
-  text-align: center;
-}
-
-@media (max-width: 820px){
-  .box-dieline-grid{ grid-template-columns: 1fr; }
-}
-section[aria-labelledby="box-dieline"] {
-  width: min(1200px, 92vw);
-  margin: 0 auto 3rem auto;
-}
-.box-dieline-card{
-  width: 100%;
-  max-width: 380px;  /* keeps them from stretching */
+  .box-dieline-card{
+    max-width: 95%;
+  }
 }
 </style>
 
@@ -260,7 +268,7 @@ section[aria-labelledby="box-dieline"] {
       </section>
 
       <section class="kit-section" aria-labelledby="box-dieline">
-        <p class="kit-label" id="box-dieline">Box Design — Outside & Inside</p>
+        <p class="kit-label" id="box-dieline">Digital Collage</p>
 
         <div class="box-dieline-grid">
           <figure class="box-dieline-card">

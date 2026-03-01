@@ -1374,3 +1374,28 @@ body{
 main{
   padding: 0 2rem;   /* side breathing room */
 }
+/* ================================
+   HOVER EFFECT (same as Matcha page)
+   ================================ */
+
+/* Put every image class/container you want to hover here */
+.logo-variation-row img,
+.logo-variations,
+.final-photo-grid img,
+.can-grid img,
+.can-box-packaging,
+.graphic-pair img,
+.shadow-outline{
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.logo-variation-row img:hover,
+.logo-variations:hover,
+.final-photo-grid img:hover,
+.can-grid img:hover,
+.can-box-packaging:hover,
+.graphic-pair img:hover,
+.shadow-outline:hover{
+  transform: scale(1.02);
+}
