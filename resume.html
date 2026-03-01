@@ -40,7 +40,33 @@
 .name {
   margin-bottom: 32px;
 }
+/* White pill for location */
+.pill.ghost{
+  background: #ffffff;
+  color: #000;
+  border: 1px solid #e5e5e5;
+}
+/* Glass scroll button */
+.scroll{
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
 
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #000;
+
+  transition: all 0.25s ease;
+}
+
+/* Subtle hover */
+.scroll:hover{
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
   </style>
 </head>
 
@@ -256,18 +282,21 @@
           I combine clean, simple design with smart strategy to help brands stand out and connect with their audience.
         </p>
 
-        <div class="contact-row" aria-label="Contact">
-          <a class="pill" href="mailto:sammijiang24@gmail.com" aria-label="Email Sammi">
-            ✦ sammijiang24@gmail.com
-          </a>
-          <a class="pill" href="tel:+19176359908" aria-label="Call Sammi">
-            ☎ (917) 635-9908
-          </a>
-          <span class="pill ghost" aria-label="Location">⌂ Based in NYC</span>
-        </div>
+<div class="contact-row" aria-label="Contact">
+  <a class="pill" href="mailto:sammijiang24@gmail.com" aria-label="Email Sammi">
+    sammijiang24@gmail.com
+  </a>
+  <a class="pill" href="tel:+19176359908" aria-label="Call Sammi">
+    (917) 635-9908
+  </a>
+  <span class="pill ghost" aria-label="Location">
+    Based in NYC
+  </span>
+</div>
 
-        <a class="scroll" href="#resume" aria-label="Scroll to Resume">Scroll down</a>
-      </div>
+<a class="scroll" href="#resume" aria-label="Scroll to Resume">
+  Scroll Down
+</a>
 
 <div class="hero-right">
   <figure class="portrait" aria-label="Portrait">
