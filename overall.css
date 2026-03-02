@@ -1399,3 +1399,29 @@ main{
 .shadow-outline:hover{
   transform: scale(1.02);
 }
+
+
+/* =========================================
+   MOBILE: add spacing under fixed header
+   ========================================= */
+@media (max-width: 768px){
+
+  /* Push entire page content down */
+  main{
+    padding-top: 90px !important;
+  }
+
+  /* Extra breathing room for title */
+  .brand-kit{
+    padding-top: 20px !important;
+  }
+
+  /* Prevent header overlap issues */
+  .site-header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+}
