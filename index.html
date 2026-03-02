@@ -57,44 +57,6 @@
 .slideshow.lemomo img{
   object-fit:contain;
 }
-/* =========================================================
-   MOBILE ONLY: fix masthead arrow overlap
-   ========================================================= */
-@media (max-width: 768px){
-
-  /* Reserve space so arrow never touches text */
-  .masthead-text{
-    padding-bottom: 120px !important;
-  }
-
-  /* Lock arrow to bottom center */
-  .masthead-arrow-container{
-    position: absolute !important;
-    left: 50% !important;
-    bottom: 40px !important;
-    transform: translateX(-50%) !important;
-  }
-
-  /* Make sure masthead fills screen height */
-  .masthead{
-    min-height: 100vh !important;
-  }
-
-  .masthead-contents{
-    min-height: 100vh !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  /* Keep intro centered like your 2nd image */
-  .intro{
-    text-align: center !important;
-    max-width: 90% !important;
-    margin: 0 auto !important;
-  }
-
-}
   </style>
 </head>
 
@@ -187,6 +149,9 @@
         <div class="site-content">
           <main>
 
+
+
+            
             <!-- Project Covers Grid -->
             <section class="project-covers" decorator="editable" data-context="theme.gallery.projects">
 
@@ -324,6 +289,7 @@
                   <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">NYC Scaffolding</div></div></div></div>
                 </div>
               </a>
+
 
 <a decorator="editable" class="project-cover hold-space" href="LEMOMO.html">
   <div class="cover-content-container">
