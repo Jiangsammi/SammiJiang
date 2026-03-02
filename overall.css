@@ -1425,3 +1425,37 @@ main{
   }
 
 }
+
+/* =========================================
+   CASE STUDY INTRO — MOBILE ONLY LAYOUT FIX
+   ========================================= */
+@media (max-width: 768px){
+
+  /* Make the intro stack instead of 2 columns */
+  .case-intro{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    align-items: start !important;
+
+    /* keep it readable on phone */
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+
+  /* Meta line should wrap nicely */
+  .case-intro .project-meta{
+    margin: 0 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.12em; /* keeps your spaced look */
+  }
+
+  /* Description full width + better reading */
+  .case-intro .project-desc{
+    margin: 0 !important;
+    max-width: 100% !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+  }
+}
