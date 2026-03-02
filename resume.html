@@ -76,6 +76,105 @@
   background: rgba(255,255,255,0.25);
   transform: translateY(-2px);
 }
+
+/* =========================================================
+   HERO: force desktop-style 2-column layout on small screens
+   (keeps the same layout as your screenshot)
+   ========================================================= */
+
+/* Make sure the hero container is a 2-col grid */
+.hero.wrap{
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  align-items: center;
+  gap: clamp(18px, 4vw, 56px);
+}
+
+/* Prevent columns from breaking onto new lines */
+.hero-left,
+.hero-right{
+  min-width: 0; /* allows text to shrink instead of forcing a wrap/stack */
+}
+
+/* Portrait sizing stays controlled */
+.hero-right{
+  display: flex;
+  justify-content: center;
+}
+.portrait{
+  width: min(420px, 42vw);
+}
+.portrait img.portrait-photo{
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* match your rounded look */
+}
+
+/* Keep pills from blowing the layout up */
+.contact-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* --- Mobile scaling (still 2 columns) --- */
+@media (max-width: 900px){
+  .hero.wrap{
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  /* scale typography smoothly so it fits */
+  .name{
+    margin-bottom: 20px;
+  }
+  .name .first,
+  .name .last{
+    font-size: clamp(44px, 10vw, 92px);
+    line-height: 0.95;
+  }
+
+  .summary{
+    font-size: clamp(14px, 2.4vw, 16px);
+    max-width: 42ch;
+  }
+
+  .portrait{
+    width: min(340px, 44vw);
+  }
+
+  /* optional: reduce sticker clutter on small screens */
+  .sticker-rail{
+    opacity: 0.85;
+    transform: scale(0.9);
+  }
+}
+
+/* --- Very small phones (still 2 columns, tighter) --- */
+@media (max-width: 520px){
+  .hero.wrap{
+    grid-template-columns: 1fr 0.85fr;
+    gap: 14px;
+  }
+
+  .kicker{
+    font-size: 12px;
+    letter-spacing: 0.22em;
+  }
+
+  .portrait{
+    width: min(260px, 46vw);
+  }
+
+  /* keep the orbit graphic from overflowing */
+  .portrait img.portrait-deco{
+    width: 110px;
+    right: -8px;
+    bottom: -8px;
+  }
+
+  /* optional: hide stickers if they crowd */
+  /* .sticker-rail{ display:none; } */
+}
   </style>
 </head>
 
