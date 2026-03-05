@@ -118,6 +118,24 @@
   }
 
 }
+/* Mobile: fit 3 videos perfectly across screen */
+@media (max-width: 768px){
+
+  .project-video-grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+    padding: 0 6px;
+  }
+
+  .project-video-grid video{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    border-radius: 16px; /* smaller so it fits better */
+  }
+
+}
 </style>
 
 
