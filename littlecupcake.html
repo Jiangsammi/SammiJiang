@@ -464,7 +464,32 @@
   height: 1px;
   background: rgba(0,0,0,0.08);
 }
-  
+
+/* Brand Collateral Grid */
+.collateral-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* desktop */
+  gap: 16px;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.collateral-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Mobile: 2 images per row */
+@media (max-width: 768px){
+  .collateral-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+
 </style>
 
 <script>
