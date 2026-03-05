@@ -57,6 +57,20 @@
 .slideshow.lemomo img{
   object-fit:contain;
 }
+/* Hide video controls / play button */
+.project-cover video::-webkit-media-controls {
+  display: none !important;
+}
+
+.project-cover video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* Make video behave like an image preview */
+.project-cover video{
+  pointer-events: none;   /* prevents clicking the video UI */
+}
   </style>
 </head>
 
