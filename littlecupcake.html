@@ -81,41 +81,27 @@
   margin-top: 0.75rem;
 }
 
-/* App UI grid */
+/* App UI Grid */
 .app-ui-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* desktop */
+  gap: 16px;
   width: min(1100px, 92vw);
   margin: 0 auto;
-  display: grid;
-  gap: 14px;
-
-  /* desktop default */
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .app-ui-grid img{
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;     /* optional */
-  object-fit: contain;      /* keeps full screen visible */
+  object-fit: contain;
 }
 
-/* tablet */
-@media (max-width: 900px){
+/* Mobile: 2 images per row */
+@media (max-width: 768px){
   .app-ui-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* mobile */
-@media (max-width: 560px){
-  .app-ui-grid{
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-  }
-
-  .app-ui-grid img{
-    border-radius: 10px;
   }
 }
 </style>
