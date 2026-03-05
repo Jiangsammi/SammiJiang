@@ -64,6 +64,7 @@
     max-width: 220px; /* never grows bigger than desktop */
   }
 }
+
 /* Character Illustration Grid */
 .final-photo-grid{
   display: grid;
@@ -78,6 +79,26 @@
   height: auto;
   display: block;
   object-fit: contain;
+}
+
+/* Mobile only: 3 videos in one row, scaled down, no outline */
+@media (max-width: 768px) {
+
+  .project-video-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .project-video-grid video{
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* prevents cropping */
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+
 }
 </style>
 
