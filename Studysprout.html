@@ -95,7 +95,23 @@
     display: block;
   }
 }
+/* Mobile fix — keep 3 images per row but fit screen */
+@media (max-width: 768px){
 
+  .final-photo-grid.ui-grid-3{
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .final-photo-grid.ui-grid-3 img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+}
 /* Mobile fix: keep 3 images per row and fit screen */
 @media (max-width: 768px){
 
