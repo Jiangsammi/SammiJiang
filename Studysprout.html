@@ -29,18 +29,22 @@
   border: none !important;
   box-shadow: none !important;
 }
-.project-video-grid {
+.project-video-grid{
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
   justify-content: center; /* centers the whole grid */
+
 }
 
-.project-video-grid video {
-  width: 250px;
-  height: 520px;
+.project-video-grid video{
+  width: 255px;
+  height: 540px;
+  aspect-ratio: 9 / 16;   /* keeps vertical phone shape */
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 52px;
 }
 
 .palette-row{
