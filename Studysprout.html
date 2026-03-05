@@ -81,9 +81,8 @@
   object-fit: contain;
 }
 
-/* Mobile only: 3 videos in one row, scaled down, no outline */
+/* Mobile only: keep 3 videos in one row */
 @media (max-width: 768px) {
-
   .project-video-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -93,12 +92,8 @@
   .project-video-grid video{
     width: 100%;
     height: auto;
-    object-fit: contain; /* prevents cropping */
-    outline: none;
-    border: none;
-    box-shadow: none;
+    display: block;
   }
-
 }
 
 /* Mobile fix: keep 3 images per row and fit screen */
