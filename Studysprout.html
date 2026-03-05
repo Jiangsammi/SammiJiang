@@ -80,20 +80,22 @@
   display: block;
   object-fit: contain;
 }
+@media (max-width: 768px){
 
-/* Mobile only: keep 3 videos in one row */
-@media (max-width: 768px) {
   .project-video-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    overflow-x: auto;   /* allows slight scroll instead of squishing */
   }
 
   .project-video-grid video{
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 250px;       /* same size as desktop */
+    height: 520px;
+    object-fit: cover;
+    flex-shrink: 0;
   }
+
 }
 /* Mobile fix — keep 3 images per row but fit screen */
 @media (max-width: 768px){
