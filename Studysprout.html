@@ -64,6 +64,21 @@
     max-width: 220px; /* never grows bigger than desktop */
   }
 }
+/* Character Illustration Grid */
+.final-photo-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 per row */
+  gap: 10px;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.final-photo-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 </style>
 
 
