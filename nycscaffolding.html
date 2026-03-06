@@ -56,6 +56,29 @@
     max-width: 220px; /* never grows bigger than desktop */
   }
 }
+
+.final-photo-grid.ui-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 20px; /* spacing between images */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.final-photo-grid.ui-grid-3 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.clean-outline-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #d9d9d9;   /* clean thin outline */
+  background: #fff;
+  box-sizing: border-box;
+}
 </style>
 
 
@@ -142,30 +165,6 @@
   </div>
 </section>
 
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
-  <p class="kit-label" id="app-ui">App UI Screens</p>
-
-  <div class="final-photo-grid">
-    <img src="images/leftbehindfigma1.png" alt="Left Behind app screen 1">
-    <img src="images/leftbehindfigma2.png" alt="Left Behind app screen 2">
-    <img src="images/leftbehindfigma3.png" alt="Left Behind app screen 3">
-    <img src="images/leftbehindfigma15.png" alt="Left Behind app screen 4">
-    <img src="images/leftbehindfigma16.png" alt="Left Behind app screen 5">
-    <img src="images/leftbehindfigma4.png" alt="Left Behind app screen 6">
-    <img src="images/leftbehindfigma5.png" alt="Left Behind app screen 7">
-    <img src="images/leftbehindfigma6.png" alt="Left Behind app screen 8">
-    <img src="images/leftbehindfigma12.png" alt="Left Behind app screen 9">
-    <img src="images/leftbehindfigma13.png" alt="Left Behind app screen 10">
-    <img src="images/leftbehindfigma7.png" alt="Left Behind app screen 11">
-    <img src="images/leftbehindfigma8.png" alt="Left Behind app screen 12">
-    <img src="images/leftbehindfigma9.png" alt="Left Behind app screen 13">
-    <img src="images/leftbehindfigma10.png" alt="Left Behind app screen 14">
-    <img src="images/leftbehindfigma14.png" alt="Left Behind app screen 15">
-    <img src="images/leftbehindfigma11.png" alt="Left Behind app screen 16">
-  </div>
-</section>
-
 <!-- Typography -->
 <section class="kit-section" aria-labelledby="typography">
   <p class="kit-label" id="typography">Typography</p>
@@ -196,25 +195,42 @@ Different typefaces are used to reflect the different kinds of documents found w
   </p>
 </section>
 
-<!-- Printed Case Files -->
-<section class="kit-section" aria-labelledby="printed-files">
-  <p class="kit-label" id="printed-files">Object Investigation Files</p>
+<section class="kit-section digital-section" aria-labelledby="app-ui">
+<p class="kit-label" id="final-product-photography">digital</p>
 
-  <img src="images/leftbehindoverall.jpg" alt="Printed case files overview" class="logo-variations">
-</section>
+  <div class="final-photo-grid ui-grid-3 clean-outline-grid">
+<img src="images/NYCscaffolding13.jpg" alt="LemonGlow product lineup on white background">
+<img src="images/NYCscaffoldingpage 2-3.png" alt="LemonGlow packaging close-up angled view">
+<img src="images/NYCscaffoldingpages 6-7.png" alt="LemonGlow packaging close-up front view">
+<img src="images/NYCscaffoldingpage14-15.png" alt="LemonGlow packaging close-up front view">
+<img src="images/NYCscaffoldingpage 18-19.png" alt="LemonGlow product set with packaging">
+<img src="images/NYCscaffoldingpage 24-25.png" alt="LemonGlow packaging close-up front view">
+
+  </div>
+
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+<p class="kit-label" id="final-product-photography">Final Product Photography</p>
+
+<div class="final-photo-grid ui-grid-2">
+<img src="images/NYCscaffolding1.JPG">
+<img src="images/NYCscaffolding2.JPG">
+<img src="images/NYCscaffolding3.JPG">
+<img src="images/NYCscaffolding4.JPG">
+</div>
 
 <!-- Final Product Photography -->
 <section class="kit-section lb-final-photos" aria-labelledby="final-photos">
-  <p class="kit-label" id="final-photos">Final Product Photography</p>
+  <p class="kit-label" id="final-photos">Final Book Photograph</p>
 
   <div class="final-photo-grid">
-    <img src="images/leftbehind6.JPG" alt="Left Behind photo 1">
-    <img src="images/leftbehind7.jpg" alt="Left Behind photo 2">
-    <img src="images/leftbehind2.JPG" alt="Left Behind photo 3">
-    <img src="images/leftbehind1.jpg" alt="Left Behind photo 4">
-    <img src="images/leftbehind3.JPG" alt="Left Behind photo 5">
-    <img src="images/leftbehind4.JPG" alt="Left Behind photo 6">
-    <img src="images/leftbehind8.JPG" alt="Left Behind photo 7">
+    <img src="images/NYCscaffolding11.png" alt="Left Behind photo 6">
+    <img src="images/NYCscaffolding8.png" alt="Left Behind photo 3">
+    <img src="images/NYCscaffolding9.png" alt="Left Behind photo 4">
+    <img src="images/NYCscaffolding10.png" alt="Left Behind photo 5">
+    <img src="images/NYCscaffolding6.png" alt="Left Behind photo 1">
+    <img src="images/NYCscaffolding7.png" alt="Left Behind photo 2">
+    <img src="images/NYCscaffolding12.png" alt="Left Behind photo 7">
   </div>
 </section>
 
