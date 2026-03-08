@@ -15,14 +15,16 @@
       gap:3rem;
       align-items:center;
       justify-content:center;
-      flex-wrap:wrap;            /* ✅ wraps on small screens */
+      flex-wrap:wrap;
       max-width:1200px;
       margin:2.5rem auto 0;
     }
+
     .logo-variation-row img{
       width:100%;
       max-width:520px;
       height:auto;
+      display:block;
       box-shadow:0 4px 12px rgba(0,0,0,0.08);
     }
 
@@ -33,50 +35,70 @@
       max-width:1200px;
       margin:2rem auto 0;
     }
+
     .final-photo-grid img{
       width:100%;
       height:auto;
       display:block;
+      object-fit:contain;
     }
 
     .type-text{
       max-width:720px;
       margin-top:0.75rem;
     }
-/* Touchpoints grid (default / desktop) */
-.collateral-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 2rem auto 0;
-}
 
-.collateral-grid img{
-  width: 100%;
-  height: auto;          /* ✅ remove fixed height */
-  display: block;
-  object-fit: contain;   /* ✅ keeps full artwork visible */
-  background: #fff;
-}
+    .collateral-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:2.5rem;
+      max-width:1200px;
+      margin:2rem auto 0;
+    }
 
-/* Mobile: force 3 in one row + make them equal tiles */
-@media (max-width: 768px){
-  .collateral-grid{
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
+    .collateral-grid img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      background:#fff;
+    }
 
-  .collateral-grid img{
-    aspect-ratio: 1 / 1;   /* ✅ makes a neat 3-tile row */
-    height: auto;
-    object-fit: contain;   /* ✅ no cropping */
-  }
-}
+    @media (max-width: 900px){
+      .final-photo-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .collateral-grid{
+        grid-template-columns:repeat(3, 1fr);
+        gap:10px;
+      }
+
+      .collateral-grid img{
+        aspect-ratio:1 / 1;
+        object-fit:contain;
+      }
+    }
+
+    @media (max-width: 640px){
+      .logo-variation-row{
+        gap:1.25rem;
+      }
+
+      .final-photo-grid{
+        grid-template-columns:1fr;
+        gap:1rem;
+      }
+
+      .collateral-grid{
+        grid-template-columns:repeat(3, 1fr);
+        gap:8px;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body class="transition-enabled">
 
   <!-- CLEAN RESUME-STYLE HEADER -->
   <header class="site-header js-site-header">
@@ -92,11 +114,10 @@
       </div>
     </div>
 
-    <!-- KEEP SOCIAL ICONS -->
     <div class="social nav-social">
       <ul>
         <li>
-          <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
               <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
             </svg>
@@ -104,7 +125,7 @@
         </li>
 
         <li>
-          <a href="https://www.pinterest.com/omgsammi/" target="_blank" rel="noopener" aria-label="Pinterest">
+          <a href="https://www.pinterest.com/omgsammi/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px" aria-hidden="true">
               <path d="M15.36 4C11.13 4 9 7.1 9 9.74c0 1.6 0.6 3 1.8 3.51c0.2 0.1 0.4 0 0.45-0.23c0.04-0.16 0.14-0.57 0.18-0.74c0.06-0.23 0.04-0.31-0.13-0.51c-0.36-0.44-0.59-1-0.59-1.8c0-2.32 1.68-4.4 4.38-4.4c2.39 0 3.7 1.5 3.7 3.52c0 2.65-1.14 4.89-2.82 4.89c-0.93 0-1.63-0.8-1.4-1.77c0.27-1.16 0.79-2.42 0.79-3.26c0-0.75-0.39-1.38-1.2-1.38c-0.95 0-1.72 1.02-1.72 2.38c0 0.9 0.3 1.4 0.3 1.45s-0.97 4.26-1.14 5c-0.34 1.49-0.05 3.31-0.03 3.49c0.01 0.1 0.1 0.1 0.2 0.05c0.09-0.12 1.22-1.56 1.61-3.01c0.11-0.41 0.63-2.53 0.63-2.53c0.31 0.6 1.2 1.1 2.2 1.15c2.86 0 4.8-2.69 4.8-6.3C21 6.5 18.8 4 15.4 4z"/>
             </svg>
@@ -133,7 +154,7 @@
       <header class="case-intro">
         <p class="project-meta">Branding · Packaging · Illustration · 2025</p>
         <p class="project-desc">
-          This rebrand presents Lemomo Tea as fresh, calm, and quietly playful—blending modern design with traditional tea culture.
+          This rebrand presents Lemomo Tea as fresh, calm, and quietly playful, blending modern design with traditional tea culture.
           The focus is on real ingredients, smooth flavors, and a relaxed experience that encourages people to slow down and enjoy the moment.
         </p>
       </header>
@@ -162,14 +183,20 @@
             alt="Lemomo Tea framed logo system"
           >
         </div>
-
-        <p class="kit-caption">
-          Organic shapes, hand-drawn type, and subtle botanical details create a calm, sensory identity.
-          The vertical and framed versions flex across layouts while staying consistent.
-        </p>
       </section>
 
-      <!-- 3) Color Palette (moved BEFORE typography) -->
+            <!-- 4) Typography -->
+      <section class="kit-section" aria-labelledby="typography">
+        <p class="kit-label" id="typography">Typography</p>
+
+        <div class="type-text">
+<p class="kit-caption">
+手札體-繁 adds a handmade feeling to the brand. Source Serif Variable Roman and Minion Variable Concept Bold keep the typography simple, clean, and easy to read across the different materials.
+</p>
+        </div>
+      </section>
+
+      <!-- 3) Color Palette -->
       <section class="kit-section" aria-labelledby="color-palette">
         <p class="kit-label" id="color-palette">Color Palette</p>
 
@@ -183,21 +210,9 @@
         </div>
 
         <p class="palette-note">
-          This palette is inspired by Lemomo Tea and the feeling of freshly brewed tea with fragrant lemons.
-          Black and white keep it clean and modern, deep blue adds a grounded “tea” tone, and the yellows bring in a light citrus lift.
+          This palette is inspired by freshly brewed tea and fragrant lemons.
+          Black and white keep the system clean and modern, deep blue adds a grounded tea-like tone, and the yellows bring in a bright citrus lift.
         </p>
-      </section>
-
-      <!-- 4) Typography -->
-      <section class="kit-section" aria-labelledby="typography">
-        <p class="kit-label" id="typography">Typography</p>
-
-        <div class="type-text">
-          <p class="kit-caption">
-            手札體-繁 brings a handmade warmth, while Source Serif Variable Roman and Minion Variable Concept Bold keep everything structured and readable.
-            Together they balance personality with a refined, classic feel across print and in-store pieces.
-          </p>
-        </div>
       </section>
 
       <!-- 5) Posters / Campaign -->
@@ -205,16 +220,16 @@
         <p class="kit-label" id="posters">Signature Lemon Ice Tea Poster</p>
 
         <div class="final-photo-grid">
-          <img src="images/LEMOMO BLUE 1.jpg" alt="Lemomo Tea poster — blue set 1">
-          <img src="images/LEMOMO BLUE 2.JPG" alt="Lemomo Tea poster — blue set 2">
-          <img src="images/LEMOMO BLUE 3.jpg" alt="Lemomo Tea poster — blue set 3">
-          <img src="images/LEMOMO ORANGE 1.jpg" alt="Lemomo Tea poster — orange set 1">
-          <img src="images/LEMOMO ORANGE 2.jpg" alt="Lemomo Tea poster — orange set 2">
-          <img src="images/LEMOMO ORANGE 3.jpg" alt="Lemomo Tea poster — orange set 3">
+          <img src="images/LEMOMO BLUE 1.jpg" alt="Lemomo Tea poster, blue version 1">
+          <img src="images/LEMOMO BLUE 2.JPG" alt="Lemomo Tea poster, blue version 2">
+          <img src="images/LEMOMO BLUE 3.jpg" alt="Lemomo Tea poster, blue version 3">
+          <img src="images/LEMOMO ORANGE 1.jpg" alt="Lemomo Tea poster, orange version 1">
+          <img src="images/LEMOMO ORANGE 2.jpg" alt="Lemomo Tea poster, orange version 2">
+          <img src="images/LEMOMO ORANGE 3.jpg" alt="Lemomo Tea poster, orange version 3">
         </div>
       </section>
 
-      <!-- 6) Brand Collateral (bags) -->
+      <!-- 6) Brand Collateral -->
       <section class="kit-section" aria-labelledby="collateral">
         <p class="kit-label" id="collateral">Brand Collateral</p>
 
@@ -225,7 +240,7 @@
         </div>
       </section>
 
-      <!-- 7) Touchpoints (sign / napkin / sticker) -->
+      <!-- 7) Touchpoints -->
       <section class="kit-section" aria-labelledby="touchpoints">
         <p class="kit-label" id="touchpoints">In-Store Touchpoints</p>
 
@@ -243,11 +258,10 @@
         <img src="images/LEMOMO TEA.png" alt="Lemomo Tea in-store marketing layout" class="logo-variations">
 
         <p class="kit-caption">
-          Designed to be easy to notice and easy to remember using bold color and clear flavor cues help each drink stand out,
-          and the consistent layout keeps the brand cohesive across the space.
+          Designed to be easy to notice and easy to remember, bold color and clear flavor cues help each drink stand out,
+          while the consistent layout keeps the brand cohesive across the space.
         </p>
       </section>
-
     </section>
   </main>
 
@@ -261,7 +275,9 @@
   </div>
 
   <script>
-    const photos = document.querySelectorAll('.final-photo-grid img, .collateral-grid img');
+    const photos = document.querySelectorAll(
+      '.final-photo-grid img, .collateral-grid img, .logo-variation-row img, .primary-logo, .logo-variations'
+    );
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox.querySelector('img');
 
@@ -275,7 +291,7 @@
       });
     });
 
-    function closeLightbox(){
+    function closeLightbox() {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
       document.body.style.overflow = '';
@@ -283,6 +299,7 @@
     }
 
     lightbox.addEventListener('click', closeLightbox);
+
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
     });

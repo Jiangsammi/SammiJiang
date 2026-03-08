@@ -33,7 +33,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-
 /* ================================
    LIGHTBOX
    ================================ */
@@ -48,7 +47,9 @@
   cursor: zoom-out;
 }
 
-.lightbox.active{ display: flex; }
+.lightbox.active{ 
+  display: flex; 
+}
 
 .lightbox img{
   max-width: 92vw;
@@ -56,7 +57,6 @@
   object-fit: contain;
   background: #fff;
 }
-
 
 /* ================================
    IMAGE INTERACTION
@@ -72,25 +72,13 @@
   transform: scale(1.02);
 }
 
-
 /* ================================
    BOX / COLLAGE / TYPO SECTIONS
-   centered + balanced size
    ================================ */
 section[aria-labelledby="box-dieline"]{
   width: 100%;
   max-width: 1400px;
   margin: 0 auto 3rem auto;
-}
-
-.box-dieline-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
-  gap: 18px;
-  width: 100%;
-  margin: 2rem auto 0;
-  justify-content: center;
-  justify-items: center;
 }
 
 .box-dieline-card{
@@ -105,6 +93,10 @@ section[aria-labelledby="box-dieline"]{
   display: block;
 }
 
+.type-text{
+  max-width: 760px;
+  margin-top: 1rem;
+}
 
 /* ================================
    MOBILE
@@ -118,12 +110,65 @@ section[aria-labelledby="box-dieline"]{
     max-width: 95%;
   }
 }
+.box-dieline-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  padding: 8px;                /* breathing room */
+  box-sizing: border-box;
+}
+.box-dieline-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images */
+  gap: 18px;
+  max-width: 1200px;
+  margin: 2rem auto; /* centers the whole grid */
+  justify-content: center;
+  align-items: start;
+}
+@media (max-width: 900px){
+  .box-dieline-grid{
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}
+
+/* Only Digital Collage section */
+#digital-collage + .box-dieline-grid{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 28px;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+#digital-collage + .box-dieline-grid .box-dieline-card{
+  max-width: 650px; /* makes them bigger */
+}
+
+#digital-collage + .box-dieline-grid img{
+  width: 100%;
+  height: auto;
+}
+
+/* Only Poster Design section */
+section[aria-labelledby="poster-design"] .box-dieline-grid{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 28px;
+  justify-content: center;  /* centers the two images */
+  margin: 2rem auto;
+}
+
+section[aria-labelledby="poster-design"] .box-dieline-card{
+  max-width: 650px;
+}
 </style>
 
 <body class="transition-enabled">
   <div class="js-responsive-nav">
 
-    <!-- CLEAN RESUME-STYLE HEADER -->
     <header class="site-header js-site-header">
       <nav class="nav-container">
         <div class="gallery-title"><a href="index.html">Home</a></div>
@@ -140,7 +185,7 @@ section[aria-labelledby="box-dieline"]{
       <div class="social nav-social">
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
                 <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
               </svg>
@@ -176,19 +221,16 @@ section[aria-labelledby="box-dieline"]{
 
     <div class="header-placeholder"></div>
 
-    <!-- BRAND KIT -->
     <main>
       <section class="brand-kit" aria-label="Matcha Girl Brand Guidelines">
 
         <h2 class="kit-title">MATCHA GIRL</h2>
 
         <header class="case-intro">
-          <p class="project-meta">Branding · Packaging · Illustration · 2025</p>
+          <p class="project-meta">Typography · Poster Design · Digital Collage · 2025</p>
 
           <p class="project-desc">
-            Creami Pop is a conceptual rebrand inspired by Milkis, the iconic Korean milk soda.
-            I recreated the creamy-fizzy vibe with brighter colors, playful type, and flavor-driven visuals,
-            keeping it fun, modern, and still familiar.
+            Matcha Girl explores how matcha has become more than just a drink. It has turned into a lifestyle image connected to social media, beauty, routine, and identity. This project uses typography, posters, and digital collage to show that cultural shift in a playful and expressive way.
           </p>
         </header>
 
@@ -196,124 +238,77 @@ section[aria-labelledby="box-dieline"]{
           <p class="kit-label" id="logo-variations">Logo Variations</p>
 
           <div class="final-photo-grid">
-            <img src="images/matcha.png" alt="Matcha Girl logo 1">
-            <img src="images/matcha3.png" alt="Matcha Girl logo 2">
-            <img src="images/matcha2.png" alt="Matcha Girl logo 3">
-            <img src="images/matcha4.png" alt="Matcha Girl logo 4">
+            <img src="images/matcha.png" alt="Matcha Girl logo variation 1">
+            <img src="images/matcha3.png" alt="Matcha Girl logo variation 2">
+            <img src="images/matcha2.png" alt="Matcha Girl logo variation 3">
+            <img src="images/matcha4.png" alt="Matcha Girl logo variation 4">
           </div>
         </section>
 
         <section class="kit-section" aria-labelledby="typography">
           <p class="kit-label" id="typography">Typography</p>
 
-          <div class="type-spec">
-            <div class="type-family">
-              <p class="type-family-name font-dtgetai">DT GETAI GROTESK DISPLAY</p>
-              <p class="type-preview font-dtgetai">CREAMI POP — 0123456789</p>
-              <ul class="type-weights">
-                <li><strong>Black · 100 pt</strong></li>
-              </ul>
-            </div>
+          <div class="type-text">
+<p class="kit-caption">
+I used Destomed for the more expressive text, Apple Chancery for the decorative type, and Arial for the body text. I also used a bold sans-serif font in the poster to make the main phrase stand out more.
+</p>
 
-            <div class="type-family">
-              <p class="type-family-name font-ppright">PPRightGrotesk</p>
-              <p class="type-preview font-ppright">Creamy fizz made modern — 0123456789</p>
-              <ul class="type-weights">
-                <li>Spatial Fine · 50 pt</li>
-                <li>Wide Medium</li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-aktiv">Aktiv Grotesk Ex</p>
-              <p class="type-preview font-aktiv">Clean, modern body text — 0123456789</p>
-              <ul class="type-weights">
-                <li>Medium · 14 pt</li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-avenir">Avenir</p>
-              <p class="type-preview font-avenir">Supporting UI text — 0123456789</p>
-              <ul class="type-weights">
-                <li>Medium · 8 pt</li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-lctmogi">LCTMOGI-A</p>
-              <p class="type-preview font-lctmogi">Playful accent — 0123456789</p>
-              <ul class="type-weights">
-                <li>Display Accent</li>
-              </ul>
-            </div>
+            <p class="kit-caption">
+              Destomed — 117 pt<br>
+              Apple Chancery — 72 pt<br>
+              Arial — body text
+            </p>
           </div>
         </section>
 
-            <section class="kit-section" aria-labelledby="color-palette">
-        <p class="kit-label" id="color-palette">Color Palette</p>
+        <section class="kit-section" aria-labelledby="digital-collage">
+          <p class="kit-label" id="digital-collage">Digital Collage</p>
 
-        <div class="palette-row">
-          <div class="palette-swatch" style="background:#91BB54"><span>#91BB54</span></div>
-          <div class="palette-swatch" style="background:#FFF378"><span>#FFF378</span></div>
-          <div class="palette-swatch" style="background:#E084B3"><span>#E084B3</span></div>
-          <div class="palette-swatch" style="background:#A02657"><span>#A02657</span></div>
-          <div class="palette-swatch" style="background:#1A97D4"><span>#1A97D4</span></div>
-          <div class="palette-swatch" style="background:#693C97"><span>#693C97</span></div>
-        </div>
+          <div class="box-dieline-grid">
+            <figure class="box-dieline-card">
+              <img src="images/matchagirl1.jpg" alt="Matcha Girl digital collage 1">
+            </figure>
 
-        <p class="palette-note">
-          Dreamy pastel tones are paired with bold, high-contrast pops to create a lively and balanced palette. Milky white and soft peach feel creamy and smooth, while lime green, electric blue, and deep purple add a bright, fizzy pop that feels fresh and fun.
-        </p>
-      </section>
+            <figure class="box-dieline-card">
+              <img src="images/matchagirl2.jpg" alt="Matcha Girl digital collage 2">
+            </figure>
+          </div>
+        </section>
 
-      <section class="kit-section" aria-labelledby="box-dieline">
-        <p class="kit-label" id="box-dieline">Digital Collage</p>
+        <section class="kit-section" aria-labelledby="poster-design">
+          <p class="kit-label" id="poster-design">Poster Design</p>
 
-        <div class="box-dieline-grid">
-          <figure class="box-dieline-card">
-            <img src="images/matchagirl1.jpg" alt="DOODLE box dieline — front">
-          </figure>
+          <div class="box-dieline-grid">
+            <figure class="box-dieline-card">
+              <img src="images/matchaposter1.png" alt="Matcha Girl poster design 1">
+            </figure>
 
-          <figure class="box-dieline-card">
-            <img src="images/matchagirl2.jpg" alt="DOODLE box dieline — back">
-          </figure>
-        </div>
-      </section>
+            <figure class="box-dieline-card">
+              <img src="images/matchaposter2.png" alt="Matcha Girl poster design 2">
+            </figure>
+          </div>
+        </section>
 
-            <section class="kit-section" aria-labelledby="box-dieline">
-        <p class="kit-label" id="box-dieline">Box Design — Outside & Inside</p>
+        <section class="kit-section" aria-labelledby="matcha-writing">
+          <p class="kit-label" id="matcha-writing">Typography Exercise</p>
+<p class="kit-caption">
+This was a typography challenge from my Systems for Branding class. I used the same Matcha text and tried three different layouts, changing the spacing, weight, and composition to see how the hierarchy could shift.
+</p>
 
-        <div class="box-dieline-grid">
-          <figure class="box-dieline-card">
-            <img src="images/matchaposter1.png" alt="DOODLE box dieline — front">
-          </figure>
+          <div class="box-dieline-grid">
+            <figure class="box-dieline-card">
+              <img src="images/matchawriting.png" alt="Matcha typography exercise 1">
+            </figure>
 
-          <figure class="box-dieline-card">
-            <img src="images/matchaposter2.png" alt="DOODLE box dieline — back">
-          </figure>
-        </div>
-      </section>
+            <figure class="box-dieline-card">
+              <img src="images/matchawriting2.png" alt="Matcha typography exercise 2">
+            </figure>
 
-      <section class="kit-section" aria-labelledby="box-dieline">
-  <p class="kit-label" id="matcha-writing">Typography Exercise</p>
-          <p class="kit-caption">
-    In-class typography challenge using the same Matcha text in three different layouts. 
-    Constraint: no color, only 1–2 typefaces and two type sizes. Goal: create hierarchy through spacing, weight, and layout.
-  </p>
-
-        <div class="box-dieline-grid">
-          <figure class="box-dieline-card">
-            <img src="images/matchawriting.png" alt="DOODLE box dieline — front">
-          </figure>
-
-          <figure class="box-dieline-card">
-            <img src="images/matchawriting2.png" alt="DOODLE box dieline — back">
-          </figure>
-          <figure class="box-dieline-card">
-            <img src="images/matchawriting3.png" alt="DOODLE box dieline — back">
-          </figure>
-        </div>
+            <figure class="box-dieline-card">
+              <img src="images/matchawriting3.png" alt="Matcha typography exercise 3">
+            </figure>
+          </div>
+        </section>
       </section>
     </main>
 
@@ -322,37 +317,43 @@ section[aria-labelledby="box-dieline"]{
     </section>
   </div>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const photos = document.querySelectorAll(".final-photo-grid img, .box-dieline-card img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
 
-const photos = document.querySelectorAll(
-  ".final-photo-grid img, .box-dieline-card img"
-);
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = lightbox.querySelector("img");
+      photos.forEach(photo => {
+        photo.addEventListener("click", function () {
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt;
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden";
+          lightbox.setAttribute("aria-hidden", "false");
+        });
+      });
 
-  photos.forEach(photo => {
-    photo.addEventListener("click", function(){
-      lightboxImg.src = this.src;
-      lightboxImg.alt = this.alt;
-      lightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
+      lightbox.addEventListener("click", function () {
+        lightbox.classList.remove("active");
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+        lightbox.setAttribute("aria-hidden", "true");
+      });
+
+      document.addEventListener("keydown", function(e){
+        if (e.key === "Escape") {
+          lightbox.classList.remove("active");
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+          lightbox.setAttribute("aria-hidden", "true");
+        }
+      });
     });
-  });
-
-  lightbox.addEventListener("click", function(){
-    lightbox.classList.remove("active");
-    lightboxImg.src = "";
-    document.body.style.overflow = "";
-  });
-
-});
-</script>
+  </script>
 
 </body>
 </html>
