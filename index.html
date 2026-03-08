@@ -91,6 +91,33 @@
   }
 
 }
+
+/* Force sharp corners on all project covers */
+.project-cover,
+.cover-content-container,
+.cover-image-wrap,
+.cover-image,
+.cover,
+.cover-normal,
+.slideshow,
+.slideshow img,
+.project-cover img,
+.project-cover video {
+  border-radius: 0 !important;
+}
+
+/* Soft outline for videos */
+.project-cover video{
+  border: 1px solid #e6e6e6;   /* soft light outline */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* subtle depth */
+}
+
+/* Soft outline for ALL project covers */
+.project-cover .cover{
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background: #fff;
+}
   </style>
 </head>
 
