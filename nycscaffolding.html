@@ -3,96 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sammi Jiang — NYC Scaffolding</title>
+  <title>Sammi Jiang — The Message on Construction</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="overall.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <style>
   .final-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 👈 4 images per row */
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 2rem auto 0;
-}
-
-.final-photo-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.palette-empty {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.palette-row{
-  display: flex;
-  justify-content: center;
-  gap: 30px;          /* fixed gap */
-  flex-wrap: nowrap;  /* force one row */
-}
-
-.palette-swatch{
-  width: 220px;
-  height: 300px;
-}
-
-/* Shrink slightly on smaller screens */
-@media (max-width: 900px){
-  .palette-swatch{
-    width: 28vw;      /* scales proportionally */
-    height: 38vw;
-    max-width: 220px; /* never grows bigger than desktop */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto 0;
   }
-}
 
-.final-photo-grid.ui-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-  gap: 20px; /* spacing between images */
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .final-photo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
 
-.final-photo-grid.ui-grid-3 img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+  .palette-empty {
+    border: none !important;
+    box-shadow: none !important;
+  }
 
-.clean-outline-grid img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid #d9d9d9;   /* clean thin outline */
-  background: #fff;
-  box-sizing: border-box;
-}
+  .palette-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+  }
+
+  .palette-swatch {
+    width: 220px;
+    height: 300px;
+  }
+
+  @media (max-width: 900px) {
+    .palette-swatch {
+      width: 28vw;
+      height: 38vw;
+      max-width: 220px;
+    }
+  }
+
+  .final-photo-grid.ui-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .final-photo-grid.ui-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .final-photo-grid.ui-grid-3 img,
+  .final-photo-grid.ui-grid-2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .clean-outline-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 900px) {
+    .final-photo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .final-photo-grid.ui-grid-3,
+    .final-photo-grid.ui-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .final-photo-grid,
+    .final-photo-grid.ui-grid-3,
+    .final-photo-grid.ui-grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
-
 
 <body class="transition-enabled">
   <div class="js-responsive-nav">
-<!-- CLEAN RESUME-STYLE HEADER -->
-<header class="site-header js-site-header">
-  <nav class="nav-container">
-    <div class="gallery-title"><a href="index.html">Home</a></div>
-    <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
-    <div class="gallery-title"><a href="resume.html">Resume</a></div>
-  </nav>
 
-
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title"><a href="index.html">Home</a></div>
+        <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+        <div class="gallery-title"><a href="resume.html">Resume</a></div>
+      </nav>
 
       <div class="logo-wrap">
         <div class="logo logo-text">
@@ -117,114 +139,147 @@
             </a>
           </li>
           <li>
-  <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <!-- arrow -->
-      <path d="M12 4v9m0 0l-3-3m3 3l3-3"
-            stroke="#000"
-            stroke-width="1.8"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-      <!-- tray -->
-      <path d="M5 18h14"
-            stroke="#000"
-            stroke-width="1.8"
-            fill="none"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
-</li>
+            <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M5 18h14"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"/>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
-  
 
-  <div class="header-placeholder"></div>
+    <div class="header-placeholder"></div>
 
-  <!-- BRAND KIT -->
-  <main>
-    <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title"> NYC Scaffolding</h2>
-<header class="case-intro">
-  <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
+    <main>
+      <section class="brand-kit" aria-label="The Message on Construction project page">
+        <h2 class="kit-title">The Message on Construction</h2>
 
-  <p class="project-desc">
-        Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
-        The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
-  </p>
-</header>
+        <header class="case-intro">
+          <p class="project-meta">Print Files · Website · Documentation · 2025</p>
 
-<!-- Typography -->
-<section class="kit-section" aria-labelledby="typography">
-  <p class="kit-label" id="typography">Typography</p>
+          <p class="project-desc">
+            While walking around New York City, I began noticing that there was alot of stickers placed on pipe scaffolding throughout the streets.
+            These stickers advertise events, promote artists, share messages, or simply leave a mark in public space.
+            What first seemed random began to feel like a visual layer of the city.
+          </p>
 
-  <p class="kit-caption">
-Each file uses a small range of type sizes to keep the hierarchy clear and the layout easy to look through. 
-Different typefaces are used to reflect the different kinds of documents found within each case file.
-  </p>
+          <p class="project-desc">
+            I started collecting and documenting these stickers to explore how people use public space to communicate.
+            Many of them are temporary and easy to miss, but together they create a kind of street history.
+            Some are handmade, some are printed, and others are faded or partially torn, showing how time and weather affect them.
+          </p>
 
-  <!-- keep your existing type-spec type-spec--three block here -->
-  <div class="type-spec type-spec--three">
-    <!-- (paste your App / Printed Pieces / Poem + Map type cards here) -->
+          <p class="project-desc">
+            I wanted this project to feel real and textured, almost like a short documentary or journal.
+            The design stays simple so the focus remains on the content and the visual stories these stickers carry.
+            This project is for people who are curious about the city and notice the small details others often overlook.
+          </p>
+        </header>
+
+        <section class="kit-section" aria-labelledby="typography">
+          <p class="kit-label" id="typography">Typography</p>
+
+          <p class="kit-caption">
+            The typography helps separate documentation, headlines, and supporting details while keeping the overall system simple and easy to follow.
+          </p>
+
+          <div class="type-spec type-spec--three">
+            <div class="type-group">
+              <p class="type-group-label">Primary Display</p>
+              <div class="type-family">
+                <p class="type-family-name">Telugu Sangam MN</p>
+                <ul class="type-weights">
+                  <li>Regular · 24 pt</li>
+                  <li>Regular · 22 pt</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="type-group">
+              <p class="type-group-label">Editorial / Print</p>
+              <div class="type-family">
+                <p class="type-family-name">Minion Pro</p>
+                <ul class="type-weights">
+                  <li>Regular · 9 pt</li>
+                  <li>Regular · 64 pt</li>
+                  <li>Regular · 96 pt</li>
+                  <li>Regular · 150 pt</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="type-group">
+              <p class="type-group-label">Supporting Text</p>
+              <div class="type-family">
+                <p class="type-family-name">Monaco</p>
+                <ul class="type-weights">
+                  <li>Regular · 22 pt</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="kit-section digital-section" aria-labelledby="digital-work">
+          <p class="kit-label" id="digital-work">Digital</p>
+
+          <div class="final-photo-grid ui-grid-3 clean-outline-grid">
+            <img src="images/NYCscaffolding13.jpg" alt="Cover design for The Message on Construction">
+            <img src="images/NYCscaffoldingpage 2-3.png" alt="Spread design showing NYC scaffolding sticker documentation">
+            <img src="images/NYCscaffoldingpages 6-7.png" alt="Interior spread with sticker collection and layout">
+            <img src="images/NYCscaffoldingpage14-15.png" alt="Editorial spread from The Message on Construction">
+            <img src="images/NYCscaffoldingpage 18-19.png" alt="Book spread featuring sticker documentation">
+            <img src="images/NYCscaffoldingpage 24-25.png" alt="Final spread from The Message on Construction">
+          </div>
+        </section>
+
+        <section class="kit-section" aria-labelledby="final-product-photography">
+          <p class="kit-label" id="final-product-photography">Final Product Photography</p>
+
+          <div class="final-photo-grid ui-grid-2">
+            <img src="images/NYCscaffolding1.JPG" alt="Photograph of The Message on Construction book">
+            <img src="images/NYCscaffolding2.JPG" alt="Photograph of printed pages from The Message on Construction">
+            <img src="images/NYCscaffolding3.JPG" alt="Close-up photograph of printed book details">
+            <img src="images/NYCscaffolding4.JPG" alt="Book photography showing layout and structure">
+          </div>
+        </section>
+
+        <section class="kit-section lb-final-photos" aria-labelledby="final-book-photograph">
+          <p class="kit-label" id="final-book-photograph">Final Book Photograph</p>
+
+          <div class="final-photo-grid">
+            <img src="images/NYCscaffolding11.png" alt="Final book photograph 1">
+            <img src="images/NYCscaffolding8.png" alt="Final book photograph 2">
+            <img src="images/NYCscaffolding9.png" alt="Final book photograph 3">
+            <img src="images/NYCscaffolding10.png" alt="Final book photograph 4">
+            <img src="images/NYCscaffolding6.png" alt="Final book photograph 5">
+            <img src="images/NYCscaffolding7.png" alt="Final book photograph 6">
+            <img src="images/NYCscaffolding12.png" alt="Final book photograph 7">
+          </div>
+        </section>
+
+        <section class="more-work-cta">
+          <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+        </section>
+      </section>
+    </main>
+
   </div>
-</section>
 
-<section class="kit-section digital-section" aria-labelledby="app-ui">
-<p class="kit-label" id="final-product-photography">digital</p>
-
-  <div class="final-photo-grid ui-grid-3 clean-outline-grid">
-<img src="images/NYCscaffolding13.jpg" alt="LemonGlow product lineup on white background">
-<img src="images/NYCscaffoldingpage 2-3.png" alt="LemonGlow packaging close-up angled view">
-<img src="images/NYCscaffoldingpages 6-7.png" alt="LemonGlow packaging close-up front view">
-<img src="images/NYCscaffoldingpage14-15.png" alt="LemonGlow packaging close-up front view">
-<img src="images/NYCscaffoldingpage 18-19.png" alt="LemonGlow product set with packaging">
-<img src="images/NYCscaffoldingpage 24-25.png" alt="LemonGlow packaging close-up front view">
-
-  </div>
-
-<!-- App UI Screens -->
-<section class="kit-section" aria-labelledby="app-ui">
-<p class="kit-label" id="final-product-photography">Final Product Photography</p>
-
-<div class="final-photo-grid ui-grid-2">
-<img src="images/NYCscaffolding1.JPG">
-<img src="images/NYCscaffolding2.JPG">
-<img src="images/NYCscaffolding3.JPG">
-<img src="images/NYCscaffolding4.JPG">
-</div>
-
-<!-- Final Product Photography -->
-<section class="kit-section lb-final-photos" aria-labelledby="final-photos">
-  <p class="kit-label" id="final-photos">Final Book Photograph</p>
-
-  <div class="final-photo-grid">
-    <img src="images/NYCscaffolding11.png" alt="Left Behind photo 6">
-    <img src="images/NYCscaffolding8.png" alt="Left Behind photo 3">
-    <img src="images/NYCscaffolding9.png" alt="Left Behind photo 4">
-    <img src="images/NYCscaffolding10.png" alt="Left Behind photo 5">
-    <img src="images/NYCscaffolding6.png" alt="Left Behind photo 1">
-    <img src="images/NYCscaffolding7.png" alt="Left Behind photo 2">
-    <img src="images/NYCscaffolding12.png" alt="Left Behind photo 7">
-  </div>
-</section>
-
-    <section class="more-work-cta">
-      <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
-    </section>
-
-  </div>
-
-  <!-- LIGHTBOX -->
   <div class="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
-<script>
-  const video = document.querySelector('.project-video video');
-  if (video) {
-    video.playbackRate = 0.75; // 👈 slower pace (try 0.8 or 0.7 if needed)
-  }
-</script>
 
   <script>
     const photos = document.querySelectorAll('.final-photo-grid img');
@@ -241,7 +296,7 @@ Different typefaces are used to reflect the different kinds of documents found w
       });
     });
 
-    function closeLightbox(){
+    function closeLightbox() {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
       document.body.style.overflow = '';
@@ -254,6 +309,5 @@ Different typefaces are used to reflect the different kinds of documents found w
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
-
 </body>
 </html>
