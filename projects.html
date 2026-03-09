@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
@@ -27,11 +27,11 @@
       width: 100% !important;
       display: flex !important;
       justify-content: center !important;
-      margin: 0 !important;
+      margin: 0 0 48px 0 !important;
       padding: 0 !important;
       position: sticky !important;
-      top: 95px;
-      z-index: 100;
+      top: 95px !important;
+      z-index: 100 !important;
       background: #fff !important;
       background-color: #fff !important;
       opacity: 1 !important;
@@ -45,10 +45,10 @@
     .gallery-filters .filter-row {
       width: max-content !important;
       margin: 0 auto !important;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
+      display: flex !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
       justify-content: center !important;
     }
 
@@ -70,6 +70,7 @@
       font-size: 16px !important;
       letter-spacing: .01em;
       white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .filter-pill:hover {
@@ -249,17 +250,18 @@
       display: none;
     }
 
-.masthead {
-  padding-bottom: 20px !important;
-}
+    /* ===== Masthead ===== */
+    .masthead {
+      padding-bottom: 20px !important;
+    }
 
-.masthead-arrow-container {
-  margin-top: -20px !important;
-}
+    .masthead-arrow-container {
+      margin-top: -20px !important;
+    }
 
-.masthead-placeholder {
-  height: 700px !important;
-}
+    .masthead-placeholder {
+      height: 700px !important;
+    }
 
     /* ===== Responsive ===== */
     @media (max-width: 1100px) {
@@ -269,6 +271,15 @@
     }
 
     @media (max-width: 768px) {
+      .js-responsive-nav,
+      .site-wrap,
+      .site-container,
+      .site-content,
+      main {
+        overflow: visible !important;
+        transform: none !important;
+      }
+
       .project-cover {
         width: 100% !important;
       }
@@ -283,13 +294,22 @@
       .gallery-filters {
         position: -webkit-sticky !important;
         position: sticky !important;
-        top: 0 !important;
+        top: 95px !important;
         z-index: 999 !important;
-        padding: 10px 0 !important;
         width: 100% !important;
+        margin: 0 0 48px 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        background-color: #fff !important;
+        opacity: 1 !important;
+        filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
       }
 
       .gallery-filters .filter-row {
+        width: 100% !important;
+        margin: 0 !important;
         display: flex !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
@@ -304,25 +324,14 @@
       }
 
       .filter-pill {
-        flex: 0 0 auto;
         padding: 10px 12px !important;
         font-size: 13px !important;
+        white-space: nowrap !important;
       }
 
       .filter-dot {
         width: 7px !important;
         height: 7px !important;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .js-responsive-nav,
-      .site-wrap,
-      .site-container,
-      .site-content,
-      main {
-        overflow: visible !important;
-        transform: none !important;
       }
     }
 
@@ -334,73 +343,6 @@
         transition: none !important;
       }
     }
-
-    .gallery-filters {
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  margin: 0 0 48px 0 !important; /* added spacing below */
-  padding: 0 !important;
-  position: sticky !important;
-  top: 95px;
-  z-index: 100;
-  background: #fff !important;
-  background-color: #fff !important;
-  opacity: 1 !important;
-  filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-
-@media (max-width: 768px) {
-  .js-responsive-nav,
-  .site-wrap,
-  .site-container,
-  .site-content,
-  main {
-    overflow: visible !important;
-    transform: none !important;
-  }
-
-  .gallery-filters {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 95px !important;   /* same sticky offset as desktop */
-    z-index: 999 !important;
-    background: #fff !important;
-    margin: 0 0 48px 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  .gallery-filters .filter-row {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start !important;
-    gap: 8px !important;
-    padding: 0 12px !important;
-  }
-
-  .gallery-filters .filter-row::-webkit-scrollbar {
-    display: none;
-  }
-
-  .filter-pill {
-    flex: 0 0 auto;
-    padding: 10px 12px !important;
-    font-size: 13px !important;
-    white-space: nowrap !important;
-  }
-
-  .filter-dot {
-    width: 7px !important;
-    height: 7px !important;
-  }
-}
   </style>
 </head>
 
@@ -430,7 +372,6 @@
               </svg>
             </a>
           </li>
-
           <li>
             <a href="mailto:sammijiang24@gmail.com" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
@@ -438,7 +379,6 @@
               </svg>
             </a>
           </li>
-
           <li>
             <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -513,10 +453,7 @@
             </section>
 
             <section class="project-covers" decorator="editable" data-context="theme.gallery.projects">
-              <a class="project-cover hold-space"
-                 href="Creamipop.html"
-                 data-category="brand physical"
-                 data-title="Creami Pop">
+              <a class="project-cover hold-space" href="Creamipop.html" data-category="brand physical" data-title="Creami Pop">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -531,20 +468,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Creami Pop</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Creami Pop</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="digiso.html"
-                 data-category="brand"
-                 data-title="DIGISO">
+              <a class="project-cover hold-space" href="digiso.html" data-category="brand" data-title="DIGISO">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -553,20 +481,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">DIGISO</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">DIGISO</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="littlecupcake.html"
-                 data-category="mobile"
-                 data-title="Little Cupcake">
+              <a class="project-cover hold-space" href="littlecupcake.html" data-category="mobile" data-title="Little Cupcake">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -577,20 +496,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Little Cupcake</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Little Cupcake</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="LemonGlow.html"
-                 data-category="brand physical"
-                 data-title="Lemon Glow">
+              <a class="project-cover hold-space" href="LemonGlow.html" data-category="brand physical" data-title="Lemon Glow">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -607,20 +517,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Lemon Glow</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lemon Glow</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="Studysprout.html"
-                 data-category="mobile"
-                 data-title="Study Sprout">
+              <a class="project-cover hold-space" href="Studysprout.html" data-category="mobile" data-title="Study Sprout">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -629,30 +530,20 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">study sprout</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">study sprout</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="leftbehind.html"
-                 data-category="mobile physical"
-                 data-title="Left Behind">
+              <a class="project-cover hold-space" href="leftbehind.html" data-category="mobile physical" data-title="Left Behind">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
                       <div class="cover cover-normal">
                         <div class="slideshow left-behind project-image">
-                          <img src="images/leftbehindoverall.jpg" alt="Home Cover" class="active">
-                          <img src="images/leftbehind2.JPG" alt="Home Cover">
-                          <img src="images/leftbehind3.JPG" alt="Home Cover">
+                          <img src="images/leftbehindoverall.jpg" alt="Left Behind" class="active">
+                          <img src="images/leftbehind2.JPG" alt="Left Behind">
+                          <img src="images/leftbehind3.JPG" alt="Left Behind">
                         </div>
-
                         <div class="project-video-grid">
                           <video src="compressed.mov" autoplay muted loop playsinline></video>
                           <video src="compressed1.mov" autoplay muted loop playsinline></video>
@@ -660,21 +551,11 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">LEFT BEHIND</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LEFT BEHIND</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="matchagirl.html"
-                 data-category="other"
-                 data-title="Matcha Girl">
+              <a class="project-cover hold-space" href="matchagirl.html" data-category="other" data-title="Matcha Girl">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -683,20 +564,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Matcha Girl</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Matcha Girl</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="nycscaffolding.html"
-                 data-category="physical"
-                 data-title="NYC Scaffolding">
+              <a class="project-cover hold-space" href="nycscaffolding.html" data-category="physical" data-title="NYC Scaffolding">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -705,20 +577,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">NYC Scaffolding</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">NYC Scaffolding</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="DreamieDuoposter.html"
-                 data-category="other"
-                 data-title="Dreamie Duo Poster">
+              <a class="project-cover hold-space" href="DreamieDuoposter.html" data-category="other" data-title="Dreamie Duo Poster">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -727,20 +590,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Dreamie Duo Poster</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Dreamie Duo Poster</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="LEMOMO.html"
-                 data-category="brand"
-                 data-title="LEMOMO">
+              <a class="project-cover hold-space" href="LEMOMO.html" data-category="brand" data-title="LEMOMO">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -759,20 +613,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">LEMOMO</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LEMOMO</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="LIMESALT.html"
-                 data-category="brand"
-                 data-title="LIMESALT">
+              <a class="project-cover hold-space" href="LIMESALT.html" data-category="brand" data-title="LIMESALT">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -781,20 +626,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">LIMESALT</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LIMESALT</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="Home.html"
-                 data-category="physical"
-                 data-title="Home">
+              <a class="project-cover hold-space" href="Home.html" data-category="physical" data-title="Home">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -803,20 +639,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Home</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Home</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="lunarphases.html"
-                 data-category="other"
-                 data-title="Lunar Phases">
+              <a class="project-cover hold-space" href="lunarphases.html" data-category="other" data-title="Lunar Phases">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -825,20 +652,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Lunar Phases</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lunar Phases</div></div></div></div>
                 </div>
               </a>
 
-              <a class="project-cover hold-space"
-                 href="guerrilla girls.html"
-                 data-category="other"
-                 data-title="Guerrilla Girls">
+              <a class="project-cover hold-space" href="guerrilla girls.html" data-category="other" data-title="Guerrilla Girls">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap">
                     <div class="cover-image">
@@ -847,13 +665,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="details-wrap">
-                    <div class="details">
-                      <div class="details-inner">
-                        <div class="title">Guerrilla Girls</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Guerrilla Girls</div></div></div></div>
                 </div>
               </a>
             </section>
@@ -873,28 +685,28 @@
 
   <script type="text/javascript">
     window.onpageshow = function(e) {
-      if (e.persisted) { window.location.reload(); }
+      if (e.persisted) window.location.reload();
     };
 
-    (function makeSparkles(){
+    (function makeSparkles() {
       const box = document.getElementById('sparkles');
       if (!box) return;
       const n = 16;
-      const rand = (a,b) => (Math.random() * (b - a) + a).toFixed(2);
+      const rand = (a, b) => (Math.random() * (b - a) + a).toFixed(2);
 
       for (let i = 0; i < n; i++) {
         const s = document.createElement('div');
         s.className = 'sparkle';
-        s.style.left = rand(0,100) + 'vw';
-        s.style.top = rand(0,100) + 'vh';
-        s.style.setProperty('--dur', rand(5,10) + 's');
-        s.style.setProperty('--op', rand(.22,.62));
-        s.style.setProperty('--x0', rand(-18,18) + 'px');
-        s.style.setProperty('--y0', rand(-22,22) + 'px');
-        s.style.setProperty('--x1', rand(-26,26) + 'px');
-        s.style.setProperty('--y1', rand(-32,32) + 'px');
-        s.style.setProperty('--s0', rand(.6,1.0));
-        s.style.setProperty('--s1', rand(.9,1.3));
+        s.style.left = rand(0, 100) + 'vw';
+        s.style.top = rand(0, 100) + 'vh';
+        s.style.setProperty('--dur', rand(5, 10) + 's');
+        s.style.setProperty('--op', rand(.22, .62));
+        s.style.setProperty('--x0', rand(-18, 18) + 'px');
+        s.style.setProperty('--y0', rand(-22, 22) + 'px');
+        s.style.setProperty('--x1', rand(-26, 26) + 'px');
+        s.style.setProperty('--y1', rand(-32, 32) + 'px');
+        s.style.setProperty('--s0', rand(.6, 1.0));
+        s.style.setProperty('--s1', rand(.9, 1.3));
         box.appendChild(s);
       }
     })();
