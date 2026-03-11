@@ -118,6 +118,13 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   background: #fff;
 }
+.project-cover video{
+  pointer-events:none;
+}
+
+.project-cover video::-webkit-media-controls-start-playback-button{
+  display:none !important;
+}
   </style>
 </head>
 
@@ -295,9 +302,9 @@
                   <div class="cover-image-wrap">
                     <div class="cover-image">
                       <div class="cover cover-normal">
-                        <video autoplay muted loop playsinline style="width:100%;display:block;">
-                          <source src="images/littlecupcake-website.mp4" type="video/mp4">
-                        </video>
+<video autoplay muted loop playsinline webkit-playsinline preload="auto">
+  <source src="images/littlecupcake-website.mp4" type="video/mp4">
+</video>
                       </div>
                     </div>
                   </div>
@@ -315,8 +322,9 @@
               <a decorator="editable" class="project-cover hold-space" href="Studysprout.html">
                 <div class="cover-content-container">
                   <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal">
-                    <video src="studysprout-4.mp4" autoplay muted loop playsinline></video>
-                  </div></div></div>
+<video autoplay muted loop playsinline webkit-playsinline preload="auto">
+  <source src="studysprout-4.mp4" type="video/mp4">
+</video>                  </div></div></div>
                   <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">study sprout</div></div></div></div>
                 </div>
               </a>
