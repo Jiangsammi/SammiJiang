@@ -8,203 +8,213 @@
   <link rel="stylesheet" href="resume.css" />
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
+<style>
+  html,
+  body,
+  * {
+    cursor: auto !important;
+  }
+
+  .name {
+    margin-bottom: 32px;
+  }
+
+  .pill.ghost {
+    background: #fff;
+    color: #000;
+    border: 1px solid #e5e5e5;
+  }
+
+  .pill.ghost::before {
+    content: "⌂";
+    margin-right: 6px;
+    font-weight: 700;
+    text-shadow:
+      0.5px 0 currentColor,
+      -0.5px 0 currentColor;
+  }
+
+  .scroll {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #000;
+    transition: all 0.25s ease;
+  }
+
+  .scroll:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero.wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .hero,
+  .hero-right,
+  .portrait,
+  .sticker-rail {
+    overflow: visible;
+  }
+
+  .portrait {
+    position: relative;
+    display: inline-block;
+    width: min(420px, 100%);
+  }
+
+  .portrait img.portrait-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .portrait img.portrait-deco {
+    position: absolute;
+    right: -30px;
+    bottom: -60px;
+    width: 180px;
+    height: auto;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
     html,
-    body,
-    * {
-      cursor: auto !important;
-    }
-
-    .name {
-      margin-bottom: 32px;
-    }
-
-    .pill.ghost {
-      background: #fff;
-      color: #000;
-      border: 1px solid #e5e5e5;
-    }
-
-    .pill.ghost::before {
-      content: "⌂";
-      margin-right: 6px;
-      font-weight: 700;
-      text-shadow:
-        0.5px 0 currentColor,
-        -0.5px 0 currentColor;
-    }
-
-    .scroll {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #000;
-      transition: all 0.25s ease;
-    }
-
-    .scroll:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
+    body {
+      overflow-x: hidden !important;
     }
 
     .hero {
-      padding-top: 80px;
+      padding-top: 24px !important;
     }
 
     .hero.wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 56px;
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 0 !important;
+      padding-top: 32px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      overflow-x: hidden !important;
     }
 
-    .hero,
-    .hero-right,
-    .portrait,
-    .sticker-rail {
-      overflow: visible;
+    .hero-left {
+      display: contents;
+    }
+
+    .kicker {
+      order: 1;
+      text-align: center !important;
+    }
+
+    .name {
+      order: 2;
+      text-align: center !important;
+      margin-bottom: 10px;
+    }
+
+    .hero-right {
+      order: 3;
+      width: 100% !important;
+      display: flex;
+      justify-content: center;
+      margin: 6px 0 24px;
+    }
+
+    .summary {
+      order: 4;
+      text-align: left !important;
+      max-width: 100% !important;
+      margin: 22px 0 0 0 !important;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+.contact-row {
+  order: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+}
+    .scroll {
+      order: 6;
+      display: inline-block;
+      margin: 18px 0 0 0;
+      width: fit-content;
+    }
+
+    .resume-actions {
+      margin-top: 32px;
     }
 
     .portrait {
-      position: relative;
-      display: inline-block;
-      width: min(420px, 100%);
-    }
-
-    .portrait img.portrait-photo {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-width: 100%;
+      width: min(320px, 82vw);
+      margin: 0 auto;
     }
 
     .portrait img.portrait-deco {
-      position: absolute;
-      right: -30px;
-      bottom: -60px;
-      width: 180px;
-      height: auto;
-      pointer-events: none;
+      width: 120px;
+      right: -12px;
+      bottom: -24px;
     }
 
-    @media (max-width: 768px) {
-      html,
-      body {
-        overflow-x: hidden !important;
-      }
+.pill,
+.pill.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  max-width: 92%;
+  text-align: left;
+}
 
-      .hero {
-        padding-top: 24px !important;
-      }
+    .sticker-rail,
+    .slide-dots {
+      display: none !important;
+    }
+  }
 
-      .hero.wrap {
-        grid-template-columns: 1fr !important;
-        gap: 28px !important;
-        padding-top: 32px !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        overflow-x: hidden !important;
-      }
-
-      .hero-left,
-      .hero-right {
-        width: 100% !important;
-      }
-
-      .hero-left {
-        order: 2;
-      }
-
-      .hero-right {
-        order: 1;
-        display: flex;
-        justify-content: center;
-      }
-
-      .portrait {
-        width: min(320px, 82vw);
-        margin: 0 auto;
-      }
-
-      .portrait img.portrait-deco {
-        width: 120px;
-        right: -12px;
-        bottom: -24px;
-      }
-
-      .kicker,
-      .name,
-      .summary {
-        text-align: center !important;
-      }
-
-      .name {
-        margin-bottom: 20px;
-      }
-
-      .summary {
-        max-width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        font-size: 16px;
-        line-height: 1.7;
-      }
-
-      .contact-row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .pill,
-      .pill.ghost {
-        width: fit-content;
-        max-width: 92%;
-        text-align: center;
-      }
-
-      .scroll {
-        display: table;
-        margin: 18px auto 0;
-      }
-
-      .sticker-rail,
-      .slide-dots {
-        display: none !important;
-      }
+  @media (max-width: 480px) {
+    .hero {
+      padding-top: 20px !important;
     }
 
-    @media (max-width: 480px) {
-      .hero {
-        padding-top: 20px !important;
-      }
-
-      .name {
-        font-size: clamp(44px, 13vw, 64px);
-        line-height: 0.9;
-      }
-
-      .summary {
-        font-size: 15px;
-        line-height: 1.65;
-      }
-
-      .portrait {
-        width: min(280px, 80vw);
-      }
-
-      .portrait img.portrait-deco {
-        width: 100px;
-        right: -8px;
-        bottom: -18px;
-      }
+    .name {
+      font-size: clamp(44px, 13vw, 64px);
+      line-height: 0.9;
     }
-  </style>
+
+    .summary {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .portrait {
+      width: min(280px, 80vw);
+    }
+
+    .portrait img.portrait-deco {
+      width: 100px;
+      right: -8px;
+      bottom: -18px;
+    }
+  }
+</style>
 </head>
 
 <body class="transition-enabled">
@@ -445,7 +455,7 @@
                 <div class="entry-title">Parsons School of Design</div>
                 <div class="entry-right">BFA Communication Design ’27</div>
               </div>
-              <div class="entry-meta">Parsons Merit Scholarship · GPA: 3.80</div>
+              <div class="entry-meta">Parsons Merit Scholarship</div>
             </div>
 
             <div class="divider"></div>
