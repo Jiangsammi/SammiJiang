@@ -91,6 +91,17 @@
     pointer-events: none;
   }
 
+  .phone-pill {
+    gap: 8px;
+  }
+
+  .phone-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    color: #3f4350;
+  }
+
   @media (max-width: 768px) {
     html,
     body {
@@ -99,6 +110,7 @@
 
     .hero {
       padding-top: 24px !important;
+      padding-bottom: 40px !important;
     }
 
     .hero.wrap {
@@ -118,6 +130,7 @@
     .kicker {
       order: 1;
       text-align: center !important;
+      margin-top: 40px;
     }
 
     .name {
@@ -143,14 +156,15 @@
       line-height: 1.7;
     }
 
-.contact-row {
-  order: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 22px;
-}
+    .contact-row {
+      order: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
     .scroll {
       order: 6;
       display: inline-block;
@@ -170,18 +184,23 @@
     .portrait img.portrait-deco {
       width: 120px;
       right: -12px;
-      bottom: -24px;
+      bottom: -8px;
     }
 
-.pill,
-.pill.ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: fit-content;
-  max-width: 92%;
-  text-align: left;
-}
+    .pill,
+    .pill.ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: fit-content;
+      max-width: 92%;
+      text-align: left;
+    }
+
+    .phone-icon {
+      position: relative;
+      top: -2px;
+    }
 
     .sticker-rail,
     .slide-dots {
@@ -214,40 +233,8 @@
       bottom: -18px;
     }
   }
-
-  @media (max-width: 768px) {
-  .kicker {
-    order: 1;
-    text-align: center !important;
-    margin-top: 16px; /* move it down */
-  }
-}
-.phone-pill {
-  gap: 8px;
-}
-
-.phone-icon {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-  color: #3f4350;
-}
-
-.phone-pill{
-  gap:8px;
-}
-
-.phone-icon{
-  width:16px;
-  height:16px;
-  flex:0 0 16px;
-}
-@media (max-width: 768px) {
-
-  .hero {
-    padding-bottom: 120px !important; /* extends background area */
-  }
-
+.card.block:last-child{
+  margin-bottom: 40px;
 }
 </style>
 </head>
