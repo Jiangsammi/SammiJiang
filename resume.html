@@ -222,6 +222,33 @@
     margin-top: 16px; /* move it down */
   }
 }
+.phone-pill {
+  gap: 8px;
+}
+
+.phone-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: #3f4350;
+}
+
+.phone-pill{
+  gap:8px;
+}
+
+.phone-icon{
+  width:16px;
+  height:16px;
+  flex:0 0 16px;
+}
+@media (max-width: 768px) {
+
+  .hero {
+    padding-bottom: 120px !important; /* extends background area */
+  }
+
+}
 </style>
 </head>
 
@@ -393,9 +420,12 @@
           <a class="pill" href="mailto:sammijiang24@gmail.com" aria-label="Email Sammi">
             ✦ sammijiang24@gmail.com
           </a>
-          <a class="pill" href="tel:+19176359908" aria-label="Call Sammi">
-            ☎ (917) 635-9908
-          </a>
+<a class="pill phone-pill" href="tel:+19176359908" aria-label="Call Sammi">
+  <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.24 1l-2.17 2.2z" fill="currentColor"/>
+  </svg>
+  (917) 635-9908
+</a>
           <span class="pill ghost" aria-label="Location">Based in NYC</span>
         </div>
 
