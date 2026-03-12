@@ -14,6 +14,114 @@
   <link rel="stylesheet" href="overall.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+<style>
+.final-photo-grid img[src="images/home8.jpg"]{
+  height: 260px;          /* adjust crop height */
+  object-fit: cover;      /* crops the image */
+  object-position: center;
+}
+.final-photo-grid img[src="images/home3.jpg"]{
+  height: 200px;          /* adjust crop height */
+  object-fit: cover;      /* crops the image */
+  object-position: center;
+}
+.final-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1800px;
+  width: 95%;
+  margin: 2rem auto 0;
+  align-items: start;
+}
+
+.final-photo-grid img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* important: make sure wrappers do not crop */
+.final-photo-grid > * {
+  overflow: visible !important;
+}
+
+.palette-empty {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.palette-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.palette-swatch {
+  width: 220px;
+  height: 300px;
+}
+
+@media (max-width: 900px) {
+  .final-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .palette-swatch {
+    width: 28vw;
+    height: 38vw;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .final-photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.final-photo-grid.ui-grid-3 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.final-photo-grid.ui-grid-3 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* prevents cropping */
+  display: block;
+}
+@media (max-width: 900px) {
+  .final-photo-grid {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .final-photo-grid {
+    margin-top: 0.5rem;
+  }
+}
+
+.final-photo-grid img{
+  border: 1px solid #ececec;   /* soft outline */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* subtle hover lift */
+.final-photo-grid img:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.shadow-outline{
+  border-radius: 0 !important;  /* ensures sharp corners */
+}
+</style>
 
 
 <body class="transition-enabled">
@@ -72,172 +180,77 @@
         </ul>
       </div>
     </header>
-    
+  
+
   <div class="header-placeholder"></div>
 
   <!-- BRAND KIT -->
   <main>
-    <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-<h2 class="kit-title">Guerrilla Girls</h2>
+<section class="brand-kit" aria-label="Home Project">
+    <h2 class="kit-title">Guerrilla Girls</h2>
 <header class="case-intro">
   <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
 
-  <p class="project-desc">
-        Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
-        The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
-  </p>
-</header><section class="kit-section" aria-labelledby="typography">
+<p class="project-desc">
+        Home is a visual storytelling project that explores family, memory, and care through quiet cultural moments and traditional imagery. Inspired by East Asian aesthetics, the book uses soft colors, textured backgrounds, and historical illustrations to create a calm and reflective atmosphere. The design focuses on simplicity, balance, and space to highlight everyday rituals like tea drinking, sharing food, and conversation. Through these elements, the project presents home not as a fixed place, but as a feeling shaped by culture, memory, and human connection.
 
+        This project reflects on family, memory, care, and the emotional nourishment that home provides through visual storytelling and curated text, inviting the reader to see home as something layered, tender, and always shifting—held together, like a bento, by quiet acts of care.
+</p>
+</header>
 
-      <!-- Primary Logo -->
-      <section class="kit-section" aria-labelledby="primary-logo">
-        <p class="kit-label" id="primary-logo">Printed Overview</p>
-        <img
-          src="images/guerrilla girls.jpg"
-          alt="Creami Pop Primary Logo"
-          class="logo-variations primary-logo"
-        >
-    <p class="kit-caption"></p>
-         This visual system shows how Creami Pop can appear across posters and brand materials. Bright colors, smooth gradients, and bubble details highlight the drink’s fun and creamy personality, creating a lively and eye-catching look.
-        </p>
+<section class="kit-section" aria-labelledby="printed-files">
+  <p class="kit-label" id="printed-files">Object Investigation Files</p>
 
-      </section>
+  <img src="images/guerrilla girls.jpg" alt="Printed case files overview" class="logo-variations">
+</section>
+<section class="kit-section" aria-labelledby="app-ui">
+<p class="kit-label" id="final-product-photography">Poster Spreads</p>
 
-      <!-- Logo Variations -->
-      <section class="kit-section" aria-labelledby="logo-variations">
-        <p class="kit-label" id="logo-variations">Map</p>
-        <img
-          src="images/leftbehindmap.png"
-          alt="Creami Pop logo variations and wordmarks"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
-        </p>
-      </section>
-
-      <!-- Color Application -->
-      <section class="kit-section" aria-labelledby="color-application">
-        <p class="kit-label" id="color-application">Color Application</p>
-        <img
-          src="images/creamipop-color-logos.png"
-          alt="Creami Pop logo color variations"
-          class="logo-variations"
-        >
-      </section>
-
-      <!-- Flavor Illustrations -->
-      <section class="kit-section" aria-labelledby="flavor-illustrations">
-        <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
-        <img
-          src="images/creamipop-flavor-illustrations.png"
-          alt="Creami Pop flavor illustrations"
-          class="logo-variations"
-        >
-        <p class="kit-caption">
-          Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
-        </p>
-      </section>
-
-      <!-- Flavor Can Designs -->
-      <section class="kit-section" aria-labelledby="flavor-can-designs">
-        <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
-
-        <div class="can-grid">
-          <figure class="can-item">
-            <img
-              src="images/creamipop-fruit-loop-can.png"
-              alt="Creami Pop Fruit Loop Milk Soda can design"
-            >
-            <figcaption class="flavor-name">Fruit Loop</figcaption>
-          </figure>
-
-          <figure class="can-item">
-            <img
-              src="images/creamipop-cinnaswrl-can.png"
-              alt="Creami Pop CinnaSwrl Milk Soda can design"
-            >
-            <figcaption class="flavor-name">CinnaSwrl</figcaption>
-          </figure>
-        </div>
-
-        <img
-          src="images/creamipop-can-box-packaging.png"
-          alt="Creami Pop can box packaging design"
-          class="can-box-packaging"
-        >
-
-        <p class="kit-caption">
-          Flavor-specific can designs and box packaging work together as a unified system,
-          using color, illustration, and typography to differentiate each variety while
-          maintaining a cohesive brand identity.
-        </p>
-      </section>
-
-          <div>
-            <p class="type-style">Body</p>
-            <p class="type-sample">
-              Creami Pop is a Korean milky soda brand that blends softness and carbonation into a clean, playful visual identity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final Product Photography -->
-      <section class="kit-section" aria-labelledby="final-product-photography">
-        <p class="kit-label" id="final-product-photography">Final Product Photography</p>
-
-        <div class="final-photo-grid">
-          <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-          <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
-
-          <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-          <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-          <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-          <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-          <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-          <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
-        </div>
-
-        <p class="kit-caption">
-          Studio photography showcasing the final Creami Pop cans and variety packaging,
-          highlighting color, material finish, and real-world scale.
-        </p>
-      </section>
-
-<div class="kit-section">
-  <p class="kit-label">Graphic Elements</p>
-
-  <div class="graphic-pair">
-    <img
-      src="images/Creamipopposter.png"
-      alt="Creami Pop Graphic Elements Poster"
-      class="shadow-outline"
-    />
-
-    <img
-      src="images/Creamipop.jpg"
-      alt="Creami Pop Instagram mockup"
-      class="shadow-outline"
-    />
-  </div>
+<div class="final-photo-grid ui-grid-3">
+  <img src="images/Guerrilla girlsposter9.jpg" alt="Home project page 10">
+  <img src="images/guerrilla girlsposter10.jpg" alt="Home project page 2">
+  <img src="images/guerrilla girlsposter11.jpg" alt="Home project page 3">
+  <img src="images/guerrilla girlsposter13.jpg" alt="Home project page 4">
+  <img src="images/guerrilla girlsposter14.jpg" alt="Home project page 5">
+  <img src="images/guerrilla girlsposter16.jpg" alt="Home project page 6">
+  <img src="images/guerrilla girlsposter17.jpg" alt="Home project page 7">
+  <img src="images/guerrilla girlsposter18.jpg" alt="Home project page 8">
+  <img src="images/guerrilla girlsposter19.jpg" alt="Home project page 9">
+  <img src="images/guerrilla girlsposter20.jpg" alt="Home project page 10">
+  <img src="images/Guerrilla girlsposter1.jpg" alt="Home project page 10">
+  <img src="images/guerrilla girlsposter5.jpg" alt="Home project page 1">
 </div>
+</section>
 
+        <!-- Graphic Elements -->
+        <section class="kit-section">
+          <p class="kit-label">Graphic Elements</p>
 
-    </section>
-  </main>
-
+          <div class="graphic-pair">
+            <img
+              src="images/guerrilla girls poster.jpg"
+              alt="Creami Pop Graphic Elements Poster"
+              class="shadow-outline"
+            />
+          </div>
+      </section>
+    </main>
 
     <section class="more-work-cta">
       <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
     </section>
 
-  </div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" aria-hidden="true">
     <img src="" alt="">
   </div>
+<script>
+  const video = document.querySelector('.project-video video');
+  if (video) {
+    video.playbackRate = 0.75; // 👈 slower pace (try 0.8 or 0.7 if needed)
+  }
+</script>
 
   <script>
     const photos = document.querySelectorAll('.final-photo-grid img');
@@ -267,6 +280,6 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
-
+</div>
 </body>
 </html>
