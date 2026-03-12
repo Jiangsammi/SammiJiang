@@ -1459,3 +1459,35 @@ main{
     text-align: left !important;
   }
 }
+
+@media (max-width: 900px) {
+  .header-placeholder {
+    height: 30px !important;
+    min-height: 30px !important;
+  }
+
+  .brand-kit {
+    margin-top: 150px !important;
+    padding-top: 0 !important;
+  }
+
+  .kit-title {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-placeholder {
+    height: 20px !important;
+    min-height: 20px !important;
+  }
+
+  .brand-kit {
+    margin-top: 60px!important;
+    padding-top: 0 !important;
+  }
+
+  .kit-title {
+    margin-top: 0 !important;
+  }
+}
