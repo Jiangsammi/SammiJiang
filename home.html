@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammi Jiang — Left Behind</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap" rel="stylesheet">
+
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="overall.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<style>
+  .final-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 👈 4 images per row */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+}
+
+.final-photo-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.palette-empty {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.palette-row{
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* fixed gap */
+  flex-wrap: nowrap;  /* force one row */
+}
+
+.palette-swatch{
+  width: 220px;
+  height: 300px;
+}
+
+/* Shrink slightly on smaller screens */
+@media (max-width: 900px){
+  .palette-swatch{
+    width: 28vw;      /* scales proportionally */
+    height: 38vw;
+    max-width: 220px; /* never grows bigger than desktop */
+  }
+}
+
+</style>
+
+
+<body class="transition-enabled">
+  <div class="js-responsive-nav">
+<!-- CLEAN RESUME-STYLE HEADER -->
+<header class="site-header js-site-header">
+  <nav class="nav-container">
+    <div class="gallery-title"><a href="index.html">Home</a></div>
+    <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+    <div class="gallery-title"><a href="resume.html">Resume</a></div>
+  </nav>
+
+
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
+      </div>
+
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sammijiang24@gmail.com" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+  <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <!-- arrow -->
+      <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+            stroke="#000"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <!-- tray -->
+      <path d="M5 18h14"
+            stroke="#000"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"/>
+    </svg>
+  </a>
+</li>
+        </ul>
+      </div>
+    </header>
+  
+
+  <div class="header-placeholder"></div>
+
+  <!-- BRAND KIT -->
+  <main>
+    <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
+<h2 class="kit-title">Left Behind</h2>
+<header class="case-intro">
+  <p class="project-meta">Print Files · Mobile App · Map · 2025</p>
+
+  <p class="project-desc">
+        Left Behind is a visual storytelling project that focuses on forgotten objects found in public spaces, thrift stores, and everyday environments. 
+        The project looks at items people lose, leave behind, or replace. A small traces of daily life that quietly hold meaning. These objects may seem ordinary or insignificant at first, but together they tell stories about presence, absence, and the passage of time.
+  </p>
+</header>
+
+<!-- App Walkthrough Videos -->
+<section class="kit-section" aria-labelledby="app-video">
+  <p class="kit-label" id="app-video">App Walkthrough</p>
+
+  <div class="project-video-grid">
+    <video src="compressed.mov" autoplay muted loop playsinline></video>
+    <video src="compressed1.mov" autoplay muted loop playsinline></video>
+  </div>
+</section>
+
+<!-- App UI Screens -->
+<section class="kit-section" aria-labelledby="app-ui">
+  <p class="kit-label" id="app-ui">App UI Screens</p>
+
+  <div class="final-photo-grid">
+    <img src="images/leftbehindfigma1.png" alt="Left Behind app screen 1">
+    <img src="images/leftbehindfigma2.png" alt="Left Behind app screen 2">
+    <img src="images/leftbehindfigma3.png" alt="Left Behind app screen 3">
+    <img src="images/leftbehindfigma15.png" alt="Left Behind app screen 4">
+    <img src="images/leftbehindfigma16.png" alt="Left Behind app screen 5">
+    <img src="images/leftbehindfigma4.png" alt="Left Behind app screen 6">
+    <img src="images/leftbehindfigma5.png" alt="Left Behind app screen 7">
+    <img src="images/leftbehindfigma6.png" alt="Left Behind app screen 8">
+    <img src="images/leftbehindfigma12.png" alt="Left Behind app screen 9">
+    <img src="images/leftbehindfigma13.png" alt="Left Behind app screen 10">
+    <img src="images/leftbehindfigma7.png" alt="Left Behind app screen 11">
+    <img src="images/leftbehindfigma8.png" alt="Left Behind app screen 12">
+    <img src="images/leftbehindfigma9.png" alt="Left Behind app screen 13">
+    <img src="images/leftbehindfigma10.png" alt="Left Behind app screen 14">
+    <img src="images/leftbehindfigma14.png" alt="Left Behind app screen 15">
+    <img src="images/leftbehindfigma11.png" alt="Left Behind app screen 16">
+  </div>
+</section>
+
+<!-- Typography -->
+<section class="kit-section" aria-labelledby="typography">
+  <p class="kit-label" id="typography">Typography</p>
+
+  <p class="kit-caption">
+Each file uses a small range of type sizes to keep the hierarchy clear and the layout easy to look through. 
+Different typefaces are used to reflect the different kinds of documents found within each case file.
+  </p>
+
+  <!-- keep your existing type-spec type-spec--three block here -->
+  <div class="type-spec type-spec--three">
+    <!-- (paste your App / Printed Pieces / Poem + Map type cards here) -->
+  </div>
+</section>
+
+
+      <!-- Color Palette -->
+      <section class="kit-section" aria-labelledby="color-palette">
+        <p class="kit-label" id="color-palette">Color Palette</p>
+<div class="palette-row palette-row--six">
+    <div class="palette-swatch" style="background:#da382d"><span>#da382d</span></div>
+    <div class="palette-swatch" style="background:#bb4f40"><span>#bb4f40</span></div>
+    <div class="palette-swatch" style="background:#000000"><span>#000000</span></div>
+</div>
+
+  <p class="palette-note">
+    Red is used as a visual thread referencing investigation and connection linking each object to an unseen story.
+  </p>
+</section>
+
+<!-- Printed Case Files -->
+<section class="kit-section" aria-labelledby="printed-files">
+  <p class="kit-label" id="printed-files">Object Investigation Files</p>
+
+  <img src="images/leftbehindoverall.jpg" alt="Printed case files overview" class="logo-variations">
+</section>
+
+<!-- Final Product Photography -->
+<section class="kit-section lb-final-photos" aria-labelledby="final-photos">
+  <p class="kit-label" id="final-photos">Final Product Photography</p>
+
+  <div class="final-photo-grid">
+    <img src="images/leftbehind6.JPG" alt="Left Behind photo 1">
+    <img src="images/leftbehind7.jpg" alt="Left Behind photo 2">
+    <img src="images/leftbehind2.JPG" alt="Left Behind photo 3">
+    <img src="images/leftbehind1.jpg" alt="Left Behind photo 4">
+    <img src="images/leftbehind3.JPG" alt="Left Behind photo 5">
+    <img src="images/leftbehind4.JPG" alt="Left Behind photo 6">
+    <img src="images/leftbehind8.JPG" alt="Left Behind photo 7">
+  </div>
+</section>
+
+<!-- Map -->
+<section class="kit-section" aria-labelledby="map">
+  <p class="kit-label" id="map">Map</p>
+
+  <img src="images/leftbehindmap.png" alt="Left Behind map" class="logo-variations">
+
+  <p class="kit-caption">
+    This map functions as a visual investigation. Red string connects each found object to its location, tracing patterns of loss and movement across the city.
+  </p>
+
+  <img src="images/leftbehindmap.jpg" alt="Left Behind map detail" class="logo-variations">
+</section>
+
+
+    <section class="more-work-cta">
+      <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+    </section>
+
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" aria-hidden="true">
+    <img src="" alt="">
+  </div>
+<script>
+  const video = document.querySelector('.project-video video');
+  if (video) {
+    video.playbackRate = 0.75; // 👈 slower pace (try 0.8 or 0.7 if needed)
+  }
+</script>
+
+  <script>
+    const photos = document.querySelectorAll('.final-photo-grid img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        lightboxImg.src = photo.src;
+        lightboxImg.alt = photo.alt || 'Expanded photo';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
