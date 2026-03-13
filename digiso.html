@@ -5,65 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sammi Jiang — DIGISO</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="overall.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .final-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1800px;
+      width: 95%;
+      margin: 2rem auto 0;
+      align-items: start;
+    }
+
+    .final-photo-grid img {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      display: block !important;
+    }
+
+    .final-photo-grid > * {
+      overflow: visible !important;
+    }
+
+    .palette-empty {
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .palette-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;
+    }
+
+    .palette-swatch {
+      width: 220px;
+      height: 300px;
+    }
+
+    .digiso-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      width: 90%;
+      margin: 2rem auto;
+      align-items: start;
+    }
+
+    .digiso-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .shadow-outline {
+      border-radius: 0 !important;
+    }
+
+    @media (max-width: 900px) {
+      .final-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 1rem;
+      }
+
+      .digiso-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .palette-swatch {
+        width: 28vw;
+        height: 38vw;
+        max-width: 220px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .final-photo-grid {
+        grid-template-columns: 1fr;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
 </head>
-
-<style>
-  .logo-variation-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 2.5rem auto 0;
-    justify-content: center;
-    justify-items: center;
-  }
-
-  .logo-variation-row img{
-    width: 100%;
-    max-width: 520px;
-    height: 420px;
-    object-fit: contain;
-    display: block;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-
-  /* ================================
-     HOVER EFFECT
-     ================================ */
-  .logo-variation-row img,
-  .logo-variations,
-  .final-photo-grid img,
-  .can-grid img,
-  .can-box-packaging,
-  .graphic-pair img,
-  .shadow-outline{
-    cursor: zoom-in;
-    transition: transform 0.25s ease;
-  }
-
-  .logo-variation-row img:hover,
-  .logo-variations:hover,
-  .final-photo-grid img:hover,
-  .can-grid img:hover,
-  .can-box-packaging:hover,
-  .graphic-pair img:hover,
-  .shadow-outline:hover{
-    transform: scale(1.02);
-  }
-
-  .shadow-outline{
-  border-radius: 0 !important;  /* ensures sharp corners */
-}
-</style>
 
 <body class="transition-enabled">
   <div class="js-responsive-nav">
 
-    <!-- CLEAN RESUME-STYLE HEADER -->
     <header class="site-header js-site-header">
       <nav class="nav-container">
         <div class="gallery-title"><a href="index.html">Home</a></div>
@@ -80,7 +121,7 @@
       <div class="social nav-social">
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
                 <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
               </svg>
@@ -89,7 +130,7 @@
           <li>
             <a href="mailto:sammijiang24@gmail.com" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
-                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-0.9-2-0.9-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
               </svg>
             </a>
           </li>
@@ -116,211 +157,59 @@
 
     <div class="header-placeholder"></div>
 
-    <!-- BRAND KIT -->
     <main>
-      <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
-        <h2 class="kit-title">DIGISO<br></h2>
+      <section class="brand-kit" aria-label="DIGISO Project">
+        <h2 class="kit-title">DIGISO</h2>
 
-<header class="case-intro">
-  <p class="project-meta">Branding · Advertisements · Illustration · 2025</p>
+        <header class="case-intro">
+          <p class="project-meta">Branding · Print Design · Marketing · 2025</p>
 
-  <p class="project-desc">
-    Creami Pop is a conceptual milk soda brand inspired by childhood nostalgia,
-    pop culture, and playful design. Created as a team collaboration with Claire Dossey,
-    the project explores a soda that blends creamy texture with fizzy refreshment,
-    featuring flavors inspired by cereal milk.
-  </p>
+          <p class="project-desc">
+DIGISO is a project based on the work I created while working as a Marketing Assistant at a Korean beauty retail store. I designed promotional materials such as hiring posters, discount tags, business cards, and Black Friday graphics. I focus on creating approachable advertisements that fit the store’s aesthetic while keeping the designs clear, simple, and easy for customers to understand.        </header>
 
-  <p class="project-desc">
-    The brand includes a full visual identity, a custom logo, individual can
-    packaging, and a 6-pack carrier. Bright colors, retro-inspired flavors,
-    and playful slogans help give the brand a nostalgic but modern feel.
-  </p>
-</header>
-        <!-- Primary Logo -->
-        <section class="kit-section" aria-labelledby="primary-logo">
-          <p class="kit-label" id="primary-logo">Primary Logo</p>
-
-          <div class="logo-variation-row">
-            <img
-              src="images/CreamipopLOGO.jpg"
-              alt="Creami Pop Primary Logo"
-              class="logo-variations primary-logo"
-            >
-          </div>
-        </section>
-
-        <!-- Logo Variations -->
-        <section class="kit-section" aria-labelledby="logo-variations">
-          <p class="kit-label" id="logo-variations">Logo Variations</p>
-          <img
-            src="images/creamipop logo design.png"
-            alt="Creami Pop logo variations and wordmarks"
-            class="logo-variations"
-          >
-          <p class="kit-caption">
-            Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
-          </p>
-        </section>
-
-        <!-- Typography -->
-        <section class="kit-section" aria-labelledby="typography">
-          <p class="kit-label" id="typography">Typography</p>
-
-          <div class="type-spec">
-            <div class="type-family">
-              <p class="type-family-name font-dtgetai">DT GETAI GROTESK DISPLAY</p>
-              <p class="type-preview font-dtgetai">
-                CREAMI POP — 0123456789
-              </p>
-              <ul class="type-weights">
-                <li><strong>Black · 100 pt</strong></li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-ppright">PPRightGrotesk</p>
-              <p class="type-preview font-ppright">
-                Creamy fizz made modern — 0123456789
-              </p>
-              <ul class="type-weights">
-                <li>Spatial Fine · 50 pt</li>
-                <li>Wide Medium</li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-aktiv">Aktiv Grotesk Ex</p>
-              <p class="type-preview font-aktiv">
-                Clean, modern body text — 0123456789
-              </p>
-              <ul class="type-weights">
-                <li>Medium · 14 pt</li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-avenir">Avenir</p>
-              <p class="type-preview font-avenir">
-                Supporting UI text — 0123456789
-              </p>
-              <ul class="type-weights">
-                <li>Medium · 8 pt</li>
-              </ul>
-            </div>
-
-            <div class="type-family">
-              <p class="type-family-name font-lctmogi">LCTMOGI-A</p>
-              <p class="type-preview font-lctmogi">
-                Playful accent — 0123456789
-              </p>
-              <ul class="type-weights">
-                <li>Display Accent</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- Color Palette -->
-        <section class="kit-section" aria-labelledby="color-palette">
-          <p class="kit-label" id="color-palette">Color Palette</p>
-
-          <div class="palette-row">
-            <div class="palette-swatch" style="background:#91BB54"><span>#91BB54</span></div>
-            <div class="palette-swatch" style="background:#FFF378"><span>#FFF378</span></div>
-            <div class="palette-swatch" style="background:#E084B3"><span>#E084B3</span></div>
-            <div class="palette-swatch" style="background:#A02657"><span>#A02657</span></div>
-            <div class="palette-swatch" style="background:#1A97D4"><span>#1A97D4</span></div>
-            <div class="palette-swatch" style="background:#693C97"><span>#693C97</span></div>
-          </div>
-
-          <p class="palette-note">
-            Dreamy pastel tones are paired with bold, high-contrast pops to create a lively and balanced palette. Milky white and soft peach feel creamy and smooth, while lime green, electric blue, and deep purple add a bright, fizzy pop that feels fresh and fun.
-          </p>
-        </section>
-
-        <!-- Color Application -->
-        <section class="kit-section" aria-labelledby="color-application">
-          <p class="kit-label" id="color-application">Color Application</p>
-          <img
-            src="images/creamipop-color-logos.png"
-            alt="Creami Pop logo color variations"
-            class="logo-variations"
-          >
-        </section>
-
-        <!-- Flavor Illustrations -->
-        <section class="kit-section" aria-labelledby="flavor-illustrations">
-          <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
-          <img
-            src="images/creamipop-flavor-illustrations.png"
-            alt="Creami Pop flavor illustrations"
-            class="logo-variations"
-          >
-          <p class="kit-caption">
-            Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
-          </p>
-        </section>
-
-        <!-- Flavor Can Designs -->
-        <section class="kit-section" aria-labelledby="flavor-can-designs">
-          <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
-
-          <div class="can-grid">
-            <figure class="can-item">
-              <img
-                src="images/creamipop-fruit-loop-can.png"
-                alt="Creami Pop Fruit Loop Milk Soda can design"
-              >
-              <figcaption class="flavor-name">Fruit Loop</figcaption>
-            </figure>
-
-            <figure class="can-item">
-              <img
-                src="images/creamipop-cinnaswrl-can.png"
-                alt="Creami Pop CinnaSwrl Milk Soda can design"
-              >
-              <figcaption class="flavor-name">CinnaSwrl</figcaption>
-            </figure>
-          </div>
-
-          <img
-            src="images/creamipop-can-box-packaging.png"
-            alt="Creami Pop can box packaging design"
-            class="can-box-packaging"
-          >
-        </section>
-
-        <!-- Final Product Photography -->
-        <section class="kit-section" aria-labelledby="final-product-photography">
-          <p class="kit-label" id="final-product-photography">Final Product Photography</p>
+        <section class="kit-section" aria-labelledby="app-ui">
+          <p class="kit-label" id="app-ui">Black Friday Poster Spreads</p>
 
           <div class="final-photo-grid">
-            <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
-            <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
-            <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
-            <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
-            <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
-            <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
-            <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
-            <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
+            <img src="images/digiso1.jpg" alt="DIGISO storefront display photo 1">
+            <img src="images/digiso2.jpg" alt="DIGISO storefront display photo 2">
+            <img src="images/digiso3.jpg" alt="DIGISO storefront display photo 3">
+            <img src="images/digiso4.jpg" alt="DIGISO storefront display photo 4">
           </div>
         </section>
 
-        <!-- Graphic Elements -->
+        <section class="kit-section" aria-labelledby="digiso-designs">
+          <p class="kit-label" id="digiso-designs">DIGISO Designs</p>
+
+          <div class="digiso-grid">
+            <img src="images/Digisojob.png" alt="DIGISO hiring poster design">
+            <img src="images/digisotag.jpg" alt="DIGISO discount tag designs">
+            <img src="images/digisobusinesscard.png" alt="DIGISO business card design">
+          </div>
+        </section>
+
+        <section class="kit-section" aria-labelledby="color-application">
+          <p class="kit-label" id="color-application">Black Friday Poster</p>
+          <img
+            src="images/digisoblackfridayoverall.png"
+            alt="DIGISO Black Friday campaign poster"
+            class="logo-variations"
+          >
+        </section>
+
         <section class="kit-section">
           <p class="kit-label">Graphic Elements</p>
 
           <div class="graphic-pair">
             <img
-              src="images/Creamipopposter.png"
-              alt="Creami Pop Graphic Elements Poster"
+              src="images/digisoblackfriday.png"
+              alt="DIGISO Black Friday graphic element poster"
               class="shadow-outline"
             />
 
             <img
-              src="images/Creamipop.jpg"
-              alt="Creami Pop Instagram mockup"
+              src="images/Digisojob.png"
+              alt="DIGISO hiring poster close-up"
               class="shadow-outline"
             />
           </div>
@@ -332,43 +221,46 @@
       <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
     </section>
 
-  </div>
+    <div class="lightbox" aria-hidden="true">
+      <img src="" alt="">
+    </div>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" aria-hidden="true">
-    <img src="" alt="">
-  </div>
+    <script>
+      const video = document.querySelector('.project-video video');
+      if (video) {
+        video.playbackRate = 0.75;
+      }
+    </script>
 
-  <script>
-    const photos = document.querySelectorAll(
-      '.final-photo-grid img, .logo-variation-row img, .logo-variations, .can-grid img, .can-box-packaging, .graphic-pair img'
-    );
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = lightbox.querySelector('img');
+    <script>
+      const photos = document.querySelectorAll('.final-photo-grid img, .digiso-grid img, .graphic-pair img, .logo-variations');
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImg = lightbox.querySelector('img');
 
-    photos.forEach(photo => {
-      photo.addEventListener('click', () => {
-        lightboxImg.src = photo.src;
-        lightboxImg.alt = photo.alt || 'Expanded photo';
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        lightbox.setAttribute('aria-hidden', 'false');
+      photos.forEach(photo => {
+        photo.addEventListener('click', () => {
+          lightboxImg.src = photo.src;
+          lightboxImg.alt = photo.alt || 'Expanded image';
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
       });
-    });
 
-    function closeLightbox(){
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-      document.body.style.overflow = '';
-      lightbox.setAttribute('aria-hidden', 'true');
-    }
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+        lightbox.setAttribute('aria-hidden', 'true');
+      }
 
-    lightbox.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', closeLightbox);
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-  </script>
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
 
+  </div>
 </body>
 </html>
