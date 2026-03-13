@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammi Jiang — LIMESALT</title>
+
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="overall.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<style>
+  .logo-variation-row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .logo-variation-row img{
+    width: 100%;
+    max-width: 520px;
+    height: 420px;
+    object-fit: contain;
+    display: block;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* ================================
+     HOVER EFFECT
+     ================================ */
+  .logo-variation-row img,
+  .logo-variations,
+  .final-photo-grid img,
+  .can-grid img,
+  .can-box-packaging,
+  .graphic-pair img,
+  .shadow-outline{
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+  }
+
+  .logo-variation-row img:hover,
+  .logo-variations:hover,
+  .final-photo-grid img:hover,
+  .can-grid img:hover,
+  .can-box-packaging:hover,
+  .graphic-pair img:hover,
+  .shadow-outline:hover{
+    transform: scale(1.02);
+  }
+
+  .shadow-outline{
+  border-radius: 0 !important;  /* ensures sharp corners */
+}
+
+
+</style>
+
+<body class="transition-enabled">
+  <div class="js-responsive-nav">
+
+    <!-- CLEAN RESUME-STYLE HEADER -->
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title"><a href="index.html">Home</a></div>
+        <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+        <div class="gallery-title"><a href="resume.html">Resume</a></div>
+      </nav>
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
+      </div>
+
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sammijiang24@gmail.com" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="resume-download-icon" href="images/Resume.png" download aria-label="Download Resume">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M5 18h14"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="header-placeholder"></div>
+
+    <!-- BRAND KIT -->
+    <main>
+      <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
+        <h2 class="kit-title">LIMESALT<br></h2>
+
+<header class="case-intro">
+  <p class="project-meta">Rebrand · Menu Design · Brand Applications · 2025</p>
+
+  <p class="project-desc">
+    LIMESALT is a rebrand of the brand’s original menu design. For this project, I focused on making the menu easier for customers to read and move through while still keeping the brand feeling fresh, fun, and recognizable.
+  </p>
+
+  <p class="project-desc">
+    A big part of this redesign was improving hierarchy. I reorganized the menu so the most important information stands out first, and each section feels more structured and easier to scan.
+  </p>
+</header>
+        <!-- Primary Logo -->
+        <section class="kit-section" aria-labelledby="primary-logo">
+          <p class="kit-label" id="primary-logo">Primary Logo</p>
+
+          <div class="logo-variation-row">
+            <img
+              src="images/CreamipopLOGO.jpg"
+              alt="Creami Pop Primary Logo"
+              class="logo-variations primary-logo"
+            >
+          </div>
+        </section>
+
+        <!-- Logo Variations -->
+        <section class="kit-section" aria-labelledby="logo-variations">
+          <p class="kit-label" id="logo-variations">Logo Variations</p>
+          <img
+            src="images/creamipop logo design.png"
+            alt="Creami Pop logo variations and wordmarks"
+            class="logo-variations"
+          >
+          <p class="kit-caption">
+            Multiple logo lockups adapt Creami Pop across packaging, posters, and digital applications while maintaining a consistent visual identity.
+          </p>
+        </section>
+
+        <!-- Typography -->
+        <section class="kit-section" aria-labelledby="typography">
+          <p class="kit-label" id="typography">Typography</p>
+
+          <div class="type-spec">
+            <div class="type-family">
+              <p class="type-family-name font-dtgetai">DT GETAI GROTESK DISPLAY</p>
+              <p class="type-preview font-dtgetai">
+                CREAMI POP — 0123456789
+              </p>
+              <ul class="type-weights">
+                <li><strong>Black · 100 pt</strong></li>
+              </ul>
+            </div>
+
+            <div class="type-family">
+              <p class="type-family-name font-ppright">PPRightGrotesk</p>
+              <p class="type-preview font-ppright">
+                Creamy fizz made modern — 0123456789
+              </p>
+              <ul class="type-weights">
+                <li>Spatial Fine · 50 pt</li>
+                <li>Wide Medium</li>
+              </ul>
+            </div>
+
+            <div class="type-family">
+              <p class="type-family-name font-aktiv">Aktiv Grotesk Ex</p>
+              <p class="type-preview font-aktiv">
+                Clean, modern body text — 0123456789
+              </p>
+              <ul class="type-weights">
+                <li>Medium · 14 pt</li>
+              </ul>
+            </div>
+
+            <div class="type-family">
+              <p class="type-family-name font-avenir">Avenir</p>
+              <p class="type-preview font-avenir">
+                Supporting UI text — 0123456789
+              </p>
+              <ul class="type-weights">
+                <li>Medium · 8 pt</li>
+              </ul>
+            </div>
+
+            <div class="type-family">
+              <p class="type-family-name font-lctmogi">LCTMOGI-A</p>
+              <p class="type-preview font-lctmogi">
+                Playful accent — 0123456789
+              </p>
+              <ul class="type-weights">
+                <li>Display Accent</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section class="kit-section" aria-labelledby="color-palette">
+          <p class="kit-label" id="color-palette">Color Palette</p>
+
+          <div class="palette-row">
+            <div class="palette-swatch" style="background:#a3b64d"><span>#a3b64d</span></div>
+            <div class="palette-swatch" style="background:#6f8f3c"><span>#6f8f3c</span></div>
+            <div class="palette-swatch" style="background:#68902d"><span>#68902d</span></div>
+            <div class="palette-swatch" style="background:#335441"><span>#335441</span></div>
+            <div class="palette-swatch" style="background:#dfad4a"><span>#dfad4a</span></div>
+          </div>
+        </section>
+
+      <section class="kit-section" aria-labelledby="applications">
+        <div class="container">
+          <p class="kit-label" id="applications">Applications</p>
+        </div>
+
+        <div class="three-grid">
+          <img src="images/limesalt front.jpg" alt="LIMESALT menu mockup" class="lb-zoom">
+          <img src="images/limesalt back.jpg" alt="LIMESALT business card design" class="lb-zoom">
+          <img src="images/limesalt inside menu.jpg" alt="LIMESALT poster mockup" class="lb-zoom">
+        </div>
+      </section>
+
+        <!-- Flavor Illustrations -->
+        <section class="kit-section" aria-labelledby="flavor-illustrations">
+          <p class="kit-label" id="flavor-illustrations">Flavor Illustrations</p>
+          <img
+            src="images/creamipop-flavor-illustrations.png"
+            alt="Creami Pop flavor illustrations"
+            class="logo-variations"
+          >
+          <p class="kit-caption">
+            Flavor-inspired illustrations pair bold color blocks with playful ingredients to visually express taste, sweetness, and personality across the Creami Pop system.
+          </p>
+        </section>
+
+        <!-- Flavor Can Designs -->
+        <section class="kit-section" aria-labelledby="flavor-can-designs">
+          <p class="kit-label" id="flavor-can-designs">Flavor Can Designs</p>
+
+          <div class="can-grid">
+            <figure class="can-item">
+              <img
+                src="images/creamipop-fruit-loop-can.png"
+                alt="Creami Pop Fruit Loop Milk Soda can design"
+              >
+              <figcaption class="flavor-name">Fruit Loop</figcaption>
+            </figure>
+
+            <figure class="can-item">
+              <img
+                src="images/creamipop-cinnaswrl-can.png"
+                alt="Creami Pop CinnaSwrl Milk Soda can design"
+              >
+              <figcaption class="flavor-name">CinnaSwrl</figcaption>
+            </figure>
+          </div>
+
+          <img
+            src="images/creamipop-can-box-packaging.png"
+            alt="Creami Pop can box packaging design"
+            class="can-box-packaging"
+          >
+        </section>
+
+        <!-- Final Product Photography -->
+        <section class="kit-section" aria-labelledby="final-product-photography">
+          <p class="kit-label" id="final-product-photography">Final Product Photography</p>
+
+          <div class="final-photo-grid">
+            <img src="images/Creamipop3.JPG" alt="Creami Pop full flavor lineup with box">
+            <img src="images/Creamipop4.JPG" alt="Creami Pop cereal variety pack front view">
+            <img src="images/Creamipop7.JPG" alt="Creami Pop cans clinking together">
+            <img src="images/Creamipop9.JPG" alt="Creami Pop chocolate, cinnamon, and ube flavors">
+            <img src="images/Creamipop8.JPG" alt="Creami Pop cans trio on white background">
+            <img src="images/Creamipop2.JPG" alt="Creami Pop cereal variety pack front">
+            <img src="images/Creamipop5.JPG" alt="Creami Pop cereal variety pack angled view">
+            <img src="images/Creamipop6.JPG" alt="Creami Pop cereal variety pack front on white">
+          </div>
+        </section>
+
+        <!-- Graphic Elements -->
+        <section class="kit-section">
+          <p class="kit-label">Graphic Elements</p>
+
+          <div class="graphic-pair">
+            <img
+              src="images/LIMESALT.png"
+              alt="Creami Pop Graphic Elements Poster"
+              class="shadow-outline"
+            />
+
+            <img
+              src="images/limesaltposter.png"
+              alt="Creami Pop Instagram mockup"
+              class="shadow-outline"
+            />
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <section class="more-work-cta">
+      <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+    </section>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" aria-hidden="true">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const photos = document.querySelectorAll(
+      '.final-photo-grid img, .logo-variation-row img, .logo-variations, .can-grid img, .can-box-packaging, .graphic-pair img'
+    );
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        lightboxImg.src = photo.src;
+        lightboxImg.alt = photo.alt || 'Expanded photo';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
