@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammi Jiang — lunarphases</title>
+
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="overall.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+.logo-variation-row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 🔥 force 3 per row */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  justify-items: center;
+}
+
+.logo-variation-row img{
+  width: 100%;
+  max-width: 350px;   /* keeps them balanced */
+  height: auto;
+  display: block;
+}
+
+    .final-photo-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:1.5rem;
+      max-width:1200px;
+      margin:2rem auto 0;
+    }
+    .final-photo-grid img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .collateral-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:2.5rem;
+      max-width:1200px;
+      margin:2rem auto 0;
+    }
+    .collateral-grid img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      background:#fff;
+    }
+
+.dreamie-image{
+  display: block;
+  max-width: 650px;   /* adjust size here */
+  width: 100%;
+  height: auto;
+  margin: 1.5rem auto 0;
+}
+
+.story-desc {
+  max-width: 520px;
+  margin: 2.5rem auto 0;
+  line-height: 1.8;
+}
+
+.story-highlight {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+.palette-row{
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* fixed gap */
+  flex-wrap: nowrap;  /* force one row */
+}
+
+.palette-swatch{
+  width: 220px;
+  height: 300px;
+}
+
+/* Shrink slightly on smaller screens */
+@media (max-width: 900px){
+  .palette-swatch{
+    width: 28vw;      /* scales proportionally */
+    height: 38vw;
+    max-width: 220px; /* never grows bigger than desktop */
+  }
+}
+  </style>
+</head>
+
+
+<body class="transition-enabled">
+  <div class="js-responsive-nav">
+<!-- CLEAN RESUME-STYLE HEADER -->
+<header class="site-header js-site-header">
+  <nav class="nav-container">
+    <div class="gallery-title"><a href="index.html">Home</a></div>
+    <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+    <div class="gallery-title"><a href="resume.html">Resume</a></div>
+  </nav>
+
+
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
+      </div>
+
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sammijiang24@gmail.com" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+  <a class="resume-download-icon" href="images/Resume.pdf" download aria-label="Download Resume">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <!-- arrow -->
+      <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+            stroke="#000"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <!-- tray -->
+      <path d="M5 18h14"
+            stroke="#000"
+            stroke-width="1.8"
+            fill="none"
+            stroke-linecap="round"/>
+    </svg>
+  </a>
+</li>
+        </ul>
+      </div>
+    </header>
+
+  <div class="header-placeholder"></div>
+
+  <!-- BRAND KIT -->
+  <main>
+
+
+        <section class="brand-kit" aria-label="Creami Pop Brand Guidelines">
+      <h2 class="kit-title">Lunar Phases<br></h2>
+<header class="case-intro">
+<p class="project-meta">Poster Design · Visual Identity · Typography · 2025</p>
+
+  <p class="project-desc">
+I remember when error pages used to feel dramatic.  
+You would just sit there staring at “404 not found.”
+
+For this poster, I imagined what it would feel like if that page showed up,
+but instead it showed something real.
+
+I included a photo of me and my friend, just casually having fun and taking selfies.
+It feels like opening an old website from the early 2000s.
+Slightly blurry. A little layered. Soft blue.
+
+Instead of an error message, it reads  
+“404: bad vibes not found.”
+
+It turns something technical into something personal,
+like a small reminder of friendship and good moments.
+</p>
+
+      </header>
+
+      <!-- 1) Primary Logo -->
+      <section class="kit-section" aria-labelledby="primary-logo">
+<p class="kit-label" id="primary-logo">Poster Title Treatment</p>
+        <img
+          src="images/Dreamie Duo title.png"
+          alt="Lemomo Tea primary logo"
+          class="logo-variations primary-logo"
+        >
+      </section>
+
+      <!-- 2) Logo Variations -->
+      <section class="kit-section" aria-labelledby="logo-variations">
+<p class="kit-label" id="logo-variations">Typography & Graphic Elements</p>
+
+        <div class="logo-variation-row">
+          <img
+            src="images/Dreamie Duo Logo.png"
+            alt="Lemomo Tea vertical logo variation"
+          >
+          <img
+            src="images/Dreamie Duo Logo 2.png"
+            alt="Lemomo Tea framed logo system"
+          >
+          <img
+            src="images/Dreamie Dou Logo3.png"
+            alt="Lemomo Tea framed logo system"
+          >
+        </div>
+
+<p class="kit-caption">
+  The bold, rounded display type references early 2000s web graphics, while the repeated “404” text creates rhythm and visual layering. 
+  Spark motifs and halftone textures add a nostalgic, slightly glitchy quality that reinforces the Y2K influence.
+</p>
+
+      </section>
+
+      <!-- 3) Color Palette (moved BEFORE typography) -->
+      <section class="kit-section" aria-labelledby="color-palette">
+        <p class="kit-label" id="color-palette">Color Palette</p>
+
+        <div class="palette-row">
+          
+          <div class="palette-swatch" style="background:#336099"><span>#336099</span></div>
+          <div class="palette-swatch" style="background:#d6d6d6"><span>#d6d6d6</span></div>
+          <div class="palette-swatch" style="background:#b5b4a9"><span>#b5b4a9</span></div>
+        </div>
+      </section>
+
+      <!-- 4) Typography -->
+      <section class="kit-section" aria-labelledby="typography">
+        <p class="kit-label" id="typography">Typography</p>
+
+        <div class="type-text">
+<p class="kit-caption">
+  I was inspired by early 2000s web design for the typography. The bold, rounded title gives it that playful Y2K energy, while the smaller text keeps it structured like an old webpage.
+  The repeated “404: bad vibes not found” works almost like a texture and adds that nostalgic internet feeling.
+</p>
+
+
+        </div>
+      </section>
+
+      <!-- 8) In-store marketing -->
+      <section class="kit-section" aria-labelledby="in-store">
+<p class="kit-label" id="in-store">Final Poster Mockup</p>
+
+<img src="images/Phase4.pdf" alt="Dreamie Duo in-store marketing layout" class="dreamie-image">
+
+<p class="kit-caption">
+  The final composition frames the image like a nostalgic webpage interface. 
+  The border treatment and layered text reinforce the 404 concept while keeping the overall layout balanced and structured.
+</p>
+      </section>
+
+      <!-- 8) In-store marketing -->
+      <section class="kit-section" aria-labelledby="in-store">
+<p class="kit-label">Detail & Texture</p>
+
+        <img src="images/lunarphases.jpg" alt="Lemomo Tea in-store marketing layout" class="logo-variations">
+      </section>
+
+    </section>
+  </main>
+
+  <section class="more-work-cta">
+    <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" aria-hidden="true">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const photos = document.querySelectorAll('.final-photo-grid img, .collateral-grid img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        lightboxImg.src = photo.src;
+        lightboxImg.alt = photo.alt || 'Expanded image';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
