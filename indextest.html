@@ -1,0 +1,953 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:image" content="style.css" />
+  <link rel="icon" href="" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">  <link rel="stylesheet" href="resume.css" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <title>Sammi Jiang</title>
+
+<style>
+  /* =========================
+     ROOT / BASE
+  ========================= */
+  :root {
+    --bg: #f7f7f5;
+    --text: #111111;
+    --muted: #6f6a66;
+    --line: #e6e1dc;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    cursor: auto !important;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg) !important;
+    color: var(--text);
+  }
+
+  body {
+    background-color: var(--bg) !important;
+  }
+
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* =========================
+     HEADER
+  ========================= */
+  .site-header {
+    background: rgba(247, 247, 245, 0.92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .gallery-title a,
+  .logo-text a,
+  .social a {
+    transition: opacity 0.25s ease;
+  }
+
+  .gallery-title a:hover,
+  .logo-text a:hover,
+  .social a:hover {
+    opacity: 0.65;
+  }
+
+  /* =========================
+     MASTHEAD
+  ========================= */
+  .masthead {
+    background: transparent !important;
+  }
+
+  .masthead-contents,
+  .masthead-text {
+    width: 100%;
+  }
+
+  .masthead-text {
+    margin-top: 0 !important;
+  }
+
+  .masthead-arrow-container {
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
+  }
+
+  .masthead-arrow-container:hover {
+    opacity: 1;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+  .hero-scroll {
+    position: relative;
+    width: 100%;
+    min-height: 175vh;
+  }
+
+  .hero-layer {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-name-layer,
+  .hero-text-layer {
+    transition:
+      opacity 1s ease,
+      transform 1s var(--ease);
+  }
+
+  .hero-name-layer {
+    z-index: 2;
+    opacity: 1;
+    transform: translateY(-110px);
+    pointer-events: auto;
+  }
+
+  .hero-name-layer.is-hidden {
+    opacity: 0;
+    transform: translateY(-130px);
+    pointer-events: none;
+  }
+
+  .hero-text-layer {
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-70px);
+    pointer-events: none;
+    margin-top: -100vh;
+    transition:
+      opacity 1.15s ease 0.08s,
+      transform 1.15s var(--ease) 0.08s;
+  }
+
+  .hero-text-layer.is-visible {
+    opacity: 1;
+    transform: translateY(-70px);
+    pointer-events: auto;
+  }
+
+  /* =========================
+     HERO NAME
+  ========================= */
+.hero-kicker {
+  margin: 0 0 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: #444;
+}
+
+  .hero-name {
+    margin: 0;
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-name .line {
+    display: block;
+    white-space: nowrap;
+  }
+
+.hero-name .line span {
+  display: inline-block;
+  animation: namePop 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+  .hero-name .filled {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(6rem, 14vw, 14rem);
+    color: #111;
+    transform: rotate(-1.4deg);
+    animation: floatName 7s ease-in-out infinite;
+  }
+
+  .hero-name .outline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(4.8rem, 9.5vw, 8.4rem);
+    color: transparent;
+    -webkit-text-stroke: 1.15px #2a2a2a;
+    margin-top: 0.60em;
+    margin-left: 0;
+    opacity: 0.82;
+    transform: rotate(1.2deg);
+    animation: floatOutline 8s ease-in-out infinite;
+  }
+
+  .hero-name .filled span:nth-child(1) { animation-delay: 0.05s; }
+  .hero-name .filled span:nth-child(2) { animation-delay: 0.10s; }
+  .hero-name .filled span:nth-child(3) { animation-delay: 0.15s; }
+  .hero-name .filled span:nth-child(4) { animation-delay: 0.20s; }
+  .hero-name .filled span:nth-child(5) { animation-delay: 0.25s; }
+
+  .hero-name .outline span:nth-child(1) { animation-delay: 0.30s; }
+  .hero-name .outline span:nth-child(2) { animation-delay: 0.35s; }
+  .hero-name .outline span:nth-child(3) { animation-delay: 0.40s; }
+  .hero-name .outline span:nth-child(4) { animation-delay: 0.45s; }
+  .hero-name .outline span:nth-child(5) { animation-delay: 0.50s; }
+
+  .hero-name:hover .filled span {
+    transform: translateY(-4px) rotate(-3deg);
+    transition: transform 0.25s ease;
+  }
+
+  .hero-name:hover .outline span {
+    transform: translateY(3px) rotate(2deg);
+    transition: transform 0.25s ease;
+  }
+
+  /* =========================
+     HERO TEXT
+  ========================= */
+  .hero-desc {
+    max-width: 980px;
+    margin: 0 auto 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3vw, 3rem);
+    line-height: 1.16;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    text-wrap: balance;
+  }
+
+  .hero-subdesc {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: clamp(300px, 40vh, 520px);
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #4f4a46;
+    text-wrap: pretty;
+  }
+
+  .hero-subdesc strong,
+  .hero-subdesc em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  /* =========================
+     PROJECT GRID
+  ========================= */
+  .project-covers {
+    opacity: 1 !important;
+    transform: none !important;
+    margin-top: 120px;
+    margin-bottom: 20px !important;
+  }
+
+  /* =========================
+     PROJECT CARDS
+  ========================= */
+  .project-cover,
+  .cover-content-container,
+  .cover-image-wrap,
+  .cover-image,
+  .cover,
+  .cover-normal,
+  .slideshow,
+  .slideshow img,
+  .project-cover img,
+  .project-cover video {
+    border-radius: 0 !important;
+  }
+
+  .project-cover {
+    transition: transform 0.35s var(--ease), opacity 0.35s ease;
+  }
+
+  .project-cover:hover {
+    transform: translateY(-6px);
+  }
+
+  .project-cover .cover,
+  .project-cover video {
+    border: 1px solid var(--line);
+    background: #ffffff;
+    box-shadow: var(--shadow);
+  }
+
+  .details .title {
+    letter-spacing: 0.02em;
+  }
+
+  /* =========================
+     VIDEO
+  ========================= */
+  .project-cover video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .project-cover video::-webkit-media-controls,
+  .project-cover video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
+
+  /* =========================
+     SLIDESHOW
+  ========================= */
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    overflow: hidden;
+  }
+
+  .slideshow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.65s ease;
+  }
+
+  .slideshow img.active {
+    opacity: 1;
+  }
+
+  .slideshow.doodle img,
+  .slideshow.lemomo img {
+    object-fit: contain;
+  }
+
+  .slideshow.doodle img {
+    object-position: center;
+  }
+
+  /* =========================
+     CTA / FOOTER
+  ========================= */
+  .more-work-cta,
+  .back-to-top,
+  .site-footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .more-work-scroll,
+  .back-to-top a {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .more-work-scroll:hover,
+  .back-to-top a:hover {
+    opacity: 0.65;
+    transform: translateY(-2px);
+  }
+
+  /* =========================
+     ANIMATIONS
+  ========================= */
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes namePop {
+    0% {
+      opacity: 0;
+      transform: translateY(34px) scale(0.92) rotate(-3deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0);
+    }
+  }
+
+  @keyframes floatName {
+    0%, 100% {
+      transform: rotate(-1.4deg) translateY(0);
+    }
+    50% {
+      transform: rotate(-1.4deg) translateY(-4px);
+    }
+  }
+
+  @keyframes floatOutline {
+    0%, 100% {
+      transform: rotate(1.2deg) translateY(0);
+    }
+    50% {
+      transform: rotate(1.2deg) translateY(5px);
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+  @media (max-width: 768px) {
+    .masthead-arrow-container {
+      display: none !important;
+    }
+
+    .hero-scroll {
+      min-height: 155vh;
+    }
+
+    .hero-name-layer {
+      transform: translateY(-70px);
+    }
+
+    .hero-name-layer.is-hidden {
+      transform: translateY(-90px);
+    }
+
+    .hero-text-layer {
+      transform: translateY(-36px);
+    }
+
+    .hero-text-layer.is-visible {
+      transform: translateY(-36px);
+    }
+
+    .hero-layer {
+      padding: 0 18px 56px;
+    }
+
+    .hero-kicker {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .hero-name .filled,
+    .hero-name .outline {
+      font-size: clamp(3.6rem, 16vw, 5.6rem);
+    }
+
+    .hero-name .outline {
+      -webkit-text-stroke: 1px #2a2a2a;
+      margin-top: 0.16em;
+    }
+
+    .hero-desc {
+      margin-bottom: 28px;
+      font-size: clamp(1.35rem, 7vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .hero-subdesc {
+      margin-bottom: 220px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .project-covers {
+      margin-top: 80px;
+    }
+
+    .slideshow {
+      min-height: 260px;
+    }
+  }
+</style>
+</head>
+
+<body class="transition-enabled">
+  <div class="js-responsive-nav">
+
+    <!-- CLEAN RESUME-STYLE HEADER -->
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title"><a href="index.html">Home</a></div>
+        <div class="gallery-title"><a href="projects.html" class="active">Projects</a></div>
+        <div class="gallery-title"><a href="resume.html">Resume</a></div>
+      </nav>
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
+      </div>
+
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/sammijiang24" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sammijiang24@gmail.com" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" height="24px">
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="resume-download-icon" href="images/Resume.pdf" download aria-label="Download Resume">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4v9m0 0l-3-3m3 3l3-3"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M5 18h14"
+                      stroke="#000"
+                      stroke-width="1.8"
+                      fill="none"
+                      stroke-linecap="round"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="hamburger-click-area js-hamburger">
+      <div class="hamburger">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+
+    <div class="header-placeholder"></div>
+
+    <!-- Masthead -->
+    <div class="masthead js-masthead-fixed">
+      <div class="masthead-contents">
+        <div class="masthead-text js-masthead-text">
+<section class="hero-scroll">
+  <div class="hero-layer hero-name-layer">
+    <p class="hero-kicker">Hi, I’m</p>
+
+    <h1 class="hero-name">
+      <span class="line filled">
+        <span>S</span><span>a</span><span>m</span><span>m</span><span>i</span>
+      </span>
+
+      <span class="line outline">
+        <span>J</span><span>i</span><span>a</span><span>n</span><span>g</span>
+      </span>
+    </h1>
+  </div>
+
+  <div class="hero-layer hero-text-layer">
+    <p class="hero-desc">
+      I’m a Communication Design student creating thoughtful, strategy-driven work.
+    </p>
+
+    <p class="hero-subdesc">
+      With experience across <strong>brand strategy</strong>, <strong>digital marketing</strong>, and <strong>content creation</strong>,
+      I like shaping ideas into clean, intentional visuals that tell a story.
+      I’m especially drawn to <em>skincare</em> and <em>lifestyle</em>, where design and storytelling come together to build meaningful connections.
+    </p>
+  </div>
+</section>
+          <div class="masthead-buttons"></div>
+        </div>
+      </div>
+      <div class="masthead-arrow-container js-masthead-arrow" decorator="editable" data-context="page.masthead">
+        <div class="masthead-arrow"></div>
+      </div>
+    </div>
+    <div class="masthead-placeholder" decorator="editable" data-context="page.masthead"></div>
+
+    <div class="site-wrap js-site-wrap">
+      <div class="site-container">
+        <div class="site-content">
+          <main>
+
+
+
+            
+            <!-- Project Covers Grid -->
+<section class="project-covers" decorator="editable" data-context="theme.gallery.projects">                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <div class="slideshow creami-pop">
+                          <img src="images/CreamipopLOGO.jpg" alt="Home Cover" class="active">
+                          <img src="images/Creamipop3.JPG" alt="Home Cover">
+                          <img src="images/Creamipop5.JPG" alt="Home Cover">
+                          <img src="images/Creamipop7.JPG" alt="Home Cover">
+                          <img src="images/Creamipop.jpg" alt="Home Cover">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap">
+                    <div class="details">
+                      <div class="details-inner">
+                        <div class="title">CREAMI POP</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+<a decorator="editable" class="project-cover hold-space" href="leftbehind.html">
+  <div class="cover-content-container">
+    <div class="cover-image-wrap">
+      <div class="cover-image">
+        <div class="cover cover-normal">
+          <div class="slideshow left-behind">
+            <img src="images/leftbehindphone2.png" alt="Home Cover">
+            <img src="images/leftbehindoverall.jpg" alt="Home Cover" class="active">
+            <img src="images/leftbehindmap.png" alt="Home Cover">
+            <img src="images/leftbehind8.JPG" alt="Home Cover">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-wrap">
+      <div class="details">
+        <div class="details-inner">
+          <div class="title">LEFT BEHIND</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+              <!-- Little Cupcake -->
+              <a decorator="editable" class="project-cover hold-space" href="littlecupcake.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+<video autoplay muted loop playsinline webkit-playsinline preload="auto">
+  <source src="images/littlecupcake-website.mp4" type="video/mp4">
+</video>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap">
+                    <div class="details">
+                      <div class="details-inner">
+                        <div class="title">Little Cupcake</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Lemon Glow (3-image slideshow) -->
+              <a decorator="editable" class="project-cover hold-space" href="LemonGlow.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <div class="slideshow lemon-glow">
+                          <img src="images/Lemon Glow logo.png" alt="Home Cover" class="active">
+                          <img src="images/Lemonglowfinal.png" alt="Home Cover">
+                          <img src="images/lemonglowfinal2.png" alt="Home Cover">
+                          <img src="images/lemonglowfinal3.png" alt="Home Cover">
+                          <img src="images/lemonglowfinal5.png" alt="Home Cover">
+                          <img src="images/LemonGlow Lip Balm.png" alt="Home Cover">
+                          <img src="images/lemonglowmedia.jpg" alt="Home Cover">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lemon Glow</div></div></div></div>
+                </div>
+              </a>
+
+              <!-- Studysprout -->
+              <a decorator="editable" class="project-cover hold-space" href="Studysprout.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal">
+<video autoplay muted loop playsinline webkit-playsinline preload="auto">
+  <source src="studysprout-4.mp4" type="video/mp4">
+</video>                  </div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">study sprout</div></div></div></div>
+                </div>
+              </a>
+
+<a decorator="editable" class="project-cover hold-space" href="Doodle.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
+  <div class="cover-content-container">
+    <div class="cover-image-wrap">
+      <div class="cover-image">
+        <div class="cover cover-normal">
+          <div class="slideshow doodle">
+            <img src="images/DOODLEpackage.jpg" alt="Home Cover" class="active">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-wrap">
+      <div class="details">
+        <div class="details-inner">
+          <div class="title">DOODLE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+              <a decorator="editable" class="project-cover hold-space" href="nycscaffolding.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/NYCscaffolding4.JPG" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">NYC Scaffolding</div></div></div></div>
+                </div>
+              </a>
+
+<a decorator="editable" class="project-cover hold-space" href="LEMOMO.html">
+  <div class="cover-content-container">
+    <div class="cover-image-wrap">
+      <div class="cover-image">
+        <div class="cover cover-normal">
+          <div class="slideshow lemomo">
+            <img src="images/perfume lemon tea logo.png" alt="Home Cover" class="active">
+            <img src="images/perfume lemon tea logo 1.png" alt="Home Cover">
+            <img src="images/LEMOMO BLUE 1.jpg" alt="Home Cover">
+            <img src="images/LEMOMO BLUE 2.JPG" alt="Home Cover">
+            <img src="images/LEMOMO BLUE 3.jpg" alt="Home Cover">
+            <img src="images/LEMOMO ORANGE 1.jpg" alt="Home Cover">
+            <img src="images/LEMOMO ORANGE 2.jpg" alt="Home Cover">
+            <img src="images/LEMOMO ORANGE 3.jpg" alt="Home Cover">
+            <img src="images/LEMOMO TEA.png" alt="Home Cover">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-wrap">
+      <div class="details">
+        <div class="details-inner">
+          <div class="title">LEMOMO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+              <a decorator="editable" class="project-cover hold-space" href="home.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap">
+                    <div class="cover-image">
+                      <div class="cover cover-normal">
+                        <div class="slideshow home">
+                          <img src="images/Home.jpg" alt="Home Cover" class="active">
+                          <img src="images/home2.jpg" alt="Home Cover">
+                          <img src="images/home3.jpg" alt="Home Cover">
+                          <img src="images/home4.jpg" alt="Home Cover">
+                          <img src="images/home5.jpg" alt="Home Cover">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details-wrap">
+                    <div class="details">
+                      <div class="details-inner">
+                        <div class="title">CREAMI POP</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+<a decorator="editable" class="project-cover hold-space" href="digiso.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
+  <div class="cover-content-container">
+    <div class="cover-image-wrap">
+      <div class="cover-image">
+        <div class="cover cover-normal">
+          <div class="slideshow doodle">
+            <img src="images/digisoblackfridayoverall.png" alt="Home Cover" class="active">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-wrap">
+      <div class="details">
+        <div class="details-inner">
+          <div class="title">DIGISO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+              <!-- Matcha Girl -->
+              <a decorator="editable" class="project-cover hold-space" href="matchagirl.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/matchagirl2.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Matcha Girl</div></div></div></div>
+                </div>
+              </a>
+
+              <!-- LIMESALT -->
+              <a decorator="editable" class="project-cover hold-space" href="LIMESALT.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/LIMESALT.png" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">LIMESALT</div></div></div></div>
+                </div>
+              </a>
+
+              <!-- Dreamie Duo -->
+              <a decorator="editable" class="project-cover hold-space" href="DreamieDuoposter.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/Dreamie Duo poster.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Dreamie Duo</div></div></div></div>
+                </div>
+              </a>
+
+              <!-- Lunar Phases -->
+              <a decorator="editable" class="project-cover hold-space" href="lunarphases.html">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/lunarphases.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Lunar Phases</div></div></div></div>
+                </div>
+              </a>
+
+              <!-- Guerrilla Girls -->
+              <a decorator="editable" class="project-cover hold-space" href="guerrilla girls.html" data-context="pages" data-identity="id:p5786cd729669b67e4ddb1324c6b631a6cf367965f4b9af5012213">
+                <div class="cover-content-container">
+                  <div class="cover-image-wrap"><div class="cover-image"><div class="cover cover-normal"><img src="images/guerrilla girls.jpg" alt="Home Cover" style="width:100%;display:block;"></div></div></div>
+                  <div class="details-wrap"><div class="details"><div class="details-inner"><div class="title">Guerrilla Girls</div></div></div></div>
+                </div>
+              </a>
+
+            </section>
+
+            <section class="more-work-cta">
+              <a class="scroll more-work-scroll" href="projects.html">View More Work</a>
+            </section>
+
+            <section class="back-to-top">
+              <a href="#top"><span class="arrow">&uarr;</span> Back to Top</a>
+            </section>
+
+            <footer class="site-footer" decorator="editable">
+              <div class="footer-text">© Sammi Jiang 2025</div>
+            </footer>
+
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+<script>
+  function startSlideshow(selector, intervalMs) {
+    const wrap = document.querySelector(selector);
+    if (!wrap) return;
+
+    const imgs = wrap.querySelectorAll("img");
+    if (imgs.length < 2) return;
+
+    let i = 0;
+    let interval;
+
+    function nextSlide() {
+      imgs[i].classList.remove("active");
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add("active");
+    }
+
+    function start() {
+      interval = setInterval(nextSlide, intervalMs);
+    }
+
+    function stop() {
+      clearInterval(interval);
+    }
+
+    wrap.addEventListener("mouseenter", stop);
+    wrap.addEventListener("mouseleave", start);
+
+    start();
+  }
+
+  startSlideshow(".slideshow.creami-pop", 2100);
+  startSlideshow(".slideshow.home", 2100);
+  startSlideshow(".slideshow.lemon-glow", 2100);
+  startSlideshow(".slideshow.lemomo", 2100);
+  startSlideshow(".slideshow.left-behind", 2100);
+
+  const heroNameLayer = document.querySelector(".hero-name-layer");
+  const heroTextLayer = document.querySelector(".hero-text-layer");
+
+  function handleScrollSequence() {
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+
+    if (scrollY > vh * 0.18) {
+      heroNameLayer.classList.add("is-hidden");
+      heroTextLayer.classList.add("is-visible");
+    } else {
+      heroNameLayer.classList.remove("is-hidden");
+      heroTextLayer.classList.remove("is-visible");
+    }
+  }
+
+  window.addEventListener("scroll", handleScrollSequence, { passive: true });
+  window.addEventListener("load", handleScrollSequence);
+  window.addEventListener("resize", handleScrollSequence);
+</script>
+
+  <script type="text/javascript" src="/site/translations?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+  <script type="text/javascript" src="/dist/js/main.js?cb=66e5f68ba84984f4e3765ab4f818d478913484b9"></script>
+</body>
+</html>
