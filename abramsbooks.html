@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sammi Jiang — Abrams Books</title>
+
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="overall.css">
+  <link rel="stylesheet" href="abramsbooks.css">
+
+  <style>
+    /* =========================================
+       PROJECT PREVIEW
+       ========================================= */
+
+    .bookshelf-preview {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2.5rem auto 0;
+      overflow: visible;
+    }
+
+    .bookshelf-preview-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+
+      display: block;
+      object-fit: contain !important;
+      object-position: center !important;
+
+      background: #fff;
+      cursor: zoom-in;
+
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease;
+    }
+
+    .bookshelf-preview-image:hover {
+      transform: scale(1.01);
+    }
+
+    /* =========================================
+       VERTICAL SCROLL LIGHTBOX
+       ========================================= */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: none;
+
+      width: 100%;
+      height: 100vh;
+      max-height: 100vh;
+
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+
+      padding: 80px 20px 40px;
+      box-sizing: border-box;
+
+      background: rgba(20, 20, 20, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .lightbox.active {
+      display: block;
+    }
+
+    .lightbox-scroll-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      overflow: visible !important;
+    }
+
+    .lightbox-scroll-content img {
+      width: 100% !important;
+      max-width: 100% !important;
+
+      height: auto !important;
+      max-height: none !important;
+
+      display: block;
+
+      object-fit: contain !important;
+      object-position: center !important;
+      aspect-ratio: auto !important;
+
+      background: #fff;
+      overflow: visible !important;
+      cursor: zoom-out;
+    }
+
+    /* =========================================
+       CLOSE BUTTON
+       ========================================= */
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 28px;
+      z-index: 99999;
+
+      width: 48px;
+      height: 48px;
+      padding: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 2px solid #fff;
+      border-radius: 50%;
+
+      background: #000;
+      color: #fff;
+
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1;
+
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      transform: scale(1.06);
+      background: #fff;
+      color: #000;
+      border-color: #000;
+    }
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 768px) {
+      .bookshelf-preview {
+        margin-top: 1.5rem;
+      }
+
+      .bookshelf-preview-image:hover {
+        transform: none;
+      }
+
+      .lightbox {
+        padding: 70px 10px 25px;
+      }
+
+      .lightbox-scroll-content {
+        gap: 10px;
+        padding-bottom: 25px;
+      }
+
+      .lightbox-close {
+        top: 10px;
+        right: 12px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body class="transition-enabled">
+  <div class="js-responsive-nav">
+
+    <!-- HEADER -->
+    <header class="site-header js-site-header">
+      <nav class="nav-container">
+        <div class="gallery-title">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="gallery-title">
+          <a href="projects.html" class="active">Projects</a>
+        </div>
+
+        <div class="gallery-title">
+          <a href="resume.html">Resume</a>
+        </div>
+      </nav>
+
+      <div class="logo-wrap">
+        <div class="logo logo-text">
+          <a href="index.html">Sammi Jiang</a>
+        </div>
+      </div>
+
+      <div class="social nav-social">
+        <ul>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/sammijiang24"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 24"
+                height="24"
+              >
+                <path d="M19.57 20v-5.78c0-1.45-0.5-2.44-1.74-2.44c-0.95 0-1.51 0.67-1.76 1.31c-0.09 0.23-0.11 0.55-0.11 0.88V20h-3.43c0 0 0.05-9.78 0-10.8h3.43v1.53c0.46-0.73 1.27-1.79 3.09-1.79c2.26 0 4 1.5 4 4.86V20H19.57z M8.92 7.73H8.89C7.74 7.7 7 6.9 7 5.86C7 4.8 7.8 4 8.9 4s1.9 0.8 1.9 1.9C10.86 6.9 10.1 7.7 8.9 7.73z M10.63 20H7.2V9.2h3.43V20z"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="mailto:sammijiang24@gmail.com"
+              aria-label="Email Sammi Jiang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 24"
+                height="24"
+              >
+                <path d="M27,6v12c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h20C26.1,4,27,4.9,27,6z M25,6l-10,7L5,6H25z M5,18h20V8l-10,7L5,8V18z"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="resume-download-icon"
+              href="images/Resume.pdf"
+              download
+              aria-label="Download Resume"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 4v9m0 0l-3-3m3 3l3-3"
+                  stroke="#000"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M5 18h14"
+                  stroke="#000"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="header-placeholder"></div>
+
+    <!-- ABRAMS BOOKS PROJECT -->
+    <main>
+      <section
+        class="brand-kit"
+        aria-label="Abrams Books Amazon A+ Content"
+      >
+        <h2 class="kit-title">
+          Abrams Books<br>
+          Intern Projects
+        </h2>
+
+        <header class="case-intro">
+          <p class="project-meta">
+            Marketing Design · Amazon A+ Content · Summer 2026
+          </p>
+
+          <p class="project-desc">
+            Created Amazon A+ marketing graphics for
+            <em>I Will Judge You By Your Bookshelf</em> by Grant Snider
+            during my Marketing Design internship at ABRAMS Books.
+          </p>
+
+          <p class="project-desc">
+            The graphics highlight the book’s illustrations, editorial
+            reviews, and playful approach to reading and book culture.
+            The designs use artwork and colors from the book to create
+            a consistent visual experience across the full Amazon page.
+          </p>
+        </header>
+
+        <!-- ONLY FIRST IMAGE SHOWS ON THE PAGE -->
+        <section
+          class="kit-section"
+          aria-labelledby="amazon-content"
+        >
+          <p class="kit-label" id="amazon-content">
+            Amazon A+ Content
+          </p>
+
+          <div class="bookshelf-preview">
+            <img
+              src="images/I Will Judge You By Your Bookshelf .jpg"
+              alt="I Will Judge You By Your Bookshelf Amazon A+ Content"
+              class="bookshelf-preview-image"
+            >
+          </div>
+
+          <p class="kit-caption">
+            Click the image to view the full project.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <section class="more-work-cta">
+      <a
+        class="scroll more-work-scroll"
+        href="projects.html"
+      >
+        View More Work
+      </a>
+    </section>
+  </div>
+
+  <!-- VERTICALLY SCROLLABLE LIGHTBOX -->
+  <div
+    class="lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Amazon A+ Content project gallery"
+  >
+    <button
+      class="lightbox-close"
+      type="button"
+      aria-label="Close project gallery"
+    >
+      ×
+    </button>
+
+    <div class="lightbox-scroll-content">
+      <img
+        src="images/I Will Judge You By Your Bookshelf .jpg"
+        alt="I Will Judge You By Your Bookshelf main Amazon graphic"
+      >
+
+      <img
+        src="images/I Will Judge You By Your Bookshelf 2.jpg"
+        alt="New York Times Book Review Amazon graphic"
+      >
+
+      <img
+        src="images/I Will Judge You By Your Bookshelf 3.jpg"
+        alt="Publishers Weekly Amazon graphic"
+      >
+
+      <img
+        src="images/I Will Judge You By Your Bookshelf 4.jpg"
+        alt="Book Riot Amazon graphic"
+      >
+
+      <img
+        src="images/I Will Judge You By Your Bookshelf 5.jpg"
+        alt="More books by Grant Snider Amazon graphic"
+      >
+    </div>
+  </div>
+
+  <script>
+    const previewImage = document.querySelector(
+      ".bookshelf-preview-image"
+    );
+
+    const lightbox = document.querySelector(".lightbox");
+    const closeButton = document.querySelector(".lightbox-close");
+    const lightboxImages = document.querySelectorAll(
+      ".lightbox-scroll-content img"
+    );
+
+    function openLightbox() {
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+
+      lightbox.scrollTop = 0;
+      document.body.style.overflow = "hidden";
+
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+
+      document.body.style.overflow = "";
+
+      previewImage.focus();
+    }
+
+    previewImage.setAttribute("tabindex", "0");
+    previewImage.setAttribute("role", "button");
+    previewImage.setAttribute(
+      "aria-label",
+      "Open the full Amazon A+ Content project"
+    );
+
+    previewImage.addEventListener("click", openLightbox);
+
+    previewImage.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox();
+      }
+    });
+
+    closeButton.addEventListener("click", event => {
+      event.stopPropagation();
+      closeLightbox();
+    });
+
+    lightboxImages.forEach(image => {
+      image.addEventListener("click", closeLightbox);
+    });
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains("active")
+      ) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
